@@ -9,8 +9,10 @@
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
-    {% if url_parts_size == node_url_parts_size and filename != 'index.html' and != 'feed.xml' and != 'sitemap.xml' and != 'robots.txt' %}
-      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' }}</a></li>
+    {% if filename != 'feed.xml' or filename != 'sitemap.xml' or filename != 'robots.txt' %}
+      {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+        <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' }}</a></li>
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endfor %}
