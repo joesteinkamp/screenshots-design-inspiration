@@ -1,5 +1,5 @@
-{% if page.gallery-key != null %}
-    {% capture gallery_path %}/{{ page.gallery-key }}{% endcapture %}
+{% if page.gallery-directory != null %}
+    {% capture gallery_path %}/{{ page.gallery-directory }}{% endcapture %}
 {% else %}
 {% capture gallery_path %}/{% endcapture %}
 {% endif %}
