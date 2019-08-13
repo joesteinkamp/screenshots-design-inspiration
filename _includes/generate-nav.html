@@ -6,7 +6,7 @@
 <ul id="generated-nav" class="menu">
 {% for node in site.pages %}
   {% if node.url contains base_url %}
-    {% assign node_url_parts = node.url | split: '/' %}
+    {% assign node_url_parts = node.url | split: '/' | sort %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if node.url != '/' and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' %}
@@ -37,6 +37,6 @@
   !function(){
       var ul = document.getElementById('generated-nav');
       sortList( ul );
-      alert('ran');
+      alert('ran 2');
   }();
 </script>
