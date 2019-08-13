@@ -15,3 +15,27 @@
   {% endif %}
 {% endfor %}
 </ul>
+
+
+
+
+<script type="text/javascript">
+  function sortList(ul){
+      var new_ul = ul.cloneNode(false);
+      var lis = [];
+      for(var i = ul.childNodes.length; i--;){
+          if(ul.childNodes[i].nodeName === 'LI')
+              lis.push(ul.childNodes[i]);
+      }
+      lis.sort(function(a, b){
+         return parseInt(b.childNodes[0].data , 10) - parseInt(a.childNodes[0].data , 10);
+      });
+      for(var i = 0; i < lis.length; i++)
+          new_ul.appendChild(lis[i]);
+      ul.parentNode.replaceChild(new_ul, ul);
+  }
+  !function(){
+      var uls = document.getElementsByTagName('ul');
+      sortList( uls[uls.length - 1] );
+  }();
+</script>
