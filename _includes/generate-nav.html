@@ -9,11 +9,9 @@
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
-    {% if node_url_parts_size != '/feed.xml' or node_url_parts_size != '/sitemap.xml' or node_url_parts_size != '/robots.txt' %}
-      {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
-        <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' }}</a></li>
-      {% endif %}
-    {% endif %}
+    
+      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' }}</a></li>
+    
   {% endif %}
 {% endfor %}
 </ul>
