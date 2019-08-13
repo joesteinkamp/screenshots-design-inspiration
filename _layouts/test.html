@@ -1,0 +1,13 @@
+<div id="cats"></div>
+<div class="imagecontainer">
+{% for image in site.static_files %}
+    {% if image.path contains '/' %}
+        {% assign imagepath = image.path | split: "/" %}
+        <img src="{{ site.baseurl }}{{ image.path }}" class="
+          {% for subpath in imagepath %}
+            {% if forloop.index0 == 3 %}{{ subpath }}{% endif %}
+          {% endfor %}
+        " />
+    {% endif %}
+{% endfor %}
+</div>
