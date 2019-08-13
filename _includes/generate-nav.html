@@ -3,7 +3,7 @@
 {% assign rm = url_parts | last %}
 {% assign base_url = page.url | replace: rm %}
 
-<ul class="menu">
+<ul id="generated-nav" class="menu">
 {% for node in site.pages %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}
@@ -35,7 +35,8 @@
       ul.parentNode.replaceChild(new_ul, ul);
   }
   !function(){
-      var uls = document.getElementsByTagName('ul');
-      sortList( uls[uls.length - 1] );
+      var ul = document.getElementById('generated-nav');
+      sortList( ul );
+      alert('ran');
   }();
 </script>
