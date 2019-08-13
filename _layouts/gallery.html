@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 {% capture gallery_path %}/{{ page.gallery-directory }}{% endcapture %}
 {% for image in site.static_files %}
     {% if image.path contains gallery_path %}
