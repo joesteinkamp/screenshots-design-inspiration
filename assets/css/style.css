@@ -1,4 +1,30 @@
 
+/* BASE STYLES */
+body {
+    font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+
+/* MENU */
+.menu {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: 24px;
+}
+    .menu-item {
+        display: block;
+        grid-column: span 6;
+        position: relative;
+    }
+        .menu-item-a {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+
+/* GALLERY */
 .grid {
     display: grid;
     grid-template-columns: repeat(12,1fr);
