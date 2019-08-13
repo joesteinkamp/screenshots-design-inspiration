@@ -1,7 +1,7 @@
 {% if page.gallery-key != null %}
     {% capture gallery_path %}/{{ page.gallery-key }}{% endcapture %}
 {% else %}
-   {% gallery_path = '/' %} 
+{% capture gallery_path %}/{% endcapture %}
 {% endif %}
 {% for image in site.static_files %}
     {% if image.path contains '/' %}
