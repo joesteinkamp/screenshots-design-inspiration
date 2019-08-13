@@ -9,4 +9,5 @@
     grid-column: span 3;
     position: relative;
     padding: 0;
+    width: 100%;
 }
