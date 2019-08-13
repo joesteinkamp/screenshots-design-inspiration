@@ -4,7 +4,7 @@
 {% assign base_url = page.url | replace: rm %}
 {% assign pages = site.pages | sort: 'url' | reverse %}
 
-<ul id="generated-nav" class="menu">
+<ul class="menu">
 {% for node in pages %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}
@@ -16,28 +16,3 @@
   {% endif %}
 {% endfor %}
 </ul>
-
-
-
-
-<script type="text/javascript">
-  function sortList(ul){
-      var new_ul = ul.cloneNode(false);
-      var lis = [];
-      for(var i = ul.childNodes.length; i--;){
-          if(ul.childNodes[i].nodeName === 'LI')
-              lis.push(ul.childNodes[i]);
-      }
-      lis.sort(function(a, b){
-         return parseInt(b.childNodes[0].data , 10) - parseInt(a.childNodes[0].data , 10);
-      });
-      for(var i = 0; i < lis.length; i++)
-          new_ul.appendChild(lis[i]);
-      ul.parentNode.replaceChild(new_ul, ul);
-  }
-  !function(){
-      var ul = document.getElementById('generated-nav');
-      sortList( ul );
-      alert('ran 5');
-  }();
-</script>
