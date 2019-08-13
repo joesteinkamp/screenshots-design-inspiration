@@ -9,11 +9,13 @@
     grid-column: span 4;
     position: relative;
     padding: 0;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
 }
     .img-item a {
         
     }
     .img-item img {
         width: 100%;
-        border-radius: 8px;
     }
