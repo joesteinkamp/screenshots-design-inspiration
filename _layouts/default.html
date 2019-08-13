@@ -1,4 +1,8 @@
-{% capture gallery_path %}/{{ page.gallery-key }}{% endcapture %}
+{% if page.gallery-key != null %}
+    {% capture gallery_path %}/{{ page.gallery-key }}{% endcapture %}
+{% else %}
+   {% gallery_path = '/' %} 
+{% endif %}
 {% for image in site.static_files %}
     {% if image.path contains '/' %}
         <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
