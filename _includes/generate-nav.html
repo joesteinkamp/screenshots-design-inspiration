@@ -2,7 +2,7 @@
 {% assign url_parts_size = url_parts | size %}
 {% assign rm = url_parts | last %}
 {% assign base_url = page.url | replace: rm %}
-{% assign pages = site.pages | sort: 'url' %}
+{% assign pages = site.pages | sort: 'url' | reverse %}
 
 <ul id="generated-nav" class="menu">
 {% for node in pages %}
@@ -38,6 +38,6 @@
   !function(){
       var ul = document.getElementById('generated-nav');
       sortList( ul );
-      alert('ran 4');
+      alert('ran 5');
   }();
 </script>
