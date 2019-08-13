@@ -11,3 +11,35 @@
     {% endif %}
 {% endfor %}
 </div>
+
+<script>
+    /* hide all images */
+    $('.imagecontainer img').hide();
+
+    /* define an array for the categories */
+    var cats = new Array();
+
+    /* fill the array with the categories */
+    $('.imagecontainer img').each(function() {
+    cats[$(this).attr('class')] = 1;
+    });
+
+    /* create a link for each category */
+    $.each(cats, function(cat, value) {
+    $('#cats').append('<a href="#" class="showcat" cat="'+cat+'">'+cat+'</a>');
+    });
+
+    /* make the links toggle the right images */
+    $('.showcat').click(function() {
+    /* hide all images */
+    $('.imagecontainer img').hide();
+    /* show images in the clicked category */
+    $('.imagecontainer img.'+$(this).attr('cat')).show();
+    });
+
+    /* make images rotate */
+    $('.imagecontainer img').click(function() {
+    /* append the clicked image to its container */
+    $('.imagecontainer').append($(this));
+    });
+</script>
