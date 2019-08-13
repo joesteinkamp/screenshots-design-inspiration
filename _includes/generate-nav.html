@@ -10,7 +10,7 @@
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
-      <li><a href='{{node.url}}'>{{node.url}}</a></li>
+      <li><a href='./{{node.url}}'>{{node.url}}</a></li>
     {% endif %}
   {% endif %}
 {% endfor %}
