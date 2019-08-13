@@ -1,10 +1,16 @@
 {% if page.gallery-directory != null %}
     {% capture gallery_path %}/{{ page.gallery-directory }}{% endcapture %}
 {% else %}
-{% capture gallery_path %}/{% endcapture %}
+    {% capture gallery_path %}/{% endcapture %}
 {% endif %}
-{% for image in site.static_files %}
-    {% if image.path contains gallery_path %}
-        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-    {% endif %}
-{% endfor %}
+<div class="grid">
+    {% for image in site.static_files %}
+        {% if image.path contains gallery_path %}
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="img-item" />
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+
+

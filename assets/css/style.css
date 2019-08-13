@@ -1,0 +1,12 @@
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: 24px;
+}
+
+.img-item {
+    grid-column: span 3;
+    position: relative;
+    padding: 0;
+}
