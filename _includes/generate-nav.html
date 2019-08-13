@@ -2,11 +2,12 @@
 {% assign url_parts_size = url_parts | size %}
 {% assign rm = url_parts | last %}
 {% assign base_url = page.url | replace: rm %}
+{% assign pages = site.pages | sort: 'title'%}
 
 <ul id="generated-nav" class="menu">
-{% for node in site.pages %}
+{% for node in pages %}
   {% if node.url contains base_url %}
-    {% assign node_url_parts = node.url | split: '/' | sort %}
+    {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if node.url != '/' and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' %}
