@@ -1,13 +1,8 @@
----
-layout: default
----
-
-{% if page.gallery-key != null %}
-    {% capture gallery_path %}/{{ page.gallery-key }}{% endcapture %}
+{% if page.gallery-directory != null %}
+    {% capture gallery_path %}/{{ page.gallery-directory }}{% endcapture %}
 {% else %}
-   {% gallery_path = '/' %} 
+{% capture gallery_path %}/{% endcapture %}
 {% endif %}
-
 {% for image in site.static_files %}
     {% if image.path contains gallery_path %}
         <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
