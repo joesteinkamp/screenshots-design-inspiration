@@ -9,7 +9,7 @@
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
-    {% if node.url != '/' or node.url != 'feed.xml' %}
+    {% if node.url != '/' and node.url != 'feed.xml' %}
       <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' }}</a></li>
     {% endif %}
   {% endif %}
