@@ -1,17 +1,8 @@
 {% assign url_parts = page.url | split: '/' %}
-{% assign url_parts_size = url_parts | size %}
-{% assign rm = url_parts | last %}
-
 {% assign base_url = page.url %}
 {% assign pages = site.pages | sort: 'url' %}
 
-{% assign url_parts = page.url | split: '/' %}
-
-<h1>{{ page.url }}</h1>
-<h2>{{ url_parts }}</h2>
-<h3>{{ rm }}</h3>
-<h4>{{ base_url }}</h4>
-<h5>{{ site.url }}</h5>
+<h1>{{ url_parts }}</h1>
 
 <ul class="menu">
 {% for node in pages %}
