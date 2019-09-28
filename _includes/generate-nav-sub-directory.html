@@ -20,7 +20,7 @@
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' %}
-      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' | replace: '%20', ' ' }}</a></li>
+      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' | replace: '%20', ' ' | remove: base_url }}</a></li>
     {% endif %}
   {% endif %}
 {% endfor %}
