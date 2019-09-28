@@ -18,6 +18,7 @@
         {% else %}
             {% capture gallery_path %}/{% endcapture %}
         {% endif %}
+        <h1>{{ page.gallery-directory }}</h1>
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
