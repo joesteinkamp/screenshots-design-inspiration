@@ -1,14 +1,11 @@
+<h1>{{ page.url }}</h1>
+<h2>{{ site.pages }}</h2>
+
 {% assign url_parts = page.url | split: '/' %}
-{{ url_parts }}
 {% assign url_parts_size = url_parts | size %}
 {{ url_parts_size }}
 {% assign rm = url_parts | last %}
-
-{{ page.url }}
 {% assign base_url = page.url | replace: rm %}
-{{ base_url }}
-
-{{ site.pages }}
 {% assign pages = site.pages | sort: 'url' %}
 
 <ul class="menu">
