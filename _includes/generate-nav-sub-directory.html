@@ -15,6 +15,7 @@
 <ul class="menu">
 {% for node in pages %}
   {% if node.url contains base_url %}
+    <h1>{{ node.url }}</h1>
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
