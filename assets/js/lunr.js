@@ -22,6 +22,8 @@
      * @example
      * var idx = lunr(function () {
      *   this.field('title')
+     *   this.field('gallery-directory')
+     *   this.field('tags')
      *   this.field('body')
      *   this.ref('id')
      *
