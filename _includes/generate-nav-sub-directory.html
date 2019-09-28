@@ -4,7 +4,7 @@
 
 <h1>{{ url_parts }}</h1>
 
-<ul class="menu">
+<ul class="directory-menu">
 {% for node in pages %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}

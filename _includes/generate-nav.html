@@ -4,7 +4,7 @@
 {% assign base_url = page.url | replace: rm %}
 {% assign pages = site.pages | sort: 'url' %}
 
-<ul class="menu">
+<ul class="directory-menu">
 {% for node in pages %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}

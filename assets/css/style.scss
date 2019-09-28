@@ -92,6 +92,28 @@ footer {
     }
 }
 
+/* DIRECTORY MENU */
+.directory-menu {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-gap: 24px;
+
+    li {
+        display: block;
+        grid-column: span 6;
+        position: relative;
+
+        a {
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
+}
+    
+        
+
 
 /* GALLERY */
 .grid {
