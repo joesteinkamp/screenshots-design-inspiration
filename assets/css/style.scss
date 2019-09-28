@@ -35,7 +35,7 @@ header {
     a { color: $whiteColor; }
     a:hover { color: $whiteColor; }
 
-    img { display: inline-block; }
+    img { display: inline-block; padding: 0; margin: 0; }
     
     h1 { 
         display: inline-block; 
@@ -67,6 +67,11 @@ header {
         }
         a:hover, a:active {
             color: $whiteColor;
+        }
+
+        a.search {
+            vertical-align: middle;
+            height: 24px;
         }
         
         li {
