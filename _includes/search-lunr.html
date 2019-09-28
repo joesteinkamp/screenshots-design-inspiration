@@ -26,6 +26,8 @@ var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or p
 var idx = lunr(function () {
     this.ref('id')
     this.field('title')
+    this.field('gallery-directory')
+    this.field('tags')
     this.field('body')
 
     documents.forEach(function (doc) {
@@ -46,8 +48,10 @@ function lunr_search(term) {
                 var ref = results[i]['ref'];
                 var url = documents[ref]['url'];
                 var title = documents[ref]['title'];
+                var gallerydirectory = documents[ref]['gallery-directory'];
+                var tags = documents[ref]['tags'];
                 var body = documents[ref]['body'].substring(0,160)+'...';
-                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><span class='url'>"+ url +"</span><br /><span class='body'>"+ body +"</span></a></li>";
+                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + gallerydirectory + "</span><br /><span class='url'>"+ url +"</span><br /><span class='body'>"+ body +"</span></a></li>";
             }
         } else {
             document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
