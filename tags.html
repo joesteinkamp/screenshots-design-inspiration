@@ -64,7 +64,7 @@ The purpose of this snippet is to list all your pages posted with a certain tag.
 		 <small>{{ page.date | date_to_string }}</small>
 		 </a>
 		 {% for tag in page.tags %}
-			 <a class="tag" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
+			 <a class="tag" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
 		 {% endfor %}
 		 </h3>
 		 </li>
