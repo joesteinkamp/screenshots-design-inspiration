@@ -5,7 +5,7 @@
 {% assign pages = site.pages | sort: 'url' %}
 
 <h1>{{ page.url }}</h1>
-<h2>{{ site.pages }}</h2>
+<h2>{{ url_parts }}</h2>
 
 <ul class="menu">
 {% for node in pages %}
