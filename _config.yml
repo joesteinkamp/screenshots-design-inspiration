@@ -1,8 +1,15 @@
 title: Sourced - Open Source Design Inspiration
+tagline: A GitHub Pages screenshot gallery
 description: A GitHub Pages screenshot gallery
+
+permalink: pretty
 
 
 google_analytics: UA-8657893-8
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+
+
+tag_page: '/tags/'
