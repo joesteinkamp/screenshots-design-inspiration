@@ -56,8 +56,14 @@ header {
 
         a { 
             text-decoration: none; 
+            font-size: 18px;
             font-weight: 500; 
             color: $whiteColor;
+            line-height: 28px;
+            display: inline-block;
+            text-align: left;
+            padding-top: 0;
+            height: auto;
         }
         a:hover, a:active {
             color: $whiteColor;
