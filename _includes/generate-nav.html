@@ -11,7 +11,8 @@
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if node.url != '/' and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' %}
-      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' }}</a></li>
+      {% assign folder_name = node.url | replace: '%20', ' '}
+      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ folder_name | remove: '/' }}</a></li>
     {% endif %}
   {% endif %}
 {% endfor %}
