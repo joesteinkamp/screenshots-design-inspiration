@@ -4,8 +4,30 @@ body {
     font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+/* VARIABLES */
+$primaryColor: #2C5D9C;
+$primaryDarkColor: #062043;
+$primaryLightColor: #D5DFEB;
+$darkGrayColor: #384048;
+$grayColor: #6C7B8B;
+$lightGrayColor: #F0F1F3;
+$whiteColor: #FFFFFF;
+$blackColor: #000000;
 
-/* MENU */
+
+/* HEADER */
+header {
+    background: #2C5D9C;
+    position: sticky;
+    top: 0;
+    margin-bottom: 56px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 24px;
+    box-sizing: border-box;
+}    
+
 .menu {
     list-style: none;
     padding: 0;
