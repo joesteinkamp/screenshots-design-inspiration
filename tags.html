@@ -35,6 +35,10 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 	{% endif %}
 {% endfor %}
 
+{% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
+
 
 {% comment %}
 =======================
