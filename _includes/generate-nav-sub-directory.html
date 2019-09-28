@@ -11,6 +11,7 @@
 <h2>{{ url_parts }}</h2>
 <h3>{{ rm }}</h3>
 <h4>{{ base_url }}</h4>
+<h5>{{ site.url }}</h5>
 
 <ul class="menu">
 {% for node in pages %}
@@ -20,7 +21,7 @@
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' %}
-      <li class="menu-item"><a href='.{{node.url}}' class="menu-item-a">{{ node.url | remove: '/' | replace: '%20', ' ' | remove: base_url }}</a></li>
+      <li class="menu-item"><a href='.{{ node.url | relative_url }}' class="menu-item-a">{{ node.url | remove: '/' | replace: '%20', ' ' | remove: base_url }}</a></li>
     {% endif %}
   {% endif %}
 {% endfor %}
