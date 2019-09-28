@@ -73,22 +73,24 @@ header {
     }
 }    
 
-// .menu {
-//     list-style: none;
-//     padding: 0;
-//     display: grid;
-//     grid-template-columns: repeat(12,1fr);
-//     grid-gap: 24px;
-// }
-//     .menu-item {
-//         display: block;
-//         grid-column: span 6;
-//         position: relative;
-//     }
-//         .menu-item-a {
-//             font-size: 32px;
-//             font-weight: 700;
-//         }
+
+/* FOOTER */
+footer {
+    padding: 80px 0;
+    box-sizing: border-box;
+    background: $lightGrayColor;
+    
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 56px;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    .button {
+        margin: 0;
+    }
+}
 
 
 /* GALLERY */

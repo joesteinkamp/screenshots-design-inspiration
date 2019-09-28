@@ -39,7 +39,28 @@
       </section>
       <footer>
         <div class="container">
-            
+            <div class="col">
+                <h4>About</h4>
+                <p>{{ site.description | default: site.github.project_tagline }}</p>
+    
+                {% if site.github.is_project_page %}
+                <p>Created and maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</p>
+                {% endif %}
+        
+                {% if site.github.is_user_page %}
+                <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+                {% endif %}
+            </div>
+            <div class="col">
+              <h4>Become a contributor</h4>
+              <ul>
+                <li><a href="https://www.youtube.com/watch?v=yr6IzOGoMsQ">How to Edit a GitHub Repo</a></li>
+              </ul>
+              {% if site.github.is_project_page %}
+                <p class="view"><a class="button" href="{{ site.github.repository_url }}">View Project on GitHub</a></p>
+              {% endif %}
+            </div>
+        </div>
       </footer>
     </div>
     {% if site.google_analytics %}
