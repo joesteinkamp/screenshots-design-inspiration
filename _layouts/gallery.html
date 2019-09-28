@@ -20,8 +20,12 @@
         {% endif %}
         <h1>{{ page.gallery-directory }}</h1>
         {% if page.tags != null %}
-            <h2>{{ page.tags | capitalize | join: ', '}}</h2>
+            {% for tag in page.tags %}
+                <a href="#{{ tag | slugify }}"> {{ tag }} </a>
+            {% endfor %}
         {% endif %}
+
+        
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
