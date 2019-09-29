@@ -1,13 +1,6 @@
 ---
 ---
 
-
-/* BASE STYLES */
-body {
-    font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    margin: 0;
-}
-
 /* VARIABLES */
 $primaryColor: #2C5D9C;
 $primaryDarkColor: #062043;
@@ -17,6 +10,48 @@ $grayColor: #6C7B8B;
 $lightGrayColor: #F0F1F3;
 $whiteColor: #FFFFFF;
 $blackColor: #000000;
+
+
+/* BASE STYLES */
+body {
+    font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    color: $darkGrayColor;
+}
+
+
+a {
+    color: $primaryColor;
+    text-decoration: none;
+
+    :hover {
+        text-decoration: underline;
+    }
+
+    :visited {
+        color: $primaryColor;
+    }
+}
+
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 32px;
+}
+h4 {
+    font-size: 24px;
+}
+h5 {
+    font-size: 20px;
+}
+h6 {
+    font-size: 16px;
+}
 
 
 /* HEADER */
@@ -32,7 +67,7 @@ header {
     box-sizing: border-box;
     z-index: 1;
 
-    a { color: $whiteColor; }
+    a { color: $whiteColor; text-decoration: none; }
     a:hover { color: $whiteColor; }
 
     img { display: inline-block; padding: 0; margin: 0; }
