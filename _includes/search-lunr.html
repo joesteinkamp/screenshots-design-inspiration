@@ -7,7 +7,7 @@ var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or p
     "url": "{{ site.url }}{{ page.url }}",
     "title": "{{ page.title }}",
     "gallery-directory": "{{ page.gallery-directory }}",
-    "tags": "{{ page.tags | jsonify }}",
+    "tags": "{{ page.tags | join: ' ' }}",
     "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
     }, {% endif %}{% endfor %}{% for page in site.without-plugin %}{
     "id": {{ counter }},
