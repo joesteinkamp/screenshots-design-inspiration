@@ -45,7 +45,7 @@ function lunr_search(term) {
         //put results on the screen.
         var results = idx.search(term);
         if(results.length>0){
-            console.log(results);
+            // console.log(results);
             //if results
             for (var i = 0; i < results.length; i++) {
                 // more statements
@@ -54,7 +54,7 @@ function lunr_search(term) {
                 var title = documents[ref]['title'];
                 var gallerydirectory = documents[ref]['gallery-directory'];
                 var tags = documents[ref]['tags'];
-                console.log(tags);
+                // console.log(tags);
                 var body = documents[ref]['body'].substring(0,160)+'...';
                 document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + gallerydirectory + "</span><br /><span class='url'>"+ url +"</span><br /><span class='body'>"+ body +"</span><br /><span class='tags'>"+ tags +"</a></li>";
             }
