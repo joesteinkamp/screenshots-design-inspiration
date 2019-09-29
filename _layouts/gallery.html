@@ -1,4 +1,7 @@
 {% include head.html %}
+
+    <section>
+
         {% if page.gallery-directory != null %}
             {% capture gallery_path %}/{{ page.gallery-directory }}{% endcapture %}
         {% else %}
@@ -24,7 +27,9 @@
                     </div>
                 {% endif %}
             {% endfor %}
-        </div>        
+        </div>
+        
+    </section>
         
 {% include footer.html %}
 
