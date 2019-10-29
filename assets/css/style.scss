@@ -53,6 +53,24 @@ h6 {
     font-size: 16px;
 }
 
+h6 a, .button { /* H6 is button hack for markdown */
+    padding: 16px 32px;
+    background: $primaryColor;
+    color: $whiteColor;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    border-radius: 16px;
+    margin: 0 0 56px;
+    display: inline-block;
+}
+h6 a:hover, .button:hover {
+    color: $whiteColor;
+    background: lighten( $primaryColor, 8% );
+    text-decoration: none;
+    font-weight: 600;
+}
+
 
 /* HEADER */
 header {
