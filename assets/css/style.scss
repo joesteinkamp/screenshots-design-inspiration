@@ -195,6 +195,21 @@ footer {
 
 
 /* GALLERY */
+.tags {
+    list-style: none;
+    margin: 0 0 56px;
+    padding: 0;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        border: 1px solid $grayColor;
+        padding: 4px 8px;
+        border-radius: 16px;
+        color: $grayColor;
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -208,13 +223,11 @@ footer {
     max-height: 300px;
     overflow: hidden;
     border-radius: 8px;
-}
-    .img-item a {
-        
-    }
-    .img-item img {
+
+    img {
         width: 100%;
     }
+}
 
 
 
