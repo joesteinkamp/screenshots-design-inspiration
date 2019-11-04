@@ -244,6 +244,12 @@ footer {
         }
     }
 
+    .directory-menu {
+        li {
+            grid-column: span 12;
+        }
+    }
+
     .img-item {
         grid-column: span 6;
     }
