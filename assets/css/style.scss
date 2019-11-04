@@ -163,6 +163,8 @@ footer {
         grid-gap: 56px;
         max-width: 1024px;
         margin: 0 auto;
+        padding: 0 16px;
+        box-sizing: border-box;
     }
     .button {
         margin: 0;
@@ -228,7 +230,12 @@ footer {
             text-align: left;
         }
     }
+
     .img-item {
         grid-column: span 6;
+    }
+
+    footer .container {
+        grid-template-columns: auto;
     }
 }
