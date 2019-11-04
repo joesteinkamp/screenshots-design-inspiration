@@ -226,7 +226,7 @@ footer {
         grid-template-columns: auto;
         position: relative;
 
-        header>div:last-child {
+        > div:last-child {
             text-align: left;
         }
     }
