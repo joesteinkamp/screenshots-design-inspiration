@@ -1,5 +1,5 @@
-# sourced-design-inspiration
-
+# Sourced - Design Inspiration
+The goal of this project is to create a simple site for finding design inspiration that can be updated by anyone. There's been plenty of great app screenshot galleries that have come and gone or stopped being maintained. Hopefully, with it being open-source and maintainable by many, it will stay as useful as possible.
 
 ## For Git Novices
 1. Download & Install [GitHub Desktop](https://desktop.github.com/)
