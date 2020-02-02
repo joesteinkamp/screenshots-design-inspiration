@@ -3,6 +3,8 @@
 {% assign pages = site.pages | sort: 'url' %}
 {% assign counter = 0 %}
 
+{% base_url %}
+
 <ul class="directory-menu">
 {% for node in pages %}
   {% capture count %}
@@ -10,6 +12,7 @@
   {% endcapture %}
   {% if count == 20 %}
     {% break %}
+    hello
   {% endif %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}
