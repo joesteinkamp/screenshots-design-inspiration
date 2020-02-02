@@ -20,9 +20,15 @@
         <ul class="filters">
         {% if page.url contains 'Mobile' %}
             <li class="active" onClick="toggleVisibility('mobile')">Mobile Gallery</li>
+            <li onClick="toggleVisibility('web')">Web Gallery</li>
+            <li onClick="toggleVisibility('email')">Email Gallery</li>
         {% elsif page.url contains 'Web' %}
+            <li onClick="toggleVisibility('mobile')">Mobile Gallery</li>
             <li class="active" onClick="toggleVisibility('web')">Web Gallery</li>
+            <li onClick="toggleVisibility('email')">Email Gallery</li>
         {% else %}
+            <li onClick="toggleVisibility('mobile')">Mobile Gallery</li>
+            <li onClick="toggleVisibility('web')">Web Gallery</li>
             <li class="active" onClick="toggleVisibility('email')">Email Gallery</li>
         {% endif %}
         </ul>
