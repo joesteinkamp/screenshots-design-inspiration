@@ -1,5 +1,7 @@
 {% include head.html %}
 
+{% assign base_url = page.url | replace: rm %}
+
     <section>
 
         {% if page.gallery-directory != null %}
@@ -15,7 +17,9 @@
                 {% endfor %}
             </ul>
         {% endif %}
-        
+    
+        <p>{% base_url %}</p>
+
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
