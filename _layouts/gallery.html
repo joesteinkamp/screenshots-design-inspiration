@@ -1,4 +1,5 @@
 {% include head.html %}
+<script src="/assets/js/toggle-visibility.js"></script>
 
     <section>
 
@@ -15,22 +16,67 @@
                 {% endfor %}
             </ul>
         {% endif %}
-
         
+        <ul class="filters">
+        {% if page.url contains 'Mobile' %}
+            <li class="active" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
+            <li onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
+            <li onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
+        {% elsif page.url contains 'Web' %}
+            <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
+            <li class="active" onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
+            <li onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
+        {% else %}
+            <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
+            <li onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
+            <li class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
+        {% endif %}
+        </ul>
+
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
-                    <div class="img-item">
-                        <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                        </a>
-                    </div>
+                    {% if image.path contains 'Mobile' %}
+                        <div class="img-item mobile">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                            </a>
+                        </div>
+                    {% elsif image.path contains 'Web' %}
+                        <div class="img-item web">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="img-item email">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                            </a>
+                        </div>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
         
     </section>
-        
+    
+
+
+    <script>
+        {% if page.url contains 'Mobile' %}
+            filterImages('web');
+            filterImages('email');
+        {% elsif page.url contains 'Web' %}
+            filterImages('mobile');
+            filterImages('email');
+        {% else %}
+            filterImages('web');
+            filterImages('mobile');
+        {% endif %}
+    </script>
+
+
 {% include footer.html %}
 
     

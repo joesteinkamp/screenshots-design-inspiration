@@ -12,6 +12,12 @@ $whiteColor: #FFFFFF;
 $blackColor: #000000;
 
 
+/* SPECIAL STYLES */
+.hidden {
+    display: none;
+}
+
+
 /* BASE STYLES */
 body {
     font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -210,6 +216,26 @@ footer {
     }
 }
 
+.filters {
+    list-style: none;
+    margin: 0 0 56px;
+    padding: 0;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        border: 1px solid $primaryColor;
+        padding: 4px 12px;
+        border-radius: 16px;
+        color: $primaryColor;
+    }
+
+    li.active {
+        background-color: $primaryColor;
+        color: $whiteColor;
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -223,6 +249,11 @@ footer {
     max-height: 300px;
     overflow: hidden;
     border-radius: 8px;
+
+    &.mobile {
+        grid-column: span 3;
+        max-height: 720px;
+    }
 
     img {
         width: 100%;
