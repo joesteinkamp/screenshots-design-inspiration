@@ -20,11 +20,19 @@
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
-                    <div class="img-item">
-                        <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                        </a>
-                    </div>
+                    {% if image.path contains 'mobile' %}
+                        <div class="img-item mobile">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="img-item">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                            </a>
+                        </div>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>

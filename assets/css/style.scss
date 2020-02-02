@@ -224,6 +224,11 @@ footer {
     overflow: hidden;
     border-radius: 8px;
 
+    &.mobile {
+        grid-column: span 3;
+        max-height: 720px;
+    }
+
     img {
         width: 100%;
     }
