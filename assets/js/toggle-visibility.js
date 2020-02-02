@@ -1,4 +1,4 @@
-function toggleClass(toggleClass) {
+function toggleVisibility(toggleClass) {
     var x = document.getElementsByClassName(toggleClass);
 
     for (var i = 0; i < x.length; i++) {

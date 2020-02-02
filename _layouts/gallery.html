@@ -16,18 +16,28 @@
                 {% endfor %}
             </ul>
         {% endif %}
-    
+        
+        <ul class="filters">
         {% if page.url contains 'Mobile' %}
-            <p onClick="toggleClass('mobile')">Mobile Gallery</p>
+            <li class="active" onClick="toggleVisibility('mobile')">Mobile Gallery</li>
             <script>
                 toggleClass('web');
                 toggleClass('email');
             </script>
         {% elsif page.url contains 'Web' %}
-            <p onClick="toggleClass('web')">Web Gallery</p>
+            <li class="active" onClick="toggleVisibility('web')">Web Gallery</li>
+            <script>
+                toggleClass('mobile');
+                toggleClass('email');
+            </script>
         {% else %}
-            <p onClick="toggleClass('email')">Email Gallery</p>
+            <li class="active" onClick="toggleVisibility('email')">Email Gallery</li>
+            <script>
+                toggleClass('web');
+                toggleClass('mobile');
+            </script>
         {% endif %}
+        </ul>
 
         <div class="grid">
             {% for image in site.static_files %}
@@ -56,7 +66,23 @@
         </div>
         
     </section>
-        
+    
+
+
+    <script>
+        {% if page.url contains 'Mobile' %}
+            toggleClass('web');
+            toggleClass('email');
+        {% elsif page.url contains 'Web' %}
+            toggleClass('mobile');
+            toggleClass('email');
+        {% else %}
+            toggleClass('web');
+            toggleClass('mobile');
+        {% endif %}
+    </script>
+
+
 {% include footer.html %}
 
     
