@@ -59,43 +59,6 @@
             {% endfor %}
         </div>
 
-
-
-        
-        {% for image in site.static_files %}
-            {% if image.path contains gallery_path %}
-                <ul class="filters">
-                    {% if image.path contains 'Mobile' %}
-                        <li {% if page.url contains 'Mobile' %}class="active"{% endif %} onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
-                    {% elsif image.path contains 'Web' %}
-                        <li {% if page.url contains 'Web' %}class="active"{% endif %} onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
-                    {% else %}
-                        <li {% if page.url contains 'Email' %}class="active"{% endif %} onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
-                    {% endif %}
-                </ul>
-                <div class="grid">
-                    {% if image.path contains 'Mobile' %}
-                        <div class="img-item mobile">
-                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                            </a>
-                        </div>
-                    {% elsif image.path contains 'Web' %}
-                        <div class="img-item web">
-                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                            </a>
-                        </div>
-                    {% else %}
-                        <div class="img-item email">
-                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                            </a>
-                        </div>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endfor %}
     
 
         
