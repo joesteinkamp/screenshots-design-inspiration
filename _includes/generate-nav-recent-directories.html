@@ -1,7 +1,7 @@
 {% assign url_parts = page.url | split: '/' %}
 {% assign base_url = page.url %}
 {% assign pages = site.pages | sort: 'url' %}
-{% assign counter = '0' %}
+{% assign counter = 0 %}
 
 <ul class="directory-menu">
 {% for node in pages %}
