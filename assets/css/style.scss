@@ -209,12 +209,13 @@ footer {
 
     li {
         display: inline-block;
-        border: 1px solid $grayColor;
         padding: 4px 12px;
         border-radius: 16px;
+        background-color: $lightGrayColor;
         color: $grayColor;
     }
 }
+
 
 .filters {
     list-style: none;
@@ -228,6 +229,7 @@ footer {
         padding: 4px 12px;
         border-radius: 16px;
         color: $primaryColor;
+        cursor: pointer;
     }
 
     li.active {
