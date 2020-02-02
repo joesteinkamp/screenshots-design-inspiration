@@ -19,6 +19,10 @@
     
         {% if page.url contains 'Mobile' %}
             <p onClick="toggleClass('mobile')">Mobile Gallery</p>
+            <script>
+                toggleClass('web');
+                toggleClass('email');
+            </script>
         {% elsif page.url contains 'Web' %}
             <p onClick="toggleClass('web')">Web Gallery</p>
         {% else %}
