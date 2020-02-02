@@ -19,17 +19,17 @@
         
         <ul class="filters">
         {% if page.url contains 'Mobile' %}
+            <li onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
             <li class="active" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
             <li onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
-            <li onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
         {% elsif page.url contains 'Web' %}
+            <li onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
             <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
             <li class="active" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
-            <li onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
         {% else %}
+            <li class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
             <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
             <li onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
-            <li class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
         {% endif %}
         </ul>
 
