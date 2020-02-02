@@ -20,7 +20,7 @@
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
-                    {% if image.path contains 'mobile' %}
+                    {% if page.url contains 'Mobile' %}
                         <div class="img-item mobile">
                             <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
                                 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
