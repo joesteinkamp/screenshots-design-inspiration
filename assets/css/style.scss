@@ -84,7 +84,7 @@ header {
     position: sticky;
     top: 0;
     margin-bottom: 56px;
-    padding: 24px;
+    padding: 24px 0;
     box-sizing: border-box;
     z-index: 1;
 
@@ -92,6 +92,7 @@ header {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 24px;
+        margin: 0 auto;
         max-width: 88%;
 
         > div:last-child {
