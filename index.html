@@ -31,7 +31,8 @@ layout: default
         {% capture count %}
             {% increment counter %}
         {% endcapture %}
-        {% if count == "20" %}
+        {% increment counter %}
+        {% if counter == "20" %}
             {% break %}
         {% endif %}
         {% if image.path contains 'Mobile' %}
