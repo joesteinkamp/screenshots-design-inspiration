@@ -5,8 +5,10 @@
 
 <ul class="directory-menu">
 {% for node in pages %}
-  {% increment counter %}
-  {% if counter == 20 %}
+  {% capture count %}
+    {% increment counter %}
+  {% endcapture %}
+  {% if count == 20 %}
     {% break %}
   {% endif %}
   {% if node.url contains base_url %}
