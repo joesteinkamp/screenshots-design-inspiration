@@ -18,11 +18,11 @@
         {% endif %}
     
         {% if page.url contains 'Mobile' %}
-            <p>Mobile Gallery</p>
+            <p onClick="toggleClass('mobile')">Mobile Gallery</p>
         {% elsif page.url contains 'Web' %}
-            <p>Web Gallery</p>
+            <p onClick="toggleClass('web')">Web Gallery</p>
         {% else %}
-            <p>Email Gallery</p>
+            <p onClick="toggleClass('email')">Email Gallery</p>
         {% endif %}
 
         <div class="grid">
