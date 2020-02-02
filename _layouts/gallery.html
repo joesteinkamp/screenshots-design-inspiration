@@ -34,8 +34,14 @@
                                 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             </a>
                         </div>
+                    {% elsif image.path contains 'Web' %}
+                        <div class="img-item web">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                            </a>
+                        </div>
                     {% else %}
-                        <div class="img-item">
+                        <div class="img-item email">
                             <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
                                 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             </a>
