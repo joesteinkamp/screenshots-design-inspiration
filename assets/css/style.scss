@@ -216,6 +216,26 @@ footer {
     }
 }
 
+.filters {
+    list-style: none;
+    margin: 0 0 56px;
+    padding: 0;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        border: 1px solid $primaryColor;
+        padding: 4px 12px;
+        border-radius: 16px;
+        color: $primaryColor;
+    }
+
+    li.active {
+        background-color: $primaryColor;
+        color: $whiteColor;
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12,1fr);
