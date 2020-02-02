@@ -285,6 +285,10 @@ footer {
 
     .img-item {
         grid-column: span 6;
+
+        &.mobile {
+            grid-column: span 6;
+        }
     }
 
     footer .container {
