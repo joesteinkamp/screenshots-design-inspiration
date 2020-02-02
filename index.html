@@ -27,7 +27,7 @@ layout: default
 
 <h3>Recent Images</h3>
 <div class="grid">
-    {% for image in site.static_files %}
+    {% for image in site.static_files | sort: "modified_time" %}
         {% capture count %}
             {% increment counter %}
         {% endcapture %}
