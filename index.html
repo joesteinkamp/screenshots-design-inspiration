@@ -29,13 +29,6 @@ layout: default
 <div class="grid">
     {% assign image_files = site.static_files | sort: "modified_time" %}
     {% for image in image_files %}
-        {% capture count %}
-            {% increment counter %}
-        {% endcapture %}
-        {% increment counter %}
-        {% if counter == "200" %}
-            {% break %}
-        {% endif %}
         {% if image.path contains 'Mobile' %}
             <div class="img-item mobile">
                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
