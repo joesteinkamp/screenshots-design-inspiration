@@ -177,6 +177,12 @@ footer {
     }
 }
 
+/* HOMEPAGE MENU */
+.channel-item {
+    grid-column: span 4;
+}
+
+
 /* DIRECTORY MENU */
 .directory-menu {
     list-style: none;
