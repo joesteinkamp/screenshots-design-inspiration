@@ -16,7 +16,13 @@
             </ul>
         {% endif %}
     
-        <p>Page = {{ page.url }}</p>
+        {% if page.url contains 'Mobile' %}
+            <p>Mobile Gallery</p>
+        {% elsif page.url contains 'Web' %}
+            <p>Web Gallery</p>
+        {% else %}
+            <p>Email Gallery</p>
+        {% endif %}
 
         <div class="grid">
             {% for image in site.static_files %}
