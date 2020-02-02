@@ -14,7 +14,7 @@
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
     {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' and node.url != '/search' and node.url != '/tags' and node.url != '/Email' and node.url != '/Mobile' and node.url != '/Web' and node.url != '/Web/UNCATEGORIZED' %}
-      <li class="menu-item"><a href='{{ node.url | relative_url }}' class="menu-item-a">{{ node.url | remove: base_url | replace: 'Email', 'Email - ' | replace: 'Mobile', 'Mobile - ' | replace: 'Web', 'Web - ' | replace: '%20', ' ' }}</a></li>
+      <li class="menu-item"><a href='{{ node.url | relative_url }}' class="menu-item-a">{{ node.url | remove: base_url | replace: '%20', ' ' }}</a></li>
     {% endif %}
   {% endif %}
 {% endfor %}
@@ -23,3 +23,28 @@
 
 
 
+<div class="grid">
+    {% for image in site.static_files %}
+        {% if image.path contains gallery_path %}
+            {% if image.path contains 'Mobile' %}
+                <div class="img-item mobile">
+                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                    </a>
+                </div>
+            {% elsif image.path contains 'Web' %}
+                <div class="img-item web">
+                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                    </a>
+                </div>
+            {% else %}
+                <div class="img-item email">
+                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                    </a>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>
