@@ -3,8 +3,6 @@
 {% assign pages = site.pages | sort: 'url' %}
 {% assign counter = 0 %}
 
-{% base_url %}
-
 <ul class="directory-menu">
 {% for node in pages %}
   {% capture count %}
