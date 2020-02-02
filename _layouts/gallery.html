@@ -59,14 +59,14 @@
 
     <script>
         {% if page.url contains 'Mobile' %}
-            toggleClass('web');
-            toggleClass('email');
+            toggleVisibility('web');
+            toggleVisibility('email');
         {% elsif page.url contains 'Web' %}
-            toggleClass('mobile');
-            toggleClass('email');
+            toggleVisibility('mobile');
+            toggleVisibility('email');
         {% else %}
-            toggleClass('web');
-            toggleClass('mobile');
+            toggleVisibility('web');
+            toggleVisibility('mobile');
         {% endif %}
     </script>
 
