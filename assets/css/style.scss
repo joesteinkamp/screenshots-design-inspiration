@@ -85,11 +85,19 @@ header {
     top: 0;
     margin-bottom: 56px;
     padding: 24px;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 24px;
     box-sizing: border-box;
     z-index: 1;
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 24px;
+        max-width: 88%;
+
+        > div:last-child {
+            text-align: right;
+        }
+    }
 
     a { color: $whiteColor; text-decoration: none; }
     a:hover { color: $whiteColor; }
@@ -102,10 +110,6 @@ header {
         font-size: 24px; 
         font-family: 'Roboto', sans-serif; 
         font-weight: 500;
-    }
-
-    > div:last-child {
-        text-align: right;
     }
 
     ul {
@@ -275,11 +279,13 @@ footer {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     header {
-        grid-template-columns: auto;
         position: relative;
 
         > div:last-child {
             text-align: left;
+        }
+        .container {
+            grid-template-columns: auto;
         }
     }
 
