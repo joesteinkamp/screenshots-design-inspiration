@@ -283,6 +283,10 @@ footer {
         }
     }
 
+    .channel-item {
+        grid-column: span 12;
+    }
+
     .directory-menu {
         li {
             grid-column: span 12;
