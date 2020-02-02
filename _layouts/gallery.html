@@ -19,17 +19,17 @@
         
         <ul class="filters">
         {% if page.url contains 'Mobile' %}
-            <li class="active" onClick="toggleVisibility('mobile')">Mobile Gallery</li>
-            <li onClick="toggleVisibility('web')">Web Gallery</li>
-            <li onClick="toggleVisibility('email')">Email Gallery</li>
+            <li class="active" onClick="filterToggle('mobile')">Mobile Gallery</li>
+            <li onClick="filterToggle('web')">Web Gallery</li>
+            <li onClick="filterToggle('email')">Email Gallery</li>
         {% elsif page.url contains 'Web' %}
-            <li onClick="toggleVisibility('mobile')">Mobile Gallery</li>
-            <li class="active" onClick="toggleVisibility('web')">Web Gallery</li>
-            <li onClick="toggleVisibility('email')">Email Gallery</li>
+            <li onClick="filterToggle('mobile')">Mobile Gallery</li>
+            <li class="active" onClick="filterToggle('web')">Web Gallery</li>
+            <li onClick="filterToggle('email')">Email Gallery</li>
         {% else %}
-            <li onClick="toggleVisibility('mobile')">Mobile Gallery</li>
-            <li onClick="toggleVisibility('web')">Web Gallery</li>
-            <li class="active" onClick="toggleVisibility('email')">Email Gallery</li>
+            <li onClick="filterToggle('mobile')">Mobile Gallery</li>
+            <li onClick="filterToggle('web')">Web Gallery</li>
+            <li class="active" onClick="filterToggle('email')">Email Gallery</li>
         {% endif %}
         </ul>
 
@@ -65,14 +65,14 @@
 
     <script>
         {% if page.url contains 'Mobile' %}
-            toggleVisibility('web');
-            toggleVisibility('email');
+            filterImages('web');
+            filterImages('email');
         {% elsif page.url contains 'Web' %}
-            toggleVisibility('mobile');
-            toggleVisibility('email');
+            filterImages('mobile');
+            filterImages('email');
         {% else %}
-            toggleVisibility('web');
-            toggleVisibility('mobile');
+            filterImages('web');
+            filterImages('mobile');
         {% endif %}
     </script>
 
