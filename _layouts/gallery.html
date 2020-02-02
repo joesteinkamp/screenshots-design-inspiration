@@ -15,13 +15,11 @@
                 {% endfor %}
             </ul>
         {% endif %}
-    
-        <p>{% page.url %}</p>
         
         <div class="grid">
             {% for image in site.static_files %}
                 {% if image.path contains gallery_path %}
-                    {% if page.url contains 'Mobile' %}
+                    {% if image.path contains 'Mobile' %}
                         <div class="img-item mobile">
                             <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
                                 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
