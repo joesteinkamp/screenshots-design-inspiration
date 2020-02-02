@@ -282,11 +282,12 @@ footer {
     header {
         position: relative;
 
-        > div:last-child {
-            text-align: left;
-        }
         .container {
             grid-template-columns: auto;
+
+            > div:last-child {
+                text-align: left;
+            }
         }
     }
 
