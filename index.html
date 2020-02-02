@@ -23,27 +23,35 @@ layout: default
 {% include generate-nav-recent-directories.html %}
 
 
+{% assign counter = 0 %}
+
 <h3>Recent Images</h3>
 <div class="grid">
-        {% for image in site.static_files %}
-          {% if image.path contains 'Mobile' %}
-              <div class="img-item mobile">
-                  <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                      <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                  </a>
-              </div>
-          {% elsif image.path contains 'Web' %}
-              <div class="img-item web">
-                  <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                      <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                  </a>
-              </div>
-          {% else %}
-              <div class="img-item email">
-                  <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                      <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                  </a>
-              </div>
-          {% endif %}
-        {% endfor %}
-    </div>
+    {% for image in site.static_files %}
+        {% capture count %}
+            {% increment counter %}
+        {% endcapture %}
+        {% if count == "20" %}
+            {% break %}
+        {% endif %}
+        {% if image.path contains 'Mobile' %}
+            <div class="img-item mobile">
+                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            </div>
+        {% elsif image.path contains 'Web' %}
+            <div class="img-item web">
+                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            </div>
+        {% else %}
+            <div class="img-item email">
+                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
