@@ -6,7 +6,7 @@
 {% base_url %}
 
 <ul class="directory-menu">
-{% for node in pages | sort: "date" %}
+{% for node in pages %}
   {% capture count %}
     {% increment counter %}
   {% endcapture %}
@@ -25,28 +25,3 @@
 
 
 
-<div class="grid">
-    {% for image in site.static_files | sort: "modified_time" %}
-        {% if image.path contains gallery_path %}
-            {% if image.path contains 'Mobile' %}
-                <div class="img-item mobile">
-                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                    </a>
-                </div>
-            {% elsif image.path contains 'Web' %}
-                <div class="img-item web">
-                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                    </a>
-                </div>
-            {% else %}
-                <div class="img-item email">
-                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                    </a>
-                </div>
-            {% endif %}
-        {% endif %}
-    {% endfor %}
-</div>
