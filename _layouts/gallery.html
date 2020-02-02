@@ -8,14 +8,9 @@
         {% else %}
             {% capture gallery_path %}/{% endcapture %}
         {% endif %}
+
+
         <h1>{{ page.gallery-directory }}</h1>
-        {% if page.tags != null %}
-            <ul class="tags">
-                {% for tag in page.tags %}
-                    <li>{{tag}}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
         
         <ul class="filters">
         {% if page.url contains 'Mobile' %}
@@ -32,6 +27,14 @@
             <li onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
         {% endif %}
         </ul>
+
+        {% if page.tags != null %}
+            <ul class="tags">
+                {% for tag in page.tags %}
+                    <li>{{tag}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
         <div class="grid">
             {% for image in site.static_files %}

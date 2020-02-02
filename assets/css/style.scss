@@ -207,27 +207,11 @@ footer {
 
 
 /* GALLERY */
-.tags {
-    list-style: none;
-    margin: 0 0 16px;
-    padding: 0;
-    display: block;
-
-    li {
-        display: inline-block;
-        padding: 4px 12px;
-        border-radius: 16px;
-        background-color: $lightGrayColor;
-        color: $grayColor;
-    }
-}
-
-
 .filters {
     list-style: none;
     margin: 0 0 56px;
     padding: 0;
-    display: block;
+    display: inline-block;
 
     li {
         display: inline-block;
@@ -243,6 +227,22 @@ footer {
         color: $whiteColor;
     }
 }
+
+.tags {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 16px;
+        background-color: $lightGrayColor;
+        color: $grayColor;
+    }
+}
+
 
 .grid {
     display: grid;
