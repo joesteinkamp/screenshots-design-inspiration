@@ -27,12 +27,13 @@ layout: default
 
 <h3>Recent Images</h3>
 <div class="grid">
-    {% for image in site.static_files | sort: "modified_time" %}
+    {% assign image_files = site.static_files | sort: "modified_time" %}
+    {% for image in image_files %}
         {% capture count %}
             {% increment counter %}
         {% endcapture %}
         {% increment counter %}
-        {% if counter == "20" %}
+        {% if counter == "200" %}
             {% break %}
         {% endif %}
         {% if image.path contains 'Mobile' %}
