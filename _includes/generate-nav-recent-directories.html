@@ -6,14 +6,14 @@
 <ul class="directory-menu">
 {% for node in pages %}
   {% increment counter %}
-  {% if counter > 20 %}
+  {% if counter == 20 %}
     {% break %}
   {% endif %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
-    {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' and node.url != '/search' and node.url != '/tags' and node.url != '/Email' and node.url != '/Mobile' and node.url != '/Web' %}
+    {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' and node.url != '/search' and node.url != '/tags' and node.url != '/Email' and node.url != '/Mobile' and node.url != '/Web' and node.url != '/Web/UNCATEGORIZED' %}
       <li class="menu-item"><a href='{{ node.url | relative_url }}' class="menu-item-a">{{ node.url | remove: base_url | replace: '/', ' - ' | replace: '%20', ' ' }}</a></li>
     {% endif %}
   {% endif %}
