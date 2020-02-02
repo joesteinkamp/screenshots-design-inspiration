@@ -19,17 +19,17 @@
         
         <ul class="filters">
         {% if page.url contains 'Mobile' %}
-            <li class="active" onClick="filterToggle('mobile')">Mobile Gallery</li>
-            <li onClick="filterToggle('web')">Web Gallery</li>
-            <li onClick="filterToggle('email')">Email Gallery</li>
+            <li class="active" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
+            <li onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
+            <li onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
         {% elsif page.url contains 'Web' %}
-            <li onClick="filterToggle('mobile')">Mobile Gallery</li>
-            <li class="active" onClick="filterToggle('web')">Web Gallery</li>
-            <li onClick="filterToggle('email')">Email Gallery</li>
+            <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
+            <li class="active" onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
+            <li onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
         {% else %}
-            <li onClick="filterToggle('mobile')">Mobile Gallery</li>
-            <li onClick="filterToggle('web')">Web Gallery</li>
-            <li class="active" onClick="filterToggle('email')">Email Gallery</li>
+            <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile Gallery</li>
+            <li onClick="filterImages('web'); this.classList.toggle('active');">Web Gallery</li>
+            <li class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email Gallery</li>
         {% endif %}
         </ul>
 
