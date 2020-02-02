@@ -1,14 +1,14 @@
 {% assign url_parts = page.url | split: '/' %}
 {% assign base_url = page.url %}
 {% assign pages = site.pages | sort: 'url' %}
-{% assign counter = 'i' %}
+{% assign counter = '0' %}
 
 <ul class="directory-menu">
 {% for node in pages %}
-  {% capture counter %}{{ counter }}i{% endcounter %}
-  {% if capture.size > 20 %}
+  {% increment counter %}
+  {% if counter > 20 %}
     {% break %}
-  {% endif  %}
+  {% endif %}
   {% if node.url contains base_url %}
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
