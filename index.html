@@ -43,3 +43,29 @@ layout: default
         {% endif %}
     {% endfor %}
 </div>
+
+<h3>Random Mobile</h3>
+<div class="grid">
+    {% assign image_files = site.static_files | sample: 20 | where_exp:"item", "item.path contains 'Mobile'"  %}
+    {% for image in image_files limit: 20 %}
+        {% if image.path contains 'Mobile' %}
+            <div class="img-item mobile">
+                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            </div>
+        {% elsif image.path contains 'Web' %}
+            <div class="img-item web">
+                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            </div>
+        {% else %}
+            <div class="img-item email">
+                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
