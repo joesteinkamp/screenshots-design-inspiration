@@ -23,13 +23,10 @@ layout: default
 {% include generate-nav-recent-directories.html %}
 
 
-{% assign counter = 0 %}
-
 <h3>Recent Images</h3>
 <div class="grid">
     {% assign image_files = site.static_files | sort: "modified_time" %}
     {% for image in image_files limit: 3 %}
-        <p>{% image.path %}</p>
         {% if image.path contains 'Mobile' %}
             <div class="img-item mobile">
                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
