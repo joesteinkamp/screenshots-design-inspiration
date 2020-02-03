@@ -18,11 +18,6 @@ layout: default
     </div>
 </div>
 
-
-<h3>Recent Additions</h3>
-{% include generate-nav-recent-directories.html %}
-
-
 <h3>Random 20</h3>
 <div class="grid">
     {% assign image_files = site.static_files | sample: 20 %}
