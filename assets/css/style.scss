@@ -212,6 +212,8 @@ footer {
     }
 
     &.home {
+        margin-bottom: 80px;
+        
         li {
             grid-column: span 4;
         }
