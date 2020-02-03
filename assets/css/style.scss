@@ -210,6 +210,12 @@ footer {
             font-weight: 700;
         }
     }
+
+    &.home {
+        li {
+            grid-column: span 4;
+        }
+    }
 }
     
         

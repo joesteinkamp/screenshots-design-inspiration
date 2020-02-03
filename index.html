@@ -18,6 +18,16 @@ layout: default
     </div>
 </div>
 
+<h3>Recently Added</h3>
+<ul class="directory-menu home">
+    <li class="menu-item"><a href="{{ site.baseurl }}/Mobile/Lemonade/" class="menu-item-a">Lemonade (Mobile)</a></li>
+    <li class="menu-item"><a href="{{ site.baseurl }}/Web/Lemonade/" class="menu-item-a">Lemonade (Web)</a></li>
+    <li class="menu-item"><a href="{{ site.baseurl }}/Web/JSTOR/" class="menu-item-a">JSTOR (Web)</a></li>
+    <li class="menu-item"><a href="{{ site.baseurl }}/Web/Airtable/" class="menu-item-a">Airtable (Web)</a></li>
+    <li class="menu-item"><a href="{{ site.baseurl }}/Web/AlphaSense/" class="menu-item-a">AlphaSense (Web)</a></li>
+    <li class="menu-item"><a href="{{ site.baseurl }}/Web/Capital IQ/" class="menu-item-a">Capital IQ (Web)</a></li>
+</ul>
+
 <h3>Random 20</h3>
 <div class="grid masonry">
     {% assign image_files = site.static_files | sample: 20 %}
