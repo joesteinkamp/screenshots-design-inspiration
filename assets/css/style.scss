@@ -275,6 +275,15 @@ footer {
     img {
         width: 100%;
     }
+
+    < .grid-masonry {
+        grid-column: span 3;
+    }
+
+    &.mobile < .grid-masonry {
+        grid-row-end: span 2;
+    }
+
 }
 
 

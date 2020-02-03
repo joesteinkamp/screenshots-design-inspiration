@@ -19,7 +19,7 @@ layout: default
 </div>
 
 <h3>Random 20</h3>
-<div class="grid">
+<div class="grid masonry">
     {% assign image_files = site.static_files | sample: 20 %}
     {% for image in image_files limit: 20 %}
         {% if image.path contains 'Mobile' %}
