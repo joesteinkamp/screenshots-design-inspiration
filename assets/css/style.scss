@@ -213,7 +213,7 @@ footer {
 
     &.home {
         margin-bottom: 80px;
-        
+
         li {
             grid-column: span 4;
         }
@@ -321,6 +321,12 @@ footer {
     .directory-menu {
         li {
             grid-column: span 12;
+        }
+
+        &.home {
+            li {
+                grid-column: span 12;
+            }
         }
     }
 
