@@ -1,0 +1,14 @@
+# General Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Windows Dump file
+*.stackdump
