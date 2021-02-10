@@ -1,6 +1,6 @@
 {% assign url_parts = page.url | split: '/' %}
 {% assign base_url = page.url %}
-{% assign pages = site.pages | sort: 'url' %}
+{% assign pages = site.pages | sort_natural: 'url' %}
 
 <h1>{{ url_parts }}</h1>
 
