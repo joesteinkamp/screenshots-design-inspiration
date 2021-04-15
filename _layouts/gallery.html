@@ -59,6 +59,12 @@
                                 </a>
                             </div>
                         {% endif %}
+                    {% elsif image.extname contains 'mp4' %}
+                        <div class="img-item web">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
+                            </a>
+                        </div>
                     {% endif %}
                 {% endif %}
             {% endfor %}
