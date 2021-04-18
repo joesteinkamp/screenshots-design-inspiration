@@ -90,22 +90,21 @@
         {% endif %}
 
 
-        if(document.querySelector(".web")) {   
+        if(document.querySelector(".web") != null) {   
             //  Show web filter
             console.log("Web images found");
             showElement('filter-web');
-        } else if(document.querySelector(".mobile")) {
+        }
+        if(document.querySelector(".mobile") != null) {
             //  Show mobile filter
             console.log("Mobile images found");
             showElement('filter-mobile');
-        } else if(document.querySelector(".email")) {
+        } 
+        if(document.querySelector(".email") != null) {
             //  Show email filter
             console.log("Email images found");
             showElement('filter-email');
-        } else {
-            // do nothing
-            console.log("no images found 🤔");
-        }
+        } 
     </script>
 
 

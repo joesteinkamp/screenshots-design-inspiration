@@ -8,5 +8,5 @@ function filterImages(toggleClass) {
 
 function showElement(id) {
     var x = document.getElementById(id);
-    x.classList.toggle('hidden');
+    x.classList.remove('hidden');
 }

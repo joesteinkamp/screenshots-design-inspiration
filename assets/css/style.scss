@@ -237,10 +237,10 @@ footer {
         border-radius: 16px;
         color: $primaryColor;
         cursor: pointer;
-
-        .hidden {
-            display: none;
-        }
+    }
+    
+    li.hidden {
+        display: none;
     }
 
     li.active {
