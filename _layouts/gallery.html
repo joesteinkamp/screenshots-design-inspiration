@@ -14,17 +14,17 @@
         
         <ul class="filters">
         {% if page.url contains 'Mobile' %}
-            <li onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
-            <li class="active" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
-            <li onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
+            <li id="filter-email" class="hidden" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
+            <li id="filter-mobile" class="active" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
+            <li id="filter-web" class="hidden" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
         {% elsif page.url contains 'Web' %}
-            <li onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
-            <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
-            <li class="active" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
+            <li id="filter-email" class="hidden" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
+            <li id="filter-mobile" class="hidden" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
+            <li id="filter-web" class="active" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
         {% else %}
-            <li class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
-            <li onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
-            <li onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
+            <li id="filter-email" class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
+            <li id="filter-mobile" class="hidden" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
+            <li id="filter-web" class="hidden" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
         {% endif %}
         </ul>
 
@@ -88,6 +88,20 @@
             filterImages('web');
             filterImages('mobile');
         {% endif %}
+
+
+        if(document.querySelector(".web")) {   
+            //  Show web filter
+            showElement('filter-web');
+        } else if(document.querySelector(".mobile")) {
+            //  Show web filter
+            showElement('filter-mobile');
+        } else if(document.querySelector(".email")) {
+            //  Show email filter
+            showElement('filter-email');
+        } else {
+            // do nothing
+        }
     </script>
 
 
