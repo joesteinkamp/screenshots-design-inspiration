@@ -92,15 +92,19 @@
 
         if(document.querySelector(".web")) {   
             //  Show web filter
+            console.log("Web images found");
             showElement('filter-web');
         } else if(document.querySelector(".mobile")) {
-            //  Show web filter
+            //  Show mobile filter
+            console.log("Mobile images found");
             showElement('filter-mobile');
         } else if(document.querySelector(".email")) {
             //  Show email filter
+            console.log("Email images found");
             showElement('filter-email');
         } else {
             // do nothing
+            console.log("no images found 🤔");
         }
     </script>
 
