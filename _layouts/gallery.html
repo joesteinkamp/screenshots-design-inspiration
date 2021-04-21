@@ -42,26 +42,14 @@
                     {% if image.path contains gallery_path %}
                         {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
                             {% if image.path contains 'Mobile' %}
-                                        <img class="mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <img class="mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% elsif image.path contains 'Web' %}
-                                <div class="img-item web">
-                                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                        <img class="web" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                                    </a>
-                                </div>
+                                <img class="web" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% else %}
-                                <div class="img-item email">
-                                    <a href="{{ site.baseurl }}{{ image.path }}">
-                                        <img class="email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                                    </a>
-                                </div>
+                                <img class="email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% endif %}
                         {% elsif image.extname contains 'mp4' %}
-                            <div class="img-item">
-                                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                    <video class="web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
-                                </a>
-                            </div>
+                            <video class="web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
                         {% endif %}
                     {% endif %}
                 {% endfor %}

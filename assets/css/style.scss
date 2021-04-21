@@ -270,32 +270,19 @@ footer {
     grid-template-columns: repeat(12,1fr);
     grid-gap: 24px;
 }
-.grid > img {
-    width: 100%;
-
-    &.mobile {
-        grid-column: span 3;
-        max-height: 720px;
-    }
-}
-
-.img-item {
+.grid > img, .grid > video {
     grid-column: span 4;
     position: relative;
     padding: 0;
     max-height: 300px;
     overflow: hidden;
     border-radius: 8px;
+    width: 100%;
 
     &.mobile {
         grid-column: span 3;
         max-height: 720px;
     }
-
-    img {
-        width: 100%;
-    }
-
 }
 
 .masonry {
@@ -342,7 +329,7 @@ footer {
         }
     }
 
-    .img-item {
+    .grid > img, .grid > video {
         grid-column: span 6;
 
         &.mobile {
