@@ -270,6 +270,14 @@ footer {
     grid-template-columns: repeat(12,1fr);
     grid-gap: 24px;
 }
+.grid > img {
+    width: 100%;
+
+    &.mobile {
+        grid-column: span 3;
+        max-height: 720px;
+    }
+}
 
 .img-item {
     grid-column: span 4;
