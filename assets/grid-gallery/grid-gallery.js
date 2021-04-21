@@ -1,6 +1,6 @@
 const root = document.querySelector("body, html");
 const container = document.querySelector('.gg-container');
-const images = document.querySelectorAll(".gg-box > img");
+const images = document.querySelectorAll(".gg-box > media");
 const l = images.length;
 
 for(var i = 0; i < l; i++) {

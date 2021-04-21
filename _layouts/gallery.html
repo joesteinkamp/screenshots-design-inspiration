@@ -42,15 +42,15 @@
                     {% if image.path contains gallery_path %}
                         {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
                             {% if image.path contains 'Mobile' %}
-                                <img class="mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <img class="media mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% elsif image.path contains 'Web' %}
-                                <img class="web" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <img class="media web" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% else %}
-                                <img class="email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <img class="media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% endif %}
                         {% elsif image.extname contains 'mp4' %}
                             <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <video class="web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
+                                <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
                             </a>
                         {% endif %}
                     {% endif %}
@@ -94,7 +94,7 @@
         } 
     </script>
 
-    <script src="/assets/grid-gallery/grid-gallery.min.js"></script>
+    <script src="/assets/grid-gallery/grid-gallery.js"></script>
     <script>
     gridGallery({
       selector: ".grid",
