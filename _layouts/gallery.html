@@ -36,8 +36,8 @@
             </ul>
         {% endif %}
 
-        <div class="grid m-p-g">
-            <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">
+        <div class="m-p-g">
+            <div class="grid m-p-g__thumbs" data-google-image-layout data-max-height="350"></div>
                 {% for image in site.static_files %}
                     {% if image.path contains gallery_path %}
                         {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
