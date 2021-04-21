@@ -36,40 +36,41 @@
             </ul>
         {% endif %}
 
-        <div class="grid gg-box">
-            {% for image in site.static_files %}
-                {% if image.path contains gallery_path %}
-                    {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
-                        {% if image.path contains 'Mobile' %}
-                            <div class="img-item mobile">
-                                <a href="{{ site.baseurl }}{{ image.path }}">
-                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                                </a>
-                            </div>
-                        {% elsif image.path contains 'Web' %}
+        <div class="gg-container">
+            <div class="grid gg-box">
+                {% for image in site.static_files %}
+                    {% if image.path contains gallery_path %}
+                        {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
+                            {% if image.path contains 'Mobile' %}
+                                <div class="img-item mobile">
+                                    <a href="{{ site.baseurl }}{{ image.path }}">
+                                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                    </a>
+                                </div>
+                            {% elsif image.path contains 'Web' %}
+                                <div class="img-item web">
+                                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="img-item email">
+                                    <a href="{{ site.baseurl }}{{ image.path }}">
+                                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% elsif image.extname contains 'mp4' %}
                             <div class="img-item web">
                                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                                </a>
-                            </div>
-                        {% else %}
-                            <div class="img-item email">
-                                <a href="{{ site.baseurl }}{{ image.path }}">
-                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
                                 </a>
                             </div>
                         {% endif %}
-                    {% elsif image.extname contains 'mp4' %}
-                        <div class="img-item web">
-                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
-                            </a>
-                        </div>
                     {% endif %}
-                {% endif %}
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-
     
 
         
@@ -107,7 +108,6 @@
         } 
     </script>
 
-    <script src="/assets/js/toggle-visibility.js"></script>
     <script src="/assets/grid-gallery/grid-gallery.min.js"></script>
     <script>
     gridGallery({
