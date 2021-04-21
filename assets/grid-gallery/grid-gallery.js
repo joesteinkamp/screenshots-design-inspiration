@@ -18,7 +18,7 @@ for(var i = 0; i < l; i++) {
     
     var fileExt = route.split('.').pop();
 
-    if (fileExt === ".mp4") {
+    if (fileExt === "mp4") {
       imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + route + '"></video>';
     }
     else {
