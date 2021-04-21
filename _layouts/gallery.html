@@ -43,26 +43,26 @@
                         {% if image.path contains 'Mobile' %}
                             <div class="img-item mobile">
                                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g" />
+                                    <img src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g" />
                                 </a>
                             </div>
                         {% elsif image.path contains 'Web' %}
                             <div class="img-item web">
                                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g" />
+                                    <img src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g" />
                                 </a>
                             </div>
                         {% else %}
                             <div class="img-item email">
                                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g" />
+                                    <img src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g" />
                                 </a>
                             </div>
                         {% endif %}
                     {% elsif image.extname contains 'mp4' %}
                         <div class="img-item web">
                             <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video" class="m-p-g">        </video>
+                                <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="video" class="m-p-g">        </video>
                             </a>
                         </div>
                     {% endif %}
