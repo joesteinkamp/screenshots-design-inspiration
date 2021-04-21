@@ -25,7 +25,7 @@
   margin: 20px 0; */
 }
 
-.gg-box img {
+.gg-box img, .gg-box video {
   object-fit: cover;
   cursor: pointer;
   width: 100%;
@@ -33,7 +33,7 @@
   background: var(--img-bg-color);
 }
 
-.gg-box img:hover {
+.gg-box img:hover, .gg-box video:hover {
   opacity: 0.98;
 }
 
