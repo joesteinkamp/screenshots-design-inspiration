@@ -15,7 +15,13 @@ for(var i = 0; i < l; i++) {
     screenItem.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
     const first = images[0].src, last = images[l-1].src;
     const imgItem = document.querySelector(".gg-image"), prevBtn = document.querySelector(".gg-prev"), nextBtn = document.querySelector(".gg-next"), close = document.querySelector(".gg-close");
-    imgItem.innerHTML = '<img src="' + route + '">';
+    
+    if (route.substring(filename.lastIndexOf('.')+1, filename.length) = ".mp4") {
+      imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + route + '"></video>';
+    }
+    else {
+      imgItem.innerHTML = '<img src="' + route + '">';
+    }
 
     if (l > 1) {
       if (route == first) {
