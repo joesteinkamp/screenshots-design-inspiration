@@ -61,18 +61,35 @@ for(var i = 0; i < l; i++) {
 
     function prev() {
       prevImg = currentImg.previousElementSibling;
-      imgItem.innerHTML = '<img src="' + prevImg.src + '">';
+
+      var fileExt = prevImg.src.split('.').pop();
+
+      if (fileExt === "mp4") {
+        imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + prevImg.src + '"></video>';
+      }
+      else {
+        imgItem.innerHTML = '<img src="' + prevImg.src + '">';
+      }
+
       currentImg = currentImg.previousElementSibling;
-      var mainImg = document.querySelector(".gg-image > img").src;
+      var mainImg = document.querySelector(".gg-image > .media").src;
       nextBtn.hidden = false;
       prevBtn.hidden = mainImg === first;
     };
 
     function next() {
       nextImg = currentImg.nextElementSibling;
-      imgItem.innerHTML = '<img src="' + nextImg.src + '">';
+      
+      var fileExt = nextImg.src.split('.').pop();
+
+      if (fileExt === "mp4") {
+        imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + nextImg.src + '"></video>';
+      }
+      else {
+        imgItem.innerHTML = '<img src="' + nextImg.src + '">';
+      }
       currentImg = currentImg.nextElementSibling;
-      var mainImg = document.querySelector(".gg-image > img").src;
+      var mainImg = document.querySelector(".gg-image > .media").src;
       prevBtn.hidden = false;
       nextBtn.hidden = mainImg === last;
     };
