@@ -49,9 +49,7 @@
                                 <img class="media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                             {% endif %}
                         {% elsif image.extname contains 'mp4' %}
-                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
-                            </a>
+                            <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
