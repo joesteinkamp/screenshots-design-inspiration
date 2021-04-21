@@ -16,7 +16,7 @@ for(var i = 0; i < l; i++) {
     const first = images[0].src, last = images[l-1].src;
     const imgItem = document.querySelector(".gg-image"), prevBtn = document.querySelector(".gg-prev"), nextBtn = document.querySelector(".gg-next"), close = document.querySelector(".gg-close");
     
-    var fileExt = route.split('.').pop()
+    var fileExt = route.split('.').pop();
 
     if (fileExt === ".mp4") {
       imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + route + '"></video>';
