@@ -18,11 +18,11 @@
 }
 
 .gg-box {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
   grid-auto-rows: var(--row-height);
   grid-gap: var(--gap-length);
-  margin: 20px 0;
+  margin: 20px 0; */
 }
 
 .gg-box img {
