@@ -36,42 +36,38 @@
             </ul>
         {% endif %}
 
-        <div class="m-p-g">
-            <div class="grid m-p-g__thumbs" data-google-image-layout data-max-height="350"></div>
-                {% for image in site.static_files %}
-                    {% if image.path contains gallery_path %}
-                        {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
-                            {% if image.path contains 'Mobile' %}
-                                <div class="img-item mobile">
-                                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                        <img src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g__thumbs-img" />
-                                    </a>
-                                </div>
-                            {% elsif image.path contains 'Web' %}
-                                <div class="img-item web">
-                                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                        <img src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g__thumbs-img" />
-                                    </a>
-                                </div>
-                            {% else %}
-                                <div class="img-item email">
-                                    <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                        <img src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="image" class="m-p-g__thumbs-img" />
-                                    </a>
-                                </div>
-                            {% endif %}
-                        {% elsif image.extname contains 'mp4' %}
+        <div class="grid gg-box">
+            {% for image in site.static_files %}
+                {% if image.path contains gallery_path %}
+                    {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
+                        {% if image.path contains 'Mobile' %}
+                            <div class="img-item mobile">
+                                <a href="{{ site.baseurl }}{{ image.path }}">
+                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                </a>
+                            </div>
+                        {% elsif image.path contains 'Web' %}
                             <div class="img-item web">
                                 <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" data-full="{{ site.baseurl }}{{ image.path }}" alt="video" class="m-p-g__thumbs-img">        </video>
+                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="img-item email">
+                                <a href="{{ site.baseurl }}{{ image.path }}">
+                                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                                 </a>
                             </div>
                         {% endif %}
+                    {% elsif image.extname contains 'mp4' %}
+                        <div class="img-item web">
+                            <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
+                                <video autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
+                            </a>
+                        </div>
                     {% endif %}
-                {% endfor %}
-            </div>
-
-            <div class="m-p-g__fullscreen"></div>
+                {% endif %}
+            {% endfor %}
         </div>
 
     
@@ -111,14 +107,30 @@
         } 
     </script>
 
-<script src="/assets/js/toggle-visibility.js"></script>
-    <script src="/assets/material-photo-gallery/material-photo-gallery.js"></script>
+    <script src="/assets/js/toggle-visibility.js"></script>
+    <script src="js/grid-gallery.min.js"></script>
     <script>
-        var elem = document.querySelector('.m-p-g');
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var gallery = new MaterialPhotoGallery(elem);
-        });
+    gridGallery({
+      selector: ".dark",
+      darkMode: true
+    });
+    gridGallery({
+      selector: "#horizontal",
+      layout: "horizontal"
+    });
+    gridGallery({
+      selector: "#square",
+      layout: "square"
+    });
+    gridGallery({
+      selector: "#gap",
+      gaplength: 10
+    });
+    gridGallery({
+      selector: "#heightWidth",
+      rowHeight: 180,
+      columnWidth: 280
+    });
     </script>
 
 
