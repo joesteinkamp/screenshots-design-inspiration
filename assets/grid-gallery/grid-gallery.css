@@ -103,7 +103,7 @@
 }
 
 @media (min-width: 478px) {
-  .gg-box img:nth-child(2n):not(:last-of-type) {
+  /* .gg-box img:nth-child(2n):not(:last-of-type) {
     grid-row-end: span 2;
   }
 
@@ -115,19 +115,19 @@
   [data-layout="square"] img:nth-child(2n):not(:last-of-type) {
     grid-row-end: span 1;
     grid-column-end: span 1;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
-  .gg-box {
+  /* .gg-box {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-auto-rows: calc(var(--row-height) - 15vh);
     margin: 10px 0;
-  }
+  } */
 }
 
 @media (max-width: 450px) {
-  .gg-box {
+  /* .gg-box {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  }
+  } */
 }
