@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>Screenshots</h1>
+<h1>Home</h1>
 <p>Welcome to Screenshots, the open source design inspiration spot.</p>
 
 <h3>Browse by Platform</h3>
@@ -22,8 +22,8 @@ layout: default
 <ul class="directory-menu home">
     {% for gallery in site.data.recent_galleries %}
     <li class="menu-item"><a href="{{ site.baseurl }}/{{ gallery.url }}" class="menu-item-a">{{ gallery.name }}
-            <span>({{
-                gallery.category }})</span></a></li>
+            <span>{{
+                gallery.category }}</span></a></li>
     {% endfor %}
 </ul>
 
