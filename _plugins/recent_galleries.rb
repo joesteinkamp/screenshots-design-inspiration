@@ -65,7 +65,7 @@ module Jekyll
       galleries.sort_by! { |g| g["date"] }.reverse!
 
       # Inject into site.data
-      site.data['recent_galleries'] = galleries.take(10)
+      site.data['recent_galleries'] = galleries.take(8)
     end
   end
 end
