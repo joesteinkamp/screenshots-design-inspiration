@@ -20,13 +20,34 @@ module Jekyll
           next unless File.directory?(gallery_path)
 
           # Find the latest modification time in this gallery
+          # defaulting to 0
           latest_mtime = Time.at(0)
           
-          # Check files within the gallery folder
-          Dir.glob(File.join(gallery_path, "*")) do |file|
-             next if File.directory?(file)
-             mtime = File.mtime(file)
-             latest_mtime = mtime if mtime > latest_mtime
+          # Try to get the last commit date for this directory using git
+          # This is more reliable in CI/CD where file mtimes are reset on checkout
+          begin
+            # %ct is committer date, UNIX timestamp
+            # We use the relative path for git command
+            relative_gallery_path = File.join(root, gallery_dir) 
+            git_log = `git log -1 --format="%ct" -- "#{gallery_path}"`.strip
+            
+            if !git_log.empty?
+              latest_mtime = Time.at(git_log.to_i)
+            else
+              # Fallback to filesystem mtime if git returns nothing (e.g. new untracked files)
+               Dir.glob(File.join(gallery_path, "*")) do |file|
+                 next if File.directory?(file)
+                 mtime = File.mtime(file)
+                 latest_mtime = mtime if mtime > latest_mtime
+               end
+            end
+          rescue
+             # Fallback if git command fails completely
+             Dir.glob(File.join(gallery_path, "*")) do |file|
+               next if File.directory?(file)
+               mtime = File.mtime(file)
+               latest_mtime = mtime if mtime > latest_mtime
+             end
           end
 
           if latest_mtime > Time.at(0)
