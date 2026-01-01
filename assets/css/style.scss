@@ -1,6 +1,11 @@
 ---
 ---
 
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* VARIABLES */
 :root {
     /* Colors */
@@ -100,6 +105,7 @@ header {
         
         a {
             background: var(--accent-gradient);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: var(--font-weight-bold);
@@ -147,20 +153,51 @@ section {
 }
 
 /* HERO / INTRO */
-section > h1 {
+/* HERO / INTRO */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xxl);
+    gap: var(--spacing-lg);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.page-header h1 {
     font-size: 3.5rem;
     background: var(--accent-gradient);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     margin-bottom: var(--spacing-sm);
+    line-height: 1.1;
 }
 
-section > p {
+.page-header p {
     font-size: 1.2rem;
     max-width: 600px;
-    margin-top: var(--spacing-sm);
-    margin-bottom: var(--spacing-xxl);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* GRID LAYOUTS */
@@ -565,7 +602,9 @@ footer {
 }
 
 .btn-primary:hover {
-  background: #e5e5e5;
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -573,10 +612,13 @@ footer {
   color: white;
   margin-right: 10px;
   border: var(--glass-border);
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
     background: rgba(255,255,255,0.2);
+    color: var(--primary-color);
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
 .modal-overlay {
@@ -604,6 +646,11 @@ footer {
   border: var(--glass-border);
 }
 
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
 .form-group label {
   display: block;
   margin-bottom: 0.8rem;
@@ -614,6 +661,7 @@ footer {
 .form-group input {
   width: 100%;
   padding: 12px;
+  padding-right: 40px; /* Space for clear button */
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-sm);
   font-size: 1rem;
@@ -626,6 +674,36 @@ footer {
     border-color: var(--primary-color);
 }
 
+.input-wrapper {
+    position: relative;
+    /* Ensure input inside takes full width */
+}
+
+.clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.clear-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
 .autocomplete-list {
   list-style: none;
   padding: 0;
@@ -635,6 +713,12 @@ footer {
   max-height: 200px;
   overflow-y: auto;
   background: var(--surface-highlight);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 .autocomplete-list li {
@@ -645,7 +729,7 @@ footer {
   justify-content: space-between;
 }
 
-.autocomplete-list li:hover {
+.autocomplete-list li:hover, .autocomplete-list li.selected {
   background: rgba(255,255,255,0.1);
 }
 
@@ -676,4 +760,38 @@ footer {
 .success-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
+}
+
+.segment-control {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    gap: 4px;
+    border: var(--glass-border);
+}
+
+.segment-option {
+    flex: 1;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.segment-option:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.segment-option.active {
+    background: rgba(99, 102, 241, 0.25);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
 }

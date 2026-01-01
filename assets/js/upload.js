@@ -11,6 +11,9 @@ const UploadApp = () => {
     const [showModal, setShowModal] = useState(false);
     const [productName, setProductName] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(-1);
+    const [platform, setPlatform] = useState('Web');
     const [uploading, setUploading] = useState(false);
     const [progress, setProgress] = useState(0);
     const [uploadComplete, setUploadComplete] = useState(false);
@@ -27,10 +30,31 @@ const UploadApp = () => {
                 p.name.toLowerCase().includes(lower)
             ).slice(0, 5); // Limit to 5 suggestions
             setFilteredProducts(filtered);
+            setSelectedIndex(-1);
         } else {
             setFilteredProducts([]);
+            setSelectedIndex(-1);
         }
     }, [productName]);
+
+    const handleKeyDown = (e) => {
+        if (!showSuggestions || filteredProducts.length === 0) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            setSelectedIndex(prev => (prev + 1) % filteredProducts.length);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            setSelectedIndex(prev => (prev - 1 + filteredProducts.length) % filteredProducts.length);
+        } else if (e.key === 'Enter') {
+            if (selectedIndex >= 0) {
+                e.preventDefault();
+                selectProduct(filteredProducts[selectedIndex]);
+            }
+        } else if (e.key === 'Escape') {
+             setShowSuggestions(false);
+        }
+    };
 
     const handleDragOver = (e) => {
         e.preventDefault();
@@ -86,9 +110,13 @@ const UploadApp = () => {
         setShowModal(true);
     };
 
-    const selectProduct = (name) => {
-        setProductName(name);
-        setFilteredProducts([]);
+    const selectProduct = (product) => {
+        setProductName(product.name);
+        if (product.category) {
+            setPlatform(product.category);
+        }
+        setShowSuggestions(false);
+        setSelectedIndex(-1);
     };
 
     const handleUpload = async () => {
@@ -115,9 +143,11 @@ const UploadApp = () => {
         const fileProgress = new Array(files.length).fill(0);
 
         const uploadPromises = files.map((file, index) => {
-            // Include product name in the path: e.g. "Airbnb/screenshot.png"
-            // Sanitize product name to avoid path issues if needed, but Firebase handles spaces usually.
-            const path = `${productName}/${file.name}`;
+            // Path: Platform/Total/File.name
+            // Wait, previous code was just productName/file.name
+            // We should use the platform in the path now.
+            // Assuming structure: Platform/Product/Filename
+            const path = `${platform}/${productName}/${file.name}`;
             const storageRef = ref(storage, path);
             const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -159,7 +189,7 @@ const UploadApp = () => {
             <div class="upload-success">
                 <div class="success-icon">✅</div>
                 <h2>Upload Complete!</h2>
-                <p>Successfully uploaded ${files.length} files to <strong>${productName}</strong>.</p>
+                <p>Successfully uploaded ${files.length} files to <strong>${platform}/${productName}</strong>.</p>
                 <button class="btn-primary" onClick=${() => window.location.reload()}>Upload More</button>
             </div>
         `;
@@ -225,22 +255,48 @@ const UploadApp = () => {
                         <h2>Details</h2>
                         <div class="form-group">
                             <label>Product Name</label>
-                            <input 
-                                type="text" 
-                                value=${productName}
-                                onInput=${(e) => setProductName(e.target.value)}
-                                placeholder="e.g. Airbnb, Spotify..."
-                            />
-                            ${filteredProducts.length > 0 && html`
+                            <div class="input-wrapper">
+                                <input 
+                                    type="text" 
+                                    value=${productName}
+                                    onInput=${(e) => {
+                                        setProductName(e.target.value);
+                                        setShowSuggestions(true);
+                                    }}
+                                    onKeyDown=${handleKeyDown}
+                                    placeholder="e.g. Airbnb, Spotify..."
+                                />
+                                ${productName && html`
+                                    <button class="clear-btn" onClick=${() => setProductName('')}>×</button>
+                                `}
+                            </div>
+                            ${showSuggestions && filteredProducts.length > 0 && html`
                                 <ul class="autocomplete-list">
-                                    ${filteredProducts.map(p => html`
-                                        <li onClick=${() => selectProduct(p.name)}>
+                                    ${filteredProducts.map((p, index) => html`
+                                        <li 
+                                            class=${index === selectedIndex ? 'selected' : ''}
+                                            onClick=${() => selectProduct(p)}
+                                        >
                                             <span class="prod-name">${p.name}</span>
                                             <span class="prod-cat">${p.category}</span>
                                         </li>
                                     `)}
                                 </ul>
                             `}
+                        </div>
+
+                        <div class="form-group">
+                            <label>Platform</label>
+                            <div class="segment-control">
+                                ${['Email', 'Mobile', 'Web'].map(p => html`
+                                    <button 
+                                        class="segment-option ${platform === p ? 'active' : ''}"
+                                        onClick=${() => setPlatform(p)}
+                                    >
+                                        ${p}
+                                    </button>
+                                `)}
+                            </div>
                         </div>
                         
                         ${uploading ? html`
