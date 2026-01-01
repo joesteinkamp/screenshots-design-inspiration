@@ -56,7 +56,7 @@ function lunr_search(term) {
                 var tags = documents[ref]['tags'];
                 // console.log(tags);
                 var body = documents[ref]['body'].substring(0,160)+'...';
-                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + gallerydirectory + "</span><br /><span class='url'>"+ url +"</span><br /><span class='body'>"+ body +"</span><br /><span class='tags'>"+ tags +"</a></li>";
+                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + gallerydirectory + "</span><span class='url'>"+ url +"</span><span class='body'>"+ body +"</span><span class='tags'>"+ tags +"</span></a></li>";
             }
         } else {
             document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
@@ -66,15 +66,152 @@ function lunr_search(term) {
 }
 </script>
 <style>
-    #lunrsearch {font-size: 16px; padding: 16px; width: 40%; margin: 0; -webkit-appearance: none; border: 1px solid #000; border-right: 0;}
-    #lunrsearchsubmit {-webkit-appearance: none; padding: 16px; background: #2C5D9C; border: 1px solid #000; border-left: 0; font-size: 16px; color: #fff; font-weight: bold; cursor: pointer;}
-    #lunrsearchresults ul {list-style: none; padding: 0;}
-    .lunrsearchresult {margin-bottom: 20px;}
-    .lunrsearchresult .title {color: #2C5D9C;}
-    .lunrsearchresult .url {color: #69788B; font-size: .95em;}
-    .lunrsearchresult a {display: block; color: #000;}
-    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
-    .lunrsearchresult a:hover .title {text-decoration: underline;}
+    /* Search Form Container */
+    form p {
+        display: flex;
+        gap: 0;
+        max-width: 600px;
+        margin-bottom: 2rem;
+    }
+
+    /* Input Field */
+    #lunrsearch {
+        font-family: var(--font-family, sans-serif);
+        font-size: 16px;
+        padding: 16px 24px;
+        width: 100%;
+        margin: 0;
+        -webkit-appearance: none;
+        background: var(--surface-color, #171717);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-right: 0;
+        border-radius: var(--radius-md, 12px) 0 0 var(--radius-md, 12px);
+        color: var(--text-primary, #ffffff);
+        transition: all 0.2s ease;
+    }
+    
+    #lunrsearch::placeholder {
+        color: var(--text-secondary, #a1a1aa);
+    }
+
+    #lunrsearch:focus {
+        outline: none;
+        background: var(--surface-highlight, #262626);
+        border-color: var(--primary-color, #6366f1);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Submit Button */
+    #lunrsearchsubmit {
+        -webkit-appearance: none;
+        padding: 16px 32px;
+        background: var(--primary-color, #6366f1);
+        border: 1px solid var(--primary-color, #6366f1);
+        border-radius: 0 var(--radius-md, 12px) var(--radius-md, 12px) 0;
+        font-family: var(--font-family, sans-serif);
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    #lunrsearchsubmit:hover {
+        background: var(--primary-hover, #4f46e5);
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Results Container */
+    #lunrsearchresults {
+        margin-top: 32px;
+    }
+
+    #lunrsearchresults p {
+        color: var(--text-secondary, #a1a1aa);
+        font-size: 1.1em;
+        margin-bottom: 24px;
+    }
+
+    #lunrsearchresults ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 16px; 
+    }
+
+    /* Individual Result Item */
+    .lunrsearchresult {
+        background: var(--surface-color, #171717);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: var(--radius-md, 12px);
+        padding: 24px;
+        transition: transform 0.2s, background 0.2s, border-color 0.2s;
+        margin-bottom: 0;
+    }
+
+    .lunrsearchresult:hover {
+        transform: translateY(-2px);
+        background: var(--surface-highlight, #262626);
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .lunrsearchresult a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Result Title */
+    .lunrsearchresult .title {
+        color: var(--text-primary, #ffffff);
+        font-size: 1.25rem;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        transition: color 0.2s;
+    }
+
+    .lunrsearchresult:hover .title {
+        color: var(--primary-color, #6366f1);
+    }
+
+    /* Result URL */
+    .lunrsearchresult .url {
+        color: var(--text-secondary, #a1a1aa);
+        font-size: 0.85em;
+        display: block;
+        margin-bottom: 12px;
+        font-family: monospace;
+        opacity: 0.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Result Body Snippet */
+    .lunrsearchresult .body {
+        color: var(--text-secondary, #a1a1aa);
+        font-size: 0.95em;
+        line-height: 1.6;
+        display: block;
+        opacity: 0.9;
+    }
+    
+    /* Result Tags */
+    .lunrsearchresult .tags {
+        display: inline-block;
+        margin-top: 16px;
+        font-size: 0.75em;
+        color: var(--primary-color, #6366f1);
+        background: rgba(99, 102, 241, 0.1);
+        padding: 4px 10px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+    }
 </style>
 
 
