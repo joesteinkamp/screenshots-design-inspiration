@@ -43,15 +43,27 @@ layout: default
     <div class="grid masonry gg-box">
     {% assign image_files = site.static_files | sample: 20 %}
     {% for image in image_files limit: 20 %}
-    {% if image.extname contains 'png' or image.extname contains 'jpg' or image.extname contains 'jpeg' or image.extname
-    contains 'gif' %}
+    {% if image.extname contains 'png' or image.extname contains 'jpg' or image.extname contains 'jpeg' or image.extname contains 'gif' %}
+        {% assign parts = image.path | split: '/' %}
+        {% assign product = parts[2] %}
+        
+        {% assign platform = "Email" %}
+        {% assign type_class = "email" %}
+        
         {% if image.path contains 'Mobile' %}
-        <img class="img-item media mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+            {% assign platform = "Mobile" %}
+            {% assign type_class = "mobile" %}
         {% elsif image.path contains 'Web' %}
-        <img class="img-item media web" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-        {% else %}
-        <img class="img-item media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+            {% assign platform = "Web" %}
+            {% assign type_class = "web" %}
         {% endif %}
+        
+        <div class="gg-element img-item media {{ type_class }}">
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ product }}" />
+            <div class="gg-overlay">
+                <a href="{{ site.baseurl }}/{{ platform }}/{{ product }}/" class="gg-product-link">{{ product }}</a>
+            </div>
+        </div>
     {% endif %}
     {% endfor %}
     </div>

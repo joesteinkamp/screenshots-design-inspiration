@@ -4,16 +4,26 @@ const images = document.querySelectorAll(".gg-box > .media");
 const l = images.length;
 
 for(var i = 0; i < l; i++) {
-  images[i].addEventListener("click", function(i) {
+  images[i].addEventListener("click", function(e) {
+    if (e.target.tagName === 'A' || e.target.closest('a')) return;
+
     var currentImg = this;
     const parentItem = currentImg.parentElement, screenItem = document.createElement('div');
     screenItem.id = "gg-screen";
     container.prepend(screenItem);
     if (parentItem.hasAttribute('data-theme')) screenItem.setAttribute("data-theme", "dark");
-    var route = currentImg.src;
+    
+    function getRoute(el) {
+        if (el.tagName === 'IMG' || el.tagName === 'VIDEO') return el.src;
+        const child = el.querySelector('img, video');
+        return child ? child.src : '';
+    }
+
+    var route = getRoute(currentImg);
     root.style.overflow = 'hidden';
     screenItem.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
-    const first = images[0].src, last = images[l-1].src;
+    
+    const first = getRoute(images[0]), last = getRoute(images[l-1]);
     const imgItem = document.querySelector(".gg-image"), prevBtn = document.querySelector(".gg-prev"), nextBtn = document.querySelector(".gg-next"), close = document.querySelector(".gg-close");
     
     var fileExt = route.split('.').pop();
@@ -61,37 +71,39 @@ for(var i = 0; i < l; i++) {
 
     function prev() {
       prevImg = currentImg.previousElementSibling;
-
-      var fileExt = prevImg.src.split('.').pop();
+      var route = getRoute(prevImg);
+      var fileExt = route.split('.').pop();
 
       if (fileExt === "mp4") {
-        imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + prevImg.src + '"></video>';
+        imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + route + '"></video>';
       }
       else {
-        imgItem.innerHTML = '<img src="' + prevImg.src + '">';
+        imgItem.innerHTML = '<img src="' + route + '">';
       }
 
       currentImg = currentImg.previousElementSibling;
-      var mainImg = document.querySelector(".gg-image > .media").src;
+      var mainImg = document.querySelector(".gg-image > .media") || document.querySelector(".gg-image > img");
+      var mainSrc = mainImg.src;
       nextBtn.hidden = false;
-      prevBtn.hidden = mainImg === first;
+      prevBtn.hidden = mainSrc === first;
     };
 
     function next() {
       nextImg = currentImg.nextElementSibling;
-      
-      var fileExt = nextImg.src.split('.').pop();
+      var route = getRoute(nextImg);
+      var fileExt = route.split('.').pop();
 
       if (fileExt === "mp4") {
-        imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + nextImg.src + '"></video>';
+        imgItem.innerHTML = '<video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="' + route + '"></video>';
       }
       else {
-        imgItem.innerHTML = '<img src="' + nextImg.src + '">';
+        imgItem.innerHTML = '<img src="' + route + '">';
       }
       currentImg = currentImg.nextElementSibling;
-      var mainImg = document.querySelector(".gg-image > .media").src;
+      var mainImg = document.querySelector(".gg-image > .media") || document.querySelector(".gg-image > img");
+      var mainSrc = mainImg.src;
       prevBtn.hidden = false;
-      nextBtn.hidden = mainImg === last;
+      nextBtn.hidden = mainSrc === last;
     };
 
     function hide() {
