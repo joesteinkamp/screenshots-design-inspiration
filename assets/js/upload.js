@@ -80,12 +80,29 @@ const UploadApp = () => {
 
     const processFiles = (newFiles) => {
         // Validation
-        const validFiles = newFiles.filter(file => 
-            file.type.startsWith('image/') || file.type.startsWith('video/')
-        );
+        const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+        const validFiles = [];
+        let typeError = false;
+        let sizeError = false;
 
-        if (validFiles.length !== newFiles.length) {
+        newFiles.forEach(file => {
+            const isValidType = file.type.startsWith('image/') || file.type.startsWith('video/');
+            const isValidSize = file.size <= MAX_SIZE;
+
+            if (!isValidType) typeError = true;
+            if (!isValidSize) sizeError = true;
+
+            if (isValidType && isValidSize) {
+                validFiles.push(file);
+            }
+        });
+
+        if (typeError && sizeError) {
+            setError('Some files were rejected: Invalid type or larger than 5MB.');
+        } else if (typeError) {
             setError('Some files were rejected. Only images and videos are allowed.');
+        } else if (sizeError) {
+            setError('Some files were rejected. Maximum file size is 5MB.');
         } else {
             setError('');
         }
@@ -211,7 +228,7 @@ const UploadApp = () => {
                         <h3>Drag & Drop files here</h3>
                         <p>or</p>
                         <button class="btn-secondary" onClick=${() => fileInputRef.current.click()}>Browse Files</button>
-                        <p class="limit-text">Max 100 files (Images & Videos only)</p>
+                        <p class="limit-text">Max 100 files (Images & Videos only, max 5MB per file)</p>
                     </div>
                 ` : html`
                     <div class="file-grid">
