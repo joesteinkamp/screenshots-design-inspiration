@@ -1,0 +1,59 @@
+---
+layout: default
+title: Upload Screenshots
+permalink: /upload/
+---
+
+<style>
+/* Scoped styles for upload page to ensure it looks good immediately even if main css update lags */
+.upload-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+</style>
+
+<div id="upload-app" class="upload-container">
+    <div class="loading-state">Loading Upload Interface...</div>
+</div>
+
+<script>
+    // Inject Jekyll data into global scope for the React app to consume
+    window.existingProducts = {{ site.data.product_folders | jsonify }};
+</script>
+
+<!-- Preact & HTM via CDN -->
+<script type="module">
+    import { h, render, Component, createRef } from 'https://esm.sh/preact@10.19.3';
+    import { useState, useEffect, useRef } from 'https://esm.sh/preact@10.19.3/hooks';
+    import htm from 'https://esm.sh/htm@3.1.1?deps=preact@10.19.3';
+    
+    // Firebase Imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
+    import { getStorage } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js";
+
+    // Initialize global dependencies
+    window.preact = { h, render, Component, createRef, useState, useEffect, useRef };
+    window.html = htm.bind(h);
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAbrrzxjbxPavc_sMvKEGQPad2xGbcyudI",
+        authDomain: "screenshots-917c8.firebaseapp.com",
+        projectId: "screenshots-917c8",
+        storageBucket: "screenshots-917c8.firebasestorage.app",
+        messagingSenderId: "925250408248",
+        appId: "1:925250408248:web:5793fb343a7c54bdeebbcd",
+        measurementId: "G-V0753XTJQB"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    window.firebaseStorage = getStorage(app);
+
+    // Dynamically import main app logic to ensure globals are set first
+    import('/assets/js/upload.js');
+</script>
