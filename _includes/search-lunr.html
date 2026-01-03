@@ -54,9 +54,23 @@ function lunr_search(term) {
                 var title = documents[ref]['title'];
                 var gallerydirectory = documents[ref]['gallery-directory'];
                 var tags = documents[ref]['tags'];
-                // console.log(tags);
-                var body = documents[ref]['body'].substring(0,160)+'...';
-                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + gallerydirectory + "</span><span class='url'>"+ url +"</span><span class='body'>"+ body +"</span><span class='tags'>"+ tags +"</span></a></li>";
+                var body = documents[ref]['body'];
+                
+                var displayTitle = gallerydirectory ? gallerydirectory : title;
+                
+                var bodyHtml = '';
+                // Only show body if it's NOT a gallery page (no gallerydirectory) AND body has content
+                if (!gallerydirectory && body && body.trim().length > 0) {
+                     var bodyTruncated = body.substring(0,160) + (body.length > 160 ? '...' : '');
+                     bodyHtml = "<span class='body'>" + bodyTruncated + "</span>";
+                }
+
+                var tagsHtml = '';
+                if (tags && tags !== '[]' && tags !== 'null' && tags.trim().length > 0) {
+                     tagsHtml = "<span class='tags'>" + tags + "</span>";
+                }
+
+                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + displayTitle + "</span><span class='url'>"+ url +"</span>" + bodyHtml + tagsHtml + "</a></li>";
             }
         } else {
             document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
