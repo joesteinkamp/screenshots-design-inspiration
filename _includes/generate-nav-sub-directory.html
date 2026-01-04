@@ -9,7 +9,7 @@
 
 <h1>{{ current_category }}</h1>
 
-<div class="product-grid">
+<div class="product-grid {{ current_category | downcase }}">
 {% for product in site.data.product_folders %}
   {% if product.category == current_category %}
       <a href="{{ site.baseurl }}/{{ product.path }}/" class="product-card">

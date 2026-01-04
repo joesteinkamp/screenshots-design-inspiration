@@ -846,6 +846,10 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-xl);
     padding-bottom: var(--spacing-xxl);
+
+    &.mobile {
+        grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+    }
 }
 
 .product-card {
