@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "firebase-functions": "^7.0.3"
+  }
+}
