@@ -21,7 +21,7 @@ exports.sendEmailNotification = functions
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.EMAIL_USER || "joe.steinkamp@gmail.com", 
+                user: process.env.EMAIL_USER || "jsteinka@gmail.com", 
                 pass: process.env.GMAIL_PASSWORD // Access secret from env
             }
         });
