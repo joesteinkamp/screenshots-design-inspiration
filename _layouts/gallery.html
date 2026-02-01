@@ -31,7 +31,11 @@
         {% if page.tags != null %}
             <ul class="tags">
                 {% for tag in page.tags %}
-                    <li>{{tag}}</li>
+                    <li>
+                        <a href="https://screenshots.designknowledgebase.com/search/?q={{ tag | downcase | uri_escape }}">
+                            {{ tag }}
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
