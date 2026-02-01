@@ -44,6 +44,8 @@ var idx = lunr(function () {
 function lunr_search(term) {
     document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
     if(term) {
+        var newUrl = window.location.pathname + '?q=' + encodeURIComponent(term);
+        history.replaceState(null, '', newUrl);
         document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
         //put results on the screen.
         var results = idx.search(term);
@@ -101,6 +103,19 @@ function lunr_search(term) {
     }
     return false;
 }
+</script>
+<script>
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q) {
+        var input = document.getElementById('lunrsearch');
+        if (input) {
+            input.value = q;
+        }
+        lunr_search(q);
+    }
+})();
 </script>
 <style>
     /* Search Form Container */
