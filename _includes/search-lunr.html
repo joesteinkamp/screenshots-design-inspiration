@@ -105,7 +105,7 @@ function lunr_search(term) {
 }
 </script>
 <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     var params = new URLSearchParams(window.location.search);
     var q = params.get('q');
     if (q) {
@@ -115,7 +115,7 @@ function lunr_search(term) {
         }
         lunr_search(q);
     }
-})();
+});
 </script>
 <style>
     /* Search Form Container */
