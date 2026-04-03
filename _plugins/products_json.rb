@@ -32,6 +32,8 @@ module Jekyll
             end
           end
           images.sort!
+          all_image_count = images.length
+          images = images.take(10)
 
           # Parse frontmatter from index.html
           index_path = File.join(full_path, 'index.html')
@@ -58,7 +60,7 @@ module Jekyll
             'path' => File.join(dir, entry),
             'tags' => tags,
             'images' => images,
-            'image_count' => images.length,
+            'image_count' => all_image_count,
             'gallery_url' => "/#{dir}/#{entry}/"
           }
         end
@@ -84,7 +86,7 @@ module Jekyll
       FileUtils.mkdir_p(File.join(site.dest, dir))
 
       page = PageWithoutAFile.new(site, site.source, dir, 'products.json')
-      page.content = JSON.pretty_generate(data)
+      page.content = JSON.generate(data)
       page.data['layout'] = nil
       site.pages << page
     end
