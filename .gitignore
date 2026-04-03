@@ -24,3 +24,6 @@ vendor/
 .bundle/
 Gemfile.lock
 node_modules
+
+# MCP Server
+mcp-server/dist/
