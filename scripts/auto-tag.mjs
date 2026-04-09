@@ -3,13 +3,15 @@
 /**
  * auto-tag.mjs
  *
- * Scans product gallery folders for screenshots that are missing tags,
- * sends a sample of images to Gemini's vision API, and writes the
- * generated tags back into each product's index.html frontmatter.
+ * Tags individual screenshots using Gemini's vision API. Each image is
+ * analysed on its own and gets its own set of tags, stored in a
+ * `tags.json` file alongside the product's index.html. The union of all
+ * per-screenshot tags is also written into the index.html frontmatter
+ * so the existing gallery, search, and MCP server keep working.
  *
  * Usage:
- *   node scripts/auto-tag.mjs                # tag only untagged products
- *   node scripts/auto-tag.mjs --all          # re-tag every product
+ *   node scripts/auto-tag.mjs                # tag only untagged screenshots
+ *   node scripts/auto-tag.mjs --all          # re-tag every screenshot
  *   node scripts/auto-tag.mjs --dry-run      # preview without writing
  *   node scripts/auto-tag.mjs --product "Web/Airbnb"  # tag one product
  *
@@ -26,9 +28,9 @@ import path from "node:path";
 
 const PLATFORMS = ["Web", "Mobile", "Email"];
 const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
-const MAX_IMAGES_PER_PRODUCT = 5; // keep API costs reasonable
 const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image
 const MODEL = "gemini-2.5-flash";
+const CONCURRENCY = 5; // parallel API calls per product
 
 // Top tags from the existing corpus — fed to Gemini for consistency.
 const EXISTING_TAGS = [
@@ -52,11 +54,7 @@ const EXISTING_TAGS = [
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const flags = {
-    all: false,
-    dryRun: false,
-    product: null,
-  };
+  const flags = { all: false, dryRun: false, product: null };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--all") flags.all = true;
     else if (args[i] === "--dry-run") flags.dryRun = true;
@@ -65,12 +63,10 @@ function parseArgs() {
   return flags;
 }
 
-/** Return the root of the repo (parent of scripts/). */
 function repoRoot() {
   return path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 }
 
-/** List image files in a product directory, sorted by name. */
 function listImages(productDir) {
   if (!fs.existsSync(productDir)) return [];
   return fs
@@ -79,28 +75,44 @@ function listImages(productDir) {
     .sort();
 }
 
-/** Read the tags array from index.html frontmatter. Returns null if no tags key. */
-function readTags(indexPath) {
-  if (!fs.existsSync(indexPath)) return null;
-  const content = fs.readFileSync(indexPath, "utf-8");
-  const match = content.match(/^tags:\s*\[([^\]]*)\]/m);
-  if (!match) return null;
-  const inner = match[1].trim();
-  if (!inner) return [];
-  return inner.split(",").map((t) => t.trim());
+/** Read existing tags.json for a product. Returns {} if missing. */
+function readTagsJson(productDir) {
+  const p = path.join(productDir, "tags.json");
+  if (!fs.existsSync(p)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(p, "utf-8"));
+  } catch {
+    return {};
+  }
 }
 
-/** Read the full content of index.html. */
-function readIndex(indexPath) {
-  return fs.readFileSync(indexPath, "utf-8");
+/** Write per-screenshot tags to tags.json. */
+function writeTagsJson(productDir, tagsMap) {
+  const sorted = Object.keys(tagsMap).sort().reduce((acc, key) => {
+    acc[key] = tagsMap[key];
+    return acc;
+  }, {});
+  fs.writeFileSync(
+    path.join(productDir, "tags.json"),
+    JSON.stringify(sorted, null, 2) + "\n",
+    "utf-8"
+  );
 }
 
-/** Write tags into the index.html frontmatter. Creates the file if missing. */
-function writeTags(indexPath, tags, productName) {
+/** Aggregate per-screenshot tags into a deduplicated, sorted array. */
+function aggregateTags(tagsMap) {
+  const all = new Set();
+  for (const tags of Object.values(tagsMap)) {
+    for (const t of tags) all.add(t);
+  }
+  return [...all].sort();
+}
+
+/** Write aggregated tags into index.html frontmatter. */
+function writeFrontmatterTags(indexPath, tags, productName) {
   const tagsLine = `tags: [${tags.join(", ")}]`;
 
   if (!fs.existsSync(indexPath)) {
-    // Create a new index.html with frontmatter
     const content = [
       "---",
       "layout: gallery",
@@ -113,20 +125,17 @@ function writeTags(indexPath, tags, productName) {
     return;
   }
 
-  let content = readIndex(indexPath);
+  let content = fs.readFileSync(indexPath, "utf-8");
 
   if (/^tags:\s*\[/m.test(content)) {
-    // Replace existing tags line
     content = content.replace(/^tags:\s*\[[^\]]*\]/m, tagsLine);
   } else {
-    // Insert tags before the closing ---
     content = content.replace(/^(---\s*)$/m, `${tagsLine}\n$1`);
   }
 
   fs.writeFileSync(indexPath, content, "utf-8");
 }
 
-/** Convert an image file to a Gemini-compatible inline data part. */
 function imageToGeminiPart(imagePath) {
   const ext = path.extname(imagePath).toLowerCase();
   const mimeTypes = {
@@ -145,66 +154,55 @@ function imageToGeminiPart(imagePath) {
   return { inlineData: { mimeType, data } };
 }
 
-/** Select a representative sample of images (first, middle, last, and a couple in between). */
-function sampleImages(images) {
-  if (images.length <= MAX_IMAGES_PER_PRODUCT) return images;
-  const indices = new Set();
-  indices.add(0);
-  indices.add(images.length - 1);
-  // Evenly space the remaining picks
-  const step = (images.length - 1) / (MAX_IMAGES_PER_PRODUCT - 1);
-  for (let i = 1; i < MAX_IMAGES_PER_PRODUCT - 1; i++) {
-    indices.add(Math.round(step * i));
+/** Run async tasks with a concurrency limit. */
+async function asyncPool(limit, items, fn) {
+  const results = [];
+  const executing = new Set();
+  for (const [i, item] of items.entries()) {
+    const p = fn(item, i).then((r) => { executing.delete(p); return r; });
+    executing.add(p);
+    results.push(p);
+    if (executing.size >= limit) await Promise.race(executing);
   }
-  return [...indices].sort((a, b) => a - b).map((i) => images[i]);
+  return Promise.all(results);
 }
 
 // ---------------------------------------------------------------------------
-// AI tagging
+// AI tagging — one screenshot at a time
 // ---------------------------------------------------------------------------
 
-async function generateTags(model, productName, platform, imagePaths) {
-  const imageParts = [];
-  for (const imgPath of imagePaths) {
-    const part = imageToGeminiPart(imgPath);
-    if (part) imageParts.push(part);
-  }
+async function tagScreenshot(model, productName, platform, imagePath) {
+  const part = imageToGeminiPart(imagePath);
+  if (!part) return null;
 
-  if (imageParts.length === 0) {
-    console.warn(`  ⚠ No valid images for ${productName}, skipping.`);
-    return null;
-  }
+  const prompt = `You are tagging a single screenshot for a design inspiration gallery.
+This screenshot is from "${productName}" (${platform} platform).
 
-  const prompt = `You are tagging screenshots for a design inspiration gallery. Analyze the provided screenshots from "${productName}" (${platform} platform) and generate 5-8 descriptive tags.
+Generate 3-6 descriptive tags for THIS specific screenshot.
 
 ## Guidelines
-- Tags should describe visual style, layout patterns, UI components, and purpose
-- Prefer reusing existing tags from the gallery when they fit. Existing popular tags include:
+- Tags should describe visual style, layout patterns, UI components, and purpose visible in this screenshot
+- Prefer reusing existing tags when they fit. Existing popular tags include:
   ${EXISTING_TAGS.join(", ")}
 - You may create new tags when none of the existing ones fit, but keep them concise (1-3 words)
 - Use Title Case for all tags
-- Focus on what would help a designer find this as inspiration
+- Focus on what would help a designer find this screenshot as inspiration
 
 ## Output format
 Return ONLY a JSON array of tag strings. No explanation, no markdown fences.
-Example: ["Dark Mode", "Dashboard", "Data-heavy", "Sidebar Navigation", "Charts"]`;
+Example: ["Dark Mode", "Dashboard", "Sidebar Navigation"]`;
 
-  const result = await model.generateContent([
-    ...imageParts,
-    { text: prompt },
-  ]);
-
+  const result = await model.generateContent([part, { text: prompt }]);
   const text = result.response.text();
 
   try {
-    // Strip markdown fences if the model wraps them anyway
     const cleaned = text.replace(/```json\s*/g, "").replace(/```\s*/g, "").trim();
     const tags = JSON.parse(cleaned);
     if (Array.isArray(tags) && tags.every((t) => typeof t === "string")) {
       return tags;
     }
   } catch {
-    console.error(`  ✗ Failed to parse tags for ${productName}: ${text}`);
+    console.error(`    ✗ Failed to parse tags for ${path.basename(imagePath)}: ${text}`);
   }
   return null;
 }
@@ -229,7 +227,6 @@ async function main() {
   const products = [];
 
   if (flags.product) {
-    // Single product mode
     const fullPath = path.join(root, flags.product);
     const parts = flags.product.split("/");
     products.push({
@@ -255,54 +252,73 @@ async function main() {
 
   console.log(`Found ${products.length} product(s) to check.\n`);
 
-  let tagged = 0;
-  let skipped = 0;
+  let productsTagged = 0;
+  let screenshotsTagged = 0;
+  let productsSkipped = 0;
 
   for (const product of products) {
     const indexPath = path.join(product.dir, "index.html");
-    const existingTags = readTags(indexPath);
-
-    // Skip products that already have tags (unless --all)
-    if (!flags.all && existingTags && existingTags.length > 0) {
-      skipped++;
-      continue;
-    }
-
     const images = listImages(product.dir);
+
     if (images.length === 0) {
       console.log(`⏭ ${product.platform}/${product.name} — no images found`);
-      skipped++;
+      productsSkipped++;
       continue;
     }
 
-    const sampled = sampleImages(images);
-    const imagePaths = sampled.map((img) => path.join(product.dir, img));
+    // Load existing per-screenshot tags
+    const existingTagsMap = readTagsJson(product.dir);
+
+    // Determine which screenshots need tagging
+    const toTag = flags.all
+      ? images
+      : images.filter((img) => !existingTagsMap[img] || existingTagsMap[img].length === 0);
+
+    if (toTag.length === 0) {
+      productsSkipped++;
+      continue;
+    }
 
     console.log(
-      `🏷 ${product.platform}/${product.name} — analyzing ${sampled.length}/${images.length} images...`
+      `🏷 ${product.platform}/${product.name} — tagging ${toTag.length}/${images.length} screenshots...`
     );
 
-    const tags = await generateTags(model, product.name, product.platform, imagePaths);
+    // Tag each screenshot individually, with concurrency limit
+    const results = await asyncPool(CONCURRENCY, toTag, async (imgName) => {
+      const imgPath = path.join(product.dir, imgName);
+      const tags = await tagScreenshot(model, product.name, product.platform, imgPath);
+      if (tags) {
+        console.log(`    ✓ ${imgName} → ${tags.join(", ")}`);
+      }
+      return { imgName, tags };
+    });
 
-    if (!tags) {
-      skipped++;
-      continue;
+    // Merge new tags into the existing map
+    const updatedTagsMap = { ...existingTagsMap };
+    for (const { imgName, tags } of results) {
+      if (tags) {
+        updatedTagsMap[imgName] = tags;
+        screenshotsTagged++;
+      }
     }
 
-    console.log(`  → ${tags.join(", ")}`);
+    // Aggregate all screenshot tags for the product-level frontmatter
+    const aggregated = aggregateTags(updatedTagsMap);
+    console.log(`  → Product tags (${aggregated.length}): ${aggregated.join(", ")}`);
 
     if (!flags.dryRun) {
-      writeTags(indexPath, tags, product.name);
-      console.log(`  ✓ Written to ${path.relative(root, indexPath)}`);
+      writeTagsJson(product.dir, updatedTagsMap);
+      writeFrontmatterTags(indexPath, aggregated, product.name);
+      console.log(`  ✓ Written tags.json + ${path.relative(root, indexPath)}`);
     } else {
       console.log(`  (dry run — not written)`);
     }
 
-    tagged++;
+    productsTagged++;
   }
 
   console.log(
-    `\nDone. Tagged: ${tagged}, Skipped: ${skipped}, Total: ${products.length}`
+    `\nDone. Products tagged: ${productsTagged}, Screenshots tagged: ${screenshotsTagged}, Products skipped: ${productsSkipped}`
   );
 }
 

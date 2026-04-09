@@ -29,7 +29,7 @@ jobs:
           cache: 'npm'
       - name: Install Node dependencies
         run: npm ci
-      - name: Auto-tag untagged products
+      - name: Auto-tag untagged screenshots
         run: node scripts/auto-tag.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -38,8 +38,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet && exit 0
-          git add "*/index.html"
-          git commit -m "Auto-tag untagged product galleries"
+          git add "*/index.html" "*/tags.json"
+          git commit -m "Auto-tag untagged screenshots"
           git push
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
