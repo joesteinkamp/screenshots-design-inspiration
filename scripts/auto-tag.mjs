@@ -108,16 +108,30 @@ function aggregateTags(tagsMap) {
   return [...all].sort();
 }
 
-/** Write aggregated tags into index.html frontmatter. */
-function writeFrontmatterTags(indexPath, tags, productName) {
-  const tagsLine = `tags: [${tags.join(", ")}]`;
+/**
+ * Write per-screenshot tags as `image_tags` into index.html frontmatter.
+ * Preserves the existing product-level `tags` array untouched.
+ */
+function writeFrontmatterImageTags(indexPath, tagsMap, productName) {
+  // Build the image_tags YAML block
+  const imageTagsLines = ["image_tags:"];
+  for (const filename of Object.keys(tagsMap).sort()) {
+    const tags = tagsMap[filename];
+    if (!tags || tags.length === 0) continue;
+    imageTagsLines.push(`  "${filename}":`);
+    for (const tag of tags) {
+      imageTagsLines.push(`    - ${tag}`);
+    }
+  }
+  const imageTagsBlock = imageTagsLines.join("\n");
 
   if (!fs.existsSync(indexPath)) {
     const content = [
       "---",
       "layout: gallery",
       `gallery-directory: ${productName}`,
-      tagsLine,
+      "tags: []",
+      imageTagsBlock,
       "---",
       "",
     ].join("\n");
@@ -127,11 +141,18 @@ function writeFrontmatterTags(indexPath, tags, productName) {
 
   let content = fs.readFileSync(indexPath, "utf-8");
 
-  if (/^tags:\s*\[/m.test(content)) {
-    content = content.replace(/^tags:\s*\[[^\]]*\]/m, tagsLine);
-  } else {
-    content = content.replace(/^(---\s*)$/m, `${tagsLine}\n$1`);
-  }
+  // Remove any existing image_tags block (everything from `image_tags:` to the
+  // next top-level key or closing `---`)
+  content = content.replace(
+    /^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m,
+    ""
+  );
+
+  // Insert image_tags block before the closing ---
+  content = content.replace(
+    /^(---\s*)$/m,
+    `${imageTagsBlock}\n$1`
+  );
 
   fs.writeFileSync(indexPath, content, "utf-8");
 }
@@ -302,14 +323,14 @@ async function main() {
       }
     }
 
-    // Aggregate all screenshot tags for the product-level frontmatter
+    // Summary
     const aggregated = aggregateTags(updatedTagsMap);
-    console.log(`  → Product tags (${aggregated.length}): ${aggregated.join(", ")}`);
+    console.log(`  → ${Object.keys(updatedTagsMap).length} screenshots, ${aggregated.length} unique tags`);
 
     if (!flags.dryRun) {
       writeTagsJson(product.dir, updatedTagsMap);
-      writeFrontmatterTags(indexPath, aggregated, product.name);
-      console.log(`  ✓ Written tags.json + ${path.relative(root, indexPath)}`);
+      writeFrontmatterImageTags(indexPath, updatedTagsMap, product.name);
+      console.log(`  ✓ Written tags.json + image_tags in ${path.relative(root, indexPath)}`);
     } else {
       console.log(`  (dry run — not written)`);
     }

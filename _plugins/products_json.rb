@@ -60,6 +60,23 @@ module Jekyll
             end
           end
 
+          # Fallback: read tags.json if image_tags is empty
+          if image_tags.empty?
+            tags_json_path = File.join(full_path, 'tags.json')
+            if File.exist?(tags_json_path)
+              begin
+                json_tags = JSON.parse(File.read(tags_json_path))
+                json_tags.each do |filename, img_tags|
+                  next unless img_tags.is_a?(Array)
+                  image_tags[filename] = img_tags
+                  img_tags.each { |t| screenshot_tag_counts[t] += 1 }
+                end
+              rescue => e
+                # Skip malformed tags.json
+              end
+            end
+          end
+
           tags.each { |tag| tag_counts[tag] += 1 }
 
           product_data = {
