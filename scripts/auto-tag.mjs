@@ -4,7 +4,7 @@
  * auto-tag.mjs
  *
  * Scans product gallery folders for screenshots that are missing tags,
- * sends a sample of images to Claude's vision API, and writes the
+ * sends a sample of images to Gemini's vision API, and writes the
  * generated tags back into each product's index.html frontmatter.
  *
  * Usage:
@@ -13,10 +13,10 @@
  *   node scripts/auto-tag.mjs --dry-run      # preview without writing
  *   node scripts/auto-tag.mjs --product "Web/Airbnb"  # tag one product
  *
- * Requires ANTHROPIC_API_KEY environment variable.
+ * Requires GEMINI_API_KEY environment variable.
  */
 
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -27,10 +27,10 @@ import path from "node:path";
 const PLATFORMS = ["Web", "Mobile", "Email"];
 const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 const MAX_IMAGES_PER_PRODUCT = 5; // keep API costs reasonable
-const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image (API limit)
-const MODEL = "claude-sonnet-4-20250514";
+const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image
+const MODEL = "gemini-2.0-flash";
 
-// Top tags from the existing corpus — fed to Claude for consistency.
+// Top tags from the existing corpus — fed to Gemini for consistency.
 const EXISTING_TAGS = [
   "Minimalist", "Dashboard", "Dark Mode", "Data-heavy", "Card Layout",
   "Clean", "Onboarding", "Light Mode", "Grid Layout", "Sidebar Navigation",
@@ -126,23 +126,23 @@ function writeTags(indexPath, tags, productName) {
   fs.writeFileSync(indexPath, content, "utf-8");
 }
 
-/** Convert an image file to a base64 data source for the Anthropic API. */
-function imageToBase64Source(imagePath) {
+/** Convert an image file to a Gemini-compatible inline data part. */
+function imageToGeminiPart(imagePath) {
   const ext = path.extname(imagePath).toLowerCase();
-  const mediaTypes = {
+  const mimeTypes = {
     ".png": "image/png",
     ".jpg": "image/jpeg",
     ".jpeg": "image/jpeg",
     ".gif": "image/gif",
     ".webp": "image/webp",
   };
-  const mediaType = mediaTypes[ext] || "image/png";
+  const mimeType = mimeTypes[ext] || "image/png";
 
   const stats = fs.statSync(imagePath);
   if (stats.size > MAX_IMAGE_SIZE_BYTES) return null;
 
   const data = fs.readFileSync(imagePath).toString("base64");
-  return { type: "image", source: { type: "base64", media_type: mediaType, data } };
+  return { inlineData: { mimeType, data } };
 }
 
 /** Select a representative sample of images (first, middle, last, and a couple in between). */
@@ -163,14 +163,14 @@ function sampleImages(images) {
 // AI tagging
 // ---------------------------------------------------------------------------
 
-async function generateTags(client, productName, platform, imagePaths) {
-  const imageBlocks = [];
+async function generateTags(model, productName, platform, imagePaths) {
+  const imageParts = [];
   for (const imgPath of imagePaths) {
-    const block = imageToBase64Source(imgPath);
-    if (block) imageBlocks.push(block);
+    const part = imageToGeminiPart(imgPath);
+    if (part) imageParts.push(part);
   }
 
-  if (imageBlocks.length === 0) {
+  if (imageParts.length === 0) {
     console.warn(`  ⚠ No valid images for ${productName}, skipping.`);
     return null;
   }
@@ -189,21 +189,12 @@ async function generateTags(client, productName, platform, imagePaths) {
 Return ONLY a JSON array of tag strings. No explanation, no markdown fences.
 Example: ["Dark Mode", "Dashboard", "Data-heavy", "Sidebar Navigation", "Charts"]`;
 
-  const response = await client.messages.create({
-    model: MODEL,
-    max_tokens: 256,
-    messages: [
-      {
-        role: "user",
-        content: [...imageBlocks, { type: "text", text: prompt }],
-      },
-    ],
-  });
+  const result = await model.generateContent([
+    ...imageParts,
+    { text: prompt },
+  ]);
 
-  const text = response.content
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("");
+  const text = result.response.text();
 
   try {
     // Strip markdown fences if the model wraps them anyway
@@ -226,12 +217,13 @@ async function main() {
   const flags = parseArgs();
   const root = repoRoot();
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error("Error: ANTHROPIC_API_KEY environment variable is required.");
+  if (!process.env.GEMINI_API_KEY) {
+    console.error("Error: GEMINI_API_KEY environment variable is required.");
     process.exit(1);
   }
 
-  const client = new Anthropic();
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: MODEL });
 
   // Discover products
   const products = [];
@@ -290,7 +282,7 @@ async function main() {
       `🏷 ${product.platform}/${product.name} — analyzing ${sampled.length}/${images.length} images...`
     );
 
-    const tags = await generateTags(client, product.name, product.platform, imagePaths);
+    const tags = await generateTags(model, product.name, product.platform, imagePaths);
 
     if (!tags) {
       skipped++;

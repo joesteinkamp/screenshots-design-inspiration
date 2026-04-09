@@ -5,7 +5,7 @@
     "auto-tag:all": "node scripts/auto-tag.mjs --all"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
+    "@google/generative-ai": "^0.21.0",
     "firebase-functions": "^7.0.3"
   }
 }

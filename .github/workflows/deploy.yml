@@ -32,7 +32,7 @@ jobs:
       - name: Auto-tag untagged products
         run: node scripts/auto-tag.mjs
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       - name: Commit new tags
         run: |
           git config user.name "github-actions[bot]"
