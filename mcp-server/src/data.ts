@@ -43,6 +43,32 @@ export function buildTagIndex(products: Product[]): Map<string, Product[]> {
   return tagIndex;
 }
 
+export interface ScreenshotMatch {
+  product: Product;
+  image: string;
+  tags: string[];
+}
+
+export function buildScreenshotTagIndex(
+  products: Product[]
+): Map<string, ScreenshotMatch[]> {
+  const index = new Map<string, ScreenshotMatch[]>();
+  for (const product of products) {
+    if (!product.image_tags) continue;
+    for (const [filename, tags] of Object.entries(product.image_tags)) {
+      const imagePath = product.images.find((img) => img.endsWith(`/${filename}`)) || `${product.path}/${filename}`;
+      for (const tag of tags) {
+        const key = tag.toLowerCase();
+        if (!index.has(key)) {
+          index.set(key, []);
+        }
+        index.get(key)!.push({ product, image: imagePath, tags });
+      }
+    }
+  }
+  return index;
+}
+
 export function imageUrl(baseUrl: string, imagePath: string): string {
   // Image paths may contain spaces and special chars — encode each segment
   const encoded = imagePath
@@ -70,11 +96,15 @@ export async function fetchImageAsBase64(
 }
 
 export function productSummary(product: Product, baseUrl: string) {
-  return {
+  const summary: Record<string, unknown> = {
     name: product.name,
     platform: product.platform,
     tags: product.tags,
     image_count: product.image_count,
     gallery_url: `${baseUrl}${product.gallery_url}`,
   };
+  if (product.image_tags && Object.keys(product.image_tags).length > 0) {
+    summary.image_tags = product.image_tags;
+  }
+  return summary;
 }

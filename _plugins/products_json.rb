@@ -9,6 +9,7 @@ module Jekyll
     def generate(site)
       products = []
       tag_counts = Hash.new(0)
+      screenshot_tag_counts = Hash.new(0)
 
       dirs_to_scan = ['Mobile', 'Web', 'Email']
       image_extensions = ['.png', '.jpg', '.jpeg', '.gif']
@@ -38,14 +39,21 @@ module Jekyll
           # Parse frontmatter from index.html
           index_path = File.join(full_path, 'index.html')
           tags = []
+          image_tags = {}
           gallery_directory = entry
           if File.exist?(index_path)
             content = File.read(index_path)
             if content =~ /\A---\s*\n(.*?\n?)^---\s*$/m
               begin
-                frontmatter = YAML.safe_load($1) || {}
+                frontmatter = YAML.safe_load($1, permitted_classes: [Date]) || {}
                 tags = frontmatter['tags'] || []
                 gallery_directory = frontmatter['gallery-directory'] || entry
+                raw_image_tags = frontmatter['image_tags'] || {}
+                raw_image_tags.each do |filename, img_tags|
+                  next unless img_tags.is_a?(Array)
+                  image_tags[filename] = img_tags
+                  img_tags.each { |t| screenshot_tag_counts[t] += 1 }
+                end
               rescue => e
                 # Skip malformed frontmatter
               end
@@ -54,7 +62,7 @@ module Jekyll
 
           tags.each { |tag| tag_counts[tag] += 1 }
 
-          products << {
+          product_data = {
             'name' => gallery_directory,
             'platform' => dir,
             'path' => File.join(dir, entry),
@@ -63,6 +71,9 @@ module Jekyll
             'image_count' => all_image_count,
             'gallery_url' => "/#{dir}/#{entry}/"
           }
+          product_data['image_tags'] = image_tags unless image_tags.empty?
+
+          products << product_data
         end
       end
 
@@ -70,6 +81,7 @@ module Jekyll
 
       # Sort tags by count descending
       sorted_tags = tag_counts.sort_by { |_, count| -count }.to_h
+      sorted_screenshot_tags = screenshot_tag_counts.sort_by { |_, count| -count }.to_h
 
       base_url = site.config['url'] || ''
       base_path = site.config['baseurl'] || ''
@@ -78,7 +90,8 @@ module Jekyll
         'generated_at' => Time.now.utc.iso8601,
         'base_url' => "#{base_url}#{base_path}",
         'products' => products,
-        'tags' => sorted_tags
+        'tags' => sorted_tags,
+        'screenshot_tags' => sorted_screenshot_tags
       }
 
       # Write the JSON file

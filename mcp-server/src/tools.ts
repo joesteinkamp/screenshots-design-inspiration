@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import {
   fetchIndex,
   buildTagIndex,
+  buildScreenshotTagIndex,
   imageUrl,
   fetchImageAsBase64,
   productSummary,
@@ -173,7 +174,7 @@ export function registerTools(server: McpServer) {
   // 4. search_inspiration
   server.tool(
     "search_inspiration",
-    "Free-text search for UI design inspiration. Searches product names and tags. Example: 'onboarding flow', 'dashboard analytics', 'messaging chat'.",
+    "Free-text search for UI design inspiration. Searches product names, product tags, and screenshot-level tags. Example: 'onboarding flow', 'dashboard analytics', 'messaging chat'.",
     {
       query: z.string().describe("Search query"),
       platform: z
@@ -203,6 +204,18 @@ export function registerTools(server: McpServer) {
             // Partial tag match
             else if (tags.some((t) => t.includes(kw) || kw.includes(t)))
               score += 1;
+          }
+
+          // Screenshot-level tag matches
+          if (p.image_tags) {
+            const allScreenshotTags = new Set(
+              Object.values(p.image_tags).flat().map((t) => t.toLowerCase())
+            );
+            for (const kw of keywords) {
+              if ([...allScreenshotTags].some((t) => t === kw)) score += 2;
+              else if ([...allScreenshotTags].some((t) => t.includes(kw) || kw.includes(t)))
+                score += 1;
+            }
           }
 
           return { product: p, score };
@@ -245,55 +258,181 @@ export function registerTools(server: McpServer) {
   // 5. list_tags
   server.tool(
     "list_tags",
-    "List all available design tags with product counts. Use this to discover what you can search for.",
+    "List all available tags with counts. Supports both product-level and screenshot-level tags. Use this to discover what you can search for.",
     {
       platform: z
         .enum(["Web", "Mobile", "Email"])
         .optional()
         .describe("Filter tags to a specific platform"),
+      level: z
+        .enum(["product", "screenshot", "all"])
+        .default("all")
+        .describe("Tag level: 'product' for product tags, 'screenshot' for per-image tags, 'all' for both"),
     },
-    async ({ platform }) => {
+    async ({ platform, level }) => {
       const index = await fetchIndex();
 
+      const includeProduct = level === "product" || level === "all";
+      const includeScreenshot = level === "screenshot" || level === "all";
+
       if (!platform) {
-        // Return the pre-computed tag counts
-        const tags = Object.entries(index.tags)
-          .map(([tag, count]) => ({ tag, count }))
-          .sort((a, b) => b.count - a.count);
+        const result: Record<string, unknown> = {};
+
+        if (includeProduct) {
+          const tags = Object.entries(index.tags)
+            .map(([tag, count]) => ({ tag, count }))
+            .sort((a, b) => b.count - a.count);
+          result.product_tags = { total: tags.length, tags };
+        }
+
+        if (includeScreenshot) {
+          const sTags = Object.entries(index.screenshot_tags || {})
+            .map(([tag, count]) => ({ tag, count }))
+            .sort((a, b) => b.count - a.count);
+          result.screenshot_tags = { total: sTags.length, tags: sTags };
+        }
 
         return {
           content: [
             {
               type: "text" as const,
-              text: JSON.stringify(
-                { total_tags: tags.length, tags },
-                null,
-                2
-              ),
+              text: JSON.stringify(result, null, 2),
             },
           ],
         };
       }
 
       // Compute tag counts for a specific platform
-      const tagCounts: Record<string, number> = {};
+      const result: Record<string, unknown> = { platform };
+
+      if (includeProduct) {
+        const tagCounts: Record<string, number> = {};
+        for (const product of index.products) {
+          if (product.platform !== platform) continue;
+          for (const tag of product.tags) {
+            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+          }
+        }
+        const tags = Object.entries(tagCounts)
+          .map(([tag, count]) => ({ tag, count }))
+          .sort((a, b) => b.count - a.count);
+        result.product_tags = { total: tags.length, tags };
+      }
+
+      if (includeScreenshot) {
+        const tagCounts: Record<string, number> = {};
+        for (const product of index.products) {
+          if (product.platform !== platform || !product.image_tags) continue;
+          for (const tags of Object.values(product.image_tags)) {
+            for (const tag of tags) {
+              tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            }
+          }
+        }
+        const tags = Object.entries(tagCounts)
+          .map(([tag, count]) => ({ tag, count }))
+          .sort((a, b) => b.count - a.count);
+        result.screenshot_tags = { total: tags.length, tags };
+      }
+
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: JSON.stringify(result, null, 2),
+          },
+        ],
+      };
+    }
+  );
+
+  // 6. search_screenshots_by_tags
+  server.tool(
+    "search_screenshots_by_tags",
+    "Search for individual screenshots by their screenshot-level tags (e.g. 'onboarding', 'empty state', 'checkout'). Returns specific matching images across all products. Use list_tags with level='screenshot' to see available screenshot tags.",
+    {
+      tags: z.array(z.string()).describe("Screenshot tags to search for"),
+      match: z
+        .enum(["all", "any"])
+        .default("any")
+        .describe("Match all tags or any tag"),
+      platform: z
+        .enum(["Web", "Mobile", "Email"])
+        .optional()
+        .describe("Filter by platform"),
+      limit: z
+        .number()
+        .min(1)
+        .max(50)
+        .default(20)
+        .describe("Max number of screenshot results to return"),
+    },
+    async ({ tags, match, platform, limit }) => {
+      const index = await fetchIndex();
+      const searchTags = tags.map((t) => t.toLowerCase());
+
+      const matches: Array<{
+        product_name: string;
+        platform: string;
+        image: string;
+        image_url: string;
+        screenshot_tags: string[];
+        product_tags: string[];
+        gallery_url: string;
+      }> = [];
+
       for (const product of index.products) {
-        if (product.platform !== platform) continue;
-        for (const tag of product.tags) {
-          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        if (platform && product.platform !== platform) continue;
+        if (!product.image_tags) continue;
+
+        for (const [filename, imgTags] of Object.entries(product.image_tags)) {
+          const lowerImgTags = imgTags.map((t) => t.toLowerCase());
+          let matched: boolean;
+
+          if (match === "all") {
+            matched = searchTags.every((st) =>
+              lowerImgTags.some((it) => it.includes(st) || st.includes(it))
+            );
+          } else {
+            matched = searchTags.some((st) =>
+              lowerImgTags.some((it) => it.includes(st) || st.includes(it))
+            );
+          }
+
+          if (matched) {
+            const imagePath = product.images.find((img) => img.endsWith(`/${filename}`)) || `${product.path}/${filename}`;
+            matches.push({
+              product_name: product.name,
+              platform: product.platform,
+              image: filename,
+              image_url: imageUrl(index.base_url, imagePath),
+              screenshot_tags: imgTags,
+              product_tags: product.tags,
+              gallery_url: `${index.base_url}${product.gallery_url}`,
+            });
+          }
         }
       }
 
-      const tags = Object.entries(tagCounts)
-        .map(([tag, count]) => ({ tag, count }))
-        .sort((a, b) => b.count - a.count);
+      if (matches.length === 0) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `No screenshots found matching tags: ${tags.join(", ")}. Use list_tags with level='screenshot' to see available screenshot tags.`,
+            },
+          ],
+        };
+      }
+
+      const results = matches.slice(0, limit);
 
       return {
         content: [
           {
             type: "text" as const,
             text: JSON.stringify(
-              { platform, total_tags: tags.length, tags },
+              { query_tags: tags, match, count: results.length, total: matches.length, screenshots: results },
               null,
               2
             ),
@@ -303,7 +442,7 @@ export function registerTools(server: McpServer) {
     }
   );
 
-  // 6. get_random_inspiration
+  // 7. get_random_inspiration
   server.tool(
     "get_random_inspiration",
     "Get random products for creative exploration. Returns metadata only — use get_product_screenshots to see images for specific products.",
@@ -387,12 +526,24 @@ async function fetchProductImages(
   const imageResults = await Promise.all(
     imagesToFetch.map(async (img) => {
       const url = imageUrl(baseUrl, img);
-      return fetchImageAsBase64(url);
+      const result = await fetchImageAsBase64(url);
+      return { img, result };
     })
   );
 
-  for (const result of imageResults) {
+  for (const { img, result } of imageResults) {
     if (result) {
+      // Add per-image tag info if available
+      if (product.image_tags) {
+        const filename = img.split("/").pop() || "";
+        const imgTags = product.image_tags[filename];
+        if (imgTags && imgTags.length > 0) {
+          content.push({
+            type: "text" as const,
+            text: `[${filename}] tags: ${imgTags.join(", ")}`,
+          });
+        }
+      }
       content.push({
         type: "image" as const,
         data: result.data,
