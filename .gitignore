@@ -27,3 +27,5 @@ node_modules
 
 # MCP Server
 mcp-server/dist/
+.DS_Store
+Web/.DS_Store
