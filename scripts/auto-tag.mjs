@@ -28,7 +28,7 @@ const PLATFORMS = ["Web", "Mobile", "Email"];
 const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 const MAX_IMAGES_PER_PRODUCT = 5; // keep API costs reasonable
 const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image
-const MODEL = "gemini-2.0-flash";
+const MODEL = "gemini-2.5-flash";
 
 // Top tags from the existing corpus — fed to Gemini for consistency.
 const EXISTING_TAGS = [
