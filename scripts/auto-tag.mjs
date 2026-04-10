@@ -54,11 +54,13 @@ const EXISTING_TAGS = [
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const flags = { all: false, dryRun: false, product: null };
+  const flags = { all: false, dryRun: false, product: null, limit: 20 };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--all") flags.all = true;
     else if (args[i] === "--dry-run") flags.dryRun = true;
     else if (args[i] === "--product" && args[i + 1]) flags.product = args[++i];
+    else if (args[i] === "--limit" && args[i + 1]) flags.limit = parseInt(args[++i], 10);
+    else if (args[i] === "--no-limit") flags.limit = Infinity;
   }
   return flags;
 }
@@ -271,13 +273,21 @@ async function main() {
     }
   }
 
-  console.log(`Found ${products.length} product(s) to check.\n`);
+  console.log(`Found ${products.length} product(s) to check.`);
+  if (flags.limit !== Infinity) {
+    console.log(`Limit: ${flags.limit} products per run (use --no-limit to process all)`);
+  }
+  console.log();
 
   let productsTagged = 0;
   let screenshotsTagged = 0;
   let productsSkipped = 0;
 
   for (const product of products) {
+    if (productsTagged >= flags.limit) {
+      console.log(`\nReached limit of ${flags.limit} products. Run again to continue.`);
+      break;
+    }
     const indexPath = path.join(product.dir, "index.html");
     const images = listImages(product.dir);
 
