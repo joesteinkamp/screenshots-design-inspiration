@@ -1,0 +1,576 @@
+{
+  "Screen Shot 2019-10-05 at 2.00.24 PM.png": [
+    "SaaS",
+    "Search-centric",
+    "Financial",
+    "Light Mode",
+    "Clean UI",
+    "Professional"
+  ],
+  "Screen Shot 2019-10-05 at 2.04.02 PM.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional",
+    "Financial",
+    "Clean UI",
+    "Document Viewer"
+  ],
+  "Screen Shot 2019-10-07 at 10.52.56 AM.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Financial",
+    "Enterprise",
+    "Document Viewer",
+    "Clean"
+  ],
+  "Screen Shot 2019-10-07 at 10.53.10 AM.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional",
+    "Financial",
+    "Document Viewer",
+    "List View"
+  ],
+  "Screen Shot 2019-10-07 at 10.53.24 AM.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Professional",
+    "List View",
+    "Document Viewer"
+  ],
+  "Screen Shot 2019-10-07 at 11.00.09 AM.png": [
+    "Professional",
+    "Light Mode",
+    "Typography-focused",
+    "SaaS",
+    "Enterprise",
+    "Document View"
+  ],
+  "Screen Shot 2019-10-07 at 11.01.05 AM.png": [
+    "Sidebar Navigation",
+    "List View",
+    "Financial",
+    "Professional",
+    "Light Mode",
+    "Document Viewer"
+  ],
+  "Screen Shot 2019-10-07 at 11.05.06 AM.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Modal Dialog",
+    "List View",
+    "Professional"
+  ],
+  "Screen Shot 2019-10-07 at 11.05.14 AM.png": [
+    "Financial",
+    "Light Mode",
+    "Sidebar Navigation",
+    "Clean Typography",
+    "Modal-driven",
+    "Data-heavy"
+  ],
+  "Screen Shot 2019-10-07 at 11.05.20 AM.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Modal-driven",
+    "List View",
+    "Professional",
+    "Clean UI"
+  ],
+  "Screen Shot 2019-10-07 at 11.05.56 AM.png": [
+    "Financial",
+    "Document Comparison",
+    "Sidebar",
+    "Text-heavy",
+    "Light Mode"
+  ],
+  "Screen Shot 2019-10-07 at 11.06.25 AM.png": [
+    "SaaS",
+    "Financial",
+    "Sidebar Navigation",
+    "Tables",
+    "Modal-driven",
+    "Clean UI"
+  ],
+  "screencapture-bamsec-2019-10-07-10_42_58.png": [
+    "Onboarding Flow",
+    "Minimalist",
+    "Clean",
+    "Light Mode",
+    "SaaS"
+  ],
+  "screencapture-bamsec-2019-10-07-10_43_59.png": [
+    "Light Mode",
+    "Clean",
+    "Search-centric",
+    "Financial",
+    "Professional",
+    "SaaS"
+  ],
+  "screencapture-bamsec-2019-10-07-11_07_20.png": [
+    "Light Mode",
+    "Financial",
+    "Data-heavy",
+    "List View",
+    "Professional",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-2019-10-07-11_08_21.png": [
+    "Light Mode",
+    "Dashboard",
+    "Data-heavy",
+    "Financial",
+    "Clean",
+    "List View"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-2019-10-05-14_00_31.png": [
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Financial",
+    "Light Mode",
+    "Clean UI",
+    "Tables"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-2019-10-05-14_07_08.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "List View",
+    "Financial",
+    "Modern SaaS"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-2019-10-07-10_45_13.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Tables",
+    "Professional",
+    "Clean UI"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-2019-10-07-10_45_25.png": [
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Light Mode",
+    "Clean UI"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-2019-10-07-10_45_51.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Tables",
+    "Clean UI",
+    "Light Mode"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-2019-10-07-10_47_02.png": [
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Dashboard",
+    "Tables"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-articles-of-incorporation-2019-10-05-14_02_25.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Tables",
+    "Data-heavy",
+    "Financial",
+    "Clean"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-articles-of-incorporation-2019-10-07-10_51_24.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Tables",
+    "Clean UI",
+    "Data-heavy"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-business-overview-2019-10-07-10_50_44.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Professional",
+    "SaaS",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-chronological-2019-10-05-14_01_01.png": [
+    "Financial",
+    "SaaS",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "List View",
+    "Clean UI"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-chronological-2019-10-07-10_47_12.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Financial",
+    "Tables",
+    "Professional"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-credit-agreements-2019-10-05-14_02_36.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "List View",
+    "Professional",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-credit-agreements-2019-10-07-10_51_35.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "SaaS",
+    "Data-heavy",
+    "List View",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-highlights-2019-10-07-10_51_16.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Clean UI",
+    "Search-centric",
+    "SaaS"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-highlights-2019-10-07-11_01_57.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Clean UI",
+    "List View",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-highlights-2019-10-07-11_03_23.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "List View",
+    "Clean UI",
+    "SaaS"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-indentures-2019-10-05-14_02_45.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Tables",
+    "Search-centric",
+    "Professional"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-indentures-2019-10-07-10_51_41.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "List View",
+    "Clean UI",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-insider-transactions-2019-10-07-10_48_00.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-insider-transactions-2019-10-07-10_48_09.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Tables",
+    "Financial",
+    "Professional"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-insider-transactions-2019-10-07-10_48_40.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Professional",
+    "Clean"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-material-contracts-2019-10-05-14_02_54.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Tables",
+    "Light Mode",
+    "Clean",
+    "Data-heavy"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-material-contracts-2019-10-07-10_51_48.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "List View",
+    "Clean",
+    "Data-heavy"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-ownership-2019-10-05-14_01_11.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Professional"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-ownership-2019-10-07-10_47_21.png": [
+    "Financial",
+    "Light Mode",
+    "Sidebar Navigation",
+    "List View",
+    "Clean",
+    "Data-heavy"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-plans-of-reorg-2019-10-05-14_03_04.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Clean UI",
+    "Search-centric",
+    "Data-heavy"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-plans-of-reorg-2019-10-07-10_51_57.png": [
+    "Light Mode",
+    "Financial",
+    "Sidebar Navigation",
+    "Professional",
+    "Clean",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-transcripts-2019-10-05-14_01_31.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Professional",
+    "Clean UI",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-transcripts-2019-10-07-10_48_56.png": [
+    "Sidebar Navigation",
+    "Modal-driven",
+    "Light Mode",
+    "SaaS",
+    "Professional",
+    "Form-heavy"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-underwriting-agreements-2019-10-05-14_03_12.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Professional",
+    "List View",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-1561550-datadog-inc-underwriting-agreements-2019-10-07-10_52_03.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Clean UI",
+    "Tables"
+  ],
+  "screencapture-bamsec-companies-320193-apple-inc-business-overview-2019-10-07-11_06_42.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Professional",
+    "Financial",
+    "Text-heavy",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-companies-320193-apple-inc-business-overview-2019-10-07-11_06_57.png": [
+    "Light Mode",
+    "Financial",
+    "Sidebar Navigation",
+    "Professional",
+    "Company Profile",
+    "Tabbed Content"
+  ],
+  "screencapture-bamsec-companies-320193-apple-inc-transcripts-2019-10-07-11_06_08.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "List View",
+    "Clean UI"
+  ],
+  "screencapture-bamsec-filing-110465919051351-2019-10-07-10_47_38.png": [
+    "Financial",
+    "Tables",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Document Viewer",
+    "Light Mode"
+  ],
+  "screencapture-bamsec-filing-119312519240411-13-2019-10-07-10_46_30.png": [
+    "Sidebar Navigation",
+    "Document Viewer",
+    "Financial",
+    "Tables",
+    "Professional",
+    "Light Mode"
+  ],
+  "screencapture-bamsec-filing-119312519252216-2-2019-10-05-14_05_02.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional",
+    "Financial",
+    "Form-heavy",
+    "SaaS"
+  ],
+  "screencapture-bamsec-filing-119312519252216-2019-10-05-14_03_42.png": [
+    "Sidebar Navigation",
+    "Financial",
+    "Tables",
+    "Document Viewer",
+    "Professional"
+  ],
+  "screencapture-bamsec-filing-119312519252216-6-2019-10-05-14_05_28.png": [
+    "Sidebar Navigation",
+    "Financial",
+    "Document Viewer",
+    "Light Mode",
+    "Professional"
+  ],
+  "screencapture-bamsec-forgot-password-2019-10-07-09_18_26.png": [
+    "Form-heavy",
+    "Authentication Flow",
+    "Light Mode",
+    "SaaS",
+    "Clean UI"
+  ],
+  "screencapture-bamsec-fulltext-search-1561550-2019-10-07-10_46_02.png": [
+    "Light Mode",
+    "Minimalist",
+    "Search-centric",
+    "List View",
+    "Financial",
+    "Sidebar"
+  ],
+  "screencapture-bamsec-fulltext-search-1561550-2019-10-07-10_46_20.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "SaaS",
+    "Clean UI",
+    "Search-centric"
+  ],
+  "screencapture-bamsec-login-2019-10-07-09_18_08.png": [
+    "Light Mode",
+    "Clean UI",
+    "Login Form",
+    "SaaS",
+    "Minimalist"
+  ],
+  "screencapture-bamsec-register-2019-10-07-09_18_33.png": [
+    "Onboarding Flow",
+    "Form-heavy",
+    "SaaS",
+    "Clean UI",
+    "Light Mode",
+    "Card Layout"
+  ],
+  "screencapture-bamsec-settings-account-2019-10-07-09_18_59.png": [
+    "Light Mode",
+    "Clean UI",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Professional"
+  ],
+  "screencapture-bamsec-settings-billing-2019-10-07-09_19_21.png": [
+    "SaaS",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Clean UI",
+    "Billing Management"
+  ],
+  "screencapture-bamsec-settings-billing-2019-10-07-12_45_49.png": [
+    "Light Mode",
+    "Clean UI",
+    "SaaS",
+    "Sidebar Navigation",
+    "Account Settings",
+    "Billing Management"
+  ],
+  "screencapture-bamsec-settings-feed-2019-10-07-09_19_33.png": [
+    "SaaS",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Clean",
+    "Financial",
+    "Sticky Header"
+  ],
+  "screencapture-bamsec-settings-feed-2019-10-07-11_08_27.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Tables",
+    "Financial",
+    "SaaS",
+    "Form-heavy"
+  ],
+  "screencapture-bamsec-settings-notifications-2019-10-07-09_19_28.png": [
+    "Minimalist",
+    "Light Mode",
+    "Sidebar Navigation",
+    "SaaS",
+    "Professional",
+    "Settings Page"
+  ],
+  "screencapture-bamsec-settings-notifications-2019-10-07-11_08_35.png": [
+    "Light Mode",
+    "Professional",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Tables",
+    "SaaS"
+  ],
+  "screencapture-bamsec-settings-security-2019-10-07-09_19_08.png": [
+    "Light Mode",
+    "SaaS",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Clean",
+    "Account Settings"
+  ],
+  "screencapture-help-bamsec-docs-documents-feed-2019-10-07-10_44_47.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Clean UI",
+    "Tables",
+    "Financial",
+    "Help Center"
+  ],
+  "screencapture-help-bamsec-docs-set-up-email-alerts-2019-10-07-10_44_33.png": [
+    "Sidebar Navigation",
+    "Clean",
+    "Light Mode",
+    "Help Center",
+    "SaaS"
+  ],
+  "screencapture-help-bamsec-docs-watched-list-2019-10-07-10_44_19.png": [
+    "Sidebar Navigation",
+    "Help Documentation",
+    "Light Mode",
+    "SaaS",
+    "Professional",
+    "Video Integration"
+  ],
+  "screencapture-mail-google-mail-u-0-2019-10-07-10_43_47.png": [
+    "Light Mode",
+    "Clean",
+    "Onboarding",
+    "SaaS",
+    "Professional",
+    "Email Design"
+  ],
+  "screencapture-mail-google-mail-u-0-2019-10-07-12_45_24.png": [
+    "Light Mode",
+    "Clean",
+    "Onboarding",
+    "SaaS",
+    "Email Client",
+    "Customer Communication"
+  ]
+}

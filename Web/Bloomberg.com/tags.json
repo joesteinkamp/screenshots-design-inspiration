@@ -1,0 +1,41 @@
+{
+  "Screen Shot 2020-04-07 at 1.21.41 PM.png": [
+    "Light Mode",
+    "Financial",
+    "News Layout",
+    "Search Overlay",
+    "Professional"
+  ],
+  "Screen Shot 2020-04-07 at 1.21.49 PM.png": [
+    "Search-centric",
+    "Financial",
+    "Professional",
+    "List View",
+    "Sticky Header",
+    "Light Mode"
+  ],
+  "screenshot-www.bloomberg.com-2020.04.07-13_18_36.png": [
+    "Financial",
+    "Data-heavy",
+    "Professional",
+    "Light Mode",
+    "Clean UI",
+    "Sticky Header"
+  ],
+  "screenshot-www.bloomberg.com-2020.04.07-13_21_10.png": [
+    "Financial",
+    "News Platform",
+    "Light Mode",
+    "Professional",
+    "Data-heavy",
+    "Clean UI"
+  ],
+  "screenshot-www.bloomberg.com-2020.04.07-13_51_50.png": [
+    "Financial",
+    "Data-heavy",
+    "Data Visualization",
+    "Sidebar Navigation",
+    "Clean",
+    "Tables"
+  ]
+}

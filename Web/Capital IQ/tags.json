@@ -1,0 +1,798 @@
+{
+  "Screen Shot 2019-10-08 at 8.46.45 AM.png": [
+    "Light Mode",
+    "Data-heavy",
+    "Tables",
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation"
+  ],
+  "Screen Shot 2019-10-08 at 8.46.53 AM.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Dashboard",
+    "Mega Menu",
+    "Light Mode"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.01 AM.png": [
+    "Dashboard",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Financial",
+    "Tables",
+    "Light Mode"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.07 AM.png": [
+    "Dashboard",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Financial",
+    "Enterprise",
+    "Tables"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.13 AM.png": [
+    "Dashboard",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Financial",
+    "Tables",
+    "Light Mode"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.23 AM.png": [
+    "Light Mode",
+    "Dashboard",
+    "Sidebar Navigation",
+    "Tables",
+    "Financial",
+    "Project Management"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.32 AM.png": [
+    "Dashboard",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Financial",
+    "Professional",
+    "Light Mode"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.39 AM.png": [
+    "Light Mode",
+    "Dashboard",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "Tables"
+  ],
+  "Screen Shot 2019-10-08 at 8.47.51 AM.png": [
+    "Light Mode",
+    "Dashboard",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "Tables"
+  ],
+  "Screen Shot 2019-10-08 at 8.51.33 AM.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Tables",
+    "Professional"
+  ],
+  "Screen Shot 2019-10-08 at 9.06.48 AM.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Tables"
+  ],
+  "Screen Shot 2019-10-08 at 9.09.39 AM.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "Document Viewer",
+    "Professional",
+    "Form-heavy",
+    "Search-centric"
+  ],
+  "Screen Shot 2022-11-13 at 1.33.23 PM.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Company Profile"
+  ],
+  "Screen Shot 2022-11-13 at 1.33.34 PM.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Analytics",
+    "Professional"
+  ],
+  "Screen Shot 2022-11-13 at 1.33.54 PM.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Tables",
+    "Financial",
+    "Analytics"
+  ],
+  "Screen Shot 2022-11-13 at 1.34.22 PM.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Professional",
+    "Enterprise",
+    "Data Visualization"
+  ],
+  "Screen Shot 2022-11-13 at 1.34.47 PM.png": [
+    "Financial",
+    "Charts",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Analytics",
+    "Professional"
+  ],
+  "Screen Shot 2022-11-13 at 1.34.58 PM.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Analytics"
+  ],
+  "Screen Shot 2022-11-13 at 1.35.09 PM.png": [
+    "Data-heavy",
+    "Enterprise",
+    "Financial",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Light Mode"
+  ],
+  "Screen Shot 2022-11-13 at 1.35.16 PM.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Enterprise",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alerts-Create-aspx-2019-10-08-08_51_44.png": [
+    "Form-heavy",
+    "Sidebar Navigation",
+    "Financial",
+    "Enterprise",
+    "Light Mode",
+    "Clean UI"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alerts-History-aspx-2019-10-08-08_51_20.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Enterprise",
+    "Tables",
+    "Clean UI"
+  ],
+  "screencapture-capitaliq-CIQDotNet-AlphaWorks-MonthlyReport-aspx-2019-10-08-09_04_29.png": [
+    "Financial",
+    "Analytics",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-AlphaWorks-MyDailyReport-aspx-2019-10-08-09_04_41.png": [
+    "Professional",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Financial",
+    "Enterprise",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-AlphaWorks-Snapshot-aspx-2019-10-08-09_03_14.png": [
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Analytics",
+    "Tables",
+    "Charts"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-Calendar-aspx-2019-10-08-09_03_47.png": [
+    "Financial",
+    "Analytics",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Calendar View",
+    "Tables"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-CountryMonitor-aspx-2019-10-08-09_04_15.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "Grid Layout",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-FactorHome-aspx-2019-10-08-09_05_08.png": [
+    "Light Mode",
+    "Financial",
+    "SaaS",
+    "Sidebar Navigation",
+    "Data Visualization",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-MarketMonitor-aspx-2019-10-08-09_03_34.png": [
+    "Financial",
+    "Dashboard",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-RegimeMonitor-aspx-2019-10-08-09_04_00.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-ResearchArticlePage-aspx-2019-10-08-09_04_50.png": [
+    "Financial",
+    "Enterprise",
+    "Light Mode",
+    "Sidebar Navigation",
+    "List View",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Alphaworks-UserSettings-aspx-2019-10-08-09_05_19.png": [
+    "Light Mode",
+    "SaaS",
+    "Financial",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Settings Page"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Analytics-aspx-2019-10-08-09_02_19.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Search-centric",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-BusinessRel-Competitors-aspx-2019-10-08-09_08_07.png": [
+    "Light Mode",
+    "Professional",
+    "Financial",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Tables"
+  ],
+  "screencapture-capitaliq-CIQDotNet-CRMLists-CoverageLists-aspx-2019-10-08-09_02_59.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Professional",
+    "Enterprise",
+    "List View",
+    "Tabbed Navigation"
+  ],
+  "screencapture-capitaliq-CIQDotNet-CRMLists-OutlookContacts-aspx-2019-10-08-08_52_40.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional",
+    "Enterprise",
+    "List View"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Charting-MySavedChartsAndAlbums-aspx-2019-10-08-09_02_50.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "List View",
+    "Charts",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Charting4-ModernBuilder-aspx-2019-10-08-09_02_28.png": [
+    "Light Mode",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Financial",
+    "Charts",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-CompanyAlerts-MyAlerts-aspx-2019-10-08-08_51_10.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Enterprise",
+    "Financial",
+    "Professional",
+    "Search-centric"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Comps-MyCompSets-aspx-2019-10-08-08_52_16.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Tables",
+    "Financial",
+    "Enterprise",
+    "Blue Accents"
+  ],
+  "screencapture-capitaliq-CIQDotNet-CoverageMgt-ActivityLog-MyActivityLogs-aspx-2019-10-08-08_50_44.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Enterprise",
+    "Form-heavy",
+    "Search-centric",
+    "Financial"
+  ],
+  "screencapture-capitaliq-CIQDotNet-DocManagement-ReportsCenter-aspx-2019-10-08-08_52_01.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Enterprise",
+    "Financial",
+    "Document Management",
+    "Tree View"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Filings-FilingsAnnualReports-aspx-2019-10-08-09_09_02.png": [
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Financial",
+    "Enterprise",
+    "Light Mode",
+    "Blue Accents"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Filings-FilingsAnnualReports-aspx-2019-10-08-09_09_19.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Professional",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Financial-IncomeStatement-aspx-2019-10-08-09_08_47.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Professional",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Financial-Multiples-aspx-2019-10-08-09_08_37.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Financial-glossary-aspx-2019-10-08-08_52_28.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Enterprise"
+  ],
+  "screencapture-capitaliq-CIQDotNet-FixedIncome-SovereignAnalysis-aspx-2019-10-08-09_07_36.png": [
+    "Light Mode",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Analytics",
+    "Financial",
+    "Data Visualization"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-FundRaisingsVisualization-aspx-2019-10-08-08_58_12.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Professional",
+    "Data-heavy",
+    "Search-centric"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-FundRaisingsVisualization-aspx-2019-10-08-08_58_59.png": [
+    "Financial",
+    "Data-heavy",
+    "Data Visualization",
+    "Tables",
+    "Sidebar Navigation",
+    "Analytics"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-PrivatePlacementsVisualization-aspx-2019-10-08-08_56_03.png": [
+    "Financial",
+    "Analytics",
+    "Data Visualization",
+    "Tables",
+    "Sidebar Navigation",
+    "Data-heavy"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-PrivatePlacementsVisualization-aspx-2019-10-08-08_56_17.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Search-centric"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-equityAnalysis-aspx-2019-10-08-09_01_16.png": [
+    "Financial",
+    "Data-heavy",
+    "Analytics",
+    "Charts",
+    "Tables",
+    "Sidebar Navigation"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-fixedIncomeAnalysis-aspx-2019-10-08-08_56_52.png": [
+    "Financial",
+    "Analytics",
+    "Data-heavy",
+    "Tables",
+    "Charts",
+    "Sidebar Navigation"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-industryAnalysis-aspx-2019-10-08-08_54_37.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Analytics",
+    "Tables",
+    "Sidebar Navigation"
+  ],
+  "screencapture-capitaliq-CIQDotNet-IndustryIntelligence-mandaanalysis-aspx-2019-10-08-08_55_12.png": [
+    "Financial",
+    "Analytics",
+    "Data-heavy",
+    "Tables",
+    "Charts",
+    "Sidebar Navigation"
+  ],
+  "screencapture-capitaliq-CIQDotNet-KeyDevs-EventCalendar-aspx-2019-10-08-09_12_06.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "List View",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-KeyDevs-KeyDevDetails-aspx-2019-10-08-09_00_44.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-KeyDevs-KeyDevDetails-aspx-2019-10-08-09_10_48.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Clean UI"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Lists-WatchLists-aspx-2019-10-08-08_54_03.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Tables",
+    "Data-heavy",
+    "Financial",
+    "Enterprise"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Lists-WatchLists-aspx-2019-10-08-08_54_11.png": [
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Professional",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-MacroEconomics-Overview-aspx-2019-10-08-09_07_21.png": [
+    "Financial",
+    "Analytics",
+    "Data-heavy",
+    "Tables",
+    "Charts",
+    "Sidebar Navigation"
+  ],
+  "screencapture-capitaliq-CIQDotNet-MacroEconomics-SFTools-aspx-2019-10-08-09_05_48.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Clean UI",
+    "Informational"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Ownership-CompanySummary-aspx-2019-10-08-09_09_56.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Charts",
+    "Sidebar Navigation",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-ReportsBuilder-CompanyReports-aspx-2019-10-08-08_52_57.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Report Builder"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Research-InvestmentResearch-aspx-2019-10-08-08_59_15.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Search-Search-aspx-2019-10-08-08_48_12.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "Search-centric",
+    "Professional"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Search-Search-aspx-2019-10-08-08_48_32.png": [
+    "Light Mode",
+    "Professional",
+    "Sidebar Navigation",
+    "Search-centric",
+    "List View",
+    "Financial"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Search-Search-aspx-2019-10-08-08_49_23.png": [
+    "Financial",
+    "Search-centric",
+    "Sidebar Navigation",
+    "List View",
+    "Professional",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Search-Search-aspx-2019-10-08-08_49_37.png": [
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Search-centric"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Search-Search-aspx-2019-10-08-08_49_55.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Search-centric",
+    "List View",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Search-Search-aspx-2019-10-08-08_50_04.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Search-centric",
+    "Tables",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Securities-EquityListings-aspx-2019-10-08-09_08_21.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "Tables",
+    "Enterprise"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Spotfire-ViewTemplate-aspx-2019-10-08-08_56_40.png": [
+    "Financial",
+    "Data-heavy",
+    "Analytics",
+    "Sidebar Navigation",
+    "Data Visualization",
+    "Tables"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Spotfire-ViewTemplate-aspx-2019-10-08-09_11_16.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Data-heavy",
+    "Light Mode",
+    "Analytics"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Transcripts-Detail-aspx-2019-10-08-09_00_19.png": [
+    "Light Mode",
+    "Professional",
+    "Financial",
+    "Typography-focused",
+    "Clean",
+    "Report Layout"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Transcripts-Streaming-aspx-2019-10-08-09_12_39.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Transcripts-Summary-aspx-2019-10-08-08_59_28.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Tables",
+    "Search-centric",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-Transcripts-Summary-aspx-2019-10-08-09_12_28.png": [
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Professional",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-company-aspx-2019-10-08-09_07_01.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-my-dashboard-aspx-2019-10-08-08_46_20.png": [
+    "Dashboard",
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Tables",
+    "Light Mode"
+  ],
+  "screencapture-capitaliq-CIQDotNet-my-dashboard-aspx-2019-10-08-08_50_26.png": [
+    "Light Mode",
+    "Sidebar Navigation",
+    "Financial",
+    "Data-heavy",
+    "List View",
+    "Professional"
+  ],
+  "screencapture-capitaliq-ciqdotnet-Macroeconomics-geographyanalysis-aspx-2019-10-08-08_54_49.png": [
+    "Financial",
+    "Data-heavy",
+    "Analytics",
+    "Sidebar Navigation",
+    "Tables",
+    "Charts"
+  ],
+  "screencapture-capitaliq-ciqdotnet-Screening-ScreenBuilderViper-aspx-2019-10-08-09_01_29.png": [
+    "Financial",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Enterprise",
+    "Form-heavy"
+  ],
+  "screencapture-capitaliq-ciqdotnet-Screening-ScreenBuilderViper-aspx-2019-10-08-09_01_50.png": [
+    "Financial",
+    "Data-heavy",
+    "Form-heavy",
+    "Sidebar Navigation",
+    "Light Mode",
+    "Enterprise"
+  ],
+  "screencapture-capitaliq-ciqdotnet-Screening-ScreenBuilderViper-aspx-2019-10-08-09_02_02.png": [
+    "Financial",
+    "SaaS",
+    "Data-heavy",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Screening Tool"
+  ],
+  "screencapture-capitaliq-ciqdotnet-Transactions-TransactionSummary-aspx-2019-10-08-09_10_10.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Tables",
+    "Sidebar Navigation",
+    "Professional"
+  ],
+  "screencapture-capitaliq-ciqdotnet-downloads-downloads-aspx-2019-10-08-09_06_03.png": [
+    "Sidebar Navigation",
+    "Light Mode",
+    "Professional",
+    "Enterprise",
+    "Data-heavy",
+    "Download Page"
+  ],
+  "screencapture-capitaliq-ciqdotnet-keydevs-CorpTimeline-aspx-2019-10-08-09_10_39.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Tables",
+    "Data-heavy",
+    "Clean UI"
+  ],
+  "screencapture-capitaliq-ciqdotnet-news-news-aspx-2019-10-08-09_11_33.png": [
+    "Financial",
+    "Sidebar Navigation",
+    "List View",
+    "Search-centric",
+    "Light Mode",
+    "Professional"
+  ],
+  "screening10_excel-export-screening-tab.png": [
+    "Tables",
+    "Data-heavy",
+    "Financial",
+    "Enterprise",
+    "Grid Layout",
+    "Professional"
+  ],
+  "screening1_capital-iq-screening-co.png": [
+    "Dashboard",
+    "Financial",
+    "Data-heavy",
+    "Professional",
+    "Charts",
+    "Sidebar Navigation"
+  ],
+  "screening2_geog-search.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Search-centric",
+    "Data-heavy"
+  ],
+  "screening3_bus-desc-eng.png": [
+    "Sidebar Navigation",
+    "Form-heavy",
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Light Mode"
+  ],
+  "screening4_results-geography-and-business-description.png": [
+    "Financial",
+    "Enterprise",
+    "SaaS",
+    "Form-heavy",
+    "Data-heavy"
+  ],
+  "screening5_employees1.png": [
+    "Financial",
+    "Enterprise",
+    "SaaS",
+    "Search-centric",
+    "Form-heavy",
+    "Light Mode"
+  ],
+  "screening6_employees-range-1.png": [
+    "Financial",
+    "Enterprise",
+    "Form-heavy",
+    "Data-heavy",
+    "Filtering Interface",
+    "List View"
+  ],
+  "screening7_view-results.png": [
+    "Financial",
+    "Enterprise",
+    "Data-heavy",
+    "Light Mode",
+    "Form-heavy",
+    "List View"
+  ],
+  "screening8_view-results1.png": [
+    "Financial",
+    "Enterprise",
+    "Professional",
+    "Light Mode",
+    "Form-heavy",
+    "Search-centric"
+  ],
+  "screening9_export-results.png": [
+    "Financial",
+    "Enterprise",
+    "Sidebar Navigation",
+    "Tables",
+    "Data-heavy"
+  ]
+}
