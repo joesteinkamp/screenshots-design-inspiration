@@ -9,6 +9,7 @@ var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or p
     "gallery-directory": "{{ page.gallery-directory }}",
     "tags": "{{ page.tags | join: ' ' }}",
     "tags_display": {{ page.tags | jsonify }},
+    "image_tags": "{% if page.image_tags %}{% for pair in page.image_tags %}{% for t in pair[1] %}{{ t }} {% endfor %}{% endfor %}{% endif %}",
     "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
     }, {% endif %}{% endfor %}{% for page in site.without-plugin %}{
     "id": {{ counter }},
@@ -17,6 +18,7 @@ var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or p
     "gallery-directory": "{{ page.gallery-directory }}",
     "tags": "{{ page.tags | jsonify }}",
     "tags_display": {{ page.tags | jsonify }},
+    "image_tags": "",
     "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
     }, {% endfor %}{% for page in site.posts %}{
     "id": {{ counter }},
@@ -25,6 +27,7 @@ var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or p
     "gallery-directory": "{{ page.gallery-directory }}",
     "tags": "{{ page.tags | jsonify }}",
     "tags_display": {{ page.tags | jsonify }},
+    "image_tags": "",
     "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
     }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
 
@@ -35,6 +38,7 @@ var idx = lunr(function () {
     this.field('title')
     this.field('gallery-directory')
     this.field('tags')
+    this.field('image_tags')
     this.field('body')
 
     documents.forEach(function (doc) {

@@ -15,3 +15,8 @@ plugins:
 
 
 tag_page: '/tags/'
+
+exclude:
+  - "*/tags.json"
+  - scripts/
+  - node_modules/
