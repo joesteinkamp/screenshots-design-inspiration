@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "auto-tag": "node scripts/auto-tag.mjs",
+    "auto-tag:dry-run": "node scripts/auto-tag.mjs --dry-run",
+    "auto-tag:all": "node scripts/auto-tag.mjs --all"
+  },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "firebase-functions": "^7.0.3"
   }
 }

@@ -331,12 +331,63 @@ section {
     }
 }
 
+/* SCREENSHOT-LEVEL TAGS */
+.media-wrapper {
+    position: relative;
+    grid-column: span 4;
+
+    &:hover .image-tags {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.media-wrapper .media {
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: var(--glass-border);
+    display: block;
+}
+
+.media-wrapper:has(.mobile) {
+    grid-column: span 3;
+}
+
+.image-tags {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-sm);
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.2s ease;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.image-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    color: white;
+    background: rgba(99, 102, 241, 0.6);
+    padding: 2px 8px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: var(--font-weight-semibold);
+    backdrop-filter: blur(4px);
+}
+
 /* GALLERY IMAGES */
 .gg-container {
     padding-bottom: var(--spacing-xxl);
 }
 
-.grid > img, .grid > video, .gg-element {
+.grid > img, .grid > video, .gg-element, .grid > .media-wrapper {
     grid-column: span 4;
     width: 100%;
     border-radius: var(--radius-md);
@@ -356,6 +407,10 @@ section {
     &.mobile {
         grid-column: span 3;
     }
+}
+
+.grid > .media-wrapper {
+    border: none;
 }
 
 .gg-element img {
@@ -432,7 +487,7 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-    .grid > img, .grid > video, .gg-element {
+    .grid > img, .grid > video, .gg-element, .grid > .media-wrapper {
         grid-column: span 6;
         &.mobile { grid-column: span 4; }
     }
@@ -454,7 +509,7 @@ footer {
     
     .channel-item { grid-column: span 12; }
     
-    .grid > img, .grid > video, .gg-element {
+    .grid > img, .grid > video, .gg-element, .grid > .media-wrapper {
         grid-column: span 12;
         &.mobile { grid-column: span 6; }
     }
