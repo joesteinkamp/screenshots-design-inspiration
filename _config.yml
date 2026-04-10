@@ -1,6 +1,7 @@
 title: Screenshots
 tagline: Open Source Design Inspiration
 description: A GitHub Pages screenshot gallery.
+project_url: https://github.com/joesteinkamp/screenshots-design-inspiration
 
 permalink: pretty
 
@@ -14,3 +15,8 @@ plugins:
 
 
 tag_page: '/tags/'
+
+exclude:
+  - "*/tags.json"
+  - scripts/
+  - node_modules/

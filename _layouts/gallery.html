@@ -31,7 +31,11 @@
         {% if page.tags != null %}
             <ul class="tags">
                 {% for tag in page.tags %}
-                    <li>{{tag}}</li>
+                    <li>
+                        <a href="https://screenshots.designknowledgebase.com/search/?q={{ tag | downcase | uri_escape }}">
+                            {{ tag }}
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -41,12 +45,47 @@
                 {% for image in site.static_files %}
                     {% if image.path contains gallery_path %}
                         {% if image.extname contains 'png' or image.extname contains 'PNG' or image.extname contains 'jpg' or image.extname contains 'JPG' or image.extname contains 'jpeg' or image.extname contains 'JPEG' or image.extname contains 'gif' or image.extname contains 'GIF' %}
+                            {% assign img_tags = "" %}
+                            {% if page.image_tags %}
+                                {% assign img_filename = image.name %}
+                                {% assign found_tags = page.image_tags[img_filename] %}
+                                {% if found_tags %}
+                                    {% assign img_tags = found_tags | join: "," %}
+                                {% endif %}
+                            {% endif %}
                             {% if image.path contains 'Mobile' %}
-                                <img class="media mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <div class="media-wrapper">
+                                    <img class="media mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
+                                    {% if img_tags != "" %}
+                                    <div class="image-tags">
+                                        {% for tag in found_tags %}
+                                        <span class="image-tag">{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
                             {% elsif image.path contains 'Web' %}
-                                <img class="media web" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <div class="media-wrapper">
+                                    <img class="media web" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
+                                    {% if img_tags != "" %}
+                                    <div class="image-tags">
+                                        {% for tag in found_tags %}
+                                        <span class="image-tag">{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
                             {% else %}
-                                <img class="media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                                <div class="media-wrapper">
+                                    <img class="media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
+                                    {% if img_tags != "" %}
+                                    <div class="image-tags">
+                                        {% for tag in found_tags %}
+                                        <span class="image-tag">{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
                             {% endif %}
                         {% elsif image.extname contains 'mp4' %}
                             <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
