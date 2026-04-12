@@ -1,0 +1,33 @@
+{
+  "light.png": [
+    "SaaS",
+    "Form-heavy",
+    "Segment Builder",
+    "Dashboard",
+    "Light Mode",
+    "Clean UI"
+  ],
+  "recipe_list.png": [
+    "Card Layout",
+    "SaaS",
+    "Clean",
+    "E-commerce",
+    "Workflow Templates"
+  ],
+  "reviews_widget-1.png": [
+    "E-commerce",
+    "Card-based",
+    "Clean UI",
+    "Image-heavy",
+    "Consumer-focused",
+    "Form-heavy"
+  ],
+  "workflowrecipe_long.png": [
+    "Workflow Builder",
+    "SaaS",
+    "Light Mode",
+    "Card Layout",
+    "Clean UI",
+    "Onboarding Flow"
+  ]
+}
