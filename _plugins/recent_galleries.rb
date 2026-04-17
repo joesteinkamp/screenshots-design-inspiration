@@ -1,53 +1,38 @@
+require 'open3'
+
 module Jekyll
   class RecentGalleriesGenerator < Generator
     safe true
     priority :low
 
+    GALLERY_ROOTS = ['Web', 'Mobile', 'Email']
+
     def generate(site)
-      # Directories to scan for galleries
-      gallery_roots = ['Web', 'Mobile', 'Email']
-      
+      # One git log covers every gallery; spawning git per directory turns a
+      # few-hundred-gallery repo into a 50+ minute build.
+      latest_by_gallery = gallery_commit_times(site.source)
+
       galleries = []
 
-      gallery_roots.each do |root|
+      GALLERY_ROOTS.each do |root|
         root_path = File.join(site.source, root)
         next unless File.directory?(root_path)
 
         Dir.foreach(root_path) do |gallery_dir|
           next if gallery_dir == '.' || gallery_dir == '..' || gallery_dir == '.DS_Store'
-          
+
           gallery_path = File.join(root_path, gallery_dir)
           next unless File.directory?(gallery_path)
 
-          # Find the latest modification time in this gallery
-          # defaulting to 0
-          latest_mtime = Time.at(0)
-          
-          # Try to get the last commit date for this directory using git
-          # This is more reliable in CI/CD where file mtimes are reset on checkout
-          begin
-            # %ct is committer date, UNIX timestamp
-            # We use the relative path for git command
-            relative_gallery_path = File.join(root, gallery_dir) 
-            git_log = `git log -1 --format="%ct" -- "#{gallery_path}"`.strip
-            
-            if !git_log.empty?
-              latest_mtime = Time.at(git_log.to_i)
-            else
-              # Fallback to filesystem mtime if git returns nothing (e.g. new untracked files)
-               Dir.glob(File.join(gallery_path, "*")) do |file|
-                 next if File.directory?(file)
-                 mtime = File.mtime(file)
-                 latest_mtime = mtime if mtime > latest_mtime
-               end
+          latest_mtime = latest_by_gallery["#{root}/#{gallery_dir}"]
+
+          if latest_mtime.nil?
+            latest_mtime = Time.at(0)
+            Dir.glob(File.join(gallery_path, "*")) do |file|
+              next if File.directory?(file)
+              mtime = File.mtime(file)
+              latest_mtime = mtime if mtime > latest_mtime
             end
-          rescue
-             # Fallback if git command fails completely
-             Dir.glob(File.join(gallery_path, "*")) do |file|
-               next if File.directory?(file)
-               mtime = File.mtime(file)
-               latest_mtime = mtime if mtime > latest_mtime
-             end
           end
 
           if latest_mtime > Time.at(0)
@@ -61,11 +46,35 @@ module Jekyll
         end
       end
 
-      # Sort by date descending
       galleries.sort_by! { |g| g["date"] }.reverse!
-
-      # Inject into site.data
       site.data['recent_galleries'] = galleries.take(8)
+    end
+
+    private
+
+    def gallery_commit_times(source)
+      result = {}
+      output, status = Open3.capture2(
+        'git', '-C', source, 'log', '--name-only',
+        '--pretty=format:COMMIT %ct', '--', *GALLERY_ROOTS
+      )
+      return result unless status.success?
+
+      current_time = nil
+      output.each_line do |line|
+        line = line.chomp
+        if line.start_with?('COMMIT ')
+          current_time = Time.at(line[7..].to_i)
+        elsif !line.empty? && current_time
+          parts = line.split('/', 3)
+          next unless parts.length >= 2 && GALLERY_ROOTS.include?(parts[0])
+          # Log is reverse-chronological; first hit per gallery is latest.
+          result["#{parts[0]}/#{parts[1]}"] ||= current_time
+        end
+      end
+      result
+    rescue StandardError
+      {}
     end
   end
 end
