@@ -31,6 +31,8 @@ const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image
 const MODEL = "gemini-2.5-flash";
 const CONCURRENCY = 5; // parallel API calls per product
+const MAX_RETRIES = 4; // retries per screenshot on transient API errors
+const RETRY_BASE_DELAY_MS = 2000; // exponential backoff: 2s, 4s, 8s, 16s
 
 // Top tags from the existing corpus — fed to Gemini for consistency.
 const EXISTING_TAGS = [
@@ -194,6 +196,25 @@ async function asyncPool(limit, items, fn) {
 // AI tagging — one screenshot at a time
 // ---------------------------------------------------------------------------
 
+function isTransientError(err) {
+  const status = err?.status ?? err?.response?.status;
+  if (status === 429 || status === 500 || status === 502 || status === 503 || status === 504) {
+    return true;
+  }
+  const msg = String(err?.message || "").toLowerCase();
+  return (
+    msg.includes("503") ||
+    msg.includes("overloaded") ||
+    msg.includes("unavailable") ||
+    msg.includes("rate limit") ||
+    msg.includes("timeout") ||
+    msg.includes("econnreset") ||
+    msg.includes("fetch failed")
+  );
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 async function tagScreenshot(model, productName, platform, imagePath) {
   const part = imageToGeminiPart(imagePath);
   if (!part) return null;
@@ -215,12 +236,36 @@ Generate 3-6 descriptive tags for THIS specific screenshot.
 Return ONLY a JSON array of tag strings. No explanation, no markdown fences.
 Example: ["Dark Mode", "Dashboard", "Sidebar Navigation"]`;
 
-  const result = await model.generateContent([part, { text: prompt }]);
-  const text = result.response.text();
+  let text;
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const result = await model.generateContent([part, { text: prompt }]);
+      text = result.response.text();
+      break;
+    } catch (err) {
+      const transient = isTransientError(err);
+      if (!transient || attempt === MAX_RETRIES) {
+        const label = transient ? "API unavailable" : "API error";
+        console.error(
+          `    ✗ ${label} for ${path.basename(imagePath)} after ${attempt + 1} attempt(s): ${err?.message || err}`
+        );
+        return null;
+      }
+      const delay = RETRY_BASE_DELAY_MS * 2 ** attempt;
+      console.error(
+        `    ⟲ Transient error for ${path.basename(imagePath)} (attempt ${attempt + 1}/${MAX_RETRIES + 1}), retrying in ${delay}ms: ${err?.message || err}`
+      );
+      await sleep(delay);
+    }
+  }
 
   try {
     const cleaned = text.replace(/```json\s*/g, "").replace(/```\s*/g, "").trim();
-    const tags = JSON.parse(cleaned);
+    // Gemini occasionally prefixes the JSON array with a reasoning object or
+    // other prose; extract the first JSON array we can find.
+    const arrayMatch = cleaned.match(/\[[\s\S]*?\]/);
+    const jsonText = arrayMatch ? arrayMatch[0] : cleaned;
+    const tags = JSON.parse(jsonText);
     if (Array.isArray(tags) && tags.every((t) => typeof t === "string")) {
       return tags;
     }
