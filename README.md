@@ -67,3 +67,38 @@ Pretty straight forward, just add the new screenshots to the correct folder.
 
 ### How to Add a New App
 To add a new app, create a folder for it named after the App then create an `index.html` file that has `gallery-directory: {App Name}` with {App Name} replaced.
+
+---
+
+## Auto-tagging screenshots
+
+`scripts/auto-tag.mjs` walks the gallery folders, finds untagged screenshots, runs them through a vision model, and writes tags into `tags.json` + the product's `index.html` frontmatter.
+
+Two backends are supported:
+
+| Backend | When to use | Requires |
+|---|---|---|
+| `local` (default in CI) | No API key, fully reproducible builds | Docker + ~6GB disk for model weights |
+| `gemini` | Faster on a laptop without local model setup | `GEMINI_API_KEY` env var |
+
+### Running locally (local backend, Qwen2.5-VL-7B via llama.cpp)
+
+```bash
+npm run tagger:download    # one-time, ~6GB into scripts/.models/ (gitignored)
+npm run tagger:start       # starts llama-server in Docker on :8080
+npm run auto-tag:local
+npm run tagger:stop
+```
+
+Tagging a single screenshot takes ~10–30s on CPU. Quality is close to Gemini Flash.
+
+### Running locally (Gemini backend)
+
+```bash
+export GEMINI_API_KEY=...
+npm run auto-tag
+```
+
+### In CI
+
+`.github/workflows/deploy.yml` caches the model weights, runs `llama-server` in Docker, tags any new screenshots with the local backend, and commits the results before the Jekyll build. No API key required.
