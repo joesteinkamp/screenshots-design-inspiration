@@ -2,7 +2,11 @@
   "scripts": {
     "auto-tag": "node scripts/auto-tag.mjs",
     "auto-tag:dry-run": "node scripts/auto-tag.mjs --dry-run",
-    "auto-tag:all": "node scripts/auto-tag.mjs --all"
+    "auto-tag:all": "node scripts/auto-tag.mjs --all",
+    "auto-tag:local": "node scripts/auto-tag.mjs --backend local",
+    "tagger:download": "scripts/download-tagger-model.sh",
+    "tagger:start": "scripts/start-local-tagger.sh --detach",
+    "tagger:stop": "scripts/stop-local-tagger.sh"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

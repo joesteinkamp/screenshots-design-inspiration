@@ -14,6 +14,12 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  TAGGER_MODEL_FILE: Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf
+  TAGGER_MMPROJ_FILE: mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf
+  TAGGER_MODEL_REPO: ggml-org/Qwen2.5-VL-7B-Instruct-GGUF
+  LLAMA_SERVER_IMAGE: ghcr.io/ggml-org/llama.cpp:server
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,17 +28,40 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '20'
           cache: 'npm'
+
       - name: Install Node dependencies
         run: npm ci
+
+      - name: Cache tagger model weights
+        id: cache-model
+        uses: actions/cache@v4
+        with:
+          path: scripts/.models
+          key: tagger-model-${{ env.TAGGER_MODEL_REPO }}-${{ env.TAGGER_MODEL_FILE }}-${{ env.TAGGER_MMPROJ_FILE }}
+
+      - name: Download tagger model weights
+        if: steps.cache-model.outputs.cache-hit != 'true'
+        run: scripts/download-tagger-model.sh
+
+      - name: Pull llama.cpp server image
+        run: docker pull "$LLAMA_SERVER_IMAGE"
+
+      - name: Start local tagger
+        run: scripts/start-local-tagger.sh --detach
+
       - name: Auto-tag untagged screenshots
-        run: node scripts/auto-tag.mjs
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/auto-tag.mjs --backend local --no-limit
+
+      - name: Stop local tagger
+        if: always()
+        run: scripts/stop-local-tagger.sh
+
       - name: Commit new tags
         run: |
           git config user.name "github-actions[bot]"
@@ -41,18 +70,22 @@ jobs:
           git add "*/index.html" "*/tags.json"
           git commit -m "Auto-tag untagged screenshots"
           git push
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6' # Matches local Gemfile constraints
           bundler-cache: true
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
+
       - name: Build with Jekyll
         # check for bundler version just in case, but usually bundler-cache handles it
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
