@@ -90,7 +90,7 @@ npm run auto-tag:local
 npm run tagger:stop
 ```
 
-Tagging a single screenshot takes ~10–30s on CPU. Quality is close to Gemini Flash.
+Tags come from a controlled vocabulary in `screenshot_tags.csv` (173 tags: Screens + UI Elements). The script drops any tag the model invents that isn't in the CSV.
 
 ### Running locally (Gemini backend)
 

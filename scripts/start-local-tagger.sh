@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Starts a local llama.cpp server hosting Qwen2.5-VL-7B for screenshot tagging.
+# Starts a local llama.cpp server hosting Qwen2.5-VL-3B for screenshot tagging.
 # Used by `npm run auto-tag:local` and the GitHub Actions workflow.
 #
 # Requires Docker. Pulls the official llama.cpp server image and mounts the
@@ -19,7 +19,9 @@ MODEL_FILE="${TAGGER_MODEL_FILE:-Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf}"
 MMPROJ_FILE="${TAGGER_MMPROJ_FILE:-mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf}"
 IMAGE="${LLAMA_SERVER_IMAGE:-ghcr.io/ggml-org/llama.cpp:server}"
 PORT="${LOCAL_TAGGER_PORT:-8080}"
-CTX_SIZE="${LLAMA_CTX_SIZE:-4096}"
+# Prompt now embeds the full 173-tag taxonomy (~7k tokens) + one image
+# (~1.5k tokens) + room for reply. 16k keeps everything in context.
+CTX_SIZE="${LLAMA_CTX_SIZE:-16384}"
 THREADS="${LLAMA_THREADS:-4}"
 CONTAINER_NAME="screenshot-tagger"
 

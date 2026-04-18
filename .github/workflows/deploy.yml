@@ -19,6 +19,7 @@ env:
   TAGGER_MMPROJ_FILE: mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf
   TAGGER_MODEL_REPO: ggml-org/Qwen2.5-VL-7B-Instruct-GGUF
   LLAMA_SERVER_IMAGE: ghcr.io/ggml-org/llama.cpp:server
+  LLAMA_CTX_SIZE: "16384"
 
 jobs:
   build:
