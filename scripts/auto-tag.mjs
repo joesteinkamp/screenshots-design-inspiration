@@ -72,6 +72,7 @@ function parseArgs() {
   };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--all") flags.all = true;
+    else if (args[i] === "--skip-valid-vocab") flags.skipValidVocab = true;
     else if (args[i] === "--dry-run") flags.dryRun = true;
     else if (args[i] === "--product" && args[i + 1]) flags.product = args[++i];
     else if (args[i] === "--limit" && args[i + 1]) flags.limit = parseInt(args[++i], 10);
@@ -174,11 +175,16 @@ function readImageBase64(imagePath) {
 
 // In-memory downscale for the local backend. Returns a JPEG buffer base64'd;
 // the source file on disk is never modified. Returns null if the image is
-// unreadable or too large on disk to open safely.
+// unreadable, too large on disk, or too small (llama.cpp's mtmd requires
+// both dimensions >= 2, and we drop anything under 32px as junk).
 async function readImageResizedBase64(imagePath, maxDim) {
   const stats = fs.statSync(imagePath);
   if (stats.size > MAX_IMAGE_SIZE_BYTES) return null;
   const sharp = (await import("sharp")).default;
+  const meta = await sharp(imagePath).metadata();
+  if (!meta.width || !meta.height || meta.width < 32 || meta.height < 32) {
+    return { tooSmall: true };
+  }
   const buf = await sharp(imagePath)
     .resize({ width: maxDim, height: maxDim, fit: "inside", withoutEnlargement: true })
     .jpeg({ quality: 85 })
@@ -475,6 +481,10 @@ async function createLocalBackend(serverUrl, taxonomy) {
     async tag(productName, platform, imagePath) {
       const img = await readImageResizedBase64(imagePath, LOCAL_IMAGE_MAX_DIM);
       if (!img) return null;
+      if (img.tooSmall) {
+        console.log(`    ⏭ ${path.basename(imagePath)} — skipped (image too small)`);
+        return null;
+      }
       const dataUrl = `data:${img.mimeType};base64,${img.data}`;
       const prompt = buildPrompt(productName, platform, taxonomy);
 
@@ -626,8 +636,14 @@ async function main() {
     }
 
     const existingTagsMap = readTagsJson(product.dir);
+    const hasValidVocabTags = (img) => {
+      const tags = existingTagsMap[img];
+      return Array.isArray(tags) && tags.length > 0 && tags.every((t) => taxonomy.allowed.has(t));
+    };
     const toTag = flags.all
       ? images
+      : flags.skipValidVocab
+      ? images.filter((img) => !hasValidVocabTags(img))
       : images.filter((img) => !existingTagsMap[img] || existingTagsMap[img].length === 0);
 
     if (toTag.length === 0) {
