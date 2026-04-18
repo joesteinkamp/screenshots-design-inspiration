@@ -1,0 +1,57 @@
+{
+  "collections.png": [
+    "Light Mode",
+    "Clean UI",
+    "Card Layout",
+    "Collaboration",
+    "Project Management",
+    "SaaS"
+  ],
+  "files.jpeg": [
+    "Light Mode",
+    "Grid Layout",
+    "Card Layout",
+    "Clean UI",
+    "Image-heavy"
+  ],
+  "hiw-hero.png": [
+    "Light Mode",
+    "List View",
+    "Clean UI",
+    "Modern SaaS",
+    "Collaboration",
+    "Email Inbox"
+  ],
+  "multi-account.png": [
+    "Clean UI",
+    "List View",
+    "Light Mode",
+    "Modern",
+    "Productivity",
+    "Blue Accents"
+  ],
+  "reply-crop.png": [
+    "Light Mode",
+    "Clean UI",
+    "Card Layout",
+    "List View",
+    "Productivity",
+    "Typography-focused"
+  ],
+  "reply-mode.png": [
+    "Light Mode",
+    "List View",
+    "Card Layout",
+    "Clean UI",
+    "Productivity",
+    "Modern SaaS"
+  ],
+  "screener.png": [
+    "Light Mode",
+    "Clean UI",
+    "List View",
+    "SaaS",
+    "Iconography",
+    "Email Management"
+  ]
+}
