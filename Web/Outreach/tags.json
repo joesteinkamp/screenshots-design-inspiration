@@ -1,0 +1,141 @@
+{
+  "1b7041462e9b1583cfea80d6620a58f0.png": [
+    "Home",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Search Bar",
+    "Table"
+  ],
+  "AnalyticsAndReporting-1.png": [
+    "Dashboard",
+    "Table",
+    "Badge",
+    "Card",
+    "Progress Indicator",
+    "Avatar",
+    "Icon"
+  ],
+  "AnalyticsAndReporting-2.png": [
+    "Home",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Table",
+    "Tab"
+  ],
+  "CoachingAnalytics-1.png": [
+    "Leaderboard",
+    "Badge",
+    "Card",
+    "Table",
+    "Text Field",
+    "Avatar",
+    "Icon"
+  ],
+  "CoachingAnalytics-2.png": [
+    "Dashboard",
+    "Avatar",
+    "Badge",
+    "Card",
+    "Progress Indicator",
+    "Text Field"
+  ],
+  "Hero.png": [
+    "Dashboard",
+    "Badge",
+    "Card",
+    "Table",
+    "Progress Indicator",
+    "Tab",
+    "Text Field"
+  ],
+  "SalesEmailAndTracking.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Avatar",
+    "Badge",
+    "Card",
+    "Divider"
+  ],
+  "SalesRepWorkflow-1.png": [
+    "Browse & Discover",
+    "Table",
+    "Badge",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Icon"
+  ],
+  "SalesRepWorkflow-2.png": [
+    "Dashboard",
+    "Card",
+    "Table",
+    "Tile",
+    "Text Field",
+    "Button",
+    "Badge"
+  ],
+  "SalesSequences-1.png": [
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Dropdown Menu"
+  ],
+  "SalesSequences-2.png": [
+    "Browse & Discover",
+    "Table",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
+  ],
+  "SalesSequences-3.png": [
+    "Settings & Preferences",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Tab",
+    "Side Navigation",
+    "Icon"
+  ],
+  "meeting-types-thumbnail.png": [
+    "Browse & Discover",
+    "Card",
+    "Divider",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge"
+  ],
+  "meetings1.png": [
+    "Calendar",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu",
+    "Text Field"
+  ],
+  "pre-call.png": [
+    "Call",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Checkbox",
+    "Dialog"
+  ],
+  "sales-texting.jpg": [
+    "Chat Detail",
+    "Avatar",
+    "Button",
+    "Text Field",
+    "Tile",
+    "Toast",
+    "Search Bar"
+  ]
+}

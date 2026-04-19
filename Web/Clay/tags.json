@@ -1,50 +1,45 @@
 {
   "Screen Shot 2022-10-29 at 10.03.11 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Onboarding",
-    "List View",
-    "Social Login",
-    "Clean UI"
+    "Home",
+    "Avatar",
+    "Banner",
+    "Card",
+    "Checkbox",
+    "Divider",
+    "Dropdown Menu"
   ],
   "Screen Shot 2022-10-29 at 9.48.10 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Onboarding",
-    "Modern",
-    "Productivity",
-    "Minimalist"
+    "Guided Tour & Tutorial",
+    "Banner",
+    "Text Field",
+    "Button",
+    "Toast"
   ],
   "Screen Shot 2022-10-29 at 9.48.22 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Productivity",
-    "Modern SaaS",
-    "Clean UI"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Toast"
   ],
   "Screen Shot 2022-10-29 at 9.48.36 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "SaaS",
-    "Search-centric",
-    "Command Palette"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Toast",
+    "Icon"
   ],
   "Screen Shot 2022-10-29 at 9.48.49 PM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Minimalist",
-    "Modern",
-    "Abstract Graphic",
-    "Clean Typography"
+    "Guided Tour & Tutorial",
+    "Illustration",
+    "Text Field",
+    "Button"
   ],
   "Screen Shot 2022-10-29 at 9.49.00 PM.png": [
-    "Dark Mode",
-    "Onboarding",
-    "Loading State",
-    "Minimalist",
-    "Clean UI",
-    "Illustrations"
+    "Guided Tour & Tutorial",
+    "Illustration",
+    "Text Field",
+    "Avatar"
   ]
 }

@@ -1,50 +1,52 @@
 {
   "Screen Shot 2018-02-19 at 7.22.43 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Card Layout",
-    "SaaS",
-    "Profile Page",
-    "Blue Accents"
+    "My Account & Profile",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2018-02-19 at 7.22.52 PM.png": [
-    "Light Mode",
-    "Dashboard",
-    "SaaS",
-    "Onboarding",
-    "Calendar",
-    "Clean UI"
+    "Guided Tour & Tutorial",
+    "Banner",
+    "Button",
+    "Card",
+    "Date Picker",
+    "Tab",
+    "Text Field"
   ],
   "Screen Shot 2018-02-19 at 7.23.13 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Onboarding",
-    "Sidebar Navigation",
-    "Empty State",
-    "News Feed"
+    "Browse & Discover",
+    "Banner",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2018-02-19 at 7.23.19 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar",
-    "Tasks Management",
-    "List View",
-    "Clean UI"
+    "Home",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2018-02-19 at 7.23.24 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Onboarding",
-    "List View",
-    "Sidebar",
-    "Illustrations"
+    "Dashboard",
+    "Button",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Banner"
   ],
   "Screen Shot 2018-02-19 at 7.23.46 PM.png": [
-    "Light Mode",
-    "Dashboard",
-    "Modal-driven",
-    "Sidebar Navigation",
-    "SaaS",
-    "Onboarding Flow"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Link",
+    "Toast"
   ]
 }

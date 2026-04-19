@@ -1,0 +1,73 @@
+{
+  "2b4c5987-559d-439b-ab66-d2bb476a368e.png": [
+    "Chat Detail",
+    "Button",
+    "Text Field",
+    "Avatar",
+    "Dropdown Menu",
+    "Checkbox",
+    "Table"
+  ],
+  "a1f280f2-059b-48c4-8840-1b28f13d6d5c (1).png": [
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge"
+  ],
+  "a1f280f2-059b-48c4-8840-1b28f13d6d5c.png": [
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge"
+  ],
+  "sell_support_assign_suggested.png": [
+    "Chat Detail",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon"
+  ],
+  "sell_support_send_note_to_sales_support.png": [
+    "Home",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu",
+    "Editable Text"
+  ],
+  "support-screenshot-2x.png": [
+    "Chat Bot",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Avatar",
+    "Icon",
+    "Badge"
+  ],
+  "uc_social_message_full3A.png": [
+    "Chat Detail",
+    "Avatar",
+    "Button",
+    "Checkbox",
+    "Combobox",
+    "Date Picker",
+    "Dropdown Menu"
+  ],
+  "zendesk CTI cloudtalk.png": [
+    "Dashboard",
+    "Button",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Toast"
+  ]
+}

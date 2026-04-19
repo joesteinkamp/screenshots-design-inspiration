@@ -1,26 +1,26 @@
 {
   "Screen Shot 2021-12-16 at 4.07.30 PM.png": [
-    "Onboarding",
-    "Form-heavy",
-    "Clean UI",
-    "Light Mode",
-    "Minimalist",
-    "Professional"
+    "Signup",
+    "Text Field",
+    "Button",
+    "Link"
   ],
   "Screen Shot 2021-12-16 at 4.09.34 PM.png": [
-    "Onboarding",
-    "Sidebar Navigation",
-    "Professional",
-    "List View",
-    "Card Layout",
-    "SaaS"
+    "Guided Tour & Tutorial",
+    "Avatar",
+    "Banner",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Icon"
   ],
   "Screen Shot 2021-12-16 at 4.10.15 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Professional",
-    "Clean",
-    "Card Layout",
-    "Illustrations"
+    "Guided Tour & Tutorial",
+    "Banner",
+    "Card",
+    "Avatar",
+    "Icon",
+    "Text Field",
+    "Button"
   ]
 }

@@ -1,0 +1,183 @@
+{
+  "Dashboard.png": [
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Table",
+    "Badge",
+    "Text Field",
+    "Button"
+  ],
+  "mixpanel-demo-1.png": [
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge"
+  ],
+  "mixpanel-demo-2.png": [
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge"
+  ],
+  "old_Dashboards.png": [
+    "Dashboard",
+    "Badge",
+    "Card",
+    "Progress Indicator",
+    "Table",
+    "Text Field"
+  ],
+  "old_Flows.png": [
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
+  ],
+  "old_Insights-report-visualization.png": [
+    "Dashboard",
+    "Table",
+    "Progress Indicator",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Segmented Control"
+  ],
+  "old_Mixpanel-Funnel-Analysis-.png": [
+    "Charts",
+    "Progress Indicator",
+    "Text Field",
+    "Badge"
+  ],
+  "old_Mixpanel-Funnel-Analysis-report.png": [
+    "Dashboard",
+    "Progress Indicator",
+    "Card",
+    "Text Field",
+    "Button",
+    "Segmented Control",
+    "Badge"
+  ],
+  "old_Mixpanel-Retention-Analysis-of-two-cohorts.png": [
+    "Dashboard",
+    "Table",
+    "Progress Indicator",
+    "Dropdown Menu",
+    "Text Field",
+    "Segmented Control"
+  ],
+  "old_cohorts.png": [
+    "Dashboard",
+    "Table",
+    "Progress Indicator",
+    "Badge",
+    "Text Field"
+  ],
+  "old_custom-alerts.png": [
+    "Settings & Preferences",
+    "Text Field",
+    "Dropdown Menu",
+    "Slider",
+    "Button"
+  ],
+  "old_granular-behavioral-targeting.png": [
+    "Filter & Sort",
+    "Text Field",
+    "Dropdown Menu"
+  ],
+  "old_group-analytics-hero-1.png": [
+    "Dashboard",
+    "Dropdown Menu",
+    "Text Field",
+    "Button"
+  ],
+  "old_img-iq.png": [
+    "Dashboard",
+    "Table",
+    "Toast",
+    "Text Field",
+    "Button"
+  ],
+  "old_img24.png": [
+    "Dashboard",
+    "Progress Indicator",
+    "Text Field",
+    "Card"
+  ],
+  "old_img25.png": [
+    "Dashboard",
+    "Card",
+    "Text Field",
+    "Progress Indicator",
+    "Button",
+    "Divider"
+  ],
+  "old_img26.png": [
+    "Dashboard",
+    "Table",
+    "Progress Indicator",
+    "Badge",
+    "Text Field",
+    "Button"
+  ],
+  "old_img27.png": [
+    "Dashboard",
+    "Slider",
+    "Text Field",
+    "Button",
+    "Segmented Control",
+    "Progress Indicator"
+  ],
+  "old_img37.png": [
+    "Edit",
+    "Text Field",
+    "Button",
+    "Segmented Control",
+    "Badge",
+    "Divider",
+    "Table"
+  ],
+  "old_img38.png": [
+    "Filter & Sort",
+    "Kanban Board",
+    "Multi-Column Layout",
+    "Checkbox",
+    "Segmented Control",
+    "Dropdown Menu",
+    "Text Field",
+    "Tile",
+    "Badge"
+  ],
+  "old_img63.png": [
+    "Settings & Preferences",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Select"
+  ],
+  "old_lexicon-data-dictionary-1.png": [
+    "Dashboard",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Table",
+    "Progress Indicator"
+  ],
+  "old_user-group-1.png": [
+    "My Account & Profile",
+    "Avatar",
+    "Text Field",
+    "Divider",
+    "Table"
+  ]
+}

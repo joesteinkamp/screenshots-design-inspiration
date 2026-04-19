@@ -1,230 +1,239 @@
 {
   "2c1652e-1080.png": [
-    "Light Mode",
-    "Clean UI",
-    "Professional",
-    "List View",
-    "Transcription",
-    "Video Player"
+    "Song & Podcast Detail",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Slider",
+    "Badge",
+    "Icon"
   ],
   "2ec4c80-1080.png": [
-    "Light Mode",
-    "Modal-driven",
-    "SaaS",
-    "Clean UI",
-    "Form-heavy",
-    "Blue Accents"
+    "Publish",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Link",
+    "Switch"
   ],
   "apply-template.png": [
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "SaaS",
-    "Productivity",
-    "Project Management"
+    "Home",
+    "Text Field",
+    "Button"
   ],
   "collab-note-taking.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Collaboration",
-    "Text Annotation",
-    "Interview Management"
+    "Note Detail",
+    "Text Field",
+    "Button",
+    "Accordion"
   ],
   "download-as-csv-1.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Clean UI",
-    "SaaS",
-    "Project Management"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "download-conclusion-as-pdf.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "SaaS",
-    "Project Management",
-    "Collaboration"
+    "Home",
+    "Button",
+    "Dropdown Menu",
+    "Icon",
+    "Text Field"
   ],
   "download-files.png": [
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "Project Management"
+    "Home",
+    "Button",
+    "Text Field",
+    "Card",
+    "Icon",
+    "Checkbox"
   ],
   "download-highlight-reel.png": [
-    "Light Mode",
-    "SaaS",
-    "Card Layout",
-    "Clean UI",
-    "Media Management",
-    "Professional"
+    "Browse & Discover",
+    "Card",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
   ],
   "filtering-global-tag-highlights-with-project-information.png": [
-    "Light Mode",
-    "Card Layout",
-    "Grid Layout",
-    "SaaS",
-    "Clean UI",
-    "Filter Chips"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Segmented Control",
+    "Button",
+    "Badge",
+    "Divider"
   ],
   "image-19.png": [
-    "Light Mode",
-    "Clean UI",
-    "Card Layout",
-    "Grid Layout",
-    "SaaS",
-    "Search-centric"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Slider",
+    "Button",
+    "Icon",
+    "Avatar"
   ],
   "image-20.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Project Management",
-    "Card Layout",
-    "Tags Management",
-    "Clean UI"
+    "Dashboard",
+    "Accordion",
+    "Button",
+    "Dropdown Menu",
+    "Tile",
+    "Text Field"
   ],
   "image-22.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Modal-driven",
-    "Form-heavy",
-    "Clean UI",
-    "SaaS"
+    "Publish",
+    "Button",
+    "Checkbox",
+    "Link",
+    "Text Field",
+    "Toast"
   ],
   "invite-collaborators-1.png": [
-    "Clean UI",
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Project Management",
-    "SaaS"
+    "Home",
+    "Button",
+    "Text Field",
+    "Table",
+    "Side Navigation",
+    "Avatar"
   ],
   "multi-workspaces.png": [
-    "Light Mode",
-    "Clean UI",
-    "Modern SaaS",
-    "Tables",
-    "User Administration",
-    "Dropdown Menu"
+    "Account Setup",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Table"
   ],
   "new-participant.png": [
-    "Light Mode",
-    "SaaS",
-    "Form-heavy",
-    "Card Layout",
-    "Clean UI",
-    "Interview Management"
+    "Account Setup",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu"
   ],
   "participant-database.png": [
-    "Sidebar Navigation",
-    "Tables",
-    "Light Mode",
-    "SaaS",
-    "Clean UI",
-    "Professional"
+    "Browse & Discover",
+    "Table",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Search Bar"
   ],
   "participant-field.png": [
-    "Light Mode",
-    "SaaS",
-    "Modal-driven",
-    "Form-heavy",
-    "Participant Management"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Dropdown Menu",
+    "Avatar",
+    "Icon"
   ],
   "play-back-from-word.png": [
-    "Light Mode",
-    "Clean",
-    "SaaS",
-    "Transcription UI",
-    "Audio Playback Controls"
+    "Chat Detail",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Divider"
   ],
   "project-export.png": [
-    "Light Mode",
-    "Minimalist",
-    "Sidebar Navigation",
-    "SaaS",
-    "Project Management",
-    "Action Menu"
+    "Settings & Preferences",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Icon"
   ],
   "project-information.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "Project Management",
-    "Image-heavy",
-    "SaaS"
+    "Home",
+    "Avatar",
+    "Banner",
+    "Card",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu"
   ],
   "session-fields.png": [
-    "Light Mode",
-    "Modern SaaS",
-    "Modal-driven",
-    "Form-heavy",
-    "Metadata Management",
-    "Clean UI"
+    "Add & Create",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Tile",
+    "Segmented Control"
   ],
   "session-overview.png": [
-    "Sidebar Navigation",
-    "Tables",
-    "Light Mode",
-    "Minimalist",
-    "SaaS",
-    "Clean UI"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Segmented Control",
+    "Dropdown Menu"
   ],
   "session-template.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Project Management",
-    "Professional"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Text Field",
+    "Button",
+    "Tab"
   ],
   "shortcut_tooltip.png": [
-    "Contextual Toolbar",
-    "Commenting",
-    "Collaboration",
-    "Text Editor",
-    "Tooltip"
+    "Code Editor",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Tooltip",
+    "Tab",
+    "Segmented Control"
   ],
   "start-a-project-1.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Project Management",
-    "Clean UI",
-    "SaaS",
-    "Image-heavy"
+    "Home",
+    "Avatar",
+    "Banner",
+    "Card",
+    "Checkbox",
+    "Dropdown Menu",
+    "Icon"
   ],
   "switchingworkspaces.png": [
-    "Sidebar Navigation",
-    "List View",
-    "Project Management",
-    "SaaS",
-    "Clean UI",
-    "Light Mode"
+    "Dashboard",
+    "Dropdown Menu",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "synthesis.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Card Layout",
-    "SaaS",
-    "Clean UI",
-    "Research Platform"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Avatar"
   ],
   "tagging-images.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Professional",
-    "Tagging System",
-    "User Research"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link",
+    "Avatar",
+    "Icon"
   ],
   "upload-recording-1.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Project Management",
-    "Form-heavy",
-    "File Upload"
+    "Home",
+    "Button",
+    "Text Field",
+    "File Upload",
+    "Card",
+    "Divider"
   ]
 }

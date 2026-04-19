@@ -1,0 +1,33 @@
+{
+  "screenshot-www.nytimes.com-2020.04.07-13_53_13.png": [
+    "News Feed",
+    "Banner",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Avatar"
+  ],
+  "screenshot-www.nytimes.com-2020.04.07-13_53_41.png": [
+    "Article Detail",
+    "Button",
+    "Text Field",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Hero Image"
+  ],
+  "screenshot-www.nytimes.com-2020.04.07-13_53_54.png": [
+    "Article Detail",
+    "Text Field"
+  ],
+  "screenshot-www.nytimes.com-2020.04.07-13_54_17.png": [
+    "News Feed",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Table"
+  ]
+}

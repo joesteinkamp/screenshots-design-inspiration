@@ -1,0 +1,183 @@
+{
+  "1_uyyaz0GgMQnbX_iN70Ya3Q.jpeg": [
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Dropdown Menu"
+  ],
+  "admin-api-key-of-shopify-store.png": [
+    "Dashboard",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Table",
+    "Icon"
+  ],
+  "app-creation-in-shopify-account.png": [
+    "Dashboard",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
+  ],
+  "apps-in-shopify-store.png": [
+    "Settings & Preferences",
+    "Checkbox",
+    "Button",
+    "Text Field",
+    "Link",
+    "Accordion",
+    "Tab"
+  ],
+  "create-new-private-app-in-shopify.png": [
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Link",
+    "Icon",
+    "Search Bar",
+    "Avatar"
+  ],
+  "creating-private-app-in-shopify.png": [
+    "Settings & Preferences",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Accordion",
+    "Tab"
+  ],
+  "creating-shopify-store.png": [
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Avatar",
+    "Illustration",
+    "Banner"
+  ],
+  "integrate-SAP-ERP-and-Shopify-Order.png": [
+    "Dashboard",
+    "Button",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
+  ],
+  "private-app-created-in-shopify.png": [
+    "Settings & Preferences",
+    "Text Field",
+    "Button",
+    "Banner",
+    "Divider",
+    "Table",
+    "Icon"
+  ],
+  "product-sync-from-SAP-to-Shopify-with-APPSeCONNECT.png": [
+    "Dashboard",
+    "Table",
+    "Button",
+    "Search Bar",
+    "Avatar",
+    "Icon",
+    "Text Field"
+  ],
+  "saving-shopify-partners-development-store.png": [
+    "Settings & Preferences",
+    "Text Field",
+    "Dropdown Menu",
+    "Checkbox",
+    "Button",
+    "Page Control"
+  ],
+  "shoipfy-liquid-code-10-18-1024x640.png": [
+    "Shop & Storefront",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Search Bar",
+    "Icon"
+  ],
+  "shopify-add-product-10-18-1024x640.png": [
+    "Product Detail",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Checkbox",
+    "Dropdown Menu"
+  ],
+  "shopify-add-variants-10-18.png": [
+    "Product Detail",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Table",
+    "Select",
+    "Accordion"
+  ],
+  "shopify-app-store-10-18-1024x640.png": [
+    "Browse & Discover",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge"
+  ],
+  "shopify-bulk-product-editor-10-18-1024x451.png": [
+    "Product Detail",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Slider",
+    "Dropdown Menu"
+  ],
+  "shopify-create-discount-10-18.png": [
+    "Pricing",
+    "Text Field",
+    "Dropdown Menu",
+    "Search Bar",
+    "Checkbox",
+    "Button",
+    "Table"
+  ],
+  "shopify-dashboard-10-18-1024x640.png": [
+    "Dashboard",
+    "Button",
+    "Text Field",
+    "Card",
+    "Icon",
+    "Banner",
+    "Tab"
+  ],
+  "shopify-development-stores.png": [
+    "Account Setup",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Accordion",
+    "Banner"
+  ],
+  "shopify-settings-menu-10-18-1024x643.png": [
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Accordion",
+    "Link",
+    "Icon"
+  ],
+  "shopify-theme-editor-main-screen-10-18-1024x635.png": [
+    "Shop & Storefront",
+    "Card",
+    "Text Field",
+    "Button",
+    "Tab",
+    "Banner",
+    "Icon"
+  ]
+}

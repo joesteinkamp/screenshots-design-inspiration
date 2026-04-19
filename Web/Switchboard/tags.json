@@ -1,0 +1,71 @@
+{
+  "activity-directory.png": [
+    "Dashboard",
+    "Table",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
+  ],
+  "content_dashboard.png": [
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Text Field"
+  ],
+  "export.png": [
+    "Dashboard",
+    "Checkbox",
+    "Table",
+    "Dropdown Menu",
+    "Text Field",
+    "Button"
+  ],
+  "member-overview.png": [
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Text Field",
+    "Table",
+    "Badge",
+    "Icon"
+  ],
+  "profile.png": [
+    "User / Group Profile",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Divider"
+  ],
+  "screenshot-template.png": [
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Search Bar",
+    "Avatar",
+    "Icon",
+    "Badge"
+  ],
+  "switchboardask.png": [
+    "Browse & Discover",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Link"
+  ],
+  "user_dashboard.png": [
+    "Dashboard",
+    "Table",
+    "Map Pin",
+    "Progress Indicator",
+    "Dropdown Menu",
+    "Avatar",
+    "Icon"
+  ]
+}

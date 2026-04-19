@@ -1,49 +1,47 @@
 {
   "Screen Shot 2021-04-28 at 3.42.24 PM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Minimalist",
-    "Bold Typography",
-    "Clean UI",
-    "High Contrast"
+    "Guided Tour & Tutorial",
+    "Logo",
+    "Text Field",
+    "Button"
   ],
   "Screen Shot 2021-04-28 at 3.42.47 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Modal-driven",
-    "Onboarding Flow",
-    "Subscription Service",
-    "Clean"
+    "Permission",
+    "Dialog",
+    "Button",
+    "Text Field"
   ],
   "Screen Shot 2021-04-28 at 3.42.51 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Modal-driven",
-    "Subscription Onboarding",
-    "News Feed"
+    "News Feed",
+    "Banner",
+    "Button",
+    "Text Field"
   ],
   "Screen Shot 2021-04-28 at 3.43.11 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Modern",
-    "Image-heavy",
-    "Consumer-focused"
+    "News Feed",
+    "Card",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Hero Image"
   ],
   "Screen Shot 2021-04-28 at 3.43.20 PM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Clean",
-    "Image-heavy",
-    "Search-centric",
-    "Consumer-focused"
+    "News Feed",
+    "Card",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Hero Image",
+    "Icon"
   ],
   "Screen Shot 2021-04-28 at 3.44.15 PM.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean",
-    "Minimalist",
-    "Typography-focused",
-    "Consumer-focused"
+    "Article Detail",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Avatar",
+    "Hero Image",
+    "Search Bar"
   ]
 }

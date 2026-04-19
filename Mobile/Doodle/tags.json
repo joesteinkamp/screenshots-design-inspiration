@@ -1,0 +1,387 @@
+{
+  "20190609_035334000_iOS.png": [
+    "Signup",
+    "Button",
+    "Icon",
+    "Text Field",
+    "Link"
+  ],
+  "20190609_035338000_iOS.png": [
+    "Signup",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Link"
+  ],
+  "20190609_035349000_iOS.png": [
+    "Login",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Loading Indicator"
+  ],
+  "20190609_035354000_iOS.png": [
+    "Home",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon"
+  ],
+  "20190609_035416000_iOS.png": [
+    "News Feed",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Segmented Control"
+  ],
+  "20190609_035432000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Button",
+    "Text Field",
+    "Toast",
+    "Avatar"
+  ],
+  "20190609_035437000_iOS.png": [
+    "Permission",
+    "Dialog",
+    "Button",
+    "Text Field"
+  ],
+  "20190609_035449000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Button",
+    "Text Field",
+    "Tile",
+    "Card",
+    "Avatar"
+  ],
+  "20190609_035522000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Button",
+    "Text Field",
+    "Tile",
+    "Card",
+    "Divider"
+  ],
+  "20190609_035529000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Button",
+    "Text Field",
+    "Tile"
+  ],
+  "20190609_035539000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Segmented Control",
+    "Tile",
+    "Text Field",
+    "Button",
+    "Badge"
+  ],
+  "20190609_035550000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Button",
+    "Segmented Control",
+    "Tile",
+    "Text Field"
+  ],
+  "20190609_035608000_iOS.png": [
+    "Settings & Preferences",
+    "Button",
+    "Date Picker",
+    "Text Field",
+    "Checkbox",
+    "Segmented Control"
+  ],
+  "20190609_035619000_iOS.png": [
+    "Search",
+    "Search Bar",
+    "Text Field",
+    "Button",
+    "Keyboard Key"
+  ],
+  "20190609_035631000_iOS.png": [
+    "Settings & Preferences",
+    "Checkbox",
+    "Text Field",
+    "Switch"
+  ],
+  "20190609_035640000_iOS.png": [
+    "Confirmation",
+    "Toast",
+    "Button",
+    "Icon"
+  ],
+  "20190609_035644000_iOS.png": [
+    "Invite Teammates",
+    "Button",
+    "Icon",
+    "Text Field",
+    "Toast"
+  ],
+  "20190609_035652000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Keyboard Key",
+    "Link"
+  ],
+  "20190609_035703000_iOS.png": [
+    "Permission",
+    "Button",
+    "Text Field",
+    "Dialog"
+  ],
+  "20190609_035733000_iOS.png": [
+    "Calendar",
+    "Accordion",
+    "Button",
+    "Date Picker",
+    "Segmented Control",
+    "Text Field"
+  ],
+  "20190609_035736000_iOS.png": [
+    "Calendar",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Text Field",
+    "Tile"
+  ],
+  "20190609_035747000_iOS.png": [
+    "Goal & Task",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Date Picker",
+    "Segmented Control"
+  ],
+  "20190609_035751000_iOS.png": [
+    "Calendar",
+    "Date Picker",
+    "Button",
+    "Text Field",
+    "Checkbox"
+  ],
+  "20190609_035804000_iOS.png": [
+    "Goal & Task",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Tile"
+  ],
+  "20190609_035824000_iOS.png": [
+    "Permission",
+    "Button",
+    "Text Field"
+  ],
+  "20190609_035837000_iOS.png": [
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Dialog"
+  ],
+  "20190609_035848000_iOS.png": [
+    "Home",
+    "Avatar",
+    "Button",
+    "Text Field",
+    "Top Navigation Bar"
+  ],
+  "20190609_035905000_iOS.png": [
+    "Calendar",
+    "Button",
+    "Text Field",
+    "Date Picker",
+    "Checkbox",
+    "Segmented Control"
+  ],
+  "20190609_035909000_iOS.png": [
+    "Edit",
+    "Button",
+    "Date Picker",
+    "Text Field",
+    "Checkbox",
+    "Segmented Control"
+  ],
+  "20190609_035916000_iOS.png": [
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Toast"
+  ],
+  "20190609_035922000_iOS.png": [
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Date Picker",
+    "Segmented Control",
+    "Toast"
+  ],
+  "20190609_035933000_iOS.png": [
+    "Action Option",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Segmented Control",
+    "Text Field",
+    "Toast"
+  ],
+  "20190609_035940000_iOS.png": [
+    "Confirmation",
+    "Button",
+    "Text Field",
+    "Dialog"
+  ],
+  "20190609_035945000_iOS.png": [
+    "Home",
+    "Button",
+    "Text Field",
+    "Card",
+    "Icon",
+    "Badge",
+    "Divider"
+  ],
+  "20190609_035950000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Keyboard Key",
+    "Link",
+    "Card",
+    "Avatar"
+  ],
+  "20190609_040013000_iOS.png": [
+    "Home",
+    "Button",
+    "Text Field",
+    "Tile",
+    "Badge",
+    "Divider"
+  ],
+  "20190609_040020000_iOS.png": [
+    "Home",
+    "Button",
+    "Avatar",
+    "Text Field",
+    "Badge",
+    "Card",
+    "Icon"
+  ],
+  "20190609_040026000_iOS.png": [
+    "My Account & Profile",
+    "Avatar",
+    "Button",
+    "Text Field",
+    "Tab"
+  ],
+  "20190609_040032000_iOS.png": [
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Divider"
+  ],
+  "20190609_040036000_iOS.png": [
+    "Settings & Preferences",
+    "Switch",
+    "Text Field"
+  ],
+  "20190609_040039000_iOS.png": [
+    "Permission",
+    "Dialog",
+    "Button",
+    "Text Field"
+  ],
+  "20190609_040050000_iOS.png": [
+    "Settings & Preferences",
+    "Switch",
+    "Text Field",
+    "Divider",
+    "Tile"
+  ],
+  "20190609_040124000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link"
+  ],
+  "20190609_040127000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field"
+  ],
+  "20190609_040132000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Avatar",
+    "Icon"
+  ],
+  "20190609_040135000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link",
+    "Toast",
+    "Avatar",
+    "Icon"
+  ],
+  "20190609_040143000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link",
+    "Toast",
+    "Avatar"
+  ],
+  "20190609_040146000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link",
+    "Icon",
+    "Badge",
+    "Divider"
+  ],
+  "20190609_040151000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link",
+    "Avatar",
+    "Badge",
+    "Icon"
+  ],
+  "20190609_040200000_iOS.png": [
+    "Home",
+    "Button",
+    "Text Field",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Badge"
+  ],
+  "20190609_040207000_iOS.png": [
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Link",
+    "Avatar",
+    "Icon"
+  ],
+  "20190609_040212000_iOS.png": [
+    "Guided Tour & Tutorial",
+    "Button",
+    "Text Field",
+    "Icon"
+  ]
+}

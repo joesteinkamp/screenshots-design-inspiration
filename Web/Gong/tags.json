@@ -1,153 +1,166 @@
 {
   "1-Account-page.png": [
-    "Light Mode",
-    "SaaS",
-    "Dashboard",
-    "Timeline",
-    "Activity Feed",
-    "Professional"
+    "Chat Detail",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Toast"
   ],
   "1.png": [
-    "SaaS",
-    "Analytics",
     "Dashboard",
-    "Data Visualization",
-    "List View",
-    "Light Mode"
+    "Table",
+    "Text Field",
+    "Progress Indicator",
+    "Badge",
+    "Card",
+    "Tab"
   ],
   "5-deal-board.png": [
-    "Light Mode",
-    "SaaS",
     "Dashboard",
-    "Data Visualization",
-    "Tables",
-    "Deal Management"
+    "Table",
+    "Progress Indicator",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Dropdown Menu"
   ],
   "Beat-Call-Page-Timeline.png": [
-    "Modern SaaS",
-    "Analytics",
-    "Data Visualization",
-    "Timeline",
-    "Call Playback",
-    "Light Mode"
+    "Home",
+    "Card",
+    "Tab",
+    "Date Picker",
+    "Text Field",
+    "Button",
+    "Avatar"
   ],
   "Beat-email-drill-down.png": [
-    "SaaS",
-    "Light Mode",
-    "Activity Feed",
-    "Data Visualization",
-    "Account Management",
-    "Professional"
+    "Home",
+    "Avatar",
+    "Text Field",
+    "Card",
+    "Divider",
+    "Table",
+    "Search Bar"
   ],
   "Screen Shot 2022-02-06 at 6.48.57 AM.png": [
-    "Light Mode",
-    "SaaS",
-    "List View",
-    "Card Layout",
-    "Modern",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Divider"
   ],
   "Screen Shot 2022-02-06 at 6.49.06 AM.png": [
-    "SaaS",
-    "Dashboard",
-    "Light Mode",
-    "List View",
-    "Clean UI",
-    "Tabbed Navigation"
+    "Home",
+    "Tab",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card"
   ],
   "Screen Shot 2022-02-06 at 6.50.07 AM.png": [
-    "Light Mode",
-    "Clean",
-    "SaaS",
-    "Form-heavy",
-    "Profile Settings",
-    "Professional"
+    "My Account & Profile",
+    "Text Field",
+    "Dropdown Menu",
+    "Button",
+    "Avatar",
+    "Search Bar"
   ],
   "Screen Shot 2022-02-06 at 6.50.24 AM.png": [
-    "SaaS",
-    "Analytics",
-    "Sidebar Navigation",
-    "List View",
-    "Charts",
-    "Light Mode"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Dropdown Menu",
+    "Table",
+    "Search Bar",
+    "Button"
   ],
   "Screen Shot 2022-02-06 at 6.50.35 AM.png": [
-    "SaaS",
-    "Minimalist",
-    "Light Mode",
-    "Search-centric",
-    "Onboarding"
+    "Home",
+    "Search Bar",
+    "Text Field",
+    "Button",
+    "Banner",
+    "Hero Image"
   ],
   "Screen Shot 2022-02-06 at 6.50.41 AM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Clean UI",
-    "Folder Management"
+    "Browse & Discover",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Search Bar",
+    "Side Navigation",
+    "Tile"
   ],
   "Search.png": [
-    "SaaS",
-    "Dashboard",
-    "Analytics",
-    "Sidebar",
-    "List View",
-    "Light Mode"
+    "Browse & Discover",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Tile",
+    "Card"
   ],
   "Whisper.png": [
-    "Light Mode",
-    "Analytics",
-    "Data Visualization",
     "Dashboard",
-    "SaaS",
-    "Clean"
+    "Card",
+    "Progress Indicator",
+    "Text Field",
+    "Badge",
+    "Table"
   ],
   "_9lFkxznBQv2BgH26rjW8fA_dkMaTRojSLSvFgJn0pl9Ng_app_Fj5v2KTYTqyocsBK9tqPGw_pWuC12RvRdixws013Kmv-w.png": [
-    "SaaS",
-    "Analytics",
-    "Data Visualization",
-    "Light Mode",
-    "Card Layout",
-    "Sidebar Navigation"
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Text Field",
+    "Table",
+    "Badge"
   ],
   "c7aaef33-1a0a-401a-8cfc-72511ec5ddd4.png": [
-    "Light Mode",
-    "SaaS",
-    "Dashboard",
-    "Form-heavy",
-    "Search-centric",
-    "Analytics"
+    "Home",
+    "Search Bar",
+    "Text Field",
+    "Dropdown Menu",
+    "Slider",
+    "Button",
+    "Tile"
   ],
   "graphic-deal-intelligence.png": [
-    "Light Mode",
-    "Clean",
-    "List View",
-    "Data Visualization",
-    "SaaS",
-    "Card Layout"
+    "Dashboard",
+    "Card",
+    "Progress Indicator",
+    "Avatar",
+    "Text Field",
+    "Badge"
   ],
   "graphic-market-intelligence.png": [
-    "Analytics",
-    "Data Visualization",
-    "Card Layout",
-    "Minimalist",
-    "Modern SaaS",
-    "Recommendations"
+    "Dashboard",
+    "Card",
+    "Text Field",
+    "Progress Indicator",
+    "Icon",
+    "Badge"
   ],
   "graphic-people-intelligence.png": [
-    "SaaS",
-    "Analytics",
-    "Data Visualization",
-    "Light Mode",
-    "Modern",
-    "Conversation Intelligence"
+    "Audio Player",
+    "Avatar",
+    "Button",
+    "Color Picker",
+    "Icon",
+    "Progress Indicator",
+    "Tab"
   ],
   "highligh-1-1024x547.jpeg": [
-    "SaaS",
-    "Analytics",
-    "Sidebar Navigation",
-    "Productivity",
-    "Video Player",
-    "Light Mode"
+    "Home",
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Divider",
+    "Grid List"
   ]
 }

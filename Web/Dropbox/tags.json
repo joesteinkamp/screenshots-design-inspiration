@@ -1,193 +1,207 @@
 {
   "Screen Shot 2021-01-27 at 9.52.10 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Dashboard",
-    "Sidebar Navigation",
-    "Clean UI",
-    "List View"
+    "Home",
+    "Button",
+    "Dropdown Menu",
+    "Icon",
+    "Search Bar",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2021-01-27 at 9.53.08 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Onboarding",
-    "Modal-driven",
-    "Clean UI",
-    "Light Mode"
+    "Home",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Avatar",
+    "Banner"
   ],
   "Screen Shot 2021-01-27 at 9.53.11 PM.png": [
-    "Onboarding",
-    "Modal-driven",
-    "Sidebar Navigation",
-    "SaaS",
-    "Project Management",
-    "Clean UI"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Link",
+    "Toast"
   ],
   "Screen Shot 2021-01-27 at 9.53.30 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Modal-driven",
-    "Clean UI",
-    "Productivity"
+    "Home",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link",
+    "Tab"
   ],
   "Screen Shot 2021-01-27 at 9.53.58 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Clean UI",
-    "Collaboration"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Table",
+    "Button",
+    "Icon",
+    "Search Bar"
   ],
   "Screen Shot 2021-01-27 at 9.54.01 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "List View",
-    "Collaboration"
+    "Browse & Discover",
+    "Tab",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2021-01-27 at 9.54.08 PM.png": [
-    "Light Mode",
-    "Minimalist",
-    "Sidebar Navigation",
-    "SaaS",
-    "Illustrations",
-    "Empty State"
+    "Home",
+    "Avatar",
+    "Button",
+    "Icon",
+    "Illustration",
+    "Search Bar",
+    "Text Field"
   ],
   "Screen Shot 2021-01-27 at 9.54.23 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean",
-    "Illustrations",
-    "Empty State"
+    "Dashboard",
+    "Banner",
+    "Card",
+    "Divider",
+    "Icon",
+    "Text Field",
+    "Toast"
   ],
   "Screen Shot 2021-01-27 at 9.54.44 PM.png": [
-    "Sidebar Navigation",
-    "List View",
-    "Light Mode",
-    "SaaS",
-    "File Management",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Table",
+    "Button",
+    "Checkbox",
+    "Search Bar",
+    "Toast"
   ],
   "Screen Shot 2021-01-27 at 9.54.52 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Professional",
-    "Sidebar Navigation",
-    "Collaboration",
-    "Document Viewer"
+    "Note Detail",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Banner",
+    "Card"
   ],
   "Screen Shot 2021-01-27 at 9.54.59 PM.png": [
-    "Light Mode",
-    "Sidebar",
-    "Collaboration",
-    "Document Viewer",
-    "SaaS"
+    "Emails & Messages",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2021-01-27 at 9.55.03 PM.png": [
-    "Collaboration",
-    "Light Mode",
-    "Sidebar",
-    "Document Viewer",
-    "Professional",
-    "Clean UI"
+    "Note Detail",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Toast"
   ],
   "Screen Shot 2021-01-27 at 9.55.56 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Collaboration",
-    "Sidebar",
-    "Annotation Tool",
-    "Clean UI"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Page Control",
+    "Divider",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2021-01-27 at 9.56.11 PM.png": [
-    "Light Mode",
-    "Document Viewer",
-    "Sidebar",
-    "Collaboration",
-    "Annotation UI",
-    "Clean UI"
+    "Article Detail",
+    "Text Field"
   ],
   "Screen Shot 2021-01-27 at 9.56.14 PM.png": [
-    "Light Mode",
-    "Sidebar",
-    "Document Viewer",
-    "SaaS",
-    "Clean UI",
-    "File Management"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2021-01-27 at 9.56.20 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Sidebar Navigation",
-    "Document Viewer",
-    "Productivity"
+    "Article Detail",
+    "Text Field",
+    "Page Control",
+    "Button",
+    "Link",
+    "Avatar"
   ],
   "Screen Shot 2021-01-27 at 9.56.26 PM.png": [
-    "Dark Mode",
-    "Sidebar",
-    "Image Editor",
-    "Form-heavy",
-    "SaaS",
-    "Settings"
+    "Note Detail",
+    "Text Field",
+    "Slider",
+    "Dropdown Menu",
+    "Checkbox",
+    "Button"
   ],
   "Screen Shot 2021-01-27 at 9.56.39 PM.png": [
-    "Modal-driven",
-    "Onboarding Flow",
-    "SaaS",
-    "Productivity",
-    "Clean UI",
-    "Blue Accents"
+    "Signup",
+    "Dialog",
+    "Checkbox",
+    "Button"
   ],
   "Screen Shot 2021-01-27 at 9.56.44 PM.png": [
-    "Light Mode",
-    "Sidebar",
-    "File Management",
-    "Document Viewer",
-    "Professional",
-    "Clean UI"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2021-01-27 at 9.56.56 PM.png": [
-    "Light Mode",
-    "Sidebar",
-    "Clean UI",
-    "Document Viewer",
-    "File Management",
-    "Card Layout"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Progress Indicator"
   ],
   "Screen Shot 2021-01-27 at 9.57.00 PM.png": [
-    "Light Mode",
-    "Sidebar",
-    "Document Viewer",
-    "SaaS",
-    "Productivity",
-    "Collaboration"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2021-01-27 at 9.57.11 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Document Viewer",
-    "SaaS",
-    "File Management",
-    "Professional"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Page Control",
+    "Divider",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2021-01-27 at 9.58.42 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "File Management",
-    "List View",
-    "Clean UI"
+    "Home",
+    "Button",
+    "Checkbox",
+    "File Upload",
+    "Search Bar",
+    "Table",
+    "Toast"
   ],
   "Screen Shot 2021-01-27 at 9.58.45 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "File Management",
-    "Productivity",
-    "Collaboration"
+    "Home",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Table",
+    "Dropdown Menu",
+    "Icon"
   ]
 }

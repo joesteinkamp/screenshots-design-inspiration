@@ -1,55 +1,63 @@
 {
   "screenshot-duckduckgo.com-2020.04.01-13_38_34.png": [
-    "Dark Mode",
-    "Search-centric",
-    "Card Layout",
-    "Sidebar",
-    "Onboarding",
-    "Clean UI"
+    "Search",
+    "Search Bar",
+    "Card",
+    "Text Field",
+    "Banner",
+    "Avatar",
+    "Icon"
   ],
   "screenshot-duckduckgo.com-2020.04.01-13_38_50.png": [
-    "Dark Mode",
-    "Search-centric",
-    "Card Layout",
-    "Sidebar",
-    "Clean UI",
-    "Professional"
+    "Browse & Discover",
+    "Search Bar",
+    "Card",
+    "Text Field",
+    "Banner",
+    "Avatar",
+    "Icon"
   ],
   "screenshot-duckduckgo.com-2020.04.01-13_39_07.png": [
-    "Dark Mode",
-    "Clean",
-    "Card Layout",
-    "Informational",
-    "List View"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "screenshot-duckduckgo.com-2020.04.01-13_39_28.png": [
-    "Search-centric",
-    "Grid Layout",
-    "Image-heavy",
-    "Light Mode",
-    "Filter Bar",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Grid List",
+    "Avatar",
+    "Icon",
+    "Text Field",
+    "Search Bar"
   ],
   "screenshot-duckduckgo.com-2020.04.01-13_39_38.png": [
-    "Search-centric",
-    "Card Layout",
-    "Grid Layout",
-    "Filter Options",
-    "Clean UI",
-    "Video Gallery"
+    "Browse & Discover",
+    "Carousel",
+    "Card",
+    "Text Field",
+    "Icon",
+    "Avatar"
   ],
   "screenshot-duckduckgo.com-2020.04.01-13_39_49.png": [
-    "Dark Mode",
-    "Search-centric",
-    "List View",
-    "Knowledge Panel",
-    "Clean"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Avatar",
+    "Icon",
+    "Divider",
+    "Table"
   ],
   "screenshot-duckduckgo.com-2020.04.01-13_40_21.png": [
-    "Dark Mode",
-    "Search-centric",
-    "List View",
-    "Settings Menu",
-    "Knowledge Panel"
+    "Settings & Preferences",
+    "Dropdown Menu",
+    "Text Field",
+    "Switch",
+    "Checkbox",
+    "Button"
   ]
 }

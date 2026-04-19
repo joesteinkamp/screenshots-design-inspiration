@@ -1,0 +1,129 @@
+{
+  "admin-control.png": [
+    "Account Setup",
+    "Avatar",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Checkbox"
+  ],
+  "conditional-logic-1.png": [
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Dropdown Menu"
+  ],
+  "cta-footer.jpg": [
+    "Kanban Board",
+    "Card",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Dropdown Menu",
+    "Toast"
+  ],
+  "database-1.png": [
+    "Browse & Discover",
+    "Table",
+    "Checkbox",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Date Picker"
+  ],
+  "email-inbox.png": [
+    "Account Setup",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu"
+  ],
+  "feature-header-mobile-app.png": [
+    "Kanban Board",
+    "Card",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
+  ],
+  "features-admin-control.png": [
+    "Account Setup",
+    "Dropdown Menu",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Icon"
+  ],
+  "features-automations-image1.png": [
+    "Kanban Board",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Tile",
+    "Segmented Control"
+  ],
+  "features-automations-image3.png": [
+    "Kanban Board",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Tile"
+  ],
+  "features-automations-imagehero-3.jpg": [
+    "News Feed",
+    "Accordion",
+    "Button",
+    "Card",
+    "Text Field",
+    "Tile"
+  ],
+  "features-connections-image2.png": [
+    "Kanban Board",
+    "Card",
+    "Text Field",
+    "Divider",
+    "Icon"
+  ],
+  "features-connections-imagehero.jpg": [
+    "Kanban Board",
+    "Card",
+    "Tile",
+    "Button",
+    "Text Field",
+    "Badge",
+    "Divider"
+  ],
+  "features-database.png": [
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Divider",
+    "Icon"
+  ],
+  "features-emailtemplates-imagehero.jpg": [
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Accordion",
+    "Card",
+    "Icon"
+  ],
+  "features-header-image-mobile-app-2.png": [
+    "Goal & Task",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Card",
+    "Divider",
+    "Progress Indicator"
+  ],
+  "field-conditionals.png": [
+    "Settings & Preferences",
+    "Text Field",
+    "Dropdown Menu"
+  ]
+}

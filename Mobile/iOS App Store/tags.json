@@ -1,0 +1,44 @@
+{
+  "20180811_192217000_iOS.png": [
+    "Guided Tour & Tutorial",
+    "Button",
+    "Text Field"
+  ],
+  "20180814_231033000_iOS.png": [
+    "Guided Tour & Tutorial",
+    "Icon",
+    "Text Field",
+    "Button"
+  ],
+  "20180814_231037000_iOS.png": [
+    "Permission",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Dialog"
+  ],
+  "20180814_231041000_iOS.png": [
+    "Permission",
+    "Button",
+    "Dialog",
+    "Text Field"
+  ],
+  "20190705_030111000_iOS.png": [
+    "Product Detail",
+    "Button",
+    "Text Field",
+    "Rating Control",
+    "Icon",
+    "Avatar",
+    "Hero Image"
+  ],
+  "20190705_030119000_iOS.png": [
+    "Product Detail",
+    "Rating Control",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon"
+  ]
+}

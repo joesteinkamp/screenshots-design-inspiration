@@ -1,168 +1,181 @@
 {
   "Screen Shot 2021-01-07 at 7.56.10 AM.png": [
-    "Sidebar Navigation",
-    "Project Management",
-    "Collaboration",
-    "Light Mode",
-    "Clean UI",
-    "Asset Management"
+    "Home",
+    "Side Navigation",
+    "Card",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge"
   ],
   "Screen Shot 2021-01-07 at 7.56.17 AM.png": [
-    "Sidebar Navigation",
-    "Modern SaaS",
-    "Clean UI",
-    "Light Mode",
-    "Tables",
-    "Team Management"
+    "Canvas",
+    "Accordion",
+    "Button",
+    "Tab",
+    "Side Navigation",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2021-01-07 at 7.56.20 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "SaaS",
-    "Minimalist",
-    "Settings Page",
-    "Team Management"
+    "Dashboard",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.56.25 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Minimalist",
-    "SaaS",
-    "Settings Page",
-    "Modal Driven"
+    "Dashboard",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Tile",
+    "Dropdown Menu",
+    "Search Bar"
   ],
   "Screen Shot 2021-01-07 at 7.56.28 AM.png": [
-    "Sidebar Navigation",
-    "Settings Page",
-    "Light Mode",
-    "SaaS",
-    "Modal-driven",
-    "Clean UI"
+    "Dashboard",
+    "Accordion",
+    "Button",
+    "Color Picker",
+    "Segmented Control",
+    "Text Field"
   ],
   "Screen Shot 2021-01-07 at 7.56.32 AM.png": [
-    "Sidebar Navigation",
-    "Settings",
-    "Modal-driven",
-    "Light Mode",
-    "SaaS",
-    "Clean UI"
+    "Settings & Preferences",
+    "Segmented Control",
+    "Color Picker",
+    "Button",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.56.37 AM.png": [
-    "Clean UI",
-    "Light Mode",
-    "SaaS",
-    "Team Management",
-    "Tables",
-    "Upgrade Flow"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Link"
   ],
   "Screen Shot 2021-01-07 at 7.56.44 AM.png": [
-    "Sidebar Navigation",
-    "Grid Layout",
-    "Clean UI",
-    "SaaS",
-    "Collaboration",
-    "Asset Management"
+    "Settings & Preferences",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Avatar"
   ],
   "Screen Shot 2021-01-07 at 7.56.55 AM.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "SaaS",
-    "Clean UI",
-    "Asset Management"
+    "Browse & Discover",
+    "Card",
+    "Grid List",
+    "Side Navigation",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2021-01-07 at 7.57.28 AM.png": [
-    "Design Tool",
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Properties Panel",
-    "Data Visualization"
+    "Canvas",
+    "Card",
+    "Grid List",
+    "Icon",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.57.40 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Design Tool UI",
-    "Process Visualization",
-    "Clean UI",
-    "SaaS"
+    "Canvas",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Tile",
+    "Tree"
   ],
   "Screen Shot 2021-01-07 at 7.57.46 AM.png": [
-    "Design Tool",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Process Diagrams"
+    "Canvas",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Tile",
+    "Table",
+    "Avatar"
   ],
   "Screen Shot 2021-01-07 at 7.57.51 AM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "Modal-driven",
-    "Productivity"
+    "Canvas",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.57.54 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Sidebar Navigation",
-    "Design Tool",
-    "Diagramming",
-    "Productivity"
+    "Canvas",
+    "Card",
+    "Grid List",
+    "Icon",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.58.10 AM.png": [
-    "Light Mode",
-    "SaaS",
-    "Sidebar Navigation",
-    "Design Tool Interface",
-    "Prototyping",
-    "Diagramming"
+    "Canvas",
+    "Button",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Tile",
+    "Tree"
   ],
   "Screen Shot 2021-01-07 at 7.58.21 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Design Tool UI",
-    "Process Diagrams",
-    "Clean"
+    "Canvas",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Segmented Control",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.58.25 AM.png": [
-    "Design Tool",
-    "Process Diagram",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI"
+    "Canvas",
+    "Card",
+    "Divider",
+    "Icon",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.58.32 AM.png": [
-    "Design Tool Interface",
-    "Process Diagrams",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Diagramming Tool",
-    "Inspect Mode"
+    "Canvas",
+    "Card",
+    "Grid List",
+    "Icon",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2021-01-07 at 7.58.59 AM.png": [
-    "SaaS",
-    "Design Tool",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Process Diagram",
-    "Clean UI"
+    "Canvas",
+    "Text Field",
+    "Button",
+    "Segmented Control",
+    "Tile",
+    "Icon",
+    "Avatar"
   ],
   "Screen Shot 2021-01-07 at 7.59.08 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Design Tool",
-    "Process Diagram",
-    "Collaboration",
-    "Clean UI"
+    "Canvas",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Progress Indicator",
+    "Divider"
   ],
   "Screen Shot 2021-01-07 at 7.59.27 AM.png": [
-    "Light Mode",
-    "Design Tool UI",
-    "Sidebar Navigation",
-    "Properties Panel",
-    "Process Diagram",
-    "Productivity"
+    "Canvas",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Progress Indicator",
+    "Divider"
   ]
 }

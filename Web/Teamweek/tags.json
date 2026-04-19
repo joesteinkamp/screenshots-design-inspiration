@@ -1,0 +1,41 @@
+{
+  "product_add_change_tasks-604f9828.png": [
+    "Calendar",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Checkbox",
+    "Date Picker",
+    "Time Picker"
+  ],
+  "product_group_months-73b89e92.png": [
+    "Calendar",
+    "Card",
+    "Divider",
+    "Table",
+    "Tab"
+  ],
+  "product_groups_view-8030bbb4.png": [
+    "Calendar",
+    "Tab",
+    "Date Picker",
+    "Button",
+    "Tile",
+    "Badge",
+    "Avatar"
+  ],
+  "product_projects_view-0da9c328.png": [
+    "Kanban Board",
+    "Card",
+    "Divider",
+    "Table",
+    "Top Navigation Bar"
+  ],
+  "product_zoom_levels-10843b21.png": [
+    "Calendar",
+    "Button",
+    "Date Picker",
+    "Segmented Control",
+    "Tile"
+  ]
+}

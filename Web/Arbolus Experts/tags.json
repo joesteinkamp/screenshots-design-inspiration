@@ -1,26 +1,28 @@
 {
   "64749fd64f38bb8792f3b1d0_export screem-09-p-800.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Profile Page"
+    "My Account & Profile",
+    "Avatar",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Divider",
+    "Card"
   ],
   "6474aeaf453365df38104fb0_web elementos-11-p-800.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Chat-centric",
-    "Collaboration",
-    "SaaS",
-    "Clean UI"
+    "Chat Detail",
+    "Avatar",
+    "Button",
+    "Text Field",
+    "Divider",
+    "Toast"
   ],
   "6479bae07ce345b17375ac9b_web elementos-12 (1)-p-800.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Two-Column Layout",
-    "Video Interview",
-    "Questionnaire"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Avatar",
+    "Hero Image",
+    "Icon"
   ]
 }

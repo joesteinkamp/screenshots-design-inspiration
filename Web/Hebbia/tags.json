@@ -1,81 +1,85 @@
 {
   "Screen Shot 2021-10-22 at 12.00.26 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Search-centric",
-    "List View",
-    "Minimalist",
-    "SaaS"
+    "Browse & Discover",
+    "Search Bar",
+    "Text Field",
+    "Accordion",
+    "Button"
   ],
   "Screen Shot 2021-10-22 at 12.00.37 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Card Layout",
-    "Clean UI",
-    "Productivity"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "Screen Shot 2021-10-22 at 12.00.45 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Search-centric",
-    "List View",
-    "Professional"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Card",
+    "Search Bar",
+    "Page Control"
   ],
   "Screen Shot 2021-10-22 at 12.01.00 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Search-centric",
-    "Card Layout",
-    "Analytics"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Badge",
+    "Icon"
   ],
   "Screen Shot 2021-10-22 at 12.01.11 PM.png": [
-    "Search-centric",
-    "List View",
-    "Card Layout",
-    "Minimalist",
-    "Professional",
-    "SaaS"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Search Bar",
+    "Button"
   ],
   "Screen Shot 2021-10-22 at 12.01.29 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "List View",
-    "Search-centric",
-    "SaaS",
-    "Card-based"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Divider"
   ],
   "Screen Shot 2021-10-22 at 12.01.40 PM.png": [
-    "Light Mode",
-    "Minimalist",
-    "Search-centric",
-    "Card Layout",
-    "List View",
-    "Professional"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "Screen Shot 2021-10-22 at 12.01.51 PM.png": [
-    "Light Mode",
-    "Search-centric",
-    "Card Layout",
-    "List View",
-    "AI-Focused",
-    "Professional"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Divider",
+    "Avatar"
   ],
   "Screen Shot 2021-10-22 at 12.02.04 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Search-centric",
-    "List View",
-    "SaaS",
-    "Professional"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Avatar"
   ],
   "Screen Shot 2021-10-22 at 12.02.15 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "List View",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Avatar"
   ]
 }

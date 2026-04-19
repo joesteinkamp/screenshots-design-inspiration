@@ -1,50 +1,48 @@
 {
   "Screenshot 2025-09-12 at 9.00.24 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Workflow Builder",
-    "SaaS",
-    "AI-Focused",
-    "Clean UI"
+    "Home",
+    "Accordion",
+    "Button",
+    "Card",
+    "Divider",
+    "Grid List",
+    "Icon"
   ],
   "Screenshot 2025-09-12 at 9.00.37 AM.png": [
-    "Light Mode",
-    "Minimalist",
-    "Sidebar Navigation",
-    "Workflow Builder",
-    "AI-Focused",
-    "SaaS"
+    "Home",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Side Navigation",
+    "Tab",
+    "Badge"
   ],
   "Screenshot 2025-09-12 at 9.00.52 AM.png": [
-    "Modal-driven",
-    "Form-heavy",
-    "SaaS",
-    "Clean UI",
-    "Light Mode",
-    "AI-Focused"
+    "Edit",
+    "Settings & Preferences",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Dropdown Menu",
+    "Toast"
   ],
   "Screenshot 2025-09-12 at 9.01.04 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "SaaS",
-    "Onboarding Flow",
-    "Category Selection"
+    "Browse & Discover",
+    "Dropdown Menu",
+    "Text Field",
+    "Button"
   ],
   "Screenshot 2025-09-12 at 9.01.21 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "SaaS",
-    "AI-Focused"
+    "Add & Create",
+    "Text Field",
+    "Checkbox",
+    "Button"
   ],
   "Screenshot 2025-09-12 at 9.01.31 AM.png": [
-    "Light Mode",
-    "Clean",
-    "Minimalist",
-    "SaaS",
-    "AI-Focused",
-    "Modal-driven"
+    "Action Option",
+    "Dropdown Menu",
+    "Text Field",
+    "Button"
   ],
   "Screenshot 2025-09-12 at 9.01.39 AM.png": [
     "Dark Mode",
@@ -54,178 +52,167 @@
     "Professional"
   ],
   "Screenshot 2025-09-12 at 9.01.55 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Form-heavy",
-    "Flow Builder",
-    "Sidebar"
+    "Edit",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Checkbox"
   ],
   "Screenshot 2025-09-12 at 9.02.04 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Workflow Builder",
-    "Configuration UI",
-    "File Type Selection",
-    "SaaS"
+    "Settings & Preferences",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Button"
   ],
   "Screenshot 2025-09-12 at 9.02.16 AM.png": [
-    "Minimalist",
-    "Light Mode",
-    "Clean UI",
-    "Workflow Builder",
-    "SaaS",
-    "Card Layout"
+    "Canvas",
+    "Button",
+    "Text Field",
+    "Card",
+    "Divider",
+    "Icon"
   ],
   "Screenshot 2025-09-12 at 9.02.35 AM.png": [
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "Workflow Builder",
-    "AI-Focused"
+    "Settings & Preferences",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu"
   ],
   "Screenshot 2025-09-12 at 9.02.45 AM.png": [
-    "Workflow Builder",
-    "SaaS",
-    "Card Layout",
-    "Minimalist",
-    "Clean UI",
-    "Light Mode"
+    "Canvas",
+    "Button",
+    "Card",
+    "Divider",
+    "Icon",
+    "Text Field"
   ],
   "Screenshot 2025-09-12 at 9.03.06 AM.png": [
-    "Light Mode",
-    "Minimalist",
-    "Modern SaaS",
-    "Workflow Builder",
-    "Side Panel",
-    "Form-heavy"
+    "Settings & Preferences",
+    "Dropdown Menu",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Icon"
   ],
   "Screenshot 2025-09-12 at 9.03.15 AM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Workflow Builder",
-    "AI-Focused",
-    "Light Mode",
-    "Clean UI"
+    "Home",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Icon",
+    "Toast"
   ],
   "Screenshot 2025-09-12 at 9.03.25 AM.png": [
-    "AI-Focused",
-    "Workflow Editor",
-    "Light Mode",
-    "SaaS",
-    "Sidebar",
-    "Clean UI"
+    "Home",
+    "File Upload",
+    "Text Field",
+    "Dropdown Menu"
   ],
   "Screenshot 2025-09-12 at 9.03.35 AM.png": [
-    "AI-Focused",
-    "Workflow Builder",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Configuration Panel"
+    "Settings & Preferences",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Icon"
   ],
   "Screenshot 2025-09-12 at 9.04.11 AM.png": [
-    "Workflow Builder",
-    "AI-Focused",
-    "SaaS",
-    "Clean UI",
-    "Form-heavy",
-    "Light Mode"
+    "Other Content",
+    "Text Field",
+    "Dropdown Menu"
   ],
   "Screenshot 2025-09-12 at 9.04.25 AM.png": [
-    "Workflow Builder",
-    "Process Automation",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI",
-    "AI-Focused"
+    "Canvas",
+    "Card",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Icon",
+    "Progress Indicator"
   ],
   "Screenshot 2025-09-12 at 9.04.44 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "AI-Focused",
-    "Form-heavy",
-    "Workflow Editor"
+    "Home",
+    "Text Field",
+    "Button",
+    "Dropdown Menu"
   ],
   "Screenshot 2025-09-12 at 9.04.53 AM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Sidebar Navigation",
-    "SaaS",
-    "AI-Focused",
-    "Workflow Builder"
+    "Home",
+    "Button",
+    "Card",
+    "Text Field",
+    "Icon",
+    "Accordion",
+    "Tile"
   ],
   "Screenshot 2025-09-12 at 9.05.12 AM.png": [
-    "Light Mode",
-    "Clean",
-    "Sidebar Navigation",
-    "AI-Focused",
+    "Upload & Download",
+    "Button",
     "File Upload",
-    "SaaS"
+    "Text Field",
+    "Icon",
+    "Banner",
+    "Card"
   ],
   "Screenshot 2025-09-12 at 9.05.23 AM.png": [
-    "AI-Focused",
-    "Chat-centric",
-    "Onboarding Flow",
-    "Minimalist",
-    "Light Mode",
-    "SaaS"
+    "Upload & Download",
+    "Button",
+    "Checkbox",
+    "Text Field"
   ],
   "Screenshot 2025-09-12 at 9.05.32 AM.png": [
-    "AI-Focused",
-    "Sidebar Navigation",
-    "Chat-centric",
-    "Document Analysis",
-    "Light Mode",
-    "Professional"
+    "Home",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Card",
+    "Divider",
+    "Dropdown Menu"
   ],
   "Screenshot 2025-09-12 at 9.05.42 AM.png": [
-    "AI-Focused",
-    "Chat-centric",
-    "Minimalist",
-    "Light Mode",
-    "Onboarding Flow"
+    "Upload & Download",
+    "Button",
+    "Text Field",
+    "Progress Indicator"
   ],
   "Screenshot 2025-09-12 at 9.05.51 AM.png": [
-    "AI-Focused",
-    "Sidebar Navigation",
-    "Light Mode",
-    "SaaS",
-    "Chat-centric",
-    "Workflow"
+    "Home",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Tab",
+    "Table"
   ],
   "Screenshot 2025-09-12 at 9.06.11 AM.png": [
-    "Workflow Builder",
-    "Node-based Interface",
-    "SaaS",
-    "Minimalist",
-    "Modern",
-    "Access Control"
+    "Action Option",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Icon"
   ],
   "Screenshot 2025-09-12 at 9.06.15 AM.png": [
-    "Modal-driven",
-    "SaaS",
-    "Collaboration",
-    "Access Management",
-    "Light Mode",
-    "List View"
+    "Settings & Preferences",
+    "Text Field",
+    "Dropdown Menu",
+    "Button",
+    "Toast"
   ],
   "Screenshot 2025-09-12 at 9.06.27 AM.png": [
-    "Modal-driven",
-    "SaaS",
-    "Collaboration",
-    "Access Management",
-    "Workflow Management",
-    "Light Mode"
+    "Confirmation",
+    "Button",
+    "Text Field",
+    "Checkbox"
   ],
   "Screenshot 2025-09-12 at 9.06.40 AM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Clean UI",
-    "SaaS",
-    "AI-Focused"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Divider",
+    "Table"
   ]
 }

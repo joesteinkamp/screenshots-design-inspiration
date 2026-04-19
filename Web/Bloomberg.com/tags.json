@@ -1,41 +1,47 @@
 {
   "Screen Shot 2020-04-07 at 1.21.41 PM.png": [
-    "Light Mode",
-    "Financial",
-    "News Layout",
-    "Search Overlay",
-    "Professional"
+    "News Feed",
+    "Search Bar",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Hero Image",
+    "Text Field"
   ],
   "Screen Shot 2020-04-07 at 1.21.49 PM.png": [
-    "Search-centric",
-    "Financial",
-    "Professional",
-    "List View",
-    "Sticky Header",
-    "Light Mode"
+    "Browse & Discover",
+    "Search Bar",
+    "Card",
+    "Avatar",
+    "Icon",
+    "Text Field",
+    "Button"
   ],
   "screenshot-www.bloomberg.com-2020.04.07-13_18_36.png": [
-    "Financial",
-    "Data-heavy",
-    "Professional",
-    "Light Mode",
-    "Clean UI",
-    "Sticky Header"
+    "Home",
+    "Banner",
+    "Button",
+    "Card",
+    "Carousel",
+    "Icon",
+    "Logo"
   ],
   "screenshot-www.bloomberg.com-2020.04.07-13_21_10.png": [
-    "Financial",
-    "News Platform",
-    "Light Mode",
-    "Professional",
-    "Data-heavy",
-    "Clean UI"
+    "Home",
+    "Banner",
+    "Card",
+    "Hero Image",
+    "Text Field",
+    "Button",
+    "Icon"
   ],
   "screenshot-www.bloomberg.com-2020.04.07-13_51_50.png": [
-    "Financial",
-    "Data-heavy",
-    "Data Visualization",
-    "Sidebar Navigation",
-    "Clean",
-    "Tables"
+    "News Feed",
+    "Card",
+    "Text Field",
+    "Avatar",
+    "Icon",
+    "Badge",
+    "Divider"
   ]
 }

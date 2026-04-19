@@ -1,105 +1,101 @@
 {
   "55be04d09da07035b21d4540a957b015_Screen Shot 2018-11-20 at 2.58.32 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "List View",
-    "Product Management",
-    "Tabbed Navigation"
+    "Settings & Preferences",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu",
+    "Link",
+    "Tile"
   ],
   "abt2.png": [
-    "SaaS",
-    "Light Mode",
-    "Form-heavy",
-    "Scheduling",
-    "Configuration",
-    "Tabbed Navigation"
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Tab",
+    "Accordion",
+    "Divider"
   ],
   "abt3.png": [
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "Modern SaaS",
-    "Settings Page",
-    "Scheduling"
+    "Settings & Preferences",
+    "Text Field",
+    "Slider",
+    "Radio Button",
+    "Checkbox",
+    "Button",
+    "Link"
   ],
   "abt4 (1).png": [
-    "Minimalist",
-    "Clean UI",
-    "Light Mode",
-    "SaaS",
-    "Card Layout",
-    "Scheduling Management"
+    "Calendar",
+    "Table",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Link",
+    "Accordion"
   ],
   "abt4.png": [
-    "Clean UI",
-    "Minimalist",
-    "Card Layout",
-    "Light Mode",
-    "Modern SaaS",
-    "Scheduling Interface"
+    "Calendar",
+    "Table",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Link"
   ],
   "ask.png": [
-    "Appointment Scheduling",
-    "Light Mode",
-    "Minimalist",
-    "Card Layout",
-    "Time Slot Selector",
-    "Modal-driven"
+    "Schedule",
+    "Button",
+    "Text Field",
+    "Segmented Control",
+    "Tile",
+    "Dropdown Menu"
   ],
   "availability1.png": [
-    "SaaS",
-    "Clean UI",
-    "Grid Layout",
-    "Calendar View",
-    "Scheduling",
-    "Form-heavy"
+    "Calendar",
+    "Button",
+    "Text Field",
+    "Accordion",
+    "Date Picker",
+    "Tab",
+    "Table"
   ],
   "coordination.jpg": [
-    "Calendar View",
-    "Scheduling",
-    "Clean UI",
-    "Light Mode",
-    "SaaS",
-    "Card Layout"
+    "Calendar",
+    "Card",
+    "Text Field",
+    "Segmented Control",
+    "Button",
+    "Divider",
+    "Tile"
   ],
   "direct link.png": [
-    "Light Mode",
-    "Modern SaaS",
-    "Clean UI",
-    "Grouped List",
-    "Scheduling Interface",
-    "Productivity"
+    "Event Detail",
+    "Button",
+    "Text Field",
+    "Link",
+    "Accordion"
   ],
   "edge.png": [
-    "Clean UI",
-    "Light Mode",
-    "Appointment Management",
-    "Confirmation Screen",
-    "SaaS"
+    "Confirmation",
+    "Button",
+    "Text Field"
   ],
   "howtouse1.png": [
-    "Form-heavy",
-    "Scheduling",
-    "SaaS",
-    "Clean UI",
-    "Light Mode",
-    "Grid Layout"
+    "Schedule",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Divider"
   ],
   "howtouse2.png": [
-    "Modal-driven",
-    "SaaS",
-    "Scheduling",
-    "Clean UI",
-    "Productivity",
-    "Form Interaction"
+    "Set",
+    "Text Field",
+    "Button"
   ],
   "screenshot - direct links to calendars.png": [
-    "Modern SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Card Layout",
-    "Scheduling Management",
-    "Settings Page"
+    "Calendar",
+    "Button",
+    "Text Field"
   ]
 }

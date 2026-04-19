@@ -1,26 +1,27 @@
 {
   "Screenshot 2024-03-27 at 4.10.26 PM.png": [
-    "Financial",
-    "AI-Focused",
-    "Search-centric",
-    "Light Mode",
-    "Clean",
-    "SaaS"
+    "Home",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Banner"
   ],
   "Screenshot 2024-03-27 at 4.10.46 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Financial",
-    "AI-Focused",
-    "Clean",
-    "Q&A Interface"
+    "Article Detail",
+    "Accordion",
+    "Text Field",
+    "Button",
+    "Tab",
+    "Search Bar",
+    "Avatar"
   ],
   "Screenshot 2024-03-27 at 4.16.47 PM.png": [
-    "Financial",
-    "SaaS",
-    "Sidebar Navigation",
-    "Tables",
-    "AI-Focused",
-    "Clean UI"
+    "Article Detail",
+    "Accordion",
+    "Button",
+    "Table",
+    "Text Field",
+    "Toast"
   ]
 }

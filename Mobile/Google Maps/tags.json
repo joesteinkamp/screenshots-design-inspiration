@@ -1,0 +1,68 @@
+{
+  "20180515_210551000_iOS.png": [
+    "Map",
+    "Map Pin",
+    "Button",
+    "Text Field",
+    "Tile",
+    "Accordion"
+  ],
+  "20180529_173036000_iOS.png": [
+    "Map",
+    "Map Pin",
+    "Search Bar",
+    "Card",
+    "Avatar",
+    "Icon"
+  ],
+  "20180717_141101000_iOS.png": [
+    "Map",
+    "Map Pin",
+    "Search Bar",
+    "Top Navigation Bar",
+    "Button",
+    "Icon",
+    "Avatar"
+  ],
+  "20181215_165709000_iOS.png": [
+    "Home",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Avatar"
+  ],
+  "20181215_165713000_iOS.png": [
+    "Guided Tour & Tutorial",
+    "Dialog",
+    "Text Field",
+    "Button",
+    "Checkbox"
+  ],
+  "20181215_165716000_iOS.png": [
+    "Settings & Preferences",
+    "Switch",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Checkbox"
+  ],
+  "20181215_165731000_iOS.png": [
+    "Guided Tour & Tutorial",
+    "Button",
+    "Checkbox",
+    "Text Field"
+  ],
+  "20181215_165740000_iOS.png": [
+    "Action Option",
+    "Button",
+    "Date Picker",
+    "Segmented Control",
+    "Text Field"
+  ],
+  "20181215_165807000_iOS.png": [
+    "Error",
+    "Dialog",
+    "Text Field",
+    "Button"
+  ]
+}

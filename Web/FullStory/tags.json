@@ -1,108 +1,94 @@
 {
   "Screen Shot 2021-05-04 at 4.13.42 PM.png": [
-    "Onboarding",
-    "SaaS",
-    "Form-heavy",
-    "Clean UI",
-    "Light Mode",
-    "Minimalist"
+    "Signup",
+    "Text Field",
+    "Button",
+    "Checkbox"
   ],
   "Screen Shot 2021-05-04 at 4.13.55 PM.png": [
-    "Onboarding",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Bright Colors",
-    "Email Template"
+    "Verification",
+    "Button",
+    "Text Field"
   ],
   "Screen Shot 2021-05-04 at 4.14.05 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Clean UI",
-    "Social Login",
-    "Light Mode"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Link",
+    "Checkbox"
   ],
   "Screen Shot 2021-05-04 at 4.14.20 PM.png": [
-    "Onboarding",
-    "SaaS",
-    "Minimalist",
-    "Clean UI",
-    "Social Login",
-    "Form-heavy"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Link",
+    "Toast"
   ],
   "Screen Shot 2021-05-04 at 4.15.02 PM.png": [
-    "Onboarding",
-    "Terms & Conditions",
-    "Light Mode",
-    "Clean UI",
-    "SaaS"
+    "Signup",
+    "Text Field",
+    "Checkbox",
+    "Button"
   ],
   "Screen Shot 2021-05-04 at 4.15.06 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Onboarding Flow",
-    "Legal Document"
+    "Signup",
+    "Text Field",
+    "Checkbox",
+    "Button"
   ],
   "Screen Shot 2021-05-04 at 4.15.21 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Clean UI",
-    "Light Mode",
-    "Form-heavy",
-    "Iconography"
+    "Account Setup",
+    "Text Field",
+    "Button",
+    "Segmented Control"
   ],
   "Screen Shot 2021-05-04 at 4.15.28 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Minimalist",
-    "Modern SaaS",
-    "Card-based",
-    "Light Mode"
+    "Account Setup",
+    "Button",
+    "Checkbox",
+    "Segmented Control",
+    "Text Field"
   ],
   "Screen Shot 2021-05-04 at 4.15.36 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "SaaS",
-    "Clean UI",
-    "Light Mode"
+    "Account Setup",
+    "Text Field",
+    "Dropdown Menu",
+    "Button"
   ],
   "Screen Shot 2021-05-04 at 4.15.40 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Light Mode",
-    "Form-heavy",
-    "Clean UI",
-    "Dropdown Menu"
+    "Account Setup",
+    "Dropdown Menu",
+    "Text Field",
+    "Button"
   ],
   "Screen Shot 2021-05-04 at 4.15.44 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Form-heavy",
-    "Clean UI",
-    "Light Mode"
+    "Signup",
+    "Dropdown Menu",
+    "Text Field",
+    "Accordion",
+    "Button"
   ],
   "Screen Shot 2021-05-04 at 4.15.53 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Developer-centric",
-    "Card Layout",
-    "Clean UI",
-    "Light Mode"
+    "Guided Tour & Tutorial",
+    "Text Field",
+    "Button",
+    "Accordion"
   ],
   "Screen Shot 2021-05-04 at 4.15.58 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Form-heavy",
-    "Clean",
-    "Light Mode",
-    "Bright Colors"
+    "Signup",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Banner"
   ],
   "Screen Shot 2021-05-04 at 4.16.02 PM.png": [
-    "SaaS",
-    "Onboarding",
-    "Sidebar Navigation",
-    "Clean UI",
-    "Developer-centric"
+    "Dashboard",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Search Bar",
+    "Badge",
+    "Card"
   ]
 }

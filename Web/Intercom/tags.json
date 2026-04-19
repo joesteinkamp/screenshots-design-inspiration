@@ -1,0 +1,146 @@
+{
+  "10_Navigation-color-change.png": [
+    "Chat Detail",
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Divider",
+    "Icon"
+  ],
+  "1_Inbox-before-and-after.png": [
+    "Chat Detail",
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Divider",
+    "Dropdown Menu"
+  ],
+  "2_Inbox-beta-designs.png": [
+    "Chat Detail",
+    "User / Group Profile",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Card"
+  ],
+  "3_Inbox-workflow.png": [
+    "Chat Detail",
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Divider",
+    "Dropdown Menu"
+  ],
+  "4_Inbox-new-look.png": [
+    "Chat Detail",
+    "Avatar",
+    "Badge",
+    "Button",
+    "Card",
+    "Checkbox",
+    "Divider"
+  ],
+  "5_side-by-side-change.png": [
+    "Chat Detail",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Divider"
+  ],
+  "5c09905dc083d9a86cf8fec0_Intercom - Step 1-p-1080.png": [
+    "Home",
+    "Illustration",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Banner"
+  ],
+  "5c0990621835a87f6e5d4624_Intercom - Step 2-p-1080.png": [
+    "Pricing",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Accordion",
+    "Card"
+  ],
+  "5c0990651835a840655d4628_Intercom - Step 3-p-1080.png": [
+    "Signup",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Link",
+    "Icon"
+  ],
+  "5c099067a4a5b04d6a12223c_Intercom - Step 4-p-1080.png": [
+    "Signup",
+    "Button",
+    "Text Field"
+  ],
+  "5c09906e88bb06695ee5c219_Intercom - Step 5-p-1080.png": [
+    "Signup",
+    "Button",
+    "Text Field",
+    "Dropdown Menu"
+  ],
+  "5c0990756a418182b94ae1fb_Intercom - Step 6-p-1080.png": [
+    "Guided Tour & Tutorial",
+    "Illustration",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Banner"
+  ],
+  "All-the-context-you-need.-.png": [
+    "Chat Detail",
+    "Avatar",
+    "Button",
+    "Checkbox",
+    "Combobox",
+    "Date Picker",
+    "Dropdown Menu"
+  ],
+  "Intercom-App-Store-launch.png": [
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Icon",
+    "Banner",
+    "Table",
+    "Avatar"
+  ],
+  "Intercom-messages.png": [
+    "Dashboard",
+    "Table",
+    "Badge",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Icon"
+  ],
+  "IntercomDeveloperHubAuthentication.png": [
+    "Settings & Preferences",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Table",
+    "Icon"
+  ],
+  "c2572231-4bf3-601f-aab1-3e66d61539c0.png": [
+    "Dashboard",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu"
+  ]
+}

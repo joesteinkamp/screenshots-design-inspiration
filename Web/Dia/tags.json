@@ -1,109 +1,113 @@
 {
   "1.png": [
-    "Light Mode",
-    "Clean UI",
-    "Search-centric",
-    "AI-Focused",
-    "Productivity",
-    "Query Suggestions"
+    "Browse & Discover",
+    "Search Bar",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Card"
   ],
   "10.png": [
-    "Light Mode",
-    "Chat-centric",
-    "AI-Focused",
-    "Clean UI",
-    "Professional"
+    "Chat Detail",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Toast"
   ],
   "11.png": [
-    "Light Mode",
-    "Search-centric",
-    "Chat-centric",
-    "Productivity",
-    "Modern",
-    "Search Suggestions"
+    "Browse & Discover",
+    "Search Bar",
+    "Dropdown Menu",
+    "Button"
   ],
   "12.png": [
-    "AI-Focused",
-    "Sidebar",
-    "Video Integration",
-    "Content Summary",
-    "Productivity",
-    "Clean UI"
+    "Video Player",
+    "Avatar",
+    "Banner",
+    "Button",
+    "Card",
+    "Checkbox",
+    "Color Picker"
   ],
   "13.png": [
-    "AI-Focused",
-    "Chat-centric",
-    "Productivity",
-    "Document Editing",
-    "Light Mode",
-    "Split View"
+    "Home",
+    "Text Field"
   ],
   "14.png": [
-    "Light Mode",
-    "Productivity",
-    "AI Assistant",
-    "Document Editor",
-    "Split View"
+    "Home",
+    "Tab",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Link",
+    "Table"
   ],
   "2.png": [
-    "AI-Focused",
-    "Consumer-focused",
-    "Sidebar",
-    "Light Mode",
-    "Video Player"
+    "Video Player",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Avatar",
+    "Badge",
+    "Toast"
   ],
   "4.png": [
     "Video Player",
-    "Sidebar",
-    "Onboarding",
-    "AI-Focused",
-    "Clean UI",
-    "List View"
+    "Button",
+    "Text Field",
+    "Icon",
+    "Avatar",
+    "Badge",
+    "Progress Indicator"
   ],
   "5.png": [
-    "Light Mode",
-    "Clean UI",
-    "Professional",
-    "AI-Focused",
-    "Knowledge Base",
-    "Text-heavy"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Avatar",
+    "Table",
+    "Accordion"
   ],
   "6.png": [
-    "Search-centric",
-    "AI-Focused",
-    "Minimalist",
-    "Light Mode",
-    "Browser Interface",
-    "Productivity"
+    "Browse & Discover",
+    "Search Bar",
+    "Dropdown Menu",
+    "Card",
+    "Text Field"
   ],
   "7.png": [
-    "Light Mode",
-    "Clean UI",
-    "Chat-centric",
-    "Search-centric",
-    "Autocomplete Input"
+    "Browse & Discover",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon"
   ],
   "8.png": [
-    "Chat-centric",
-    "Light Mode",
-    "Minimalist",
-    "AI-Focused",
-    "Search-centric",
-    "Web Browser UI"
+    "Chat Bot",
+    "Button",
+    "Text Field",
+    "Card",
+    "Icon"
   ],
   "9.png": [
-    "Light Mode",
-    "Minimalist",
-    "AI-Focused",
-    "Search-centric",
-    "Clean UI"
+    "Browse & Discover",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Banner"
   ],
   "Screenshot 2025-05-14 at 3.25.07 PM.png": [
-    "Light Mode",
-    "Clean",
-    "Productivity",
-    "AI-Focused",
-    "Sidebar",
-    "Text-heavy"
+    "Note Detail",
+    "Text Field",
+    "Button",
+    "Dropdown Menu",
+    "Icon",
+    "Avatar",
+    "Toast"
   ]
 }

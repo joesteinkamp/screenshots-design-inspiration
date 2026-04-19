@@ -1,471 +1,508 @@
 {
   "Screen Shot 2021-05-05 at 2.12.59 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Illustrations",
-    "Search-centric",
-    "Card Layout"
+    "Home",
+    "Banner",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Tab"
   ],
   "Screen Shot 2021-05-05 at 2.13.04 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Dashboard",
-    "Data-heavy",
-    "Card Layout",
-    "Analytics"
+    "Home",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Card",
+    "Table",
+    "Icon"
   ],
   "Screen Shot 2021-05-05 at 2.13.10 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Financial",
-    "Tables",
-    "List View",
-    "Data-heavy"
+    "Home",
+    "Search Bar",
+    "Button",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.13.14 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "List View",
-    "Sidebar",
-    "Professional",
-    "Tables"
+    "Home",
+    "Search Bar",
+    "Button",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar"
   ],
   "Screen Shot 2021-05-05 at 2.13.22 PM.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Tables",
-    "SaaS",
-    "Professional",
-    "Modal Window"
+    "Browse & Discover",
+    "Card",
+    "Table",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Avatar"
   ],
   "Screen Shot 2021-05-05 at 2.13.39 PM.png": [
-    "SaaS",
-    "Data-heavy",
-    "Light Mode",
-    "List View",
-    "Tables",
-    "Modal-driven"
+    "Home",
+    "Card",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2021-05-05 at 2.13.43 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Data-heavy",
-    "Modal-driven",
-    "Tables",
-    "Illustrations"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Dialog"
   ],
   "Screen Shot 2021-05-05 at 2.13.53 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Illustrations",
-    "Card Layout",
-    "Professional"
+    "Home",
+    "Dropdown Menu",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Hero Image"
   ],
   "Screen Shot 2021-05-05 at 2.13.58 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "List View",
-    "Data-heavy",
-    "Search-centric",
-    "Light Mode"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.10 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Tables",
-    "Light Mode",
-    "Data-heavy"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.12 PM.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Sidebar",
-    "Tables",
-    "SaaS",
-    "Search-centric"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.16 PM.png": [
-    "SaaS",
-    "Data-heavy",
-    "Sidebar",
-    "Tables",
-    "Filters",
-    "Light Mode"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.19 PM.png": [
-    "Search-centric",
-    "Sidebar Navigation",
-    "Tables",
-    "Data-heavy",
-    "SaaS",
-    "Light Mode"
+    "Browse & Discover",
+    "Table",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Badge"
   ],
   "Screen Shot 2021-05-05 at 2.14.22 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Tables",
-    "Search-centric",
-    "SaaS",
-    "Professional"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu"
   ],
   "Screen Shot 2021-05-05 at 2.14.25 PM.png": [
-    "SaaS",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Tables",
-    "Data-heavy",
-    "Light Mode"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.28 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Sidebar",
-    "Tables",
-    "Data-heavy",
-    "Search-centric"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.32 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Tables",
-    "Sidebar",
-    "Data-heavy"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "Screen Shot 2021-05-05 at 2.14.47 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Illustrations",
-    "Search-centric",
-    "Card Layout",
-    "Financial"
+    "Home",
+    "Button",
+    "Dropdown Menu",
+    "Icon",
+    "Text Field",
+    "Avatar",
+    "Hero Image"
   ],
   "Screen Shot 2021-05-05 at 2.14.49 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Illustrations",
-    "Search-centric",
-    "Dropdown Menu"
+    "Home",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Hero Image",
+    "Banner",
+    "Card"
   ],
   "Screen Shot 2021-05-05 at 2.14.51 PM.png": [
-    "Light Mode",
-    "Illustrations",
-    "SaaS",
-    "Card Layout",
-    "Clean UI",
-    "Search-centric"
+    "Home",
+    "Banner",
+    "Card",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Tab"
   ],
   "Screen Shot 2021-05-05 at 2.14.59 PM.png": [
-    "SaaS",
-    "Pricing Page",
-    "Card Layout",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI"
+    "Pricing",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Divider",
+    "Icon"
   ],
   "Screen Shot 2021-05-05 at 2.15.06 PM.png": [
-    "Login Page",
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "Social Login",
-    "Card-based"
+    "Login",
+    "Button",
+    "Text Field",
+    "Link",
+    "Icon",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.15.15 PM.png": [
-    "Onboarding Flow",
-    "Social Login",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "Professional"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Link",
+    "Accordion"
   ],
   "Screen Shot 2021-05-05 at 2.15.48 PM.png": [
-    "Onboarding Flow",
-    "Social Login",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "Professional"
+    "Signup",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Accordion"
   ],
   "Screen Shot 2021-05-05 at 2.15.59 PM.png": [
-    "Onboarding Flow",
-    "Light Mode",
-    "Clean UI",
-    "Card Layout",
-    "Grid Layout",
-    "SaaS"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Icon",
+    "Text Field",
+    "Tab"
   ],
   "Screen Shot 2021-05-05 at 2.16.08 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Light Mode",
-    "Illustrations",
-    "Personalization",
-    "Clean UI"
+    "Signup",
+    "Accordion",
+    "Checkbox",
+    "Text Field",
+    "Search Bar",
+    "Button"
   ],
   "Screen Shot 2021-05-05 at 2.16.15 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "Illustrations",
-    "Blue Accents"
-  ],
-  "Screen Shot 2021-05-05 at 2.16.19 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "Illustrations"
-  ],
-  "Screen Shot 2021-05-05 at 2.16.28 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Clean UI",
-    "Light Mode",
-    "Illustrations",
-    "Blue Accents"
-  ],
-  "Screen Shot 2021-05-05 at 2.16.42 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Light Mode",
-    "Illustrations",
-    "Clean UI",
-    "Blue Accents"
-  ],
-  "Screen Shot 2021-05-05 at 2.17.04 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "Search-centric",
-    "Modern"
-  ],
-  "Screen Shot 2021-05-05 at 2.17.07 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Clean UI",
-    "Light Mode",
-    "Blue Accents",
-    "Professional"
-  ],
-  "Screen Shot 2021-05-05 at 2.17.16 PM.png": [
-    "Onboarding Flow",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "Illustrations",
-    "SaaS"
-  ],
-  "Screen Shot 2021-05-05 at 2.17.20 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Light Mode",
-    "Grid Layout",
-    "Illustrations",
-    "Clean UI"
-  ],
-  "Screen Shot 2021-05-05 at 2.17.29 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Illustrations",
-    "Clean UI",
-    "Blue Accents"
-  ],
-  "Screen Shot 2021-05-05 at 2.17.47 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Tables",
-    "Data-heavy",
-    "Professional",
-    "Clean UI"
-  ],
-  "Screen Shot 2021-05-05 at 2.18.06 PM.png": [
-    "Search-centric",
-    "Tables",
-    "Filtered Search",
-    "Data-heavy",
-    "SaaS",
-    "Light Mode"
-  ],
-  "Screen Shot 2021-05-05 at 2.18.16 PM.png": [
-    "SaaS",
-    "Search-centric",
-    "Tables",
-    "Modal-driven",
-    "Light Mode",
-    "Financial Data"
-  ],
-  "Screen Shot 2021-05-05 at 2.18.27 PM.png": [
-    "Onboarding Flow",
-    "SaaS",
-    "Illustrations",
-    "Light Mode",
-    "Clean UI",
-    "Premium Promotion"
-  ],
-  "Screen Shot 2021-05-05 at 2.18.32 PM.png": [
-    "Dashboard",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "SaaS",
-    "Professional"
-  ],
-  "Screen Shot 2021-05-05 at 2.18.56 PM.png": [
-    "Card Layout",
-    "List View",
-    "SaaS",
-    "Professional",
-    "Blue Accents",
-    "Recommended Feed"
-  ],
-  "Screen Shot 2021-05-05 at 2.19.05 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Modal-driven",
-    "Form-heavy",
-    "Card Layout",
-    "Blue Accents"
-  ],
-  "Screen Shot 2021-05-05 at 2.19.13 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Card Layout",
-    "List View",
-    "Clean UI",
+    "Signup",
+    "Segmented Control",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Search Bar",
     "Dropdown Menu"
   ],
+  "Screen Shot 2021-05-05 at 2.16.19 PM.png": [
+    "Signup",
+    "Dropdown Menu",
+    "Text Field",
+    "Checkbox",
+    "Search Bar",
+    "Button"
+  ],
+  "Screen Shot 2021-05-05 at 2.16.28 PM.png": [
+    "Guided Tour & Tutorial",
+    "Dropdown Menu",
+    "Text Field",
+    "Checkbox",
+    "Search Bar",
+    "Button",
+    "Icon"
+  ],
+  "Screen Shot 2021-05-05 at 2.16.42 PM.png": [
+    "Signup",
+    "Text Field",
+    "Dropdown Menu",
+    "Checkbox",
+    "Search Bar",
+    "Button"
+  ],
+  "Screen Shot 2021-05-05 at 2.17.04 PM.png": [
+    "Signup",
+    "Dropdown Menu",
+    "Search Bar",
+    "Checkbox",
+    "Button"
+  ],
+  "Screen Shot 2021-05-05 at 2.17.07 PM.png": [
+    "Signup",
+    "Text Field",
+    "Checkbox",
+    "Dropdown Menu",
+    "Search Bar",
+    "Button",
+    "Tab"
+  ],
+  "Screen Shot 2021-05-05 at 2.17.16 PM.png": [
+    "Signup",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Checkbox",
+    "Segmented Control"
+  ],
+  "Screen Shot 2021-05-05 at 2.17.20 PM.png": [
+    "Guided Tour & Tutorial",
+    "Checkbox",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Banner"
+  ],
+  "Screen Shot 2021-05-05 at 2.17.29 PM.png": [
+    "Guided Tour & Tutorial",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Illustration"
+  ],
+  "Screen Shot 2021-05-05 at 2.17.47 PM.png": [
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link",
+    "Badge"
+  ],
+  "Screen Shot 2021-05-05 at 2.18.06 PM.png": [
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu"
+  ],
+  "Screen Shot 2021-05-05 at 2.18.16 PM.png": [
+    "Feature Info",
+    "Button",
+    "Text Field",
+    "Icon"
+  ],
+  "Screen Shot 2021-05-05 at 2.18.27 PM.png": [
+    "Guided Tour & Tutorial",
+    "Icon",
+    "Text Field",
+    "Button"
+  ],
+  "Screen Shot 2021-05-05 at 2.18.32 PM.png": [
+    "Home",
+    "Avatar",
+    "Button",
+    "Card",
+    "Text Field",
+    "Tile",
+    "Banner"
+  ],
+  "Screen Shot 2021-05-05 at 2.18.56 PM.png": [
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
+  ],
+  "Screen Shot 2021-05-05 at 2.19.05 PM.png": [
+    "Settings & Preferences",
+    "Slider",
+    "Text Field",
+    "Button",
+    "Dropdown Menu",
+    "Toast"
+  ],
+  "Screen Shot 2021-05-05 at 2.19.13 PM.png": [
+    "Home",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Avatar"
+  ],
   "Screen Shot 2021-05-05 at 2.19.24 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Account Settings",
-    "SaaS",
-    "Clean UI"
+    "Account Setup",
+    "Accordion",
+    "Button",
+    "Text Field",
+    "Badge",
+    "Divider",
+    "Card"
   ],
   "Screen Shot 2021-05-05 at 2.26.26 PM.png": [
-    "Light Mode",
-    "Clean",
-    "Professional",
-    "Card Layout",
-    "Data-heavy",
-    "SaaS"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.26.30 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Card Layout",
-    "Data-heavy",
-    "Professional",
-    "Company Profile"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.26.32 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Data-heavy",
-    "List View",
-    "Card Layout"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.26.38 PM.png": [
-    "Financial",
-    "Data-heavy",
-    "Card Layout",
-    "SaaS",
-    "Clean UI",
-    "Sticky Header"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.26.42 PM.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Card Layout",
-    "Tables",
-    "SaaS",
-    "Financial"
+    "Product Detail",
+    "Button",
+    "Text Field",
+    "Table",
+    "Icon",
+    "Badge",
+    "Avatar"
   ],
   "Screen Shot 2021-05-05 at 2.26.53 PM.png": [
-    "Financial",
-    "Data-heavy",
-    "Tables",
-    "Light Mode",
-    "Professional",
-    "SaaS"
+    "Product Detail",
+    "Table",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Search Bar",
+    "Badge"
   ],
   "Screen Shot 2021-05-05 at 2.26.58 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Financial",
-    "Tables",
-    "Data-heavy",
-    "Company Profile"
+    "Product Detail",
+    "Table",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Search Bar"
   ],
   "Screen Shot 2021-05-05 at 2.27.04 PM.png": [
-    "SaaS",
-    "Professional",
-    "Light Mode",
-    "Company Profile",
-    "List View",
-    "Tabbed Navigation"
+    "Product Detail",
+    "Avatar",
+    "Button",
+    "Card",
+    "Text Field",
+    "Icon",
+    "Hero Image"
   ],
   "Screen Shot 2021-05-05 at 2.27.08 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Card Layout",
-    "Data-heavy",
-    "Sidebar"
+    "Product Detail",
+    "Avatar",
+    "Button",
+    "Card",
+    "Text Field",
+    "Table",
+    "Icon"
   ],
   "Screen Shot 2021-05-05 at 2.27.12 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Card Layout",
-    "Data-heavy",
-    "Company Profile",
-    "Tabbed Navigation"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.27.17 PM.png": [
-    "SaaS",
-    "Professional",
-    "Data-heavy",
-    "Card Layout",
-    "Sidebar",
-    "Light Mode"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "Screen Shot 2021-05-05 at 2.27.22 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Analytics",
-    "Data-heavy",
-    "Tables",
-    "Card Layout"
+    "Product Detail",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Icon",
+    "Avatar"
   ],
   "Screen Shot 2021-05-05 at 2.27.25 PM.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Tables",
-    "SaaS",
-    "Analytics",
-    "Professional"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Search Bar",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.27.29 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Data-heavy",
-    "Card Layout",
-    "List View",
-    "Search-centric"
+    "Product Detail",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2021-05-05 at 2.27.33 PM.png": [
-    "Light Mode",
-    "Professional",
-    "Card Layout",
-    "List View",
-    "SaaS",
-    "Data-heavy"
+    "Home",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Card",
+    "Divider",
+    "Table"
   ]
 }

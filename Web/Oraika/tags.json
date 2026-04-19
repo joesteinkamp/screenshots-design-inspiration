@@ -1,0 +1,55 @@
+{
+  "desktop_1.8bdb465f.png": [
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Progress Indicator",
+    "Table",
+    "Text Field"
+  ],
+  "desktop_2.49c21333.png": [
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Card"
+  ],
+  "desktop_3.be380af2.png": [
+    "Dashboard",
+    "Progress Indicator",
+    "Table",
+    "Card",
+    "Badge",
+    "Text Field",
+    "Button"
+  ],
+  "original (1).png": [
+    "Dashboard",
+    "Card",
+    "Text Field",
+    "Segmented Control",
+    "Button",
+    "Divider",
+    "Tile"
+  ],
+  "original (2).png": [
+    "Dashboard",
+    "Progress Indicator",
+    "Table",
+    "Badge",
+    "Card",
+    "Segmented Control",
+    "Text Field"
+  ],
+  "original.png": [
+    "Dashboard",
+    "Badge",
+    "Card",
+    "Carousel",
+    "Color Picker",
+    "Date Picker",
+    "Dropdown Menu"
+  ]
+}

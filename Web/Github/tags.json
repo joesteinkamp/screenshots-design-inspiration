@@ -1,121 +1,135 @@
 {
   "Screen Shot 2020-03-31 at 9.49.34 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Sidebar",
-    "List View",
-    "Search-centric",
-    "Developer-centric"
+    "Browse & Discover",
+    "Search Bar",
+    "Button",
+    "Card",
+    "Text Field",
+    "Link",
+    "Avatar"
   ],
   "screencapture-github-joesteinkamp-test-settings-2019-04-25-11_45_19.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Modal-driven",
-    "Developer-centric",
-    "SaaS",
-    "Form-heavy"
+    "Delete & Deactivate Account",
+    "Button",
+    "Text Field",
+    "Dialog",
+    "Checkbox"
   ],
   "screenshot-github.com-2020.03.31-21_48_24.png": [
-    "Light Mode",
-    "Clean",
-    "Sidebar Navigation",
-    "Developer-centric",
-    "List View",
-    "SaaS"
+    "Home",
+    "Button",
+    "Text Field",
+    "Card",
+    "Badge",
+    "Divider",
+    "Avatar"
   ],
   "screenshot-github.com-2020.03.31-21_49_41.png": [
-    "Light Mode",
-    "Clean",
-    "Sidebar Navigation",
-    "List View",
-    "Search-centric",
-    "Developer-centric"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Card",
+    "Divider"
   ],
   "screenshot-github.com-2020.03.31-21_50_00.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Developer-centric",
-    "List View",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "screenshot-github.com-2020.03.31-21_50_11.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Search-centric",
-    "List View",
-    "Data-heavy",
-    "Developer-centric"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Card",
+    "Divider"
   ],
   "screenshot-github.com-2020.03.31-21_50_20.png": [
-    "Developer-centric",
-    "Sidebar Navigation",
-    "List View",
-    "Search Results",
-    "Project Management",
-    "Light Mode"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Card",
+    "Table"
   ],
   "screenshot-github.com-2020.03.31-21_50_31.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Developer-centric",
-    "Clean UI",
-    "Project Management"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Card",
+    "Badge",
+    "Divider"
   ],
   "screenshot-github.com-2020.03.31-21_50_41.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Developer-centric",
-    "Search Results",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "screenshot-github.com-2020.03.31-21_50_50.png": [
-    "Sidebar Navigation",
-    "List View",
-    "Search-centric",
-    "Light Mode",
-    "Developer-centric",
-    "Clean UI"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Card",
+    "Badge",
+    "Icon"
   ],
   "screenshot-github.com-2020.03.31-21_51_00.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Search-centric",
-    "Developer-centric",
-    "Clean UI"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Card",
+    "Divider"
   ],
   "screenshot-github.com-2020.03.31-21_51_11.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Search-centric",
-    "Developer-centric",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Link",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "screenshot-github.com-2020.03.31-21_51_25.png": [
-    "Sidebar Navigation",
-    "List View",
-    "Light Mode",
-    "Developer-centric",
-    "Clean UI",
-    "Search Results"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "screenshot-github.com-2020.03.31-21_51_50.png": [
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "Developer-centric",
-    "Advanced Search"
+    "Search",
+    "Search Bar",
+    "Text Field",
+    "Checkbox",
+    "Radio Button",
+    "Dropdown Menu",
+    "Slider"
   ],
   "screenshot-github.com-2020.03.31-21_52_21.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Dashboard",
-    "Developer-centric",
-    "Clean UI",
-    "List View"
+    "Browse & Discover",
+    "Search Bar",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Avatar"
   ]
 }

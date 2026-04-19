@@ -1,83 +1,81 @@
 {
   "Screenshot 2025-11-27 at 8.17.56 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Minimalist",
-    "Modern",
-    "Blue Accents"
+    "Guided Tour & Tutorial",
+    "Logo",
+    "Text Field",
+    "Button"
   ],
   "Screenshot 2025-11-27 at 8.18.00 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Clean",
-    "Minimalist",
-    "Setup Wizard",
-    "Choice Screen"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Text Field"
   ],
   "Screenshot 2025-11-27 at 8.18.03 AM.png": [
-    "Onboarding",
-    "Dark Mode",
-    "Developer-centric",
-    "Theme Selection",
-    "Clean UI",
-    "Modern"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Segmented Control",
+    "Icon"
   ],
   "Screenshot 2025-11-27 at 8.18.05 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Configuration",
-    "Clean UI",
-    "Form-heavy"
+    "Guided Tour & Tutorial",
+    "Radio Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Tab"
   ],
   "Screenshot 2025-11-27 at 8.18.12 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Configuration Screen",
-    "Two-Column Layout",
-    "Form Layout",
-    "Clean UI"
+    "Guided Tour & Tutorial",
+    "Radio Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Tab"
   ],
   "Screenshot 2025-11-27 at 8.18.47 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Configuration Screen",
-    "Clean UI",
-    "Developer-centric"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Checkbox",
+    "Button",
+    "Text Field",
+    "Segmented Control",
+    "Page Control"
   ],
   "Screenshot 2025-11-27 at 8.19.10 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Social Login",
-    "Clean",
-    "Minimalist"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Text Field"
   ],
   "Screenshot 2025-11-27 at 8.19.40 AM.png": [
-    "Dark Mode",
-    "Onboarding Flow",
-    "Minimalist",
-    "Blue Accents",
-    "Modern"
+    "Guided Tour & Tutorial",
+    "Loading Indicator",
+    "Page Control",
+    "Button"
   ],
   "Screenshot 2025-11-27 at 8.19.44 AM.png": [
-    "Dark Mode",
-    "Onboarding",
-    "Clean UI",
-    "Typography-focused",
-    "High Contrast"
+    "Guided Tour & Tutorial",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Page Control"
   ],
   "Screenshot 2025-11-27 at 8.19.53 AM.png": [
-    "Onboarding Flow",
-    "Modal-driven",
-    "Light Mode",
-    "AI-Focused",
-    "Developer-centric"
+    "Confirmation",
+    "Dialog",
+    "Button",
+    "Text Field"
   ],
   "Screenshot 2025-11-27 at 8.20.06 AM.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Developer-centric",
-    "AI-Focused",
-    "Onboarding Flow",
-    "Clean UI"
+    "Home",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Banner",
+    "Card",
+    "Divider"
   ]
 }

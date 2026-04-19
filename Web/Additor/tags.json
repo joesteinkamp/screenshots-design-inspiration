@@ -1,207 +1,224 @@
 {
   "Screen Shot 2019-11-03 at 8.49.18 PM.png": [
     "Video Player",
-    "Text Editor",
-    "Two-Column Layout",
-    "Light Mode",
-    "Productivity",
-    "Clean UI"
+    "Avatar",
+    "Icon",
+    "Photo",
+    "Hero Image",
+    "Button",
+    "Text Field"
   ],
   "Screen Shot 2019-11-03 at 8.49.31 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Productivity",
-    "Modern SaaS",
-    "Video Integration",
-    "Note-taking"
+    "Video Player",
+    "Avatar",
+    "Icon",
+    "Photo",
+    "Button",
+    "Text Field",
+    "Toast"
   ],
   "Screen Shot 2019-11-03 at 8.49.52 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Minimalist",
-    "Productivity",
-    "Two-Column Layout",
-    "Video Player"
+    "Product Detail",
+    "Avatar",
+    "Icon",
+    "Photo",
+    "Button",
+    "Text Field",
+    "Badge"
   ],
   "Screen Shot 2019-11-03 at 8.50.04 PM.png": [
-    "Video Player",
-    "Tagging System",
-    "Note-taking",
-    "Clean UI",
-    "Light Mode",
-    "SaaS"
+    "Product Detail",
+    "Avatar",
+    "Icon",
+    "Photo",
+    "Button",
+    "Text Field",
+    "Badge"
   ],
   "Screen Shot 2019-11-03 at 8.50.15 PM.png": [
     "Video Player",
-    "Tag Layout",
-    "Clean UI",
-    "Content-focused",
-    "Light Mode",
-    "Professional"
+    "Avatar",
+    "Icon",
+    "Photo",
+    "Button",
+    "Text Field",
+    "Badge"
   ],
   "Screen Shot 2019-11-03 at 8.50.35 PM.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI",
-    "Productivity",
-    "Content Management",
-    "Modern SaaS"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Tab",
+    "Badge",
+    "Avatar"
   ],
   "Screen Shot 2019-11-03 at 8.50.54 PM.png": [
-    "Sidebar Navigation",
-    "Collaboration",
-    "Clean UI",
-    "SaaS",
-    "Productivity",
-    "Modal-driven"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Avatar"
   ],
   "Screen Shot 2019-11-03 at 8.51.29 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Sidebar Navigation",
-    "Modern SaaS",
-    "Hero Image",
-    "Onboarding"
+    "Home",
+    "Banner",
+    "Text Field",
+    "Button",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2019-11-03 at 8.51.53 PM.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "Modal-driven",
-    "Clean UI",
-    "Productivity"
+    "Confirmation",
+    "Dialog",
+    "Button",
+    "Text Field"
   ],
   "Screen Shot 2019-11-03 at 8.52.04 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "Minimalist",
-    "Card Layout",
-    "Productivity",
-    "Content Management"
+    "Browse & Discover",
+    "Card",
+    "Avatar",
+    "Icon",
+    "Text Field",
+    "Button",
+    "Divider"
   ],
   "Screen Shot 2019-11-03 at 8.52.15 PM.png": [
-    "Light Mode",
-    "Card Layout",
-    "Clean UI",
-    "Productivity",
-    "Notifications Panel",
-    "Illustrations"
+    "Browse & Discover",
+    "Card",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider"
   ],
   "Screen Shot 2019-11-03 at 8.52.59 PM.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "Productivity",
-    "Clean UI"
+    "Home",
+    "Side Navigation",
+    "Search Bar",
+    "Card",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2019-11-03 at 8.53.31 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "Card Layout",
-    "Productivity"
+    "Account Setup",
+    "Dropdown Menu",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Icon"
   ],
   "Screen Shot 2019-11-03 at 8.56.35 PM.png": [
-    "Sidebar Navigation",
-    "SaaS",
-    "Clean UI",
-    "Manage Channels",
-    "List View"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Search Bar",
+    "Tab",
+    "Side Navigation",
+    "Badge"
   ],
   "Screen Shot 2019-11-03 at 8.57.37 PM.png": [
-    "Sidebar Navigation",
-    "Minimalist",
-    "SaaS",
-    "Modal-driven",
-    "Form-heavy",
-    "Admin Panel"
+    "Add & Create",
+    "Button",
+    "Text Field",
+    "Dialog"
   ],
   "Screen Shot 2019-11-03 at 8.59.08 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "SaaS",
-    "Tables",
-    "Clean UI",
-    "Search-centric"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Side Navigation",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2019-11-03 at 8.59.21 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "SaaS",
-    "Settings Page",
-    "Professional"
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Link",
+    "Divider"
   ],
   "Screen Shot 2019-11-03 at 8.59.43 PM.png": [
-    "Account Settings",
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "SaaS"
+    "Settings & Preferences",
+    "Button",
+    "Text Field",
+    "Avatar",
+    "Checkbox",
+    "Link"
   ],
   "Screen Shot 2019-11-03 at 9.00.41 PM.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Form-heavy"
+    "Browse & Discover",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Tile"
   ],
   "screencapture-app-additor-io-check-in-start-with-workspaces-2019-11-03-20_46_29.png": [
-    "Onboarding Flow",
-    "Modal-driven",
-    "Illustrations",
-    "Clean UI",
-    "Light Mode",
-    "SaaS"
+    "Guided Tour & Tutorial",
+    "Banner",
+    "Card",
+    "Button",
+    "Icon",
+    "Illustration"
   ],
   "screencapture-jsteinka-additor-io-2019-11-03-20_46_43.png": [
-    "Sidebar Navigation",
-    "Dashboard",
-    "Light Mode",
-    "Card Layout",
-    "Productivity",
-    "Clean UI"
+    "Home",
+    "Avatar",
+    "Banner",
+    "Card",
+    "Divider",
+    "Icon",
+    "Illustration"
   ],
   "screencapture-jsteinka-additor-io-channel-QKjD7IQE-2019-11-03-20_47_39.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Grid Layout",
-    "Clean UI",
-    "Productivity",
-    "Content Organization"
+    "Browse & Discover",
+    "Card",
+    "Side Navigation",
+    "Avatar",
+    "Text Field",
+    "Badge",
+    "Divider"
   ],
   "screencapture-jsteinka-additor-io-channel-QKjD7IQE-2019-11-03-20_48_26.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Grid Layout",
-    "Clean UI",
-    "Productivity",
-    "Modern"
+    "Browse & Discover",
+    "Accordion",
+    "Card",
+    "Divider",
+    "Dropdown Menu",
+    "Icon",
+    "Text Field"
   ],
   "screencapture-jsteinka-additor-io-page-77yR5h0ya0Q-2019-11-03-20_47_48.png": [
-    "Sidebar Navigation",
-    "Clean UI",
-    "Productivity",
-    "Light Mode",
-    "Minimalist",
-    "Note-Taking App"
+    "Kanban Board",
+    "Tab",
+    "Card",
+    "Divider",
+    "Icon",
+    "Text Field",
+    "Button"
   ],
   "screencapture-jsteinka-additor-io-page-77yR5h0ya0Q-2019-11-03-20_48_07.png": [
-    "Sidebar Navigation",
-    "Clean UI",
-    "Light Mode",
-    "Productivity",
-    "SaaS",
-    "Content Editor"
+    "Home",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Accordion",
+    "Tile",
+    "Icon"
   ],
   "screencapture-jsteinka-additor-io-page-NSV9jQQ2-2019-11-03-20_48_38.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI",
-    "Article Page",
-    "Card Layout",
-    "Productivity"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Avatar",
+    "Icon",
+    "Banner",
+    "Table"
   ]
 }

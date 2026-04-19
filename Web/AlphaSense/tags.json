@@ -1,1090 +1,1156 @@
 {
   "Screen Shot 2019-10-02 at 10.28.56 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Data Visualization",
-    "List View",
-    "Split View"
+    "Browse & Discover",
+    "Article Detail",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link"
   ],
   "Screen Shot 2019-10-02 at 10.29.03 PM.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Search-centric",
-    "Data Visualization",
-    "Sidebar Navigation",
-    "Professional"
+    "Browse & Discover",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 10.29.15 PM.png": [
-    "SaaS",
-    "Enterprise",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Data Visualization",
-    "Tables"
+    "Dashboard",
+    "Search",
+    "Accordion",
+    "Search Bar",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge"
   ],
   "Screen Shot 2019-10-02 at 10.29.22 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Data-heavy",
-    "Charts",
-    "Sidebar"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Table"
   ],
   "Screen Shot 2019-10-02 at 10.29.48 PM.png": [
-    "Dark Mode",
-    "Data-heavy",
-    "SaaS",
-    "Charts",
-    "Search-centric",
-    "List View"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link"
   ],
   "Screen Shot 2019-10-02 at 10.29.59 PM.png": [
-    "Data-heavy",
-    "SaaS",
-    "Search-centric",
-    "Charts",
-    "List View",
-    "Document Viewer"
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox"
   ],
   "Screen Shot 2019-10-02 at 10.30.16 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Data-heavy",
-    "Search-centric",
-    "Tables",
-    "Charts"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Editable Text",
+    "File Upload"
   ],
   "Screen Shot 2019-10-02 at 10.30.23 PM.png": [
-    "SaaS",
-    "Financial",
-    "Data-heavy",
-    "Analytics",
-    "Search-centric",
-    "Tables"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Table",
+    "Button",
+    "Search Bar",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 10.30.57 PM.png": [
-    "Search-centric",
-    "Sidebar Navigation",
-    "Light Mode",
-    "SaaS",
-    "Enterprise",
-    "Three-Column Layout"
+    "Browse & Discover",
+    "Search Bar",
+    "Text Field",
+    "Button",
+    "Banner",
+    "Card",
+    "Divider"
   ],
   "Screen Shot 2019-10-02 at 10.32.37 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Enterprise",
-    "Financial"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Table",
+    "Avatar"
   ],
   "Screen Shot 2019-10-02 at 10.32.55 PM.png": [
-    "Financial",
-    "SaaS",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Search-centric",
-    "Document Viewer"
+    "Article Detail",
+    "Button",
+    "Text Field",
+    "Accordion",
+    "Table",
+    "Badge",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 10.33.02 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Financial",
-    "Search-centric"
+    "News Feed",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Accordion",
+    "Search Bar",
+    "Badge"
   ],
   "Screen Shot 2019-10-02 at 10.33.21 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Modal-driven",
-    "Financial"
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Radio Button",
+    "Dropdown Menu"
   ],
   "Screen Shot 2019-10-02 at 10.33.31 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Sidebar Navigation",
-    "Tables",
-    "Modal-driven",
-    "Financial"
+    "Action Option",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Radio Button",
+    "Select",
+    "Time Picker"
   ],
   "Screen Shot 2019-10-02 at 10.34.20 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Enterprise"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Dropdown Menu",
+    "Button"
   ],
   "Screen Shot 2019-10-02 at 10.34.55 PM.png": [
-    "SaaS",
-    "Professional",
-    "Light Mode",
-    "Data-heavy",
-    "Tables",
-    "Search-centric"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Link"
   ],
   "Screen Shot 2019-10-02 at 10.36.16 PM.png": [
-    "SaaS",
-    "Financial",
-    "Data-heavy",
-    "Search-centric",
-    "Tables",
-    "Two-Pane Layout"
+    "Browse & Discover",
+    "Article Detail",
+    "Table",
+    "Text Field",
+    "Button",
+    "Link",
+    "Accordion",
+    "Card"
   ],
   "Screen Shot 2019-10-02 at 10.37.50 PM.png": [
-    "Financial",
-    "Tables",
-    "Light Mode",
-    "Data-heavy",
-    "SaaS",
-    "Sidebar Navigation"
+    "Home",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 10.38.07 PM.png": [
-    "Financial",
-    "Enterprise",
-    "SaaS",
-    "Dashboard",
-    "Sidebar Navigation",
-    "Document Viewer"
+    "Browse & Discover",
+    "Table",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Search Bar"
   ],
   "Screen Shot 2019-10-02 at 10.39.13 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding",
-    "List View",
-    "SaaS",
-    "Clean UI"
+    "Home",
+    "Search Bar",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Banner"
   ],
   "Screen Shot 2019-10-02 at 10.39.21 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding",
-    "SaaS",
-    "Clean UI",
-    "List View"
+    "Home",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 10.39.41 PM.png": [
-    "Modal-driven",
-    "Preferences",
-    "Form-heavy",
-    "SaaS",
-    "Light Mode",
-    "Collaboration"
+    "Settings & Preferences",
+    "Checkbox",
+    "Dropdown Menu",
+    "Radio Button",
+    "Text Field",
+    "Button",
+    "Toast"
   ],
   "Screen Shot 2019-10-02 at 10.40.32 PM.png": [
-    "Modal-driven",
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Help Section",
-    "Sidebar Navigation"
+    "Help & Support",
+    "Text Field"
   ],
   "Screen Shot 2019-10-02 at 10.40.41 PM.png": [
-    "Light Mode",
-    "Clean",
-    "Sidebar Navigation",
-    "Modal-driven",
-    "SaaS",
-    "Professional"
+    "Feature Info",
+    "Text Field",
+    "Button",
+    "Accordion"
   ],
   "Screen Shot 2019-10-02 at 4.18.05 PM.png": [
-    "Search-centric",
-    "Data-heavy",
-    "Analytics",
-    "Tables",
-    "Charts",
-    "Financial"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Search Bar",
+    "Badge"
   ],
   "Screen Shot 2019-10-02 at 4.18.52 PM.png": [
-    "Dark Mode",
-    "Data-heavy",
-    "Search-centric",
-    "Charts",
-    "Tables",
-    "Financial"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Badge",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 8.00.11 PM.png": [
-    "SaaS",
-    "Analytics",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Charts",
-    "Professional"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu",
+    "Link"
   ],
   "Screen Shot 2019-10-02 at 8.00.33 PM.png": [
-    "Financial",
-    "SaaS",
-    "Search-centric",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Modal-driven"
+    "Browse & Discover",
+    "Search Bar",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Table",
+    "Avatar"
   ],
   "Screen Shot 2019-10-02 at 8.00.59 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Data-heavy",
-    "Analytics",
-    "Search-centric",
-    "Financial"
+    "Browse & Discover",
+    "Dashboard",
+    "Home",
+    "Accordion",
+    "Card",
+    "Checkbox",
+    "Color Picker",
+    "Date Picker",
+    "Dropdown Menu"
   ],
   "Screen Shot 2019-10-02 at 8.01.30 PM.png": [
-    "Light Mode",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Document Analysis",
-    "Productivity",
-    "Clean UI"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Search Bar",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 8.01.53 PM.png": [
-    "SaaS",
-    "Search-centric",
-    "Data Visualization",
-    "Sidebar Navigation",
-    "Financial",
-    "List View"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Color Picker",
+    "Combobox",
+    "Date Picker"
   ],
   "Screen Shot 2019-10-02 at 8.03.11 PM.png": [
-    "SaaS",
-    "Dashboard",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Data Visualization",
-    "Tables"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Color Picker",
+    "Date Picker",
+    "Editable Text"
   ],
   "Screen Shot 2019-10-02 at 8.03.49 PM.png": [
-    "Search-centric",
-    "Sidebar Navigation",
-    "Data Visualization",
-    "Tables",
-    "Financial",
-    "Light Mode"
+    "Browse & Discover",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Table",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 8.04.17 PM.png": [
-    "SaaS",
-    "Professional",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Financial"
+    "Browse & Discover",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Search Bar",
+    "Button",
+    "Checkbox"
   ],
   "Screen Shot 2019-10-02 at 8.05.45 PM.png": [
-    "Dark Mode",
-    "SaaS",
-    "Financial",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Document Viewer"
+    "Browse & Discover",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Search Bar"
   ],
   "Screen Shot 2019-10-02 at 8.06.02 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Search-centric",
-    "Data-heavy",
-    "Analytics",
-    "Sidebar"
+    "Browse & Discover",
+    "Segmented Control",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu",
+    "Table",
+    "Avatar"
   ],
   "Screen Shot 2019-10-02 at 8.07.22 PM.png": [
-    "SaaS",
-    "Professional",
-    "Dashboard",
-    "Analytics",
-    "Sidebar Navigation",
-    "Data Visualization"
+    "Browse & Discover",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Table",
+    "Tile",
+    "Button"
   ],
   "Screen Shot 2019-10-02 at 8.07.31 PM.png": [
-    "Dashboard",
-    "Data-heavy",
-    "Financial",
-    "SaaS",
-    "Search-centric",
-    "Data Visualization"
+    "Browse & Discover",
+    "Article Detail",
+    "Search",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Color Picker",
+    "Date Picker",
+    "Editable Text"
   ],
   "Screen Shot 2019-10-02 at 8.07.41 PM.png": [
-    "Dashboard",
-    "Data-heavy",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Enterprise"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Color Picker",
+    "Date Picker",
+    "Editable Text"
   ],
   "Screen Shot 2019-10-02 at 8.07.53 PM.png": [
-    "Light Mode",
-    "Search-centric",
-    "Data Visualization",
-    "Tables",
-    "Sidebar Navigation",
-    "Financial"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Table",
+    "Button",
+    "Dropdown Menu",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 8.11.16 PM.png": [
-    "SaaS",
-    "Dashboard",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Analytics",
-    "Search-centric"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Card",
+    "Tile"
   ],
   "Screen Shot 2019-10-02 at 8.13.36 PM.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Search-centric",
-    "Data Visualization"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Link"
   ],
   "Screen Shot 2019-10-02 at 8.13.50 PM.png": [
-    "SaaS",
-    "Professional",
-    "Sidebar Navigation",
-    "Analytics",
-    "Data-heavy",
-    "Document Viewer"
+    "News Feed",
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Table",
+    "Badge",
+    "Search Bar"
   ],
   "Screen Shot 2019-10-02 at 8.15.35 PM.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Analytics",
-    "List View",
-    "Modal-driven"
+    "News Feed",
+    "Card",
+    "Text Field",
+    "Button",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2019-10-02 at 8.18.39 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Financial",
-    "Data-heavy",
-    "Charts",
-    "Search-centric"
+    "News Feed",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Table",
+    "Badge",
+    "Search Bar"
   ],
   "Screen Shot 2019-10-02 at 8.18.46 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Financial"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link"
   ],
   "Screen Shot 2019-10-02 at 8.19.18 PM.png": [
-    "Dark Mode",
-    "Data-heavy",
-    "Analytics",
-    "List View",
-    "Charts",
-    "Modal-driven"
+    "Article Detail",
+    "Button",
+    "Text Field",
+    "Dialog",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 1.17-1.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Search-centric",
-    "Filters"
+    "Browse & Discover",
+    "Accordion",
+    "Dropdown Menu",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 1.17-2.png": [
-    "Sidebar Navigation",
-    "SaaS",
-    "Financial",
-    "Search-centric",
-    "List View",
-    "Professional"
+    "Browse & Discover",
+    "Accordion",
+    "Checkbox",
+    "Dropdown Menu",
+    "Table",
+    "Text Field",
+    "Tile"
   ],
   "Screen Shot 2022-03-10 at 1.17.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "List View",
-    "Data-heavy",
-    "Professional",
-    "Financial"
+    "Browse & Discover",
+    "Article Detail",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 1.18.png": [
-    "Light Mode",
     "Dashboard",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Data-heavy",
-    "Financial"
+    "Accordion",
+    "Dropdown Menu",
+    "Date Picker",
+    "Text Field",
+    "Card",
+    "Banner"
   ],
   "Screen Shot 2022-03-10 at 1.19.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Financial",
-    "Enterprise",
-    "Data-heavy"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2022-03-10 at 1.21.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Analytics",
-    "Search-centric",
-    "Tables",
-    "Charts"
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Progress Indicator"
   ],
   "Screen Shot 2022-03-10 at 1.22.png": [
-    "SaaS",
-    "Data-heavy",
-    "Tables",
-    "Light Mode",
-    "Search-centric",
-    "Enterprise"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Dropdown Menu",
+    "Button",
+    "Text Field",
+    "Badge"
   ],
   "Screen Shot 2022-03-10 at 1.23-1.png": [
-    "SaaS",
-    "Data-heavy",
-    "Analytics",
-    "Tables",
-    "Financial",
-    "Card Layout"
+    "Browse & Discover",
+    "Dropdown Menu",
+    "Table",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Table of Contents"
   ],
   "Screen Shot 2022-03-10 at 1.23-2.png": [
-    "Light Mode",
-    "Professional",
-    "Data-heavy",
-    "Tables",
-    "Sidebar Navigation",
-    "Financial"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Dropdown Menu",
+    "Link",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 1.23-3.png": [
-    "Financial",
-    "Data-heavy",
-    "Tables",
-    "Light Mode",
-    "Enterprise",
-    "Sidebar Navigation"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Search Bar",
+    "Pagination"
   ],
   "Screen Shot 2022-03-10 at 1.23.png": [
-    "Light Mode",
-    "SaaS",
-    "Data-heavy",
-    "Analytics",
-    "Search-centric",
-    "Tables"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Page Control"
   ],
   "Screen Shot 2022-03-10 at 1.25.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Tables",
-    "Sidebar Navigation",
-    "Financial",
-    "Clean UI"
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Link",
+    "Accordion",
+    "Search Bar"
   ],
   "Screen Shot 2022-03-10 at 1.26.png": [
-    "Light Mode",
-    "Data-heavy",
-    "Analytics",
-    "Tables",
-    "Sidebar Navigation",
-    "Financial"
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Divider"
   ],
   "Screen Shot 2022-03-10 at 1.27.png": [
-    "SaaS",
-    "Enterprise",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Multi-Column Layout",
-    "Analytics"
+    "Browse & Discover",
+    "Article Detail",
+    "Home",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu"
   ],
   "Screen Shot 2022-03-10 at 1.29.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "List View",
-    "Data-heavy",
-    "Professional",
-    "Light Mode"
+    "Browse & Discover",
+    "Article Detail",
+    "Home",
+    "Accordion",
+    "Card",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Link"
   ],
   "Screen Shot 2022-03-10 at 1.30-1.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Professional",
-    "Financial",
-    "Document Viewer"
+    "Browse & Discover",
+    "Article Detail",
+    "Video Player",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Link",
+    "Search Bar"
   ],
   "Screen Shot 2022-03-10 at 1.30.png": [
-    "SaaS",
-    "Financial",
-    "Analytics",
-    "Three-Column Layout",
-    "Data-heavy",
-    "Transcript View"
+    "Browse & Discover",
+    "Article Detail",
+    "Video Player",
+    "Accordion",
+    "Card",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Table"
   ],
   "Screen Shot 2022-03-10 at 1.31-1.png": [
-    "SaaS",
-    "Financial",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Data-heavy",
-    "Light Mode"
+    "Browse & Discover",
+    "Article Detail",
+    "News Feed",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Link",
+    "Badge"
   ],
   "Screen Shot 2022-03-10 at 1.31-2.png": [
-    "SaaS",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Financial",
-    "List View"
+    "Article Detail",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu"
   ],
   "Screen Shot 2022-03-10 at 1.31.png": [
-    "SaaS",
-    "Professional",
-    "Light Mode",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "Analytics"
+    "Article Detail",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Link",
+    "Badge"
   ],
   "Screen Shot 2022-03-10 at 1.32-1.png": [
-    "SaaS",
-    "Minimalist",
-    "Sidebar Navigation",
-    "Search-centric",
-    "Two-Column Layout",
-    "Document Viewer"
+    "Kanban Board",
+    "Card",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 1.32.png": [
-    "SaaS",
-    "Search-centric",
-    "Financial",
-    "Enterprise",
-    "Sidebar Navigation",
-    "Data-heavy"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Divider",
+    "Table"
   ],
   "Screen Shot 2022-03-10 at 11.34.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Professional",
-    "List View",
-    "Modal-driven"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Button",
+    "Card",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu"
   ],
   "Screen Shot 2022-03-10 at 11.37-1.png": [
-    "SaaS",
-    "Professional",
-    "Financial",
-    "Clean UI",
-    "Search-centric",
-    "Document Viewer"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Table of Contents",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 11.37.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Financial",
-    "Data-heavy",
-    "Clean UI"
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 11.38.png": [
-    "Light Mode",
-    "SaaS",
-    "Financial",
-    "Data-heavy",
-    "Sidebar Navigation",
-    "List View"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Table",
+    "Accordion",
+    "Search Bar",
+    "Avatar"
   ],
   "Screen Shot 2022-03-10 at 11.45.png": [
-    "SaaS",
-    "Light Mode",
-    "Sidebar Navigation",
-    "Financial",
-    "Professional",
-    "Transcript Viewer"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Table",
+    "Avatar",
+    "Icon",
+    "Search Bar"
   ],
   "Screen Shot 2022-03-10 at 11.46-1.png": [
-    "Light Mode",
-    "Professional",
-    "Modal-driven",
-    "List View",
-    "Financial",
-    "Clean UI"
+    "Article Detail",
+    "Text Field",
+    "Button"
   ],
   "Screen Shot 2022-03-10 at 11.46.png": [
-    "Light Mode",
-    "Clean UI",
-    "Professional",
-    "SaaS",
-    "Search-centric",
-    "Document Viewer"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Avatar",
+    "Icon",
+    "Search Bar"
   ],
   "Screen Shot 2022-03-10 at 11.47.png": [
-    "Light Mode",
-    "SaaS",
-    "Financial",
-    "Modal-driven",
-    "Professional",
-    "Clean"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Search Bar",
+    "Badge",
+    "Avatar"
   ],
   "Screen Shot 2022-03-10 at 11.48-1.png": [
-    "SaaS",
-    "Professional",
-    "Financial",
-    "Sidebar Navigation",
-    "List View",
-    "Document Viewer"
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 11.48.png": [
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Professional",
-    "Financial",
-    "Master-Detail Layout",
-    "Search-centric"
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Tab",
+    "Search Bar"
   ],
   "Screen Shot 2022-03-10 at 11.50.png": [
-    "Light Mode",
     "Dashboard",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Professional",
-    "Financial"
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 11.51.png": [
-    "Light Mode",
-    "SaaS",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Financial",
-    "List View"
+    "Browse & Discover",
+    "Article Detail",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Table",
+    "Avatar",
+    "Icon"
   ],
   "Screen Shot 2022-03-10 at 11.53.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Financial",
-    "List View",
-    "Professional"
+    "Dashboard",
+    "Accordion",
+    "Button",
+    "Card",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu"
   ],
   "Screen Shot 2022-03-10 at 11.54.png": [
-    "Dashboard",
-    "Sidebar Navigation",
-    "Data-heavy",
-    "Professional",
-    "Financial",
-    "Search-centric"
+    "Article Detail",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu",
+    "Page Control"
   ],
   "Screen Shot 2022-03-10 at 11.55-1.png": [
-    "Sidebar Navigation",
-    "List View",
-    "Modal-driven",
-    "Form-heavy",
-    "Financial",
-    "High Contrast"
+    "Dashboard",
+    "Search",
+    "Add & Create",
+    "Search Bar",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Toast",
+    "Avatar"
   ],
   "Screen Shot 2022-03-10 at 11.55.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "SaaS",
-    "Financial",
-    "Search-centric",
-    "Annotation"
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Search Bar",
+    "Text Field",
+    "Table",
+    "Avatar"
   ],
   "Screen Shot 2022-03-10 at 11.57-1.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "Professional",
-    "Search-centric",
-    "Modal-driven",
-    "Financial"
+    "Dashboard",
+    "Button",
+    "Dialog",
+    "Text Field",
+    "Avatar",
+    "Icon",
+    "Table"
   ],
   "Screen Shot 2022-03-10 at 11.57.png": [
-    "Dark Mode",
-    "Sidebar Navigation",
-    "SaaS",
-    "Financial",
-    "Modal-driven",
-    "Data-heavy"
+    "Add & Create",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Dialog"
   ],
   "screencapture-research-alpha-sense-2019-10-02-16_15_11.png": [
-    "Light Mode",
-    "Clean UI",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Two-Column Layout",
-    "Enterprise"
+    "Browse & Discover",
+    "Search Bar",
+    "Text Field",
+    "Button",
+    "Dropdown Menu"
   ],
   "screencapture-research-alpha-sense-2019-10-02-16_30_03.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Search-centric",
-    "SaaS",
-    "Financial",
-    "Data-heavy"
+    "Browse & Discover",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Icon",
+    "Badge"
   ],
   "screencapture-research-alpha-sense-2019-10-02-19_59_10.png": [
-    "SaaS",
-    "Search-centric",
-    "Multi-panel Layout",
-    "Light Mode",
-    "Enterprise",
-    "Sidebar Navigation"
+    "Dashboard",
+    "Search Bar",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Banner"
   ],
   "screencapture-research-alpha-sense-2019-10-02-22_31_10.png": [
-    "Financial",
-    "Data-heavy",
-    "Tables",
-    "Analytics",
-    "Light Mode",
-    "Sidebar"
+    "Dashboard",
+    "Table",
+    "Card",
+    "Text Field",
+    "Button",
+    "Accordion",
+    "Progress Indicator"
   ],
   "screencapture-research-alpha-sense-login-userid-2019-10-02-16_14_20.png": [
-    "Onboarding Flow",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Search-centric",
-    "AI-Focused"
+    "Login",
+    "Button",
+    "Text Field",
+    "Banner",
+    "Avatar",
+    "Icon",
+    "Hero Image"
   ],
   "z_extras_1 (1).png": [
-    "Search-centric",
-    "Light Mode",
-    "Card Layout",
-    "Financial",
-    "Data-heavy",
-    "Professional"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "z_extras_1.png": [
-    "Search-centric",
-    "Data Visualization",
-    "Card Layout",
-    "Financial",
-    "Modern SaaS",
-    "Analytics"
+    "Dashboard",
+    "Badge",
+    "Card",
+    "Text Field",
+    "Progress Indicator",
+    "Table",
+    "Avatar"
   ],
   "z_extras_2.png": [
-    "Financial",
-    "Search-centric",
-    "Document Analysis",
-    "List View",
-    "Clean UI",
-    "AI-Focused"
+    "Article Detail",
+    "Text Field"
   ],
   "z_extras_3 (1).png": [
-    "SaaS",
-    "Professional",
-    "Search-centric",
-    "Tables",
-    "Financial",
-    "Light Mode"
+    "Browse & Discover",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Tile",
+    "Slider",
+    "Tab"
   ],
   "z_extras_3.png": [
-    "Dark Mode",
     "Dashboard",
-    "Data Visualization",
-    "Charts",
-    "Search-centric",
-    "Financial"
+    "Table",
+    "Progress Indicator",
+    "Text Field",
+    "Badge",
+    "Card",
+    "Grid List"
   ],
   "z_extras_471x0w.jpg": [
-    "Dark Mode",
-    "Professional",
-    "Typography-focused",
-    "Mobile UI",
-    "Financial",
-    "Article View"
+    "Browse & Discover",
+    "Text Field"
   ],
   "z_extras_690x0w (1).jpg": [
-    "Search-centric",
-    "Form-heavy",
-    "Light Mode",
-    "Enterprise",
-    "Clean UI",
-    "List View"
+    "Browse & Discover",
+    "Accordion",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field"
   ],
   "z_extras_690x0w (2).jpg": [
-    "Light Mode",
-    "Search-centric",
-    "List View",
-    "Card Layout",
-    "Minimalist",
-    "Financial"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Divider",
+    "Icon",
+    "Badge",
+    "Button"
   ],
   "z_extras_690x0w (3).jpg": [
-    "Dark Mode",
-    "Card Layout",
-    "Financial",
-    "Search-centric",
-    "Professional",
-    "AI-Focused"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Search Bar",
+    "Avatar",
+    "Icon"
   ],
   "z_extras_690x0w.jpg": [
-    "Light Mode",
-    "Search-centric",
-    "Card Layout",
-    "Professional",
-    "Clean UI",
-    "Productivity"
+    "Browse & Discover",
+    "Text Field"
   ],
   "z_extras_939x0w (1).jpg": [
-    "Dark Mode",
-    "Financial",
-    "Enterprise",
-    "Document Viewer",
-    "Search-centric",
-    "Text Highlighting"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Divider"
   ],
   "z_extras_939x0w (2).jpg": [
-    "Search-centric",
-    "Filter Panel",
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Clean UI"
+    "Browse & Discover",
+    "Search Bar",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Accordion",
+    "Divider"
   ],
   "z_extras_939x0w (3).jpg": [
-    "List View",
-    "Search Results",
-    "Clean UI",
-    "Financial",
-    "High Contrast",
-    "Blue Accents"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Divider",
+    "Icon",
+    "Progress Indicator"
   ],
   "z_extras_939x0w (4).jpg": [
-    "List View",
-    "Card-based",
-    "Data-heavy",
-    "Financial",
-    "Professional",
-    "Clean UI"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Avatar",
+    "Icon",
+    "Banner"
   ],
   "z_extras_939x0w.jpg": [
-    "Light Mode",
-    "Clean",
-    "Professional",
-    "Typography-focused",
-    "Financial",
-    "Document View"
+    "Article Detail",
+    "Text Field"
   ],
   "z_extras_AS-RSS-how-to-4x.gif": [
-    "SaaS",
-    "Professional",
-    "Clean UI",
-    "Sidebar Navigation",
-    "Data Filtering",
-    "Financial"
+    "Browse & Discover",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon"
   ],
   "z_extras_AS-Sentiment-LP-v2.png": [
-    "Dark Mode",
-    "SaaS",
-    "Search-centric",
-    "Sidebar Navigation",
-    "Financial",
-    "AI-Focused"
+    "Dashboard",
+    "Card",
+    "Text Field",
+    "Table",
+    "Badge",
+    "Button",
+    "Accordion"
   ],
   "z_extras_Alpha-sense-Mactro-Trends-image-2.png": [
-    "Light Mode",
-    "SaaS",
-    "Financial",
-    "Professional",
-    "Text Analysis",
-    "Document Viewer"
+    "Article Detail",
+    "Text Field"
   ],
   "z_extras_Brexit-Sentiment-Analysis-1.png": [
-    "Dark Mode",
-    "Data-heavy",
-    "Analytics",
-    "Tables",
-    "Data Visualization",
-    "AI-Focused"
+    "Browse & Discover",
+    "Dashboard",
+    "Progress",
+    "Table",
+    "Badge",
+    "Card",
+    "Progress Indicator",
+    "Text Field",
+    "Button"
   ],
   "z_extras_Jan-Sentiment-Blog-New-4.png": [
-    "Dark Mode",
     "Dashboard",
-    "Data Visualization",
-    "Analytics",
-    "Card Layout",
-    "Financial"
+    "Card",
+    "Progress Indicator",
+    "Text Field",
+    "Table"
   ],
   "z_extras_NB-Step-02-1.png": [
-    "SaaS",
-    "Enterprise",
-    "Financial",
-    "Productivity",
-    "Sidebar Navigation",
-    "Light Mode"
+    "Note Detail",
+    "Button",
+    "Text Field",
+    "Icon"
   ],
   "z_extras_NB-Step-03.png": [
-    "Card Layout",
-    "Clean UI",
-    "SaaS",
-    "Productivity",
-    "Text Highlights",
-    "Blue Accents"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card"
   ],
   "z_extras_Notebook-blog-cover.png": [
-    "Sidebar Navigation",
-    "List View",
-    "Financial",
-    "Productivity",
-    "Clean UI",
-    "AI-Focused"
+    "Home",
+    "Search Bar",
+    "Text Field",
+    "Button",
+    "Tile",
+    "Card",
+    "Table"
   ],
   "z_extras_RSS-Blog-Cover.png": [
-    "Modal-driven",
-    "Form-heavy",
-    "SaaS",
-    "Data Filtering",
-    "Professional",
-    "List View"
+    "Add & Create",
+    "Button",
+    "Text Field",
+    "Dropdown Menu",
+    "Checkbox",
+    "Link"
   ],
   "z_extras_Sentiment-Analysis-Healthcare-Macro.png": [
-    "Analytics",
-    "Data Visualization",
-    "Tables",
-    "Financial",
-    "Dark Mode",
-    "SaaS"
+    "Dashboard",
+    "Table",
+    "Progress Indicator",
+    "Text Field",
+    "Button",
+    "Dropdown Menu",
+    "Badge"
   ],
   "z_extras_Sentiment-Jan-Sell-Side-2-1.png": [
-    "Financial",
-    "SaaS",
-    "Light Mode",
-    "Sidebar",
-    "Text Analysis",
-    "Clean UI"
+    "News Feed",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Link",
+    "Divider",
+    "Table"
   ],
   "z_extras_Sentiment-Sell-Side-1-1.png": [
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Financial",
-    "Clean Typography",
-    "Text Analysis"
+    "Article Detail",
+    "Text Field",
+    "Button",
+    "Link",
+    "Accordion",
+    "Search Bar"
   ],
   "z_extras_background@2x.jpg": [
-    "Financial",
-    "Search-centric",
-    "List View",
-    "Light Mode",
-    "Professional",
-    "AI-Focused"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Badge",
+    "Divider",
+    "Table",
+    "Avatar"
   ],
   "z_extras_blackline1.png": [
-    "Document Comparison",
-    "Version Control",
-    "Financial",
-    "Enterprise",
-    "Clean UI",
-    "Light Mode"
+    "Article Detail",
+    "Text Field"
   ],
   "z_extras_blackline2.png": [
-    "Light Mode",
-    "Professional",
-    "Document Comparison",
-    "Redline View",
-    "Financial Reporting",
-    "Interactive Document"
+    "Article Detail",
+    "Text Field"
   ],
   "z_extras_candied fruit.png": [
-    "SaaS",
-    "Financial",
-    "Analytics",
-    "Modal-driven",
-    "Charts",
-    "Tables"
+    "Action Option",
+    "Button",
+    "Text Field",
+    "Radio Button",
+    "Dialog"
   ],
   "z_extras_corporates.png": [
-    "SaaS",
-    "Light Mode",
-    "Data-heavy",
-    "List View",
-    "Card Layout",
-    "Financial"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Badge",
+    "Divider"
   ],
   "z_extras_financials.png": [
-    "Dark Mode",
-    "Search-centric",
-    "Data Visualization",
-    "Financial",
-    "Charts",
-    "Analytics"
+    "Dashboard",
+    "Search Bar",
+    "Progress Indicator",
+    "Table",
+    "Text Field"
   ],
   "z_extras_hero (1).png": [
-    "SaaS",
-    "Financial",
-    "Data-heavy",
-    "Tables",
-    "Sidebar Navigation",
-    "Light Mode"
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Icon"
   ],
   "z_extras_hero.png": [
-    "Analytics",
-    "Data Visualization",
-    "Data-heavy",
-    "Tables",
-    "Professional",
-    "Light Mode"
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Progress Indicator",
+    "Card"
   ],
   "z_extras_screen@2x (1).png": [
-    "Dark Mode",
-    "SaaS",
-    "Financial",
-    "Analytics",
-    "Data Visualization",
-    "Search-centric"
+    "Dashboard",
+    "Accordion",
+    "Card",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Table"
   ],
   "z_extras_screen@2x.png": [
-    "Dark Mode",
-    "Data-heavy",
-    "Financial",
-    "Search-centric",
-    "Data Visualization",
-    "Tables"
+    "Dashboard",
+    "Table",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Card",
+    "Progress Indicator"
   ],
   "z_extras_sentiment-Jan-sell-side-3.png": [
-    "Dark Mode",
-    "Analytics",
-    "Data Visualization",
-    "Card Layout",
-    "Financial",
-    "SaaS"
+    "Dashboard",
+    "Text Field",
+    "Progress Indicator",
+    "Badge",
+    "Card"
   ],
   "z_extras_sentiment-features.png": [
-    "Dark Mode",
-    "Search-centric",
-    "Sentiment Analysis",
-    "Data Visualization",
-    "Tables",
-    "Financial"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Table"
   ],
   "z_extras_sentiment-jan-sell-side-4.png": [
-    "Tables",
-    "Financial",
-    "Data-heavy",
-    "Light Mode",
-    "Blue Accents",
-    "Data Visualization"
+    "Browse & Discover",
+    "Table",
+    "Text Field",
+    "Badge",
+    "Divider",
+    "Icon"
   ],
   "z_extras_sentiment-stock-price-hooker-furniture-1.png": [
-    "Financial",
-    "Data Visualization",
-    "Charts",
-    "Dark Mode",
-    "Analytics",
-    "AI-Focused"
+    "Article Detail",
+    "Text Field"
   ],
   "z_extras_sentiment-stock-price-progress-software.png": [
-    "Financial",
-    "Analytics",
-    "Data Visualization",
-    "Dark Mode",
-    "SaaS",
-    "Data-heavy"
+    "Dashboard",
+    "Text Field",
+    "Progress Indicator",
+    "Table",
+    "Card"
   ],
   "z_extras_sentiment-stock-price-roku.png": [
-    "Analytics",
-    "Financial",
-    "Data Visualization",
-    "Dark Mode",
-    "Data-heavy",
-    "Modal-driven"
+    "News Feed",
+    "Text Field",
+    "Button",
+    "Progress Indicator"
   ],
   "z_extras_sentiment-stock-price-victrex.png": [
-    "Financial",
-    "Analytics",
-    "Charts",
-    "Data-heavy",
-    "Document Analysis",
-    "Modal-driven"
+    "Article Detail",
+    "Text Field"
   ]
 }

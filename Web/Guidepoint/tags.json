@@ -1,18 +1,20 @@
 {
   "Insight-Header-Screenshots-Only.png": [
-    "Sidebar Navigation",
-    "Card Layout",
-    "Light Mode",
-    "Professional",
-    "SaaS",
-    "Filter Pills"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Divider",
+    "Table"
   ],
   "Qsight-Header-3.png": [
     "Dashboard",
-    "Analytics",
-    "Data Visualization",
-    "Charts",
-    "Tables",
-    "Light Mode"
+    "Table",
+    "Progress Indicator",
+    "Badge",
+    "Card",
+    "Text Field",
+    "Icon"
   ]
 }

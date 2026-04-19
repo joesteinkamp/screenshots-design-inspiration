@@ -1,372 +1,377 @@
 {
   "20180211_222210000_iOS.png": [
-    "Onboarding",
-    "App Permissions",
-    "Modal Dialog",
-    "Illustrations",
-    "Clean UI",
-    "Light Mode"
+    "Permission",
+    "Button",
+    "Text Field",
+    "Dialog"
   ],
   "20180211_222214000_iOS.png": [
-    "Onboarding Flow",
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy",
-    "Blue Accents",
-    "Enterprise"
+    "Login",
+    "Button",
+    "Text Field",
+    "Link"
   ],
   "Screen Shot 2018-02-11 at 3.17.08 PM.png": [
-    "Onboarding",
-    "Form-heavy",
-    "SaaS",
-    "Light Mode",
-    "Professional",
-    "Two-Column Layout"
+    "Signup",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Dropdown Menu",
+    "Accordion"
   ],
   "Screen Shot 2018-02-11 at 3.18.44 PM.png": [
-    "Onboarding",
-    "Form-heavy",
-    "SaaS",
-    "Clean",
-    "Image-heavy",
-    "Light Mode"
+    "Signup",
+    "Text Field",
+    "Dropdown Menu",
+    "Button"
   ],
   "Screen Shot 2018-02-11 at 3.19.28 PM.png": [
-    "Onboarding",
-    "Form-heavy",
-    "Clean",
-    "Modern",
-    "SaaS"
+    "Signup",
+    "Text Field",
+    "Dropdown Menu",
+    "Checkbox",
+    "Button"
   ],
   "Screen Shot 2018-02-11 at 3.19.40 PM.png": [
-    "Onboarding Flow",
-    "Minimalist",
-    "Clean UI",
-    "Light Mode",
-    "SaaS"
+    "Verification",
+    "Text Field",
+    "Button"
   ],
   "Screen Shot 2018-02-11 at 3.20.01 PM.png": [
-    "Onboarding",
-    "Email Confirmation",
-    "Light Mode",
-    "Minimalist",
-    "Clean",
-    "Blue Accents"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Link"
   ],
   "Screen Shot 2018-02-11 at 3.20.14 PM.png": [
-    "Onboarding",
-    "Form-heavy",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Card Layout"
+    "Signup",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Link",
+    "Accordion"
   ],
   "Screen Shot 2018-02-11 at 3.20.29 PM.png": [
-    "Onboarding",
-    "Form-heavy",
-    "Clean UI",
-    "Light Mode",
-    "SaaS"
+    "Signup",
+    "Text Field",
+    "Checkbox",
+    "Button",
+    "Radio Button"
   ],
   "Screen Shot 2018-02-11 at 3.20.39 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Project Management",
-    "Clean UI",
-    "Onboarding"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Avatar",
+    "Banner",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.20.51 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Onboarding Flow",
-    "SaaS",
-    "Project Management"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Text Field",
+    "Date Picker",
+    "Radio Button",
+    "Button"
   ],
   "Screen Shot 2018-02-11 at 3.21.15 PM.png": [
-    "Light Mode",
-    "Onboarding Flow",
-    "Form-heavy",
-    "Sidebar Navigation",
-    "SaaS"
+    "Add & Create",
+    "Text Field",
+    "Button",
+    "Date Picker",
+    "Checkbox",
+    "Segmented Control",
+    "Accordion"
   ],
   "Screen Shot 2018-02-11 at 3.21.50 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Form-heavy",
-    "Clean UI",
-    "Blue Accents"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Date Picker",
+    "Checkbox",
+    "Accordion",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.22.01 PM.png": [
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Light Mode",
-    "Onboarding Flow",
-    "Calendar Picker",
-    "SaaS"
+    "Signup",
+    "Button",
+    "Text Field",
+    "Date Picker",
+    "Accordion",
+    "Checkbox",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.22.09 PM.png": [
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Light Mode",
-    "SaaS",
-    "Blue Accents",
-    "Clean UI"
+    "Signup",
+    "Text Field",
+    "Date Picker",
+    "Time Picker",
+    "Button",
+    "Checkbox",
+    "Accordion"
   ],
   "Screen Shot 2018-02-11 at 3.22.18 PM.png": [
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Blue Accents"
+    "Account Setup",
+    "Button",
+    "Date Picker",
+    "Time Picker",
+    "Text Field",
+    "Accordion",
+    "Checkbox"
   ],
   "Screen Shot 2018-02-11 at 3.22.32 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Clean UI",
-    "Form-heavy"
+    "Account Setup",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Accordion",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.22.56 PM.png": [
-    "Tables",
-    "Form-heavy",
-    "Data-heavy",
-    "Light Mode",
-    "SaaS"
+    "Home",
+    "Table",
+    "Text Field",
+    "Button",
+    "Tab",
+    "Icon"
   ],
   "Screen Shot 2018-02-11 at 3.23.13 PM.png": [
-    "Spreadsheet Interface",
-    "Data Entry",
-    "Template",
-    "Grid Layout",
-    "Light Mode",
-    "SaaS Integration"
+    "Home",
+    "Button",
+    "Text Field",
+    "Table"
   ],
   "Screen Shot 2018-02-11 at 3.23.44 PM.png": [
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Form-heavy"
+    "Signup",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon"
   ],
   "Screen Shot 2018-02-11 at 3.23.53 PM.png": [
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Map Integration",
-    "SaaS",
-    "Light Mode",
-    "Form-heavy"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Map Pin",
+    "Accordion",
+    "Tab",
+    "Banner"
   ],
   "Screen Shot 2018-02-11 at 3.24.01 PM.png": [
-    "Onboarding Flow",
-    "Sidebar Navigation",
-    "Light Mode",
-    "Clean UI",
-    "SaaS",
-    "Progress Indicator"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.24.19 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Clean UI",
-    "SaaS",
-    "Project Management"
+    "Guided Tour & Tutorial",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Tab",
+    "Icon",
+    "Badge"
   ],
   "Screen Shot 2018-02-11 at 3.24.58 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Map Integration",
-    "SaaS",
-    "Clean UI"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Map Pin",
+    "Tab",
+    "Banner"
   ],
   "Screen Shot 2018-02-11 at 3.25.08 PM.png": [
-    "SaaS",
-    "Project Management",
-    "Sidebar Navigation",
-    "Tables",
-    "Light Mode",
-    "Clean"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Pagination",
+    "Icon",
+    "Text Field"
   ],
   "Screen Shot 2018-02-11 at 3.25.29 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "SaaS",
-    "Form-heavy",
-    "Clean UI"
+    "Guided Tour & Tutorial",
+    "Search Bar",
+    "Button",
+    "Tab",
+    "Text Field",
+    "Icon"
   ],
   "Screen Shot 2018-02-11 at 3.25.37 PM.png": [
-    "Onboarding Flow",
-    "Sidebar Navigation",
-    "Project Management",
-    "SaaS",
-    "Clean UI",
-    "Light Mode"
+    "Guided Tour & Tutorial",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon"
   ],
   "Screen Shot 2018-02-11 at 3.25.46 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "SaaS",
-    "Project Management",
-    "Clean UI"
+    "Guided Tour & Tutorial",
+    "Search Bar",
+    "Button",
+    "Text Field",
+    "Accordion",
+    "Tab",
+    "Icon"
   ],
   "Screen Shot 2018-02-11 at 3.25.59 PM.png": [
-    "Onboarding Flow",
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Clean UI",
-    "SaaS",
-    "Card Layout"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Dropdown Menu",
+    "Switch",
+    "Toast"
   ],
   "Screen Shot 2018-02-11 at 3.26.09 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "SaaS",
-    "Form-heavy",
-    "Clean UI"
+    "Account Setup",
+    "Accordion",
+    "Text Field",
+    "Button",
+    "Search Bar",
+    "Dropdown Menu",
+    "Checkbox"
   ],
   "Screen Shot 2018-02-11 at 3.26.15 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "Form-heavy",
-    "Clean UI",
-    "SaaS"
+    "Settings & Preferences",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Search Bar",
+    "Checkbox"
   ],
   "Screen Shot 2018-02-11 at 3.26.40 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "SaaS",
-    "Onboarding Flow",
-    "Form-heavy"
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Search Bar",
+    "Dropdown Menu"
   ],
   "Screen Shot 2018-02-11 at 3.26.50 PM.png": [
-    "Sidebar Navigation",
-    "Onboarding Flow",
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Project Management"
+    "Guided Tour & Tutorial",
+    "Button",
+    "Search Bar",
+    "Checkbox",
+    "Text Field",
+    "Accordion",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.26.58 PM.png": [
-    "Sidebar Navigation",
-    "Project Management",
-    "SaaS",
-    "Map Integration",
-    "Clean UI",
-    "Light Mode"
+    "Dashboard",
+    "Accordion",
+    "Button",
+    "Card",
+    "Map Pin",
+    "Text Field"
   ],
   "Screen Shot 2018-02-11 at 3.27.04 PM.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "Professional",
-    "Map Integration",
-    "Project Management",
-    "Form-heavy"
+    "Home",
+    "Button",
+    "Text Field",
+    "Map Pin",
+    "Accordion",
+    "Tile"
   ],
   "Screen Shot 2018-02-11 at 3.27.24 PM.png": [
-    "SaaS",
-    "Sidebar Navigation",
-    "List View",
-    "Tables",
-    "Light Mode",
-    "Project Management"
+    "Dashboard",
+    "Table",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Icon",
+    "Divider"
   ],
   "Screen Shot 2018-02-11 at 3.27.32 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean UI",
-    "Search-centric",
-    "SaaS",
-    "Professional"
+    "Home",
+    "Search Bar",
+    "Button",
+    "Icon",
+    "Text Field",
+    "Avatar",
+    "Banner"
   ],
   "Screen Shot 2018-02-11 at 3.27.42 PM.png": [
-    "Sidebar Navigation",
-    "Tables",
-    "Admin Panel",
-    "User Management",
-    "Light Mode",
-    "SaaS"
+    "Dashboard",
+    "Table",
+    "Button",
+    "Search Bar",
+    "Dropdown Menu",
+    "Pagination",
+    "Avatar"
   ],
   "Screen Shot 2018-02-11 at 3.27.48 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Dashboard",
-    "Tables",
-    "Form-heavy",
-    "SaaS"
+    "Account Setup",
+    "Button",
+    "Dropdown Menu",
+    "Text Field",
+    "Checkbox",
+    "Table",
+    "Icon"
   ],
   "Screen Shot 2018-02-11 at 3.27.54 PM.png": [
-    "Light Mode",
-    "SaaS",
-    "Sidebar Navigation",
-    "Tables",
-    "Form-heavy",
-    "Clean UI"
+    "Account Setup",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Table"
   ],
   "Screen Shot 2018-02-11 at 3.28.05 PM.png": [
-    "Sidebar Navigation",
-    "Form-heavy",
-    "SaaS",
-    "Clean UI",
-    "User Profile",
-    "Tabbed Navigation"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Accordion",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.28.16 PM.png": [
-    "Sidebar Navigation",
-    "Light Mode",
-    "SaaS",
-    "Professional",
-    "Onboarding",
-    "Clean UI"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Avatar",
+    "Icon",
+    "Banner",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.28.23 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean",
-    "SaaS",
-    "Form-heavy",
-    "Professional"
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Link"
   ],
   "Screen Shot 2018-02-11 at 3.28.30 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Clean",
-    "Onboarding",
-    "SaaS",
-    "Professional"
+    "Browse & Discover",
+    "Button",
+    "Text Field",
+    "Icon",
+    "Avatar",
+    "Banner",
+    "Tab"
   ],
   "Screen Shot 2018-02-11 at 3.28.41 PM.png": [
-    "Light Mode",
-    "Sidebar Navigation",
-    "Form-heavy",
-    "Modern SaaS",
-    "Clean UI",
-    "Blue Accents"
+    "Account Setup",
+    "Text Field",
+    "Dropdown Menu",
+    "Button",
+    "Banner"
   ],
   "Screen Shot 2018-02-11 at 3.28.56 PM.png": [
-    "Spreadsheet Interface",
-    "Data Entry",
-    "Template",
-    "Grid Layout",
-    "SaaS",
-    "Light Mode"
+    "Home",
+    "Button",
+    "Text Field",
+    "Table"
   ],
   "Screen Shot 2018-02-11 at 3.29.06 PM.png": [
-    "Sidebar Navigation",
-    "Tables",
-    "SaaS",
-    "Light Mode",
-    "Clean UI",
-    "Search-centric"
+    "Browse & Discover",
+    "Table",
+    "Search Bar",
+    "Button",
+    "Pagination",
+    "Icon",
+    "Text Field"
   ]
 }

@@ -1,121 +1,129 @@
 {
   "23845da0-9e43-4ef3-818f-c97886d88ae5.jpeg": [
     "Dashboard",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Analytics",
-    "Light Mode",
-    "Minimalist"
+    "Card",
+    "Text Field",
+    "Button",
+    "Badge",
+    "Table",
+    "Avatar"
   ],
   "30969026-ac12-4606-ae89-7b7aeb122bba.jpeg": [
-    "SaaS",
-    "Publishing Workflow",
-    "Content Preview",
-    "Light Mode",
-    "Clean UI",
-    "Form-heavy"
+    "Article Detail",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu",
+    "Page Control",
+    "Text Field"
   ],
   "4ac17491-889d-4bea-928f-9c82ac7e89e1.jpeg": [
-    "Modern",
-    "Clean",
-    "Image-heavy",
-    "Newsletter",
-    "Bold Typography",
-    "Landing Page"
+    "Browse & Discover",
+    "Card",
+    "Avatar",
+    "Text Field",
+    "Button",
+    "Hero Image",
+    "Icon"
   ],
   "7faf1fd4-c6e8-4471-bafb-c550c4f7d011.jpeg": [
-    "Light Mode",
-    "Minimalist",
-    "Card Layout",
-    "Image-heavy",
-    "Blog Layout",
-    "Newsletter Design"
+    "Home",
+    "Avatar",
+    "Banner",
+    "Card",
+    "Carousel",
+    "Hero Image",
+    "Text Field"
   ],
   "Tiers-Screenshot@2x-3.png": [
-    "Light Mode",
-    "Clean UI",
-    "Onboarding Flow",
-    "Form-heavy",
-    "Card Layout",
-    "SaaS"
+    "Subscription & Paywall",
+    "Button",
+    "Text Field",
+    "Radio Button"
   ],
   "b45b8ad3-e56d-4843-a2d4-4c8863e24ae2.jpeg": [
-    "Light Mode",
-    "Clean UI",
-    "Modern",
-    "Content Editor",
-    "SaaS",
-    "Clean Typography"
+    "Article Detail",
+    "Button",
+    "Dropdown Menu",
+    "Icon",
+    "Text Field",
+    "Tile"
   ],
   "b4c25c5a-4694-4cc2-819e-8fac6ddbf056.jpeg": [
-    "Sidebar Navigation",
     "Dashboard",
-    "SaaS",
-    "List View",
-    "Analytics",
-    "Minimalist"
+    "Avatar",
+    "Badge",
+    "Card",
+    "Divider",
+    "Grid List",
+    "Icon"
   ],
   "bea58519-6fdc-4c55-ba97-9db50a88db92.jpeg": [
-    "Dark Mode",
-    "Dashboard",
-    "Sidebar Navigation",
-    "List View",
-    "Analytics",
-    "SaaS"
+    "Browse & Discover",
+    "Card",
+    "Text Field",
+    "Button",
+    "Checkbox",
+    "Segmented Control",
+    "Table"
   ],
   "email-design-new.png": [
-    "Clean UI",
-    "Light Mode",
-    "Sidebar",
-    "Form-heavy",
-    "Typography-focused",
-    "Modern SaaS"
+    "Settings & Preferences",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Switch",
+    "Tile"
   ],
   "email-without-publishing.png": [
-    "Light Mode",
-    "Clean UI",
-    "Sidebar",
-    "SaaS",
-    "Publishing Workflow",
-    "Content Editor"
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Checkbox",
+    "Date Picker",
+    "Segmented Control"
   ],
   "filtering-members.png": [
-    "SaaS",
-    "Dashboard",
-    "Light Mode",
-    "Clean UI",
-    "Filter UI",
-    "List View"
+    "Filter & Sort",
+    "Dropdown Menu",
+    "Text Field",
+    "Button",
+    "Checkbox"
   ],
   "home-screenshot_hub16a8f8cd368011dde6bde1c63bdcb1f_730392_2400x0_resize_box_2.png": [
-    "Dark Mode",
     "Dashboard",
-    "Sidebar Navigation",
-    "Card Layout",
-    "Data Visualization",
-    "SaaS"
+    "Avatar",
+    "Banner",
+    "Card",
+    "Carousel",
+    "Divider",
+    "Grid List"
   ],
   "post-list-3000.png": [
-    "Dark Mode",
     "Dashboard",
-    "Sidebar Navigation",
-    "Tables",
-    "Data-heavy",
-    "SaaS"
+    "Avatar",
+    "Button",
+    "Card",
+    "Checkbox",
+    "Dropdown Menu",
+    "Icon"
   ],
   "private-communities.png": [
-    "Sidebar Navigation",
-    "SaaS",
-    "Clean UI",
-    "Modal-driven",
-    "Light Mode",
-    "Settings Page"
+    "Settings & Preferences",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Toast"
   ],
   "segmented-email.png": [
-    "Modal-driven",
-    "SaaS",
-    "Light Mode",
-    "Minimalist",
-    "Publishing Flow"
+    "Publish",
+    "Button",
+    "Checkbox",
+    "Date Picker",
+    "Dropdown Menu",
+    "Segmented Control",
+    "Text Field"
   ]
 }
