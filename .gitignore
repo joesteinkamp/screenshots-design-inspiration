@@ -32,3 +32,6 @@ Web/.DS_Store
 
 # Local tagger model weights (downloaded on demand, ~6GB)
 scripts/.models/
+
+# Backfill logs
+logs/

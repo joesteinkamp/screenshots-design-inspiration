@@ -73,6 +73,7 @@ function parseArgs() {
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--all") flags.all = true;
     else if (args[i] === "--skip-valid-vocab") flags.skipValidVocab = true;
+    else if (args[i] === "--repair-frontmatter") flags.repairFrontmatter = true;
     else if (args[i] === "--dry-run") flags.dryRun = true;
     else if (args[i] === "--product" && args[i + 1]) flags.product = args[++i];
     else if (args[i] === "--limit" && args[i + 1]) flags.limit = parseInt(args[++i], 10);
@@ -151,17 +152,39 @@ function writeFrontmatterImageTags(indexPath, tagsMap, productName) {
     return;
   }
 
-  let content = fs.readFileSync(indexPath, "utf-8");
-  content = content.replace(
-    /^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m,
-    ""
-  );
-  content = content.replace(
-    /^(---\s*)$/m,
-    `${imageTagsBlock}\n$1`
-  );
+  const raw = fs.readFileSync(indexPath, "utf-8");
+  // Match proper Jekyll frontmatter: --- ... --- at the top of the file.
+  const fmMatch = raw.match(/^---\s*\n([\s\S]*?)\n---\s*(?:\r?\n|$)/);
+  let yaml;
+  let body;
+  if (fmMatch) {
+    yaml = fmMatch[1];
+    body = raw.slice(fmMatch[0].length);
+  } else {
+    // No valid frontmatter — synthesize one. This also repairs files where
+    // a previous buggy write prepended `image_tags:` BEFORE the opening ---.
+    // Strip any stray leading image_tags block and any wrongly-placed
+    // frontmatter that follows.
+    const stripped = raw
+      .replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "")
+      .replace(/^---\s*\n([\s\S]*?)\n---\s*(?:\r?\n|$)/, (_, y) => {
+        yaml = y;
+        return "";
+      });
+    if (!yaml) {
+      yaml = [
+        "layout: gallery",
+        `gallery-directory: ${productName}`,
+        "tags: []",
+      ].join("\n");
+    }
+    body = stripped.replace(/^\s+/, "");
+  }
 
-  fs.writeFileSync(indexPath, content, "utf-8");
+  // Remove any pre-existing image_tags block from yaml so we can re-write it.
+  yaml = yaml.replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "").trimEnd();
+  const newFrontmatter = `---\n${yaml}\n${imageTagsBlock}\n---\n`;
+  fs.writeFileSync(indexPath, newFrontmatter + body, "utf-8");
 }
 
 function readImageBase64(imagePath) {
@@ -582,6 +605,26 @@ async function main() {
   console.log(
     `Loaded taxonomy: ${taxonomy.allowed.size} tags across ${taxonomy.byType.size} type(s).`
   );
+
+  if (flags.repairFrontmatter) {
+    let repaired = 0;
+    for (const platform of PLATFORMS) {
+      const platformDir = path.join(root, platform);
+      if (!fs.existsSync(platformDir)) continue;
+      for (const entry of fs.readdirSync(platformDir, { withFileTypes: true })) {
+        if (!entry.isDirectory()) continue;
+        const productDir = path.join(platformDir, entry.name);
+        const indexPath = path.join(productDir, "index.html");
+        if (!fs.existsSync(indexPath)) continue;
+        const tagsMap = readTagsJson(productDir);
+        if (Object.keys(tagsMap).length === 0) continue;
+        writeFrontmatterImageTags(indexPath, tagsMap, entry.name);
+        repaired++;
+      }
+    }
+    console.log(`Repaired frontmatter in ${repaired} index.html files.`);
+    return;
+  }
 
   const backend = await selectBackend(flags, taxonomy);
   console.log(`Using backend: ${backend.name}`);
