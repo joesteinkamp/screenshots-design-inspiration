@@ -63,13 +63,28 @@ jobs:
         if: always()
         run: scripts/stop-local-tagger.sh
 
-      - name: Commit new tags
+      # Repair any YAML typos — contributors' own, or any our auto-tagger
+      # may have introduced. Exit code 2 just means fixes were applied; exit
+      # code 1 means unfixable errors remain (the safety-net plugin will
+      # still render those products so the build succeeds, but we log it).
+      - name: Auto-fix frontmatter YAML
+        run: |
+          set +e
+          node scripts/validate-frontmatter.mjs --fix
+          code=$?
+          if [ "$code" -eq 1 ]; then
+            echo "::warning::validate-frontmatter found unfixable YAML errors. The safety-net plugin will fall back to minimal frontmatter so the build continues."
+          fi
+          exit 0
+
+      - name: Commit bot updates (auto-tags + YAML fixes)
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet && exit 0
           git add "*/index.html" "*/tags.json"
-          git commit -m "Auto-tag untagged screenshots"
+          git commit -m "chore(bot): auto-tag + auto-fix frontmatter [skip ci]"
           git push
 
       - name: Setup Ruby

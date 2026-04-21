@@ -1,0 +1,117 @@
+# Contributing
+
+Thanks for contributing screenshots! This guide focuses on the bits that are easy to get wrong — the YAML frontmatter inside each product's `index.html`.
+
+## Adding a new product
+
+1. Create a folder named after the app under `Web/`, `Mobile/`, or `Email/`:
+
+   ```
+   Web/YourApp/
+     index.html
+     screenshot1.png
+     screenshot2.png
+   ```
+
+2. Drop in an `index.html` with this frontmatter:
+
+   ```yaml
+   ---
+   layout: gallery
+   gallery-directory: YourApp
+   tags: [Onboarding, Dashboard, Minimalist]
+   ---
+   ```
+
+3. That's it. The CI auto-tagger will fill in `image_tags` for each screenshot on the next build to `main`.
+
+## Adding screenshots to an existing product
+
+Drop the image files into the product folder and open a PR. The auto-tagger handles the rest.
+
+## Frontmatter reference
+
+| Field | Required | Type | Notes |
+|---|---|---|---|
+| `layout` | yes | string | Always `gallery`. |
+| `gallery-directory` | yes | string | The app name as it should appear in the page heading. |
+| `tags` | no | string array | Freeform product-level descriptors (flows, vibe, app category). No controlled vocabulary — this is up to you. |
+| `image_tags` | no | object | Per-screenshot tags, filled in by the auto-tagger. Tags here **must** come from [`screenshot_tags.csv`](screenshot_tags.csv). Usually you don't touch this field directly. |
+
+Example with `image_tags` (what the auto-tagger produces):
+
+```yaml
+---
+layout: gallery
+gallery-directory: YourApp
+tags: [Onboarding, Dashboard]
+image_tags:
+  "screenshot1.png":
+    - Signup
+    - Button
+    - Text Field
+  "screenshot2.png":
+    - Dashboard & Analytics
+    - Card
+    - Chart
+---
+```
+
+## YAML gotchas
+
+The YAML parser is strict. These are the mistakes that historically broke the site build:
+
+- **Orphan list markers.** A `- Something` line hanging between two mapping keys is a syntax error:
+
+  ```yaml
+  tags: [Dashboard]
+      - Divider          # ← this line is an orphan — delete it
+  image_tags:
+    ...
+  ```
+
+- **Filenames starting with a digit must be quoted.** YAML parses unquoted `20240327.png:` as a number, then chokes when it finds the `:`. Wrap in double quotes:
+
+  ```yaml
+  image_tags:
+    "20240327.png":      # ← quoted
+      - Card
+  ```
+
+- **Tabs are forbidden in YAML indentation.** Use spaces (two per level).
+
+- **macOS screenshot filenames contain a narrow no-break space (U+202F)** — something like `Screenshot 2024-03-27 at 4.25.59 PM.png` has a U+202F between the time and `PM`. This is **intentional** and must stay — the file on disk has the same character, so the YAML key has to match byte-for-byte. Just quote the key and don't touch the contents.
+
+## Validating locally
+
+Before you push, run:
+
+```bash
+npm install
+node scripts/validate-frontmatter.mjs --dry-run
+```
+
+The validator reports every issue it finds, split into three buckets:
+
+- **Auto-fixable** — safe to repair automatically. Re-run with `--fix` to apply:
+  ```bash
+  node scripts/validate-frontmatter.mjs --fix
+  ```
+- **Warnings** — usually a tag in `image_tags` that isn't in `screenshot_tags.csv`. The build tolerates these; decide whether it's a typo (fix it) or a new tag worth adding to the taxonomy.
+- **Errors** — YAML that's still invalid after every known auto-fixer. These need a human. The site will still build (the safety-net plugin renders the product with minimal frontmatter), but the product won't have tags until you fix it.
+
+## What happens on your PR
+
+1. `pr-validate.yml` runs the validator in dry-run mode on every `index.html` you changed.
+2. For each auto-fixable issue, the bot posts an inline ```suggestion``` comment on the exact line. Click **Commit suggestion** to apply — no need to pull, edit, and push.
+3. A single summary comment lists warnings and any unfixable errors.
+4. The PR check fails **only** if there are unfixable errors. Auto-fixable issues and warnings don't block the merge.
+
+## What happens after your PR is merged
+
+Two bot commits may land on `main` after your merge:
+
+- **Auto-tagging** — the CI tagger runs `scripts/auto-tag.mjs` to fill in `image_tags` for any new screenshots.
+- **Auto-fix** — `validate-frontmatter.mjs --fix` reapplies any safe corrections the merge missed.
+
+Both are combined into one commit: `chore(bot): auto-tag + auto-fix frontmatter [skip ci]`.

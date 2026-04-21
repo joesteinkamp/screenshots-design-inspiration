@@ -35,3 +35,6 @@ scripts/.models/
 
 # Backfill logs
 logs/
+
+# Build warnings report (regenerated each jekyll build by _plugins/safe_frontmatter.rb)
+_build_warnings.json

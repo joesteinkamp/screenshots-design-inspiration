@@ -1,5 +1,6 @@
 require 'json'
 require 'yaml'
+require 'pathname'
 
 module Jekyll
   class ProductsJsonGenerator < Generator
@@ -55,7 +56,25 @@ module Jekyll
                   img_tags.each { |t| screenshot_tag_counts[t] += 1 }
                 end
               rescue => e
-                # Skip malformed frontmatter
+                # Surface the error instead of silently skipping — the
+                # safety-net plugin may have already rendered the page with
+                # minimal data, but we still want CI and PR reviewers to know
+                # this file is broken.
+                rel = Pathname.new(index_path).relative_path_from(Pathname.new(site.source)).to_s rescue index_path
+                Jekyll.logger.warn('ProductsJson:', "#{rel} frontmatter unparseable: #{e.message.to_s[0, 200]}")
+                begin
+                  require 'json'
+                  warnings_path = File.join(site.source, '_build_warnings.json')
+                  existing = File.exist?(warnings_path) ? (JSON.parse(File.read(warnings_path, encoding: 'UTF-8')) rescue []) : []
+                  existing << {
+                    'file' => rel,
+                    'rule' => 'products-json-skip',
+                    'message' => "Skipped product in products.json because frontmatter is unparseable: #{e.message.to_s[0, 200]}",
+                  }
+                  File.write(warnings_path, JSON.generate(existing) + "\n")
+                rescue StandardError
+                  # Don't let warning-logging itself break the build.
+                end
               end
             end
           end
