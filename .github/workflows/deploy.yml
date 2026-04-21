@@ -41,7 +41,7 @@ jobs:
 
       - name: Cache tagger model weights
         id: cache-model
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: scripts/.models
           key: tagger-model-${{ env.TAGGER_MODEL_REPO }}-${{ env.TAGGER_MODEL_FILE }}-${{ env.TAGGER_MMPROJ_FILE }}
