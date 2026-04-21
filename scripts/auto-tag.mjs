@@ -182,7 +182,10 @@ function writeFrontmatterImageTags(indexPath, tagsMap, productName) {
   }
 
   // Remove any pre-existing image_tags block from yaml so we can re-write it.
-  yaml = yaml.replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "").trimEnd();
+  // The frontmatter capture group strips the trailing newline, so the last
+  // dash line in the block has no `\n` and the line-oriented regex below
+  // leaves it orphaned. Append a sentinel newline so every line is matchable.
+  yaml = (yaml + "\n").replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "").trimEnd();
   const newFrontmatter = `---\n${yaml}\n${imageTagsBlock}\n---\n`;
   fs.writeFileSync(indexPath, newFrontmatter + body, "utf-8");
 }
