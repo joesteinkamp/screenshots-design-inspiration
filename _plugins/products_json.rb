@@ -42,7 +42,7 @@ module Jekyll
           image_tags = {}
           gallery_directory = entry
           if File.exist?(index_path)
-            content = File.read(index_path)
+            content = File.read(index_path, encoding: 'UTF-8')
             if content =~ /\A---\s*\n(.*?\n?)^---\s*$/m
               begin
                 frontmatter = YAML.safe_load($1, permitted_classes: [Date]) || {}
@@ -65,7 +65,7 @@ module Jekyll
             tags_json_path = File.join(full_path, 'tags.json')
             if File.exist?(tags_json_path)
               begin
-                json_tags = JSON.parse(File.read(tags_json_path))
+                json_tags = JSON.parse(File.read(tags_json_path, encoding: 'UTF-8'))
                 json_tags.each do |filename, img_tags|
                   next unless img_tags.is_a?(Array)
                   image_tags[filename] = img_tags
