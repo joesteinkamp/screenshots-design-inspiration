@@ -59,12 +59,12 @@ module Jekyll
         tags = Array(data['tags']).compact.map { |t| sanitize(t.to_s) }
         gallery_directory = sanitize(data['gallery-directory'].to_s)
 
-        image_tags_buf = []
+        image_tags = []
         raw_image_tags = data['image_tags']
         if raw_image_tags.is_a?(Hash)
           raw_image_tags.each_value do |values|
             next unless values.is_a?(Array)
-            values.each { |v| image_tags_buf << v.to_s }
+            values.each { |v| image_tags << sanitize(v.to_s) }
           end
         end
 
@@ -87,7 +87,7 @@ module Jekyll
           'title' => sanitize(data['title'].to_s),
           'gallery-directory' => gallery_directory,
           'tags' => tags,
-          'image_tags' => sanitize(image_tags_buf.join(' ')),
+          'image_tags' => image_tags,
           'body' => body,
         }
       end

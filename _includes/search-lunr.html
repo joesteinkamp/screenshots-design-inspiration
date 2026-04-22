@@ -79,14 +79,14 @@ function buildIndex(docs) {
         this.field('body');
         var self = this;
         documents.forEach(function (doc) {
-            // Tags come through as an array — Lunr expects strings per field,
-            // so collapse to space-joined form just for indexing.
+            // Tags / image_tags come through as arrays; Lunr expects a string
+            // per field, so collapse to space-joined form just for indexing.
             var indexable = {
                 id: doc.id,
                 title: doc.title,
                 'gallery-directory': doc['gallery-directory'],
                 tags: Array.isArray(doc.tags) ? doc.tags.join(' ') : (doc.tags || ''),
-                image_tags: doc.image_tags || '',
+                image_tags: Array.isArray(doc.image_tags) ? doc.image_tags.join(' ') : (doc.image_tags || ''),
                 body: doc.body || ''
             };
             self.add(indexable);
