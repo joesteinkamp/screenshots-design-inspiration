@@ -1,122 +1,120 @@
 <script src="/assets/js/lunr.js"></script>
 
 <script>
-{% assign counter = 0 %}
-var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or page.url contains 'assets' %}{% else %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{ page.url }}",
-    "title": "{{ page.title }}",
-    "gallery-directory": "{{ page.gallery-directory }}",
-    "tags": "{{ page.tags | join: ' ' }}",
-    "tags_display": {{ page.tags | jsonify }},
-    "image_tags": "{% if page.image_tags %}{% for pair in page.image_tags %}{% for t in pair[1] %}{{ t }} {% endfor %}{% endfor %}{% endif %}",
-    "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-    }, {% endif %}{% endfor %}{% for page in site.without-plugin %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{ page.url }}",
-    "title": "{{ page.title }}",
-    "gallery-directory": "{{ page.gallery-directory }}",
-    "tags": "{{ page.tags | jsonify }}",
-    "tags_display": {{ page.tags | jsonify }},
-    "image_tags": "",
-    "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-    }, {% endfor %}{% for page in site.posts %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{ page.url }}",
-    "title": "{{ page.title }}",
-    "gallery-directory": "{{ page.gallery-directory }}",
-    "tags": "{{ page.tags | jsonify }}",
-    "tags_display": {{ page.tags | jsonify }},
-    "image_tags": "",
-    "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-    }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
+var documents = [];
+var idx = null;
+var indexReady = false;
+var pendingQuery = null;
 
-console.log(documents);
-
-var idx = lunr(function () {
-    this.ref('id')
-    this.field('title')
-    this.field('gallery-directory')
-    this.field('tags')
-    this.field('image_tags')
-    this.field('body')
-
-    documents.forEach(function (doc) {
-        this.add(doc)
-    }, this)
-});
-function lunr_search(term) {
-    document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
-    if(term) {
-        var newUrl = window.location.pathname + '?q=' + encodeURIComponent(term);
-        history.replaceState(null, '', newUrl);
-        document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
-        //put results on the screen.
-        var results = idx.search(term);
-        if(results.length>0){
-            // console.log(results);
-            //if results
-            for (var i = 0; i < results.length; i++) {
-                // more statements
-                var ref = results[i]['ref'];
-                var url = documents[ref]['url'];
-                var title = documents[ref]['title'];
-                var gallerydirectory = documents[ref]['gallery-directory'];
-                var tags = documents[ref]['tags'];
-                var body = documents[ref]['body'];
-                
-                var displayTitle = gallerydirectory ? gallerydirectory : title;
-                
-                var bodyHtml = '';
-                // Only show body if it's NOT a gallery page (no gallerydirectory) AND body has content
-                if (!gallerydirectory && body && body.trim().length > 0) {
-                     var bodyTruncated = body.substring(0,160) + (body.length > 160 ? '...' : '');
-                     bodyHtml = "<span class='body'>" + bodyTruncated + "</span>";
-                }
-
-                var tags = documents[ref]['tags_display'];
-                // Fallback: parse legacy string/json if tags_display missing
-                if (!tags) {
-                    var raw = documents[ref]['tags'];
-                    if (raw) {
-                        try {
-                            if (raw.trim().startsWith('[')) tags = JSON.parse(raw);
-                            else tags = raw.split(' ');
-                        } catch(e) { tags = raw.split(' '); }
-                    }
-                }
-
-                var tagsHtml = '';
-                if (tags && Array.isArray(tags) && tags.length > 0) {
-                     tagsHtml = "<div class='tags-container'>";
-                     for (var t=0; t < tags.length; t++) {
-                         if (tags[t] && tags[t].trim().length > 0) {
-                             tagsHtml += "<span class='tag'>" + tags[t] + "</span>";
-                         }
-                     }
-                     tagsHtml += "</div>";
-                } else if (typeof tags === 'string' && tags.trim().length > 0) {
-                     tagsHtml = "<div class='tags-container'><span class='tag'>" + tags + "</span></div>";
-                }
-
-                document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + displayTitle + "</span><span class='url'>"+ url +"</span>" + bodyHtml + tagsHtml + "</a></li>";
-            }
-        } else {
-            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
-        }
+function renderResults(term, results) {
+    var container = document.querySelectorAll('#lunrsearchresults ul')[0];
+    if (!container) { return; }
+    container.innerHTML = '';
+    if (results.length === 0) {
+        container.innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
+        return;
     }
+    for (var i = 0; i < results.length; i++) {
+        var ref = results[i]['ref'];
+        var doc = documents[ref];
+        if (!doc) { continue; }
+        var url = doc['url'];
+        var title = doc['title'];
+        var gallerydirectory = doc['gallery-directory'];
+        var body = doc['body'];
+
+        var displayTitle = gallerydirectory ? gallerydirectory : title;
+
+        var bodyHtml = '';
+        if (!gallerydirectory && body && body.trim().length > 0) {
+            var bodyTruncated = body.substring(0, 160) + (body.length > 160 ? '...' : '');
+            bodyHtml = "<span class='body'>" + bodyTruncated + "</span>";
+        }
+
+        var tags = doc['tags'];
+        var tagsHtml = '';
+        if (tags && Array.isArray(tags) && tags.length > 0) {
+            tagsHtml = "<div class='tags-container'>";
+            for (var t = 0; t < tags.length; t++) {
+                if (tags[t] && String(tags[t]).trim().length > 0) {
+                    tagsHtml += "<span class='tag'>" + tags[t] + "</span>";
+                }
+            }
+            tagsHtml += "</div>";
+        }
+
+        container.innerHTML += "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + displayTitle + "</span><span class='url'>" + url + "</span>" + bodyHtml + tagsHtml + "</a></li>";
+    }
+}
+
+function lunr_search(term) {
+    var resultsContainer = document.getElementById('lunrsearchresults');
+    if (resultsContainer) {
+        resultsContainer.innerHTML = "<p>Search results for '" + term + "'</p><ul></ul>";
+    }
+    if (!term) { return false; }
+
+    var newUrl = window.location.pathname + '?q=' + encodeURIComponent(term);
+    history.replaceState(null, '', newUrl);
+
+    if (!indexReady) {
+        pendingQuery = term;
+        var ul = document.querySelectorAll('#lunrsearchresults ul')[0];
+        if (ul) { ul.innerHTML = "<li class='lunrsearchresult'>Loading index...</li>"; }
+        return false;
+    }
+
+    renderResults(term, idx.search(term));
     return false;
 }
-</script>
-<script>
+
+function buildIndex(docs) {
+    documents = docs;
+    idx = lunr(function () {
+        this.ref('id');
+        this.field('title');
+        this.field('gallery-directory');
+        this.field('tags');
+        this.field('image_tags');
+        this.field('body');
+        var self = this;
+        documents.forEach(function (doc) {
+            // Tags come through as an array — Lunr expects strings per field,
+            // so collapse to space-joined form just for indexing.
+            var indexable = {
+                id: doc.id,
+                title: doc.title,
+                'gallery-directory': doc['gallery-directory'],
+                tags: Array.isArray(doc.tags) ? doc.tags.join(' ') : (doc.tags || ''),
+                image_tags: doc.image_tags || '',
+                body: doc.body || ''
+            };
+            self.add(indexable);
+        });
+    });
+    indexReady = true;
+    if (pendingQuery) {
+        var q = pendingQuery;
+        pendingQuery = null;
+        renderResults(q, idx.search(q));
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    fetch('/assets/js/search-data.json')
+        .then(function (r) { return r.json(); })
+        .then(function (docs) { buildIndex(docs); })
+        .catch(function (err) {
+            console.error('Failed to load search index:', err);
+            var ul = document.querySelectorAll('#lunrsearchresults ul')[0];
+            if (ul) { ul.innerHTML = "<li class='lunrsearchresult'>Search index failed to load.</li>"; }
+        });
+
     var params = new URLSearchParams(window.location.search);
     var q = params.get('q');
     if (q) {
         var input = document.getElementById('lunrsearch');
-        if (input) {
-            input.value = q;
-        }
+        if (input) { input.value = q; }
         lunr_search(q);
     }
 });
@@ -145,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         color: var(--text-primary, #ffffff);
         transition: all 0.2s ease;
     }
-    
+
     #lunrsearch::placeholder {
         color: var(--text-secondary, #a1a1aa);
     }
@@ -193,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
         list-style: none;
         padding: 0;
         display: grid;
-        gap: 16px; 
+        gap: 16px;
     }
 
     /* Individual Result Item */
@@ -254,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
         display: block;
         opacity: 0.9;
     }
-    
+
     /* Result Tags */
     .lunrsearchresult .tags-container {
         display: flex;
