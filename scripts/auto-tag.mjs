@@ -29,6 +29,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import yaml from "js-yaml";
 
 // ---------------------------------------------------------------------------
 // Config
@@ -126,28 +127,52 @@ function aggregateTags(tagsMap) {
   return [...all].sort();
 }
 
-function writeFrontmatterImageTags(indexPath, tagsMap, productName) {
-  const imageTagsLines = ["image_tags:"];
+// Canonical frontmatter key order. Any keys not in this list are appended in
+// their original order after these.
+const FRONTMATTER_KEY_ORDER = ["layout", "gallery-directory", "tags", "image_tags"];
+
+function orderFrontmatterKeys(obj) {
+  const ordered = {};
+  for (const k of FRONTMATTER_KEY_ORDER) {
+    if (Object.prototype.hasOwnProperty.call(obj, k)) ordered[k] = obj[k];
+  }
+  for (const k of Object.keys(obj)) {
+    if (!Object.prototype.hasOwnProperty.call(ordered, k)) ordered[k] = obj[k];
+  }
+  return ordered;
+}
+
+function dumpFrontmatter(obj) {
+  return yaml.dump(obj, {
+    lineWidth: -1,
+    quotingType: '"',
+    forceQuotes: false,
+    noRefs: true,
+    sortKeys: false,
+  });
+}
+
+function buildImageTagsObject(tagsMap) {
+  const out = {};
   for (const filename of Object.keys(tagsMap).sort()) {
     const tags = tagsMap[filename];
-    if (!tags || tags.length === 0) continue;
-    imageTagsLines.push(`  "${filename}":`);
-    for (const tag of tags) {
-      imageTagsLines.push(`    - ${tag}`);
-    }
+    if (!Array.isArray(tags) || tags.length === 0) continue;
+    out[filename] = tags;
   }
-  const imageTagsBlock = imageTagsLines.join("\n");
+  return out;
+}
+
+function writeFrontmatterImageTags(indexPath, tagsMap, productName) {
+  const imageTags = buildImageTagsObject(tagsMap);
 
   if (!fs.existsSync(indexPath)) {
-    const content = [
-      "---",
-      "layout: gallery",
-      `gallery-directory: ${productName}`,
-      "tags: []",
-      imageTagsBlock,
-      "---",
-      "",
-    ].join("\n");
+    const fm = orderFrontmatterKeys({
+      layout: "gallery",
+      "gallery-directory": productName,
+      tags: [],
+      image_tags: imageTags,
+    });
+    const content = `---\n${dumpFrontmatter(fm)}---\n`;
     fs.writeFileSync(indexPath, content, "utf-8");
     return;
   }
@@ -155,38 +180,38 @@ function writeFrontmatterImageTags(indexPath, tagsMap, productName) {
   const raw = fs.readFileSync(indexPath, "utf-8");
   // Match proper Jekyll frontmatter: --- ... --- at the top of the file.
   const fmMatch = raw.match(/^---\s*\n([\s\S]*?)\n---\s*(?:\r?\n|$)/);
-  let yaml;
-  let body;
+
+  let frontmatter = {};
+  let body = "";
   if (fmMatch) {
-    yaml = fmMatch[1];
+    try {
+      frontmatter = yaml.load(fmMatch[1]) || {};
+    } catch {
+      // Malformed frontmatter — fall through to synthesize safe defaults below.
+      // The validator/safety-net will log this separately.
+      frontmatter = {};
+    }
     body = raw.slice(fmMatch[0].length);
   } else {
-    // No valid frontmatter — synthesize one. This also repairs files where
+    // No valid frontmatter — synthesize one. This also recovers files where
     // a previous buggy write prepended `image_tags:` BEFORE the opening ---.
-    // Strip any stray leading image_tags block and any wrongly-placed
-    // frontmatter that follows.
-    const stripped = raw
-      .replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "")
-      .replace(/^---\s*\n([\s\S]*?)\n---\s*(?:\r?\n|$)/, (_, y) => {
-        yaml = y;
-        return "";
-      });
-    if (!yaml) {
-      yaml = [
-        "layout: gallery",
-        `gallery-directory: ${productName}`,
-        "tags: []",
-      ].join("\n");
-    }
-    body = stripped.replace(/^\s+/, "");
+    body = raw.replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "").replace(/^\s+/, "");
   }
 
-  // Remove any pre-existing image_tags block from yaml so we can re-write it.
-  // The frontmatter capture group strips the trailing newline, so the last
-  // dash line in the block has no `\n` and the line-oriented regex below
-  // leaves it orphaned. Append a sentinel newline so every line is matchable.
-  yaml = (yaml + "\n").replace(/^image_tags:\n(?:  .*\n(?:    - .*\n)*)*/m, "").trimEnd();
-  const newFrontmatter = `---\n${yaml}\n${imageTagsBlock}\n---\n`;
+  if (typeof frontmatter !== "object" || Array.isArray(frontmatter) || frontmatter === null) {
+    frontmatter = {};
+  }
+
+  // Guarantee the minimum required fields, but preserve existing values.
+  if (!frontmatter.layout) frontmatter.layout = "gallery";
+  if (!frontmatter["gallery-directory"]) frontmatter["gallery-directory"] = productName;
+  if (!Array.isArray(frontmatter.tags)) frontmatter.tags = [];
+
+  // Replace image_tags wholesale — that's the whole point of this function.
+  frontmatter.image_tags = imageTags;
+
+  const ordered = orderFrontmatterKeys(frontmatter);
+  const newFrontmatter = `---\n${dumpFrontmatter(ordered)}---\n`;
   fs.writeFileSync(indexPath, newFrontmatter + body, "utf-8");
 }
 

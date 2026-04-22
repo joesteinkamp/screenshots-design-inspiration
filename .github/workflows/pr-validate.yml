@@ -1,0 +1,76 @@
+name: Validate frontmatter on PR
+
+on:
+  pull_request:
+    paths:
+      - 'Mobile/**/index.html'
+      - 'Web/**/index.html'
+      - 'Email/**/index.html'
+      - 'scripts/validate-frontmatter.mjs'
+      - '.github/workflows/pr-validate.yml'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          # Need fetch-depth > 1 so we can diff against the base branch to
+          # find changed files.
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: List changed index.html files
+        id: changed
+        run: |
+          base_sha=$(git merge-base HEAD origin/${{ github.event.pull_request.base.ref }})
+          files=$(git diff --name-only "$base_sha" HEAD -- 'Mobile/**/index.html' 'Web/**/index.html' 'Email/**/index.html' | tr '\n' ',' | sed 's/,$//')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "Changed index.html files: $files"
+
+      - name: Run validator (dry-run)
+        id: validate
+        run: |
+          if [ -z "${{ steps.changed.outputs.files }}" ]; then
+            echo "No content files changed; nothing to validate."
+            echo '{"summary":{"files":0,"fixed":0,"warnings":0,"errors":0},"results":[]}' > report.json
+            exit 0
+          fi
+          set +e
+          node scripts/validate-frontmatter.mjs --json --paths="${{ steps.changed.outputs.files }}" > report.json
+          code=$?
+          set -e
+          echo "validator_exit=$code" >> "$GITHUB_OUTPUT"
+          cat report.json
+
+      - name: Post review comments
+        uses: actions/github-script@v7
+        env:
+          VALIDATOR_EXIT: ${{ steps.validate.outputs.validator_exit }}
+        with:
+          script: |
+            const path = require('path');
+            const fs = require('fs');
+            process.chdir(process.env.GITHUB_WORKSPACE);
+            const mod = await import(path.join(process.env.GITHUB_WORKSPACE, 'scripts/pr-comment.mjs'));
+            await mod.run({
+              github,
+              context,
+              core,
+              reportPath: 'report.json',
+              validatorExit: parseInt(process.env.VALIDATOR_EXIT || '0', 10),
+            });

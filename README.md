@@ -68,6 +68,18 @@ Pretty straight forward, just add the new screenshots to the correct folder.
 ### How to Add a New App
 To add a new app, create a folder for it named after the App then create an `index.html` file that has `gallery-directory: {App Name}` with {App Name} replaced.
 
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full frontmatter schema, common gotchas (YAML is picky!), and the local validation command.
+
+### Build-time safety
+
+The Jekyll build is resilient to frontmatter typos:
+
+- **Before build**, `scripts/validate-frontmatter.mjs --fix` auto-repairs known-safe YAML errors (orphan list markers, unquoted digit-leading filename keys, tabs in indentation). Fixes are committed back to `main` by the CI bot.
+- **During build**, the `_plugins/safe_frontmatter.rb` safety net catches any remaining YAML errors and renders the affected product with minimal fallback metadata — one bad file no longer kills the whole site.
+- **On every PR**, the validator runs in dry-run mode and leaves inline `suggestion` comments so contributors can one-click apply fixes.
+
+If you see a bot commit titled `chore(bot): auto-tag + auto-fix frontmatter` on `main` after your PR is merged, that's the validator cleaning up.
+
 ---
 
 ## Auto-tagging screenshots
