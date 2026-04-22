@@ -8,6 +8,8 @@ module Jekyll
     priority :low
 
     def generate(site)
+      started_at = Time.now
+      Jekyll.logger.info('ProductsJson:', 'scanning Mobile/Web/Email galleries...')
       products = []
       tag_counts = Hash.new(0)
       screenshot_tag_counts = Hash.new(0)
@@ -18,6 +20,8 @@ module Jekyll
       dirs_to_scan.each do |dir|
         base_path = File.join(site.source, dir)
         next unless File.directory?(base_path)
+        dir_started_at = Time.now
+        dir_count = 0
 
         Dir.foreach(base_path) do |entry|
           next if entry == '.' || entry == '..' || entry == '.DS_Store'
@@ -110,10 +114,19 @@ module Jekyll
           product_data['image_tags'] = image_tags unless image_tags.empty?
 
           products << product_data
+          dir_count += 1
         end
+        Jekyll.logger.info(
+          'ProductsJson:',
+          "scanned #{dir_count} #{dir} galleries in #{format('%.2fs', Time.now - dir_started_at)}"
+        )
       end
 
       products.sort_by! { |p| p['name'].downcase }
+      Jekyll.logger.info(
+        'ProductsJson:',
+        "collected #{products.size} products, #{tag_counts.size} tags, #{screenshot_tag_counts.size} screenshot tags in #{format('%.2fs', Time.now - started_at)}"
+      )
 
       # Sort tags by count descending
       sorted_tags = tag_counts.sort_by { |_, count| -count }.to_h
