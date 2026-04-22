@@ -8,9 +8,15 @@ module Jekyll
     GALLERY_ROOTS = ['Web', 'Mobile', 'Email']
 
     def generate(site)
+      started_at = Time.now
+      Jekyll.logger.info('RecentGalleries:', 'reading git log for gallery mtimes...')
       # One git log covers every gallery; spawning git per directory turns a
       # few-hundred-gallery repo into a 50+ minute build.
       latest_by_gallery = gallery_commit_times(site.source)
+      Jekyll.logger.info(
+        'RecentGalleries:',
+        "git log returned #{latest_by_gallery.size} gallery entries in #{format('%.2fs', Time.now - started_at)}"
+      )
 
       galleries = []
 
@@ -48,6 +54,10 @@ module Jekyll
 
       galleries.sort_by! { |g| g["date"] }.reverse!
       site.data['recent_galleries'] = galleries.take(8)
+      Jekyll.logger.info(
+        'RecentGalleries:',
+        "ranked #{galleries.size} galleries in #{format('%.2fs', Time.now - started_at)}"
+      )
     end
 
     private

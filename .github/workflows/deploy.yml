@@ -97,8 +97,10 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Build with Jekyll
-        # check for bundler version just in case, but usually bundler-cache handles it
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # --verbose + --trace stream per-file progress and full backtraces so a
+        # stalled build is obvious from the live CI log; the _plugins/build_progress.rb
+        # plugin adds phase timings and a render heartbeat on top of that.
+        run: bundle exec jekyll build --verbose --trace --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
