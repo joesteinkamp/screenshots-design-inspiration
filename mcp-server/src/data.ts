@@ -18,13 +18,22 @@ export async function fetchIndex(): Promise<ProductsIndex> {
     return cachedIndex;
   }
 
-  const url = `${getBaseUrl()}${INDEX_PATH}`;
+  const baseUrl = getBaseUrl();
+  const url = `${baseUrl}${INDEX_PATH}`;
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Failed to fetch products index: ${res.status} ${res.statusText} from ${url}`);
   }
 
-  cachedIndex = (await res.json()) as ProductsIndex;
+  const index = (await res.json()) as ProductsIndex;
+  // The Jekyll generator derives base_url from site.config url/baseurl, which
+  // are unset in this repo — so the published index ships with base_url: "".
+  // Fall back to the host we fetched the index from so image and gallery URLs
+  // are absolute and fetchable.
+  if (!index.base_url || !/^https?:\/\//i.test(index.base_url)) {
+    index.base_url = baseUrl;
+  }
+  cachedIndex = index;
   cachedAt = now;
   return cachedIndex;
 }
