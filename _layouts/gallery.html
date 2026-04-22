@@ -53,7 +53,7 @@
                             {% endif %}
                         {% endif %}
                         {% if image.path contains 'Mobile' %}
-                            <div class="media-wrapper">
+                            <div class="media-wrapper media mobile">
                                 <img class="media mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
                                 {% if img_tags != "" %}
                                 <div class="image-tags">
@@ -64,7 +64,7 @@
                                 {% endif %}
                             </div>
                         {% elsif image.path contains 'Web' %}
-                            <div class="media-wrapper">
+                            <div class="media-wrapper media web">
                                 <img class="media web" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
                                 {% if img_tags != "" %}
                                 <div class="image-tags">
@@ -75,7 +75,7 @@
                                 {% endif %}
                             </div>
                         {% else %}
-                            <div class="media-wrapper">
+                            <div class="media-wrapper media email">
                                 <img class="media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
                                 {% if img_tags != "" %}
                                 <div class="image-tags">
@@ -87,7 +87,9 @@
                             </div>
                         {% endif %}
                     {% elsif image.extname contains 'mp4' %}
-                        <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video">        </video>
+                        <div class="media-wrapper media web">
+                            <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video"></video>
+                        </div>
                     {% endif %}
                 {% endfor %}
             </div>
