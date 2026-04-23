@@ -111,6 +111,11 @@ export function productSummary(product: Product, baseUrl: string) {
     tags: product.tags,
     image_count: product.image_count,
     gallery_url: `${baseUrl}${product.gallery_url}`,
+    // Pre-encoded direct URLs for each screenshot — callers should prefer
+    // these over constructing URLs from `gallery_url` + filename, because
+    // filenames may contain non-ASCII whitespace (e.g. U+202F) that requires
+    // specific percent-encoding.
+    download_urls: product.images.map((img) => imageUrl(baseUrl, img)),
   };
   if (product.image_tags && Object.keys(product.image_tags).length > 0) {
     summary.image_tags = product.image_tags;
