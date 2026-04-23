@@ -44,10 +44,20 @@ No repo clone, no install, no build required. `npx` handles everything.
 |------|-------------|
 | `list_tags` | List all available design tags with product counts. Start here to see what's searchable. |
 | `search_by_tags` | Find products matching design tags (e.g. "Dark Mode", "SaaS Dashboard"). Supports AND/OR matching. |
-| `search_inspiration` | Free-text search across product names and tags (e.g. "onboarding flow", "messaging chat"). |
-| `get_product_screenshots` | Get actual screenshot images for a specific product. Returns base64-encoded images. |
+| `search_inspiration` | Search by free-text query, product tags, screenshot tags, or any combination — e.g. `product_tags=["AI-first"], screenshot_tags=["Dashboard"]`. |
+| `search_screenshots_by_tags` | Find individual screenshots by their per-image tags (e.g. "onboarding", "empty state") across all products. |
+| `get_product_screenshots` | Get screenshots for a specific product. Returns base64 images for in-chat viewing by default. Pass `include_images=false` to get metadata + download URLs only (no base64) — useful when saving to disk or avoiding context bloat. |
 | `browse_by_platform` | List all products for Web, Mobile, or Email with pagination. |
 | `get_random_inspiration` | Get random products for creative exploration, with optional tag/platform filters. |
+
+### Download URLs
+
+Every product response includes pre-encoded `download_urls` (on the product) and
+`download_url` (on each screenshot). Prefer these over building URLs yourself —
+filenames may contain non-ASCII whitespace (e.g. `U+202F`) that needs specific
+percent-encoding. To save screenshots to disk, call `get_product_screenshots`
+with `include_images=false` and fetch each `download_url` with your client's
+own file-writing tools.
 
 ---
 

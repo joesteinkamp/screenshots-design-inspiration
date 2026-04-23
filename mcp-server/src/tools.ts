@@ -72,7 +72,7 @@ export function registerTools(server: McpServer) {
   // 2. get_product_screenshots
   server.tool(
     "get_product_screenshots",
-    "Get actual screenshot images for a specific product. Returns base64 images. Use sparingly — images are large. Search/browse first, then fetch screenshots for specific products of interest.",
+    "Get screenshots for a specific product. By default returns base64 images for in-chat viewing; set include_images=false to get just metadata + download URLs (no base64). To save images to disk, call with include_images=false and fetch each download_url with your own tools.",
     {
       product: z.string().describe("Product name (e.g. 'Airbnb', 'Stripe')"),
       platform: z
@@ -85,8 +85,12 @@ export function registerTools(server: McpServer) {
         .max(10)
         .default(4)
         .describe("Number of images to return (default 4, max 10)"),
+      include_images: z
+        .boolean()
+        .default(true)
+        .describe("When false, skip base64 image payloads and return metadata + download URLs only. Use this when saving to disk or when you only need URLs."),
     },
-    async ({ product, platform, limit }) => {
+    async ({ product, platform, limit, include_images }) => {
       const index = await fetchIndex();
       const searchName = product.toLowerCase();
 
@@ -127,10 +131,10 @@ export function registerTools(server: McpServer) {
         }
 
         // Single partial match — use it
-        return await fetchProductImages(partials[0], index.base_url, limit);
+        return await fetchProductImages(partials[0], index.base_url, limit, include_images);
       }
 
-      return await fetchProductImages(match, index.base_url, limit);
+      return await fetchProductImages(match, index.base_url, limit, include_images);
     }
   );
 
@@ -174,39 +178,92 @@ export function registerTools(server: McpServer) {
   // 4. search_inspiration
   server.tool(
     "search_inspiration",
-    "Free-text search for UI design inspiration. Searches product names, product tags, and screenshot-level tags. Example: 'onboarding flow', 'dashboard analytics', 'messaging chat'.",
+    "Search for UI design inspiration. Supply at least one of: a free-text query, product_tags, or screenshot_tags. Filters compose — e.g. product_tags=['AI-first'] + screenshot_tags=['Dashboard'] returns AI-first products that have at least one Dashboard-tagged screenshot. Use list_tags to discover available tags.",
     {
-      query: z.string().describe("Search query"),
+      query: z
+        .string()
+        .optional()
+        .describe("Free-text query across product names, product tags, and screenshot tags (e.g. 'onboarding flow')"),
+      product_tags: z
+        .array(z.string())
+        .optional()
+        .describe("Narrow to products whose product-level tags match these (case-insensitive, substring match)"),
+      screenshot_tags: z
+        .array(z.string())
+        .optional()
+        .describe("Narrow to products that have at least one screenshot tagged with these"),
+      tag_match: z
+        .enum(["all", "any"])
+        .default("all")
+        .describe("Within each tag array, require all tags to match or any"),
       platform: z
         .enum(["Web", "Mobile", "Email"])
         .optional()
         .describe("Filter by platform"),
+      limit: z
+        .number()
+        .min(1)
+        .max(100)
+        .default(20)
+        .describe("Max results to return"),
     },
-    async ({ query, platform }) => {
+    async ({ query, product_tags, screenshot_tags, tag_match, platform, limit }) => {
+      if (!query && (!product_tags || product_tags.length === 0) && (!screenshot_tags || screenshot_tags.length === 0)) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: "Provide at least one of: query, product_tags, or screenshot_tags.",
+            },
+          ],
+        };
+      }
+
       const index = await fetchIndex();
-      const keywords = query
+      const keywords = (query || "")
         .toLowerCase()
         .split(/\s+/)
         .filter((w) => w.length > 1);
 
+      const productTagNeedles = (product_tags || []).map((t) => t.toLowerCase());
+      const screenshotTagNeedles = (screenshot_tags || []).map((t) => t.toLowerCase());
+
+      const tagMatches = (
+        needles: string[],
+        haystack: string[]
+      ): boolean => {
+        if (needles.length === 0) return true;
+        const check = (n: string) =>
+          haystack.some((h) => h.includes(n) || n.includes(h));
+        return tag_match === "all" ? needles.every(check) : needles.some(check);
+      };
+
       const scored = index.products
         .filter((p) => !platform || p.platform === platform)
+        .filter((p) => {
+          const lowerProductTags = p.tags.map((t) => t.toLowerCase());
+          if (!tagMatches(productTagNeedles, lowerProductTags)) return false;
+
+          if (screenshotTagNeedles.length > 0) {
+            const allScreenshotTags = p.image_tags
+              ? Object.values(p.image_tags).flat().map((t) => t.toLowerCase())
+              : [];
+            if (!tagMatches(screenshotTagNeedles, allScreenshotTags)) return false;
+          }
+          return true;
+        })
         .map((p) => {
           let score = 0;
           const name = p.name.toLowerCase();
           const tags = p.tags.map((t) => t.toLowerCase());
 
           for (const kw of keywords) {
-            // Name matches score highest
             if (name.includes(kw)) score += 3;
-            // Exact tag match
             if (tags.some((t) => t === kw)) score += 2;
-            // Partial tag match
             else if (tags.some((t) => t.includes(kw) || kw.includes(t)))
               score += 1;
           }
 
-          // Screenshot-level tag matches
           if (p.image_tags) {
             const allScreenshotTags = new Set(
               Object.values(p.image_tags).flat().map((t) => t.toLowerCase())
@@ -218,18 +275,22 @@ export function registerTools(server: McpServer) {
             }
           }
 
+          // Structural-filter-only queries (no free-text) get a baseline
+          // score so they aren't filtered out by the score>0 check.
+          if (keywords.length === 0) score = 1;
+
           return { product: p, score };
         })
         .filter((s) => s.score > 0)
         .sort((a, b) => b.score - a.score)
-        .slice(0, 20);
+        .slice(0, limit);
 
       if (scored.length === 0) {
         return {
           content: [
             {
               type: "text" as const,
-              text: `No results for "${query}". Try different keywords or use list_tags to see available tags.`,
+              text: "No results. Try different keywords or use list_tags to see available tags.",
             },
           ],
         };
@@ -245,7 +306,14 @@ export function registerTools(server: McpServer) {
           {
             type: "text" as const,
             text: JSON.stringify(
-              { query, count: results.length, products: results },
+              {
+                query: query || null,
+                product_tags: product_tags || [],
+                screenshot_tags: screenshot_tags || [],
+                tag_match,
+                count: results.length,
+                products: results,
+              },
               null,
               2
             ),
@@ -375,7 +443,7 @@ export function registerTools(server: McpServer) {
         product_name: string;
         platform: string;
         image: string;
-        image_url: string;
+        download_url: string;
         screenshot_tags: string[];
         product_tags: string[];
         gallery_url: string;
@@ -405,7 +473,7 @@ export function registerTools(server: McpServer) {
               product_name: product.name,
               platform: product.platform,
               image: filename,
-              image_url: imageUrl(index.base_url, imagePath),
+              download_url: imageUrl(index.base_url, imagePath),
               screenshot_tags: imgTags,
               product_tags: product.tags,
               gallery_url: `${index.base_url}${product.gallery_url}`,
@@ -509,53 +577,69 @@ export function registerTools(server: McpServer) {
 async function fetchProductImages(
   product: Product,
   baseUrl: string,
-  limit: number
+  limit: number,
+  includeImages: boolean
 ) {
   const imagesToFetch = product.images.slice(0, limit);
-  const content: Array<
-    { type: "text"; text: string } | { type: "image"; data: string; mimeType: string }
-  > = [];
 
-  // Add metadata first
-  content.push({
-    type: "text" as const,
-    text: JSON.stringify(productSummary(product, baseUrl), null, 2),
+  // Structured per-image metadata that callers can parse deterministically
+  // without having to reconstruct URLs or walk the base64 image blocks.
+  const screenshotEntries = imagesToFetch.map((img) => {
+    const filename = img.split("/").pop() || "";
+    const tags =
+      (product.image_tags && product.image_tags[filename]) || [];
+    return {
+      filename,
+      download_url: imageUrl(baseUrl, img),
+      tags,
+    };
   });
 
-  // Fetch images in parallel
+  const summary = productSummary(product, baseUrl);
+  const metadata = {
+    ...summary,
+    returned_count: screenshotEntries.length,
+    screenshots: screenshotEntries,
+  };
+
+  const content: Array<
+    { type: "text"; text: string } | { type: "image"; data: string; mimeType: string }
+  > = [
+    { type: "text" as const, text: JSON.stringify(metadata, null, 2) },
+  ];
+
+  if (!includeImages) {
+    return { content };
+  }
+
   const imageResults = await Promise.all(
-    imagesToFetch.map(async (img) => {
-      const url = imageUrl(baseUrl, img);
-      const result = await fetchImageAsBase64(url);
-      return { img, result };
+    screenshotEntries.map(async (entry) => {
+      const result = await fetchImageAsBase64(entry.download_url);
+      return { entry, result };
     })
   );
 
-  for (const { img, result } of imageResults) {
-    if (result) {
-      // Add per-image tag info if available
-      if (product.image_tags) {
-        const filename = img.split("/").pop() || "";
-        const imgTags = product.image_tags[filename];
-        if (imgTags && imgTags.length > 0) {
-          content.push({
-            type: "text" as const,
-            text: `[${filename}] tags: ${imgTags.join(", ")}`,
-          });
-        }
-      }
+  let anyFetched = false;
+  for (const { entry, result } of imageResults) {
+    if (!result) continue;
+    anyFetched = true;
+    if (entry.tags.length > 0) {
       content.push({
-        type: "image" as const,
-        data: result.data,
-        mimeType: result.mimeType,
+        type: "text" as const,
+        text: `[${entry.filename}] tags: ${entry.tags.join(", ")}`,
       });
     }
+    content.push({
+      type: "image" as const,
+      data: result.data,
+      mimeType: result.mimeType,
+    });
   }
 
-  if (content.length === 1) {
+  if (!anyFetched) {
     content.push({
       type: "text" as const,
-      text: "Could not fetch any images. The images may not be available at the expected URLs.",
+      text: "Could not fetch any images. Download URLs are included in the metadata above — try fetching them directly, or call again with include_images=false.",
     });
   }
 
