@@ -1,6 +1,6 @@
 {
   "name": "screenshots-design-inspiration-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server for UI design inspiration from real product screenshots",
   "type": "module",
   "main": "dist/index.js",
