@@ -18,7 +18,7 @@ This repo includes a [Model Context Protocol](https://modelcontextprotocol.io/) 
 **Claude Code:**
 
 ```bash
-claude mcp add design-screenshots -- npx screenshots-design-inspiration-mcp
+claude mcp add design-screenshots --scope user npx screenshots-design-inspiration-mcp
 ```
 
 **Claude Desktop, Cursor, or any MCP client:**
