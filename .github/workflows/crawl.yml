@@ -1,0 +1,83 @@
+name: Product candidate crawler
+
+# Discovery-only crawler. Pulls freshly-launched products from ToS-clean
+# sources, dedupes against the existing gallery, and opens a PR with a
+# candidate manifest for a human to review and screenshot. It never commits
+# to master and never touches gallery folders — see crawler/README.md.
+
+on:
+  schedule:
+    # Weekly, Mondays 09:00 UTC.
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: 'Comma-separated sources (yc,hn,github,producthunt)'
+        required: false
+        default: 'yc,hn,github,producthunt'
+      limit:
+        description: 'Max candidates per run'
+        required: false
+        default: '15'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: product-crawler
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Crawl for product candidates
+        env:
+          # Built-in token lifts the GitHub Search API rate limit; no other
+          # secrets are needed — every source is token-free or uses this.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/crawl-candidates.mjs \
+            --sources "${{ github.event.inputs.sources || 'yc,hn,github,producthunt' }}" \
+            --limit "${{ github.event.inputs.limit || '15' }}"
+
+      - name: Open candidate PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: crawler/candidates
+          base: master
+          # Only the crawler's own files are ever staged — never gallery
+          # content — so pr-validate.yml (scoped to */index.html) stays quiet.
+          add-paths: |
+            crawler/candidates/**
+            crawler/seen.json
+          commit-message: "chore(crawler): weekly product candidates"
+          title: "Product candidates — weekly crawl"
+          body: |
+            Automated discovery-only crawl. Each row in the manifest under
+            `crawler/candidates/` is a **candidate** — a product found on a
+            launch source, not yet in the gallery.
+
+            **To add one:** create its folder under `Web/`/`Mobile/`/`Email/`
+            with real, self-captured screenshots per
+            [CONTRIBUTING.md](../blob/master/CONTRIBUTING.md). **Do not reuse the
+            sources' images** — they're copyrighted.
+
+            Merging this PR only records the candidate list + dedupe state; it
+            adds no gallery content. See `crawler/README.md` for how this works.
+          delete-branch: false

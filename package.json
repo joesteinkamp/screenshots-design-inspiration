@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "crawl": "node scripts/crawl-candidates.mjs",
+    "crawl:dry-run": "node scripts/crawl-candidates.mjs --dry-run",
     "auto-tag": "node scripts/auto-tag.mjs",
     "auto-tag:dry-run": "node scripts/auto-tag.mjs --dry-run",
     "auto-tag:all": "node scripts/auto-tag.mjs --all",
