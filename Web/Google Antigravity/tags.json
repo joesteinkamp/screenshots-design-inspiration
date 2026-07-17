@@ -77,5 +77,51 @@
     "Banner",
     "Card",
     "Divider"
+  ],
+  "Screenshot 2026-05-20 at 2.48.51 PM.png": [
+    "Guided Tour & Tutorial",
+    "Logo",
+    "Text Field",
+    "Button",
+    "Checkbox"
+  ],
+  "Screenshot 2026-05-20 at 2.49.16 PM.png": [
+    "Guided Tour & Tutorial",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Banner"
+  ],
+  "Screenshot 2026-05-20 at 2.49.20 PM.png": [
+    "Guided Tour & Tutorial",
+    "Button",
+    "Card",
+    "Icon",
+    "Text Field"
+  ],
+  "Screenshot 2026-05-20 at 2.49.26 PM.png": [
+    "Signup",
+    "Button",
+    "Checkbox",
+    "Text Field",
+    "Divider",
+    "Loading Indicator"
+  ],
+  "Screenshot 2026-05-20 at 2.50.02 PM.png": [
+    "Signup",
+    "Checkbox",
+    "Text Field",
+    "Button",
+    "Divider",
+    "Loading Indicator"
+  ],
+  "Screenshot 2026-05-20 at 2.50.10 PM.png": [
+    "Guided Tour & Tutorial",
+    "Accordion",
+    "Button",
+    "Checkbox",
+    "Dropdown Menu",
+    "Text Field",
+    "Toast"
   ]
 }
