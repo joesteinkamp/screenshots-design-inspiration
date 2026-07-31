@@ -950,13 +950,18 @@ footer {
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
     
-    /* Ratios */
+    /* Ratios. An explicit height as well as the ratio: every .card-img is
+       absolutely positioned, so the preview has no in-flow content to give it
+       height. If aspect-ratio doesn't resolve, the box collapses to 0 and the
+       thumbnails vanish while the title and count below still render. */
     &.ios, &.android {
         aspect-ratio: 9/19.5; /* phone portrait */
+        height: 400px;
     }
-    
+
     &.web, &.email {
         aspect-ratio: 16/10; /* Web/Desktop */
+        height: 260px;
     }
 }
 
@@ -1049,7 +1054,13 @@ footer {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: var(--spacing-md);
     }
-    
+
+    /* Narrower columns here, so scale the preview heights to match. */
+    .card-preview {
+        &.ios, &.android { height: 340px; }
+        &.web, &.email { height: 180px; }
+    }
+
     .card-title {
         font-size: 0.95rem;
     }
