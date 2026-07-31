@@ -29,7 +29,7 @@ Thanks for contributing screenshots! This guide focuses on the bits that are eas
    ---
    ```
 
-3. That's it. The CI auto-tagger will fill in `image_tags` for each screenshot on the next build to `main`.
+3. That's it. The CI auto-tagger fills in `image_tags` for each screenshot. It runs on a schedule rather than on your merge, so tags usually appear within a few hours.
 
 ## Adding screenshots to an existing product
 
@@ -119,7 +119,7 @@ The validator reports every issue it finds, split into three buckets:
 
 Two bot commits may land on `main` after your merge:
 
-- **Auto-tagging** — the CI tagger runs `scripts/auto-tag.mjs` to fill in `image_tags` for any new screenshots.
-- **Auto-fix** — `validate-frontmatter.mjs --fix` reapplies any safe corrections the merge missed.
+- **Auto-fix** — `validate-frontmatter.mjs --fix` reapplies any safe corrections the merge missed, as part of the deploy. Commit: `chore(bot): auto-fix frontmatter [skip ci] [skip-recency]`.
+- **Auto-tagging** — `scripts/auto-tag.mjs` fills in `image_tags` for new screenshots. This runs on its own schedule (every 6 hours), *not* on your merge, because the vision model needs about a minute per screenshot and would otherwise hold up the deploy. Commit: `chore(bot): auto-tag screenshots [skip-recency]`.
 
-Both are combined into one commit: `chore(bot): auto-tag + auto-fix frontmatter [skip ci]`.
+If you'd rather not wait, you can run the tagger yourself and include the tags in your PR — see [Auto-tagging screenshots](README.md#auto-tagging-screenshots) in the README.

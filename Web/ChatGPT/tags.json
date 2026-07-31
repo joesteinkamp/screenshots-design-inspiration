@@ -28,5 +28,61 @@
     "Button",
     "Avatar",
     "Icon"
+  ],
+  "Screenshot 2026-07-10 at 9.30.57 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Button",
+    "Text Field",
+    "Avatar"
+  ],
+  "Screenshot 2026-07-10 at 9.31.00 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Button",
+    "Radio Button",
+    "Checkbox",
+    "Page Control",
+    "Tab",
+    "Progress Indicator"
+  ],
+  "Screenshot 2026-07-10 at 9.31.05 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Button",
+    "Text Field"
+  ],
+  "Screenshot 2026-07-10 at 9.31.09 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Button",
+    "Text Field"
+  ],
+  "Screenshot 2026-07-10 at 9.31.35 PM.png": [
+    "Action Option",
+    "Button",
+    "Checkbox",
+    "Dialog",
+    "Drawer",
+    "Tooltip"
+  ],
+  "Screenshot 2026-07-10 at 9.31.45 PM.png": [
+    "Action Option",
+    "Button"
+  ],
+  "Screenshot 2026-07-10 at 9.32.27 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Multi-Column Layout",
+    "Button",
+    "Rating Control",
+    "Dialog"
+  ],
+  "Screenshot 2026-07-10 at 9.32.37 PM.png": [
+    "Home",
+    "Account Setup",
+    "Button",
+    "Text Field",
+    "Checkbox"
   ]
 }
