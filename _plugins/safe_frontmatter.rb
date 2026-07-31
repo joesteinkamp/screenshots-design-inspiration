@@ -69,10 +69,17 @@ module Jekyll
       __safe_frontmatter_original_read_yaml(base, name, opts)
     rescue Psych::SyntaxError, StandardError => e
       full_path = File.join(base, name)
-      # Only intervene for the content files we own. Anything else should
-      # still fail loud — this shouldn't silently mask unrelated bugs.
-      unless full_path.end_with?('/index.html') &&
-             %w[Mobile Web Email].any? { |p| full_path.include?("/#{p}/") }
+      # Only intervene for the content files we own — a gallery index.html
+      # inside one of the platform directories. Anything else should still fail
+      # loud; this shouldn't silently mask unrelated bugs.
+      #
+      # `base` is the site source, so the path relative to it starts with the
+      # platform segment. Match on that segment rather than searching the whole
+      # path for "/<Platform>/", which would also match a product folder that
+      # happens to be named after a platform.
+      relative = name.to_s.sub(%r{\A/}, '')
+      unless relative.end_with?('/index.html') &&
+             Jekyll::Platforms.from_path(@site, relative)
         raise
       end
 

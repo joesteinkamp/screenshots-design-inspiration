@@ -1,11 +1,9 @@
-{% assign current_category = "" %}
-{% if page.url contains 'Mobile' %}
-    {% assign current_category = "Mobile" %}
-{% elsif page.url contains 'Web' %}
-    {% assign current_category = "Web" %}
-{% elsif page.url contains 'Email' %}
-    {% assign current_category = "Email" %}
-{% endif %}
+{% comment %}
+  The platform is the first segment of the URL (/<Platform>/). Take it directly
+  rather than substring-matching the URL — product folders like "T-Mobile" or
+  "Universal Studios" contain platform names as substrings.
+{% endcomment %}
+{% assign current_category = page.url | remove_first: '/' | split: '/' | first %}
 
 <h1>{{ current_category }}</h1>
 

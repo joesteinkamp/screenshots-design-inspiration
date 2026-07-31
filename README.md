@@ -3,14 +3,14 @@ The goal of this project is to create a simple site for finding design inspirati
 
 ## MCP Server
 
-This repo includes a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that lets AI tools query the screenshot library directly. AI models often lack access to curated, real product screenshots — this MCP bridges that gap by giving AI tools access to 410+ products across Web, Mobile, and Email with tagged metadata and actual images.
+This repo includes a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that lets AI tools query the screenshot library directly. AI models often lack access to curated, real product screenshots — this MCP bridges that gap by giving AI tools access to 410+ products across Web, iOS, Android, and Email with tagged metadata and actual images.
 
 ### Use Cases
 
 - **UI design research** — Ask your AI tool "show me how products handle dark mode dashboards" and get real screenshots from Stripe, Linear, Notion, etc.
 - **Design pattern exploration** — Search by tags like "Onboarding", "SaaS Dashboard", "Card-based", "Minimalist" to see how real products solve specific UI problems
 - **Creative inspiration** — Get random product screenshots to spark ideas when starting a new design
-- **Competitive analysis** — Browse all Web or Mobile products in a specific category to see common patterns
+- **Competitive analysis** — Browse all Web, iOS, or Android products in a specific category to see common patterns
 - **Reference for implementation** — When building a new feature, pull up real-world examples to guide your design decisions
 
 ### Setup
@@ -47,7 +47,7 @@ No repo clone, no install, no build required. `npx` handles everything.
 | `search_inspiration` | Search by free-text query, product tags, screenshot tags, or any combination — e.g. `product_tags=["AI-first"], screenshot_tags=["Dashboard"]`. |
 | `search_screenshots_by_tags` | Find individual screenshots by their per-image tags (e.g. "onboarding", "empty state") across all products. |
 | `get_product_screenshots` | Get screenshots for a specific product. Returns base64 images for in-chat viewing by default. Pass `include_images=false` to get metadata + download URLs only (no base64) — useful when saving to disk or avoiding context bloat. |
-| `browse_by_platform` | List all products for Web, Mobile, or Email with pagination. |
+| `browse_by_platform` | List all products for Web, iOS, Android, or Email with pagination. |
 | `get_random_inspiration` | Get random products for creative exploration, with optional tag/platform filters. |
 
 ### Download URLs

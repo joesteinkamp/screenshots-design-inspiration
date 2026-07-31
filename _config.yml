@@ -6,6 +6,31 @@ project_url: https://github.com/joesteinkamp/screenshots-design-inspiration
 
 permalink: pretty
 
+# The platform taxonomy — the single source of truth for it.
+#
+# A platform IS a top-level directory: `<Platform>/<Product>/index.html`. This
+# list is what the nav, the filter chips, the Ruby generators, the Node scripts
+# and the upload UI all read, so adding or renaming a platform means editing
+# this list and moving the directory — nothing else.
+#
+# Order is display order (nav, landing-page cards, filter chips).
+platforms:
+  - Email
+  - iOS
+  - Android
+  - Web
+
+# Which of the above hold phone-shaped screenshots. The gallery grid gives these
+# a narrow column sized for a 9:19.5 frame, so tablet captures sitting inside
+# them (iPad shots in an iOS gallery) need flagging to get full width back —
+# that's what scripts/mark-tablet-screenshots.mjs writes into `tablet_images:`.
+#
+# The matching `.ios, .android` selectors in assets/css/style.scss are written
+# out literally; adding a phone platform means updating them too.
+phone_platforms:
+  - iOS
+  - Android
+
 # Force UTF-8 reads of source files regardless of the host locale. Without
 # this, Ruby falls back to US-ASCII when LANG is unset and kramdown rejects
 # any non-ASCII byte in page content (em-dashes, Unicode filename chars,
@@ -17,6 +42,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  # Generates stubs at the old /Mobile/<Product>/ URLs, which moved to
+  # /iOS/<Product>/ when the Mobile category was split into iOS and Android.
+  - jekyll-redirect-from
 
 
 

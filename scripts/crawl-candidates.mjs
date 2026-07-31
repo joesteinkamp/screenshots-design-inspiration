@@ -27,12 +27,12 @@ import { fetchCandidates as yc } from "./sources/yc.mjs";
 import { fetchCandidates as hn } from "./sources/hn.mjs";
 import { fetchCandidates as github } from "./sources/github.mjs";
 import { fetchCandidates as producthunt } from "./sources/producthunt.mjs";
+import { loadPlatforms } from "./lib/platforms.mjs";
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
 
-const PLATFORMS = ["Web", "Mobile", "Email"];
 const SOURCES = { yc, hn, github, producthunt };
 const DEFAULT_LIMIT = 15;
 const SEEN_PATH = "crawler/seen.json";
@@ -94,7 +94,7 @@ function domainOf(url) {
 // the `gallery-directory` frontmatter value, so folder names are the catalog).
 function existingProductNames(root) {
   const names = new Set();
-  for (const platform of PLATFORMS) {
+  for (const platform of loadPlatforms(root)) {
     const dir = path.join(root, platform);
     if (!fs.existsSync(dir)) continue;
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -126,11 +126,12 @@ function writeSeen(root, seen) {
 }
 
 // Suggested gallery bucket. We have little platform signal from these sources,
-// so default to Web and only bump to Mobile on an obvious app-store URL. The
-// human reviewer confirms/edits in the PR.
+// so default to Web and only move off it for an obvious app-store URL — where
+// the store itself tells us which OS. The human reviewer confirms/edits in the PR.
 function suggestPlatform(candidate) {
   const u = (candidate.url || "").toLowerCase();
-  if (/apps\.apple\.com|play\.google\.com|itunes\.apple\.com/.test(u)) return "Mobile";
+  if (/apps\.apple\.com|itunes\.apple\.com/.test(u)) return "iOS";
+  if (/play\.google\.com/.test(u)) return "Android";
   return "Web";
 }
 

@@ -30,12 +30,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import yaml from "js-yaml";
+import { loadPlatforms } from "./lib/platforms.mjs";
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
 
-const PLATFORMS = ["Web", "Mobile", "Email"];
 const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image
 const GEMINI_MODEL = "gemini-2.5-flash";
@@ -129,7 +129,19 @@ function aggregateTags(tagsMap) {
 
 // Canonical frontmatter key order. Any keys not in this list are appended in
 // their original order after these.
-const FRONTMATTER_KEY_ORDER = ["layout", "gallery-directory", "tags", "image_tags"];
+const FRONTMATTER_KEY_ORDER = [
+  "layout",
+  "gallery-directory",
+  // Galleries that moved when Mobile was split into iOS/Android keep their old
+  // URL alive. Listed here so it stays above the long image_tags block instead
+  // of being appended after it as an unrecognized key.
+  "redirect_from",
+  "tags",
+  // Written by scripts/mark-tablet-screenshots.mjs; listed so the tagger's
+  // rewrite preserves its position rather than appending it after image_tags.
+  "tablet_images",
+  "image_tags",
+];
 
 function orderFrontmatterKeys(obj) {
   const ordered = {};
@@ -636,7 +648,7 @@ async function main() {
 
   if (flags.repairFrontmatter) {
     let repaired = 0;
-    for (const platform of PLATFORMS) {
+    for (const platform of loadPlatforms(root)) {
       const platformDir = path.join(root, platform);
       if (!fs.existsSync(platformDir)) continue;
       for (const entry of fs.readdirSync(platformDir, { withFileTypes: true })) {
@@ -667,7 +679,7 @@ async function main() {
       dir: fullPath,
     });
   } else {
-    for (const platform of PLATFORMS) {
+    for (const platform of loadPlatforms(root)) {
       const platformDir = path.join(root, platform);
       if (!fs.existsSync(platformDir)) continue;
       const entries = fs.readdirSync(platformDir, { withFileTypes: true });

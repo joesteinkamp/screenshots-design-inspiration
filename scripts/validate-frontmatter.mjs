@@ -3,8 +3,9 @@
 /**
  * validate-frontmatter.mjs
  *
- * Scans every `{Mobile,Web,Email}/*\/index.html` for YAML frontmatter
- * problems, auto-fixing known-safe ones. Used by:
+ * Scans every `<Platform>/*\/index.html` for YAML frontmatter problems
+ * (platforms come from `platforms:` in _config.yml), auto-fixing known-safe
+ * ones. Used by:
  *   - CI (post auto-tag) to repair orphan list markers before Jekyll build
  *   - PR validation workflow (dry-run) to post suggestions to contributors
  *   - Contributors locally: `node scripts/validate-frontmatter.mjs --dry-run`
@@ -24,8 +25,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import yaml from "js-yaml";
+import { loadPlatforms } from "./lib/platforms.mjs";
 
-const PLATFORMS = ["Web", "Mobile", "Email"];
 const TAXONOMY_CSV = "screenshot_tags.csv";
 
 function parseArgs() {
@@ -53,7 +54,7 @@ function listIndexFiles(root, explicitPaths) {
       .filter((p) => fs.existsSync(p) && p.endsWith("index.html"));
   }
   const out = [];
-  for (const platform of PLATFORMS) {
+  for (const platform of loadPlatforms(root)) {
     const platformDir = path.join(root, platform);
     if (!fs.existsSync(platformDir)) continue;
     for (const entry of fs.readdirSync(platformDir, { withFileTypes: true })) {

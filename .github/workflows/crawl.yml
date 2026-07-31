@@ -73,7 +73,7 @@ jobs:
             `crawler/candidates/` is a **candidate** — a product found on a
             launch source, not yet in the gallery.
 
-            **To add one:** create its folder under `Web/`/`Mobile/`/`Email/`
+            **To add one:** create its folder under `Web/`/`iOS/`/`Android/`/`Email/`
             with real, self-captured screenshots per
             [CONTRIBUTING.md](../blob/master/CONTRIBUTING.md). **Do not reuse the
             sources' images** — they're copyrighted.

@@ -9,7 +9,7 @@ will run automatically but ticking these off locally saves a round trip.
 
 ## Checklist
 
-- [ ] Screenshots are in the correct platform folder (`Web/`, `Mobile/`, or `Email/`).
+- [ ] Screenshots are in the correct platform folder (`Web/`, `iOS/`, `Android/`, or `Email/`).
 - [ ] For a new app: `index.html` includes `layout: gallery` and `gallery-directory: <AppName>`.
 - [ ] Ran `node scripts/validate-frontmatter.mjs --dry-run` locally — no unfixable errors.
 - [ ] Any digit-leading filename keys in `image_tags` are quoted (e.g. `"20240327.png":`).

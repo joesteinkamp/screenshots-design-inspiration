@@ -19,15 +19,11 @@ layout: default
 
 <h3>Browse by Platform</h3>
 <div class="grid">
+    {% for platform in site.platforms %}
     <div class="channel-item">
-        <h1><a href="Email/">Email</a></h1>
+        <h1><a href="{{ platform }}/">{{ platform }}</a></h1>
     </div>
-    <div class="channel-item">
-        <h1><a href="Mobile/">Mobile</a></h1>
-    </div>
-    <div class="channel-item">
-        <h1><a href="Web/">Web</a></h1>
-    </div>
+    {% endfor %}
 </div>
 
 <h3>Recently Added</h3>
@@ -45,26 +41,24 @@ layout: default
     {% assign image_files = site.static_files | sample: 20 %}
     {% for image in image_files limit: 20 %}
     {% if image.extname contains 'png' or image.extname contains 'jpg' or image.extname contains 'jpeg' or image.extname contains 'gif' %}
+        {% comment %}
+          image.path is /<Platform>/<Product>/<file>, so the platform is the
+          first segment. Anything outside a platform directory (site assets,
+          for instance) has no product page to link to and is skipped.
+        {% endcomment %}
         {% assign parts = image.path | split: '/' %}
+        {% assign platform = parts[1] %}
         {% assign product = parts[2] %}
-        
-        {% assign platform = "Email" %}
-        {% assign type_class = "email" %}
-        
-        {% if image.path contains 'Mobile' %}
-            {% assign platform = "Mobile" %}
-            {% assign type_class = "mobile" %}
-        {% elsif image.path contains 'Web' %}
-            {% assign platform = "Web" %}
-            {% assign type_class = "web" %}
-        {% endif %}
-        
+
+        {% if site.platforms contains platform and product %}
+        {% assign type_class = platform | downcase %}
         <div class="gg-element img-item media {{ type_class }}">
             <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ product }}" />
             <div class="gg-overlay">
                 <a href="{{ site.baseurl }}/{{ platform }}/{{ product }}/" class="gg-product-link">{{ product }}</a>
             </div>
         </div>
+        {% endif %}
     {% endif %}
     {% endfor %}
     </div>

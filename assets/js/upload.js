@@ -13,7 +13,12 @@ const UploadApp = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
-    const [platform, setPlatform] = useState('Web');
+    // Platforms come from _config.yml via upload.html. Default to the last one
+    // (the largest, most likely bucket) rather than a hardcoded name.
+    const platforms = window.platforms && window.platforms.length
+        ? window.platforms
+        : ['Web'];
+    const [platform, setPlatform] = useState(platforms[platforms.length - 1]);
     const [uploading, setUploading] = useState(false);
     const [progress, setProgress] = useState(0);
     const [uploadComplete, setUploadComplete] = useState(false);
@@ -305,7 +310,7 @@ const UploadApp = () => {
                         <div class="form-group">
                             <label>Platform</label>
                             <div class="segment-control">
-                                ${['Email', 'Mobile', 'Web'].map(p => html`
+                                ${platforms.map(p => html`
                                     <button 
                                         class="segment-option ${platform === p ? 'active' : ''}"
                                         onClick=${() => setPlatform(p)}

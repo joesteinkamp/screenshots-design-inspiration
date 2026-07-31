@@ -11,21 +11,21 @@
 
 
         <h1>{{ page.gallery-directory }}</h1>
-        
+
+        {% comment %}
+          This gallery's own platform, taken from the first URL segment rather
+          than by substring-matching the URL (product folders like "T-Mobile"
+          contain platform names). Its chip starts active; the rest start hidden
+          and are revealed below only if the gallery actually holds shots of
+          that platform.
+        {% endcomment %}
+        {% assign current_platform = page.url | remove_first: '/' | split: '/' | first %}
+
         <ul class="filters">
-        {% if page.url contains 'Mobile' %}
-            <li id="filter-email" class="hidden" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
-            <li id="filter-mobile" class="active" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
-            <li id="filter-web" class="hidden" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
-        {% elsif page.url contains 'Web' %}
-            <li id="filter-email" class="hidden" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
-            <li id="filter-mobile" class="hidden" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
-            <li id="filter-web" class="active" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
-        {% else %}
-            <li id="filter-email" class="active" onClick="filterImages('email'); this.classList.toggle('active');">Email</li>
-            <li id="filter-mobile" class="hidden" onClick="filterImages('mobile'); this.classList.toggle('active');">Mobile</li>
-            <li id="filter-web" class="hidden" onClick="filterImages('web'); this.classList.toggle('active');">Web</li>
-        {% endif %}
+        {% for platform in site.platforms %}
+            {% assign slug = platform | downcase %}
+            <li id="filter-{{ slug }}" class="{% if platform == current_platform %}active{% else %}hidden{% endif %}" onClick="filterImages('{{ slug }}'); this.classList.toggle('active');">{{ platform }}</li>
+        {% endfor %}
         </ul>
 
         {% if page.tags != null %}
@@ -52,40 +52,33 @@
                                 {% assign img_tags = found_tags | join: "," %}
                             {% endif %}
                         {% endif %}
-                        {% if image.path contains 'Mobile' %}
-                            <div class="media-wrapper media mobile">
-                                <img class="media mobile" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
-                                {% if img_tags != "" %}
-                                <div class="image-tags">
-                                    {% for tag in found_tags %}
-                                    <span class="image-tag">{{ tag }}</span>
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
-                            </div>
-                        {% elsif image.path contains 'Web' %}
-                            <div class="media-wrapper media web">
-                                <img class="media web" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
-                                {% if img_tags != "" %}
-                                <div class="image-tags">
-                                    {% for tag in found_tags %}
-                                    <span class="image-tag">{{ tag }}</span>
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
-                            </div>
-                        {% else %}
-                            <div class="media-wrapper media email">
-                                <img class="media email" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
-                                {% if img_tags != "" %}
-                                <div class="image-tags">
-                                    {% for tag in found_tags %}
-                                    <span class="image-tag">{{ tag }}</span>
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
-                            </div>
+                        {% comment %}
+                          The platform class drives both the filter chips above
+                          and the card geometry in style.scss. Derive it from the
+                          image's own first path segment, so a gallery holding
+                          shots from more than one platform still classes each
+                          image correctly.
+                        {% endcomment %}
+                        {% assign img_platform = image.path | remove_first: '/' | split: '/' | first | downcase %}
+                        {% comment %}
+                          Tablet captures sit inside phone galleries, so they'd
+                          otherwise be squeezed into a phone-width column. See
+                          scripts/mark-tablet-screenshots.mjs.
+                        {% endcomment %}
+                        {% assign shape = "" %}
+                        {% if page.tablet_images and page.tablet_images contains image.name %}
+                            {% assign shape = " tablet" %}
                         {% endif %}
+                            <div class="media-wrapper media {{ img_platform }}{{ shape }}">
+                                <img class="media {{ img_platform }}{{ shape }}" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
+                                {% if img_tags != "" %}
+                                <div class="image-tags">
+                                    {% for tag in found_tags %}
+                                    <span class="image-tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
                     {% elsif image.extname contains 'mp4' %}
                         <div class="media-wrapper media web">
                             <video class="media web" autoplay="autoplay" muted="muted" loop="loop" playsinline="" src="{{ site.baseurl }}{{ image.path }}" alt="video"></video>
@@ -102,33 +95,19 @@
 
 
     <script>
-        {% if page.url contains 'Mobile' %}
-            filterImages('web');
-            filterImages('email');
-        {% elsif page.url contains 'Web' %}
-            filterImages('mobile');
-            filterImages('email');
-        {% else %}
-            filterImages('web');
-            filterImages('mobile');
-        {% endif %}
+        // Start with only this gallery's own platform showing.
+        {% for platform in site.platforms %}{% unless platform == current_platform %}
+            filterImages('{{ platform | downcase }}');
+        {% endunless %}{% endfor %}
 
-
-        if(document.querySelector(".web") != null) {   
-            //  Show web filter
-            console.log("Web images found");
-            showElement('filter-web');
+        // Reveal a platform's chip only if the gallery actually has shots for
+        // it — most galleries are single-platform, so most chips stay hidden.
+        {% for platform in site.platforms %}
+        if(document.querySelector(".{{ platform | downcase }}") != null) {
+            console.log("{{ platform }} images found");
+            showElement('filter-{{ platform | downcase }}');
         }
-        if(document.querySelector(".mobile") != null) {
-            //  Show mobile filter
-            console.log("Mobile images found");
-            showElement('filter-mobile');
-        } 
-        if(document.querySelector(".email") != null) {
-            //  Show email filter
-            console.log("Email images found");
-            showElement('filter-email');
-        } 
+        {% endfor %}
     </script>
 
     <script src="/assets/grid-gallery/grid-gallery.js"></script>
