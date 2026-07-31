@@ -3,6 +3,16 @@
 {% assign pages = site.pages | sort: 'url' %}
 {% assign counter = 0 %}
 
+{% comment %}
+  Platform landing pages are listed by the parent nav, not here, so build their
+  URLs from the taxonomy and skip them below.
+{% endcomment %}
+{% assign platform_roots = "" %}
+{% for platform in site.platforms %}
+  {% assign platform_roots = platform_roots | append: '/' | append: platform | append: ',' %}
+{% endfor %}
+{% assign platform_roots = platform_roots | split: ',' %}
+
 <ul class="directory-menu">
 {% for node in pages %}
   {% capture count %}
@@ -13,7 +23,9 @@
     {% assign node_url_parts = node.url | split: '/' %}
     {% assign node_url_parts_size = node_url_parts | size %}
     {% assign filename = node_url_parts | last %}
-    {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' and node.url != '/search' and node.url != '/tags' and node.url != '/Email' and node.url != '/Mobile' and node.url != '/Web' and node.url != '/Web/UNCATEGORIZED' %}
+    {% assign is_platform_root = false %}
+    {% if platform_roots contains node.url %}{% assign is_platform_root = true %}{% endif %}
+    {% if node.url != base_url and node.url != '/feed.xml' and node.url != '/sitemap.xml' and node.url != '/robots.txt' and filename != 'style.css' and node.url != '/search' and node.url != '/tags' and node.url != '/Web/UNCATEGORIZED' and is_platform_root == false %}
       <li class="menu-item"><a href='{{ node.url | relative_url }}' class="menu-item-a">{{ node.url | remove: base_url | replace: '%20', ' ' }}</a></li>
     {% endif %}
   {% endif %}

@@ -34,9 +34,9 @@
         <div class="col">
           <ul class="menu">
             <li><a class="search" href="{{ "search" | relative_url}}"><img src="{{ "assets/img/icon-search.svg" | relative_url}}" /></a></li>
-            <li><a href="{{ "Email/" | relative_url}}">Email</a></li>
-            <li><a href="{{ "Mobile/" | relative_url}}">Mobile</a></li>
-            <li><a href="{{ "Web/" | relative_url}}">Web</a></li>
+            {% for platform in site.platforms %}
+            <li><a href="{{ platform | append: '/' | relative_url}}">{{ platform }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>

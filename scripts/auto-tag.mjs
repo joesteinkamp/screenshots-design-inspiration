@@ -30,12 +30,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import yaml from "js-yaml";
+import { loadPlatforms } from "./lib/platforms.mjs";
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
 
-const PLATFORMS = ["Web", "Mobile", "Email"];
 const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB per image
 const GEMINI_MODEL = "gemini-2.5-flash";
@@ -636,7 +636,7 @@ async function main() {
 
   if (flags.repairFrontmatter) {
     let repaired = 0;
-    for (const platform of PLATFORMS) {
+    for (const platform of loadPlatforms(root)) {
       const platformDir = path.join(root, platform);
       if (!fs.existsSync(platformDir)) continue;
       for (const entry of fs.readdirSync(platformDir, { withFileTypes: true })) {
@@ -667,7 +667,7 @@ async function main() {
       dir: fullPath,
     });
   } else {
-    for (const platform of PLATFORMS) {
+    for (const platform of loadPlatforms(root)) {
       const platformDir = path.join(root, platform);
       if (!fs.existsSync(platformDir)) continue;
       const entries = fs.readdirSync(platformDir, { withFileTypes: true });

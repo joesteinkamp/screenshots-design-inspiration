@@ -27,12 +27,12 @@ import { fetchCandidates as yc } from "./sources/yc.mjs";
 import { fetchCandidates as hn } from "./sources/hn.mjs";
 import { fetchCandidates as github } from "./sources/github.mjs";
 import { fetchCandidates as producthunt } from "./sources/producthunt.mjs";
+import { loadPlatforms } from "./lib/platforms.mjs";
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
 
-const PLATFORMS = ["Web", "Mobile", "Email"];
 const SOURCES = { yc, hn, github, producthunt };
 const DEFAULT_LIMIT = 15;
 const SEEN_PATH = "crawler/seen.json";
@@ -94,7 +94,7 @@ function domainOf(url) {
 // the `gallery-directory` frontmatter value, so folder names are the catalog).
 function existingProductNames(root) {
   const names = new Set();
-  for (const platform of PLATFORMS) {
+  for (const platform of loadPlatforms(root)) {
     const dir = path.join(root, platform);
     if (!fs.existsSync(dir)) continue;
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {

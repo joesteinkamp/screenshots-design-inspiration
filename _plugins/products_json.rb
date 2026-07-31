@@ -9,12 +9,12 @@ module Jekyll
 
     def generate(site)
       started_at = Time.now
-      Jekyll.logger.info('ProductsJson:', 'scanning Mobile/Web/Email galleries...')
+      dirs_to_scan = Jekyll::Platforms.for(site)
+      Jekyll.logger.info('ProductsJson:', "scanning #{dirs_to_scan.join('/')} galleries...")
       products = []
       tag_counts = Hash.new(0)
       screenshot_tag_counts = Hash.new(0)
 
-      dirs_to_scan = ['Mobile', 'Web', 'Email']
       image_extensions = ['.png', '.jpg', '.jpeg', '.gif']
 
       dirs_to_scan.each do |dir|
@@ -122,7 +122,10 @@ module Jekyll
         )
       end
 
-      products.sort_by! { |p| p['name'].downcase }
+      # Platform breaks name ties, so the output order doesn't depend on the
+      # order `platforms:` happens to list. Some products exist on more than one
+      # platform (Catalant is both Email and Web), and sort_by isn't stable.
+      products.sort_by! { |p| [p['name'].downcase, p['platform']] }
       Jekyll.logger.info(
         'ProductsJson:',
         "collected #{products.size} products, #{tag_counts.size} tags, #{screenshot_tag_counts.size} screenshot tags in #{format('%.2fs', Time.now - started_at)}"
