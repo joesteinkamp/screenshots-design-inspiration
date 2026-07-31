@@ -1,0 +1,130 @@
+name: Auto-tag screenshots
+
+# The tagger runs a vision model on a CPU-only runner — roughly a minute per
+# screenshot at 3B — so a large backlog takes hours. It used to sit inside
+# deploy.yml, which meant the site could not publish until every new
+# screenshot was tagged, and a backlog big enough to hit the 6h job ceiling
+# lost all of its work and never converged.
+#
+# So it lives here instead: its own schedule, a wall-clock budget, and a
+# commit of whatever finished. Each run chips away at the backlog and the
+# resulting push triggers a normal (now fast) deploy that publishes the tags.
+
+on:
+  schedule:
+    # Every 6 hours. Four budgeted runs a day comfortably outpaces the rate
+    # new galleries get added.
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      max_minutes:
+        description: 'Wall-clock tagging budget in minutes'
+        required: false
+        default: '45'
+      model_size:
+        description: 'Tagger model size (3b or 7b)'
+        required: false
+        default: '3b'
+
+permissions:
+  contents: write
+
+# Never let two taggers write tags concurrently — they would collide on the
+# push. Queue instead of cancelling so a run in progress keeps its work.
+concurrency:
+  group: auto-tag
+  cancel-in-progress: false
+
+env:
+  TAGGER_MODEL_SIZE: ${{ github.event.inputs.model_size || '3b' }}
+  # Pinned rather than auto-detected: the runner has no llama-server binary, so
+  # auto would land on Docker anyway, but saying so keeps CI from silently
+  # changing runtime if that ever stops being true.
+  TAGGER_RUNTIME: docker
+  LLAMA_SERVER_IMAGE: ghcr.io/ggml-org/llama.cpp:server
+  LLAMA_CTX_SIZE: "16384"
+  MAX_MINUTES: ${{ github.event.inputs.max_minutes || '45' }}
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    # The budget plus model download, Docker pull and commit, with headroom.
+    # A backstop only — auto-tag.mjs is expected to stop on its own budget.
+    timeout-minutes: 75
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          # Full history so the rebase in the commit step below has something
+          # to rebase onto — it is unreliable against a shallow clone.
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      # Cheap filesystem scan, no model server needed. Everything below is
+      # conditional on it so a run with nothing to do costs seconds instead of
+      # a 3.3GB download.
+      - name: Count untagged screenshots
+        id: backlog
+        run: |
+          count=$(node scripts/auto-tag.mjs --count-untagged | tail -1)
+          echo "Backlog: $count"
+          images=$(node -e "process.stdout.write(String(JSON.parse(process.argv[1]).images))" "$count")
+          echo "images=$images" >> "$GITHUB_OUTPUT"
+
+      - name: Cache tagger model weights
+        if: steps.backlog.outputs.images != '0'
+        id: cache-model
+        uses: actions/cache@v5
+        with:
+          path: scripts/.models
+          key: tagger-model-${{ env.TAGGER_MODEL_SIZE }}
+
+      - name: Download tagger model weights
+        if: steps.backlog.outputs.images != '0' && steps.cache-model.outputs.cache-hit != 'true'
+        run: scripts/download-tagger-model.sh
+
+      - name: Pull llama.cpp server image
+        if: steps.backlog.outputs.images != '0'
+        run: docker pull "$LLAMA_SERVER_IMAGE"
+
+      - name: Start local tagger
+        if: steps.backlog.outputs.images != '0'
+        run: scripts/start-local-tagger.sh --detach
+
+      # --no-limit because the product cap never predicted runtime (products
+      # hold anywhere from 1 to 40 screenshots); --max-minutes is the real
+      # bound. Whatever does not finish is picked up by the next run.
+      - name: Auto-tag screenshots
+        if: steps.backlog.outputs.images != '0'
+        run: node scripts/auto-tag.mjs --backend local --no-limit --max-minutes "$MAX_MINUTES"
+
+      - name: Stop local tagger
+        if: always()
+        run: scripts/stop-local-tagger.sh
+
+      # [skip-recency] matters here: _plugins/recent_galleries.rb dates a
+      # gallery by its last commit, and this job works through a backlog that
+      # can include galleries added long ago. Without the marker, tagging an
+      # old gallery would shove it back onto "recently added".
+      - name: Commit new tags
+        if: steps.backlog.outputs.images != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "*/index.html" "*/tags.json"
+          if git diff --cached --quiet; then
+            echo "No new tags produced; nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(bot): auto-tag screenshots [skip-recency]"
+          # A human push during the budget window would otherwise reject this.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push

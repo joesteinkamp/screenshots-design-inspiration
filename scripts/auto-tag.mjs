@@ -25,6 +25,16 @@
  *   node scripts/auto-tag.mjs --backend local     # force local backend
  *   node scripts/auto-tag.mjs --backend gemini    # force Gemini backend
  *   node scripts/auto-tag.mjs --local-url http://127.0.0.1:8080
+ *   node scripts/auto-tag.mjs --max-minutes 45    # stop cleanly after 45 min
+ *   node scripts/auto-tag.mjs --concurrency 4     # parallel requests (GPU)
+ *   node scripts/auto-tag.mjs --count-untagged    # report backlog, tag nothing
+ *
+ * On a CPU-only CI runner a 7B model needs minutes per screenshot, so a full
+ * pass over a large backlog cannot finish inside a job's time limit. Use
+ * --max-minutes: the run stops at the deadline having already written every
+ * product it completed, and the next run resumes with whatever is still
+ * untagged. Progress is durable, so the backlog drains across several runs
+ * instead of being lost to a timeout.
  */
 
 import fs from "node:fs";
@@ -70,17 +80,29 @@ function parseArgs() {
     limit: 20,
     backend: null,
     localUrl: LOCAL_DEFAULT_URL,
+    maxMinutes: null,
+    concurrency: null,
+    countUntagged: false,
   };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--all") flags.all = true;
     else if (args[i] === "--skip-valid-vocab") flags.skipValidVocab = true;
     else if (args[i] === "--repair-frontmatter") flags.repairFrontmatter = true;
+    else if (args[i] === "--count-untagged") flags.countUntagged = true;
     else if (args[i] === "--dry-run") flags.dryRun = true;
     else if (args[i] === "--product" && args[i + 1]) flags.product = args[++i];
     else if (args[i] === "--limit" && args[i + 1]) flags.limit = parseInt(args[++i], 10);
     else if (args[i] === "--no-limit") flags.limit = Infinity;
+    else if (args[i] === "--max-minutes" && args[i + 1]) flags.maxMinutes = parseFloat(args[++i]);
+    else if (args[i] === "--concurrency" && args[i + 1]) flags.concurrency = parseInt(args[++i], 10);
     else if (args[i] === "--backend" && args[i + 1]) flags.backend = args[++i];
     else if (args[i] === "--local-url" && args[i + 1]) flags.localUrl = args[++i];
+  }
+  if (flags.maxMinutes !== null && (!Number.isFinite(flags.maxMinutes) || flags.maxMinutes <= 0)) {
+    throw new Error("--max-minutes expects a positive number of minutes.");
+  }
+  if (flags.concurrency !== null && (!Number.isInteger(flags.concurrency) || flags.concurrency < 1)) {
+    throw new Error("--concurrency expects a positive integer.");
   }
   return flags;
 }
@@ -95,6 +117,48 @@ function listImages(productDir) {
     .readdirSync(productDir)
     .filter((f) => IMAGE_EXTENSIONS.has(path.extname(f).toLowerCase()))
     .sort();
+}
+
+// Every gallery folder across every platform, or just the one named by
+// --product. Shared by the tagging loop and --count-untagged so the two can
+// never disagree about what "the backlog" means.
+function collectProducts(root, flags) {
+  if (flags.product) {
+    const parts = flags.product.split("/");
+    return [{
+      platform: parts[0],
+      name: parts.slice(1).join("/"),
+      dir: path.join(root, flags.product),
+    }];
+  }
+  const products = [];
+  for (const platform of loadPlatforms(root)) {
+    const platformDir = path.join(root, platform);
+    if (!fs.existsSync(platformDir)) continue;
+    for (const entry of fs.readdirSync(platformDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      products.push({
+        platform,
+        name: entry.name,
+        dir: path.join(platformDir, entry.name),
+      });
+    }
+  }
+  return products;
+}
+
+// Which of a product's screenshots this run should send to the model.
+function selectImagesToTag(images, existingTagsMap, taxonomy, flags) {
+  if (flags.all) return images;
+  if (flags.skipValidVocab) {
+    return images.filter((img) => {
+      const tags = existingTagsMap[img];
+      return !(
+        Array.isArray(tags) && tags.length > 0 && tags.every((t) => taxonomy.allowed.has(t))
+      );
+    });
+  }
+  return images.filter((img) => !existingTagsMap[img] || existingTagsMap[img].length === 0);
 }
 
 function readTagsJson(productDir) {
@@ -238,13 +302,25 @@ function readImageBase64(imagePath) {
 
 // In-memory downscale for the local backend. Returns a JPEG buffer base64'd;
 // the source file on disk is never modified. Returns null if the image is
-// unreadable, too large on disk, or too small (llama.cpp's mtmd requires
-// both dimensions >= 2, and we drop anything under 32px as junk).
+// unreadable, or {tooSmall} if it is under 32px (llama.cpp's mtmd requires
+// both dimensions >= 2, and anything that small is junk anyway).
+//
+// Deliberately no on-disk size cap, unlike readImageBase64 — nothing leaves
+// this process at full size, so a 22MB animated GIF becomes a ~35KB JPEG.
+// Capping by file size would permanently skip images the downscale handles
+// fine, and the scheduled tagger would burn a model startup retrying them
+// every run, forever.
 async function readImageResizedBase64(imagePath, maxDim) {
-  const stats = fs.statSync(imagePath);
-  if (stats.size > MAX_IMAGE_SIZE_BYTES) return null;
   const sharp = (await import("sharp")).default;
-  const meta = await sharp(imagePath).metadata();
+  let meta;
+  try {
+    meta = await sharp(imagePath).metadata();
+  } catch (err) {
+    console.error(
+      `    ✗ ${path.basename(imagePath)}: unreadable image (${err?.message || err})`
+    );
+    return null;
+  }
   if (!meta.width || !meta.height || meta.width < 32 || meta.height < 32) {
     return { tooSmall: true };
   }
@@ -666,33 +742,40 @@ async function main() {
     return;
   }
 
-  const backend = await selectBackend(flags, taxonomy);
-  console.log(`Using backend: ${backend.name}`);
-
-  const products = [];
-  if (flags.product) {
-    const fullPath = path.join(root, flags.product);
-    const parts = flags.product.split("/");
-    products.push({
-      platform: parts[0],
-      name: parts.slice(1).join("/"),
-      dir: fullPath,
-    });
-  } else {
-    for (const platform of loadPlatforms(root)) {
-      const platformDir = path.join(root, platform);
-      if (!fs.existsSync(platformDir)) continue;
-      const entries = fs.readdirSync(platformDir, { withFileTypes: true });
-      for (const entry of entries) {
-        if (!entry.isDirectory()) continue;
-        products.push({
-          platform,
-          name: entry.name,
-          dir: path.join(platformDir, entry.name),
-        });
-      }
+  // Backlog report. Deliberately ahead of selectBackend() so CI can size up
+  // the work without a model server running — starting one costs minutes.
+  if (flags.countUntagged) {
+    let images = 0;
+    let productCount = 0;
+    for (const product of collectProducts(root, flags)) {
+      const pending = selectImagesToTag(
+        listImages(product.dir),
+        readTagsJson(product.dir),
+        taxonomy,
+        flags
+      );
+      if (pending.length === 0) continue;
+      productCount++;
+      images += pending.length;
     }
+    console.log(JSON.stringify({ products: productCount, images }));
+    return;
   }
+
+  const backend = await selectBackend(flags, taxonomy);
+  const concurrency = flags.concurrency ?? backend.concurrency;
+  console.log(`Using backend: ${backend.name} (concurrency ${concurrency})`);
+
+  // Wall-clock budget. Checked between products and between screenshots, so a
+  // run always stops with completed products already written to disk rather
+  // than being killed mid-pass and losing everything.
+  const deadline = flags.maxMinutes === null ? null : Date.now() + flags.maxMinutes * 60_000;
+  const outOfTime = () => deadline !== null && Date.now() >= deadline;
+  if (deadline !== null) {
+    console.log(`Time budget: ${flags.maxMinutes} minute(s). Unfinished work resumes next run.`);
+  }
+
+  const products = collectProducts(root, flags);
 
   console.log(`Found ${products.length} product(s) to check.`);
   if (flags.limit !== Infinity) {
@@ -703,6 +786,8 @@ async function main() {
   let productsTagged = 0;
   let screenshotsTagged = 0;
   let productsSkipped = 0;
+  let screenshotsDeferred = 0;
+  let budgetExhausted = false;
 
   for (const product of products) {
     if (productsTagged >= flags.limit) {
@@ -719,18 +804,18 @@ async function main() {
     }
 
     const existingTagsMap = readTagsJson(product.dir);
-    const hasValidVocabTags = (img) => {
-      const tags = existingTagsMap[img];
-      return Array.isArray(tags) && tags.length > 0 && tags.every((t) => taxonomy.allowed.has(t));
-    };
-    const toTag = flags.all
-      ? images
-      : flags.skipValidVocab
-      ? images.filter((img) => !hasValidVocabTags(img))
-      : images.filter((img) => !existingTagsMap[img] || existingTagsMap[img].length === 0);
+    const toTag = selectImagesToTag(images, existingTagsMap, taxonomy, flags);
 
     if (toTag.length === 0) {
       productsSkipped++;
+      continue;
+    }
+
+    // Out of time: count what is left so the summary reports a true backlog,
+    // and leave the files untouched for the next run to pick up.
+    if (outOfTime()) {
+      budgetExhausted = true;
+      screenshotsDeferred += toTag.length;
       continue;
     }
 
@@ -738,7 +823,10 @@ async function main() {
       `🏷 ${product.platform}/${product.name} — tagging ${toTag.length}/${images.length} screenshots...`
     );
 
-    const results = await asyncPool(backend.concurrency, toTag, async (imgName) => {
+    const results = await asyncPool(concurrency, toTag, async (imgName) => {
+      // Re-checked per screenshot: one gallery can hold dozens, which is far
+      // longer than a budget should overrun.
+      if (outOfTime()) return { imgName, tags: null, deferred: true };
       const imgPath = path.join(product.dir, imgName);
       const tags = await backend.tag(product.name, product.platform, imgPath);
       if (tags) {
@@ -748,22 +836,31 @@ async function main() {
     });
 
     const updatedTagsMap = { ...existingTagsMap };
-    for (const { imgName, tags } of results) {
+    let taggedHere = 0;
+    for (const { imgName, tags, deferred } of results) {
+      if (deferred) {
+        budgetExhausted = true;
+        screenshotsDeferred++;
+        continue;
+      }
       if (tags) {
         updatedTagsMap[imgName] = tags;
         screenshotsTagged++;
+        taggedHere++;
       }
     }
 
     const aggregated = aggregateTags(updatedTagsMap);
     console.log(`  → ${Object.keys(updatedTagsMap).length} screenshots, ${aggregated.length} unique tags`);
 
-    if (!flags.dryRun) {
+    // A partially tagged product is still worth writing — those screenshots
+    // are done and the next run only picks up the ones still missing.
+    if (flags.dryRun) {
+      console.log(`  (dry run — not written)`);
+    } else if (taggedHere > 0) {
       writeTagsJson(product.dir, updatedTagsMap);
       writeFrontmatterImageTags(indexPath, updatedTagsMap, product.name);
       console.log(`  ✓ Written tags.json + image_tags in ${path.relative(root, indexPath)}`);
-    } else {
-      console.log(`  (dry run — not written)`);
     }
 
     productsTagged++;
@@ -772,6 +869,13 @@ async function main() {
   console.log(
     `\nDone. Products tagged: ${productsTagged}, Screenshots tagged: ${screenshotsTagged}, Products skipped: ${productsSkipped}`
   );
+
+  if (budgetExhausted) {
+    console.log(
+      `Time budget of ${flags.maxMinutes} minute(s) reached — ${screenshotsDeferred} screenshot(s) left untagged. ` +
+      `Everything tagged so far is written; the next run continues from here.`
+    );
+  }
 }
 
 main().catch((err) => {

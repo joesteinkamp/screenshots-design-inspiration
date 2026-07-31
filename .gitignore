@@ -32,6 +32,9 @@ Web/.DS_Store
 
 # Local tagger model weights (downloaded on demand, ~6GB)
 scripts/.models/
+# Native llama-server bookkeeping from start-local-tagger.sh
+scripts/.tagger.pid
+scripts/.tagger.log
 
 # Backfill logs
 logs/

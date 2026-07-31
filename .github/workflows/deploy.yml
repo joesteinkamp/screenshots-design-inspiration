@@ -14,12 +14,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  TAGGER_MODEL_FILE: Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf
-  TAGGER_MMPROJ_FILE: mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf
-  TAGGER_MODEL_REPO: ggml-org/Qwen2.5-VL-7B-Instruct-GGUF
-  LLAMA_SERVER_IMAGE: ghcr.io/ggml-org/llama.cpp:server
-  LLAMA_CTX_SIZE: "16384"
+# Screenshot auto-tagging deliberately does NOT happen here — it runs a vision
+# model at roughly a minute per image, which blocked publishing for hours and
+# blew past the job time limit once the backlog grew. It lives in tag.yml on
+# its own schedule; its commits land on master and trigger this workflow
+# normally. See .github/workflows/tag.yml.
 
 jobs:
   build:
@@ -39,30 +38,6 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Cache tagger model weights
-        id: cache-model
-        uses: actions/cache@v5
-        with:
-          path: scripts/.models
-          key: tagger-model-${{ env.TAGGER_MODEL_REPO }}-${{ env.TAGGER_MODEL_FILE }}-${{ env.TAGGER_MMPROJ_FILE }}
-
-      - name: Download tagger model weights
-        if: steps.cache-model.outputs.cache-hit != 'true'
-        run: scripts/download-tagger-model.sh
-
-      - name: Pull llama.cpp server image
-        run: docker pull "$LLAMA_SERVER_IMAGE"
-
-      - name: Start local tagger
-        run: scripts/start-local-tagger.sh --detach
-
-      - name: Auto-tag untagged screenshots
-        run: node scripts/auto-tag.mjs --backend local --no-limit
-
-      - name: Stop local tagger
-        if: always()
-        run: scripts/stop-local-tagger.sh
-
       # Repair any YAML typos — contributors' own, or any our auto-tagger
       # may have introduced. Exit code 2 just means fixes were applied; exit
       # code 1 means unfixable errors remain (the safety-net plugin will
@@ -77,14 +52,20 @@ jobs:
           fi
           exit 0
 
-      - name: Commit bot updates (auto-tags + YAML fixes)
+      # [skip ci] so the fix commit does not re-trigger this workflow; the
+      # fixes publish with whatever push comes next. [skip-recency] keeps a
+      # YAML repair from re-dating an old gallery as "recently added".
+      - name: Commit bot updates (YAML fixes)
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet && exit 0
           git add "*/index.html" "*/tags.json"
-          git commit -m "chore(bot): auto-tag + auto-fix frontmatter [skip ci]"
+          if git diff --cached --quiet; then
+            echo "No frontmatter fixes to commit."
+            exit 0
+          fi
+          git commit -m "chore(bot): auto-fix frontmatter [skip ci] [skip-recency]"
           git push
 
       - name: Setup Ruby

@@ -1,22 +1,26 @@
 #!/usr/bin/env bash
 #
-# Downloads Qwen2.5-VL-7B-Instruct GGUF weights for local screenshot tagging.
+# Downloads Qwen2.5-VL-Instruct GGUF weights for local screenshot tagging.
 #
 # Files land in scripts/.models/ (gitignored). Re-running is a no-op once the
-# files exist; pass --force to redownload.
+# files exist; pass --force to redownload. The 3B and 7B filenames differ, so
+# both sizes can sit side by side and you can switch with TAGGER_MODEL_SIZE
+# without redownloading.
 #
-# Override the source by setting:
-#   TAGGER_MODEL_REPO   (default: ggml-org/Qwen2.5-VL-7B-Instruct-GGUF)
-#   TAGGER_MODEL_FILE   (default: Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf)
-#   TAGGER_MMPROJ_FILE  (default: mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf)
+# Pick a size with TAGGER_MODEL_SIZE=3b|7b (default 3b), or override the exact
+# artifacts with TAGGER_MODEL_REPO / TAGGER_MODEL_FILE / TAGGER_MMPROJ_FILE.
+# See scripts/lib/tagger-model.sh.
 
 set -euo pipefail
 
-REPO="${TAGGER_MODEL_REPO:-ggml-org/Qwen2.5-VL-7B-Instruct-GGUF}"
-MODEL_FILE="${TAGGER_MODEL_FILE:-Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf}"
-MMPROJ_FILE="${TAGGER_MMPROJ_FILE:-mmproj-Qwen2.5-VL-7B-Instruct-f16.gguf}"
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=lib/tagger-model.sh
+source "${SCRIPT_DIR}/lib/tagger-model.sh"
+
+REPO="$TAGGER_MODEL_REPO"
+MODEL_FILE="$TAGGER_MODEL_FILE"
+MMPROJ_FILE="$TAGGER_MMPROJ_FILE"
+
 MODELS_DIR="${SCRIPT_DIR}/.models"
 mkdir -p "$MODELS_DIR"
 
@@ -38,6 +42,7 @@ download() {
   echo "✓ saved $dest ($(du -h "$dest" | cut -f1))"
 }
 
+echo "→ model size: ${TAGGER_MODEL_SIZE} (${REPO})"
 download "$MODEL_FILE"
 download "$MMPROJ_FILE"
 

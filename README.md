@@ -88,7 +88,7 @@ The Jekyll build is resilient to frontmatter typos:
 - **During build**, the `_plugins/safe_frontmatter.rb` safety net catches any remaining YAML errors and renders the affected product with minimal fallback metadata — one bad file no longer kills the whole site.
 - **On every PR**, the validator runs in dry-run mode and leaves inline `suggestion` comments so contributors can one-click apply fixes.
 
-If you see a bot commit titled `chore(bot): auto-tag + auto-fix frontmatter` on `main` after your PR is merged, that's the validator cleaning up.
+If you see a bot commit titled `chore(bot): auto-fix frontmatter` on `main` after your PR is merged, that's the validator cleaning up.
 
 ---
 
@@ -100,16 +100,49 @@ Two backends are supported:
 
 | Backend | When to use | Requires |
 |---|---|---|
-| `local` (default in CI) | No API key, fully reproducible builds | Docker + ~6GB disk for model weights |
+| `local` (default in CI) | No API key, fully reproducible builds | Docker + 3.3GB (3B) or 6GB (7B) disk for model weights |
 | `gemini` | Faster on a laptop without local model setup | `GEMINI_API_KEY` env var |
 
-### Running locally (local backend, Qwen2.5-VL-7B via llama.cpp)
+Check the backlog at any time — a cheap filesystem scan, no model server needed:
 
 ```bash
-npm run tagger:download    # one-time, ~6GB into scripts/.models/ (gitignored)
-npm run tagger:start       # starts llama-server in Docker on :8080
+npm run auto-tag:count     # {"products":19,"images":205}
+```
+
+### Running locally (local backend, Qwen2.5-VL via llama.cpp)
+
+Defaults to the **3B** weights, the same size CI uses:
+
+```bash
+npm run tagger:download    # one-time, ~3.3GB into scripts/.models/ (gitignored)
+npm run tagger:start       # starts llama-server on :8080
 npm run auto-tag:local
 npm run tagger:stop
+```
+
+`tagger:start` picks a runtime automatically:
+
+| Runtime | Chosen when | Notes |
+|---|---|---|
+| `native` | a `llama-server` binary is on `PATH` | **Preferred on macOS.** `brew install llama.cpp`. Uses the GPU via Metal. |
+| `docker` | no native binary, but a Docker daemon responds | What CI uses. On macOS, Docker runs in a Linux VM with no GPU access, so this is CPU-only and much slower. |
+
+Force one with `TAGGER_RUNTIME=native|docker`. If neither is available the script says so and points at both fixes. Other knobs: `LLAMA_THREADS` (defaults to every core), `LLAMA_GPU_LAYERS` (defaults to 99, i.e. offload everything), `LOCAL_TAGGER_PORT`.
+
+For better tags at roughly 2.5x the time per screenshot, use the 7B weights. The two sizes have different filenames, so both can live in `scripts/.models/` and you can switch without redownloading:
+
+```bash
+npm run tagger:download:7b
+npm run tagger:start:7b
+npm run auto-tag:local
+```
+
+Any `TAGGER_MODEL_SIZE=3b|7b` works as an env var on the underlying scripts. `LLAMA_THREADS` defaults to every core on the machine.
+
+Draining a large backlog locally is much faster than waiting for CI to chip away at it — a laptop has more cores, and with a GPU you can raise the request concurrency (the local backend serializes by default because CPU parallelism just thrashes):
+
+```bash
+node scripts/auto-tag.mjs --backend local --no-limit --concurrency 4
 ```
 
 Tags come from a controlled vocabulary in `screenshot_tags.csv` (173 tags: Screens + UI Elements). The script drops any tag the model invents that isn't in the CSV.
@@ -123,4 +156,10 @@ npm run auto-tag
 
 ### In CI
 
-`.github/workflows/deploy.yml` caches the model weights, runs `llama-server` in Docker, tags any new screenshots with the local backend, and commits the results before the Jekyll build. No API key required.
+`.github/workflows/tag.yml` runs the tagger on its own schedule — **not** as part of the deploy. Every 6 hours it caches the 3B weights, runs `llama-server` in Docker, and tags for a fixed wall-clock budget (45 minutes by default), then commits whatever it finished. No API key required.
+
+The budget is the important part. A vision model on a CPU-only runner needs about a minute per screenshot, so a large backlog cannot be cleared in one job. `--max-minutes` makes the run stop cleanly with its completed work already written, and the next run resumes from whatever is still untagged. The backlog drains over several runs instead of being lost to a job timeout.
+
+Trigger a run early, or give it a longer budget, from the Actions tab (**Auto-tag screenshots** → *Run workflow*), which takes `max_minutes` and `model_size` inputs.
+
+Because the tagger commits to `master`, its push triggers a normal deploy that publishes the new tags. Deploys themselves no longer wait on tagging.
