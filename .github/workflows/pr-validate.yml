@@ -3,7 +3,8 @@ name: Validate frontmatter on PR
 on:
   pull_request:
     paths:
-      - 'Mobile/**/index.html'
+      - 'iOS/**/index.html'
+      - 'Android/**/index.html'
       - 'Web/**/index.html'
       - 'Email/**/index.html'
       - 'scripts/validate-frontmatter.mjs'
@@ -38,7 +39,7 @@ jobs:
         id: changed
         run: |
           base_sha=$(git merge-base HEAD origin/${{ github.event.pull_request.base.ref }})
-          files=$(git diff --name-only "$base_sha" HEAD -- 'Mobile/**/index.html' 'Web/**/index.html' 'Email/**/index.html' | tr '\n' ',' | sed 's/,$//')
+          files=$(git diff --name-only "$base_sha" HEAD -- 'iOS/**/index.html' 'Android/**/index.html' 'Web/**/index.html' 'Email/**/index.html' | tr '\n' ',' | sed 's/,$//')
           echo "files=$files" >> "$GITHUB_OUTPUT"
           echo "Changed index.html files: $files"
 

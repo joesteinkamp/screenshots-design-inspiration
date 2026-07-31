@@ -22,7 +22,12 @@ module Jekyll
             full_path = File.join(base_path, entry)
             # Check if it's a directory
             if File.directory?(full_path)
-              
+              # A folder without index.html has no page to link to — Jekyll
+              # renders nothing for it, so a card here would be a dead link.
+              # Dropping screenshots in before writing the frontmatter is a
+              # normal in-progress state, so skip quietly rather than fail.
+              next unless File.exist?(File.join(full_path, 'index.html'))
+
               # Find first 4 images
               images = []
               Dir.foreach(full_path) do |file|

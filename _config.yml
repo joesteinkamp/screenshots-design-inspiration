@@ -16,8 +16,20 @@ permalink: pretty
 # Order is display order (nav, landing-page cards, filter chips).
 platforms:
   - Email
-  - Mobile
+  - iOS
+  - Android
   - Web
+
+# Which of the above hold phone-shaped screenshots. The gallery grid gives these
+# a narrow column sized for a 9:19.5 frame, so tablet captures sitting inside
+# them (iPad shots in an iOS gallery) need flagging to get full width back —
+# that's what scripts/mark-tablet-screenshots.mjs writes into `tablet_images:`.
+#
+# The matching `.ios, .android` selectors in assets/css/style.scss are written
+# out literally; adding a phone platform means updating them too.
+phone_platforms:
+  - iOS
+  - Android
 
 # Force UTF-8 reads of source files regardless of the host locale. Without
 # this, Ruby falls back to US-ASCII when LANG is unset and kramdown rejects
@@ -30,6 +42,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  # Generates stubs at the old /Mobile/<Product>/ URLs, which moved to
+  # /iOS/<Product>/ when the Mobile category was split into iOS and Android.
+  - jekyll-redirect-from
 
 
 

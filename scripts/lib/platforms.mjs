@@ -20,19 +20,23 @@ export function repoRoot() {
 }
 
 let cached = null;
+let cachedConfig = null;
+
+function readConfig(root) {
+  if (cachedConfig) return cachedConfig;
+  const configPath = path.join(root, "_config.yml");
+  try {
+    cachedConfig = yaml.load(fs.readFileSync(configPath, "utf-8")) || {};
+  } catch (err) {
+    throw new Error(`Could not read ${configPath}: ${err.message}`);
+  }
+  return cachedConfig;
+}
 
 export function loadPlatforms(root = repoRoot()) {
   if (cached) return cached;
 
-  const configPath = path.join(root, "_config.yml");
-  let config;
-  try {
-    config = yaml.load(fs.readFileSync(configPath, "utf-8")) || {};
-  } catch (err) {
-    throw new Error(`Could not read ${configPath}: ${err.message}`);
-  }
-
-  const platforms = config.platforms;
+  const platforms = readConfig(root).platforms;
   if (!Array.isArray(platforms) || platforms.length === 0) {
     throw new Error(
       `_config.yml \`platforms:\` must be a non-empty list of directory names ` +
@@ -50,6 +54,32 @@ export function loadPlatforms(root = repoRoot()) {
 
   cached = platforms;
   return cached;
+}
+
+/**
+ * Platforms whose screenshots are phone-shaped, from `phone_platforms:`.
+ *
+ * Every entry must also appear in `platforms:`. Defaults to empty rather than
+ * throwing: a site with no phone platforms is legitimate.
+ */
+export function loadPhonePlatforms(root = repoRoot()) {
+  const raw = readConfig(root).phone_platforms;
+  if (raw == null) return [];
+  if (!Array.isArray(raw)) {
+    throw new Error(
+      `_config.yml \`phone_platforms:\` must be a list (got ${JSON.stringify(raw)})`
+    );
+  }
+  const known = loadPlatforms(root);
+  for (const name of raw) {
+    if (!known.includes(name)) {
+      throw new Error(
+        `_config.yml \`phone_platforms:\` lists ${JSON.stringify(name)}, which is ` +
+          `not in \`platforms:\` (${known.join(", ")})`
+      );
+    }
+  }
+  return raw;
 }
 
 /**

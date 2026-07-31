@@ -349,8 +349,16 @@ section {
     display: block;
 }
 
-.media-wrapper:has(.mobile) {
+/* Phone screenshots are tall and narrow, so they get a narrower column than
+   web/email. `.tablet` marks iPad captures inside an iOS gallery — roughly 3:4,
+   so they need the full default width back. It follows the phone rule because
+   both classes land on the same element and the later rule wins. */
+.media-wrapper:has(.ios, .android) {
     grid-column: span 3;
+}
+
+.media-wrapper:has(.tablet) {
+    grid-column: span 4;
 }
 
 .image-tags {
@@ -404,8 +412,12 @@ section {
         border-color: rgba(255,255,255,0.3);
     }
 
-    &.mobile {
+    &.ios, &.android {
         grid-column: span 3;
+    }
+
+    &.tablet {
+        grid-column: span 4;
     }
 }
 
@@ -461,8 +473,13 @@ section {
         grid-column: span 3;
     }
     
-    .mobile {
-        grid-row: span 2; 
+    .ios, .android {
+        grid-row: span 2;
+    }
+
+    /* iPad captures are roughly 3:4, not 9:19.5 — one row is enough. */
+    .tablet {
+        grid-row: span 1;
     }
 }
 
@@ -489,7 +506,8 @@ footer {
 @media (max-width: 1024px) {
     .grid > img, .grid > video, .gg-element, .grid > .media-wrapper {
         grid-column: span 6;
-        &.mobile { grid-column: span 4; }
+        &.ios, &.android { grid-column: span 4; }
+        &.tablet { grid-column: span 6; }
     }
     
     .masonry .img-item {
@@ -511,7 +529,8 @@ footer {
     
     .grid > img, .grid > video, .gg-element, .grid > .media-wrapper {
         grid-column: span 12;
-        &.mobile { grid-column: span 6; }
+        &.ios, &.android { grid-column: span 6; }
+        &.tablet { grid-column: span 12; }
     }
 
     .masonry .img-item {
@@ -902,7 +921,7 @@ footer {
     gap: var(--spacing-xl);
     padding-bottom: var(--spacing-xxl);
 
-    &.mobile {
+    &.ios, &.android {
         grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
     }
 }
@@ -932,8 +951,8 @@ footer {
     }
     
     /* Ratios */
-    &.mobile {
-        aspect-ratio: 9/19.5; /* iPhone */
+    &.ios, &.android {
+        aspect-ratio: 9/19.5; /* phone portrait */
     }
     
     &.web, &.email {

@@ -8,7 +8,12 @@ import {
   fetchImageAsBase64,
   productSummary,
 } from "./data.js";
+import { PLATFORMS } from "./types.js";
 import type { Product } from "./types.js";
+
+// One enum for every platform-filtered tool, so the list can't drift between them.
+const platformEnum = () => z.enum(PLATFORMS);
+const PLATFORM_LIST = PLATFORMS.join(", ");
 
 export function registerTools(server: McpServer) {
   // 1. search_by_tags
@@ -75,8 +80,7 @@ export function registerTools(server: McpServer) {
     "Get screenshots for a specific product. By default returns base64 images for in-chat viewing; set include_images=false to get just metadata + download URLs (no base64). To save images to disk, call with include_images=false and fetch each download_url with your own tools.",
     {
       product: z.string().describe("Product name (e.g. 'Airbnb', 'Stripe')"),
-      platform: z
-        .enum(["Web", "Mobile", "Email"])
+      platform: platformEnum()
         .optional()
         .describe("Filter by platform"),
       limit: z
@@ -141,9 +145,9 @@ export function registerTools(server: McpServer) {
   // 3. browse_by_platform
   server.tool(
     "browse_by_platform",
-    "List all products for a platform (Web, Mobile, or Email). Returns metadata only — use get_product_screenshots to see images.",
+    `List all products for a platform (${PLATFORM_LIST}). Returns metadata only — use get_product_screenshots to see images.`,
     {
-      platform: z.enum(["Web", "Mobile", "Email"]).describe("Platform to browse"),
+      platform: platformEnum().describe("Platform to browse"),
       limit: z.number().min(1).max(100).default(20).describe("Results per page"),
       offset: z.number().min(0).default(0).describe("Offset for pagination"),
     },
@@ -196,8 +200,7 @@ export function registerTools(server: McpServer) {
         .enum(["all", "any"])
         .default("all")
         .describe("Within each tag array, require all tags to match or any"),
-      platform: z
-        .enum(["Web", "Mobile", "Email"])
+      platform: platformEnum()
         .optional()
         .describe("Filter by platform"),
       limit: z
@@ -328,8 +331,7 @@ export function registerTools(server: McpServer) {
     "list_tags",
     "List all available tags with counts. Supports both product-level and screenshot-level tags. Use this to discover what you can search for.",
     {
-      platform: z
-        .enum(["Web", "Mobile", "Email"])
+      platform: platformEnum()
         .optional()
         .describe("Filter tags to a specific platform"),
       level: z
@@ -424,8 +426,7 @@ export function registerTools(server: McpServer) {
         .enum(["all", "any"])
         .default("any")
         .describe("Match all tags or any tag"),
-      platform: z
-        .enum(["Web", "Mobile", "Email"])
+      platform: platformEnum()
         .optional()
         .describe("Filter by platform"),
       limit: z
@@ -521,8 +522,7 @@ export function registerTools(server: McpServer) {
         .max(10)
         .default(5)
         .describe("Number of random products"),
-      platform: z
-        .enum(["Web", "Mobile", "Email"])
+      platform: platformEnum()
         .optional()
         .describe("Filter by platform"),
       tags: z

@@ -60,8 +60,17 @@
                           image correctly.
                         {% endcomment %}
                         {% assign img_platform = image.path | remove_first: '/' | split: '/' | first | downcase %}
-                            <div class="media-wrapper media {{ img_platform }}">
-                                <img class="media {{ img_platform }}" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
+                        {% comment %}
+                          Tablet captures sit inside phone galleries, so they'd
+                          otherwise be squeezed into a phone-width column. See
+                          scripts/mark-tablet-screenshots.mjs.
+                        {% endcomment %}
+                        {% assign shape = "" %}
+                        {% if page.tablet_images and page.tablet_images contains image.name %}
+                            {% assign shape = " tablet" %}
+                        {% endif %}
+                            <div class="media-wrapper media {{ img_platform }}{{ shape }}">
+                                <img class="media {{ img_platform }}{{ shape }}" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
                                 {% if img_tags != "" %}
                                 <div class="image-tags">
                                     {% for tag in found_tags %}

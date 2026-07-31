@@ -126,11 +126,12 @@ function writeSeen(root, seen) {
 }
 
 // Suggested gallery bucket. We have little platform signal from these sources,
-// so default to Web and only bump to Mobile on an obvious app-store URL. The
-// human reviewer confirms/edits in the PR.
+// so default to Web and only move off it for an obvious app-store URL — where
+// the store itself tells us which OS. The human reviewer confirms/edits in the PR.
 function suggestPlatform(candidate) {
   const u = (candidate.url || "").toLowerCase();
-  if (/apps\.apple\.com|play\.google\.com|itunes\.apple\.com/.test(u)) return "Mobile";
+  if (/apps\.apple\.com|itunes\.apple\.com/.test(u)) return "iOS";
+  if (/play\.google\.com/.test(u)) return "Android";
   return "Web";
 }
 

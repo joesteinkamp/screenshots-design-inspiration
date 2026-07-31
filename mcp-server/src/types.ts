@@ -1,6 +1,14 @@
+// The platform taxonomy. Mirrors `platforms:` in the site's _config.yml — the
+// site derives it from its top-level content directories, and this server only
+// ever reads the generated api/products.json, so the two must be kept in step
+// by hand. PLATFORMS in tools.ts is the single place the values are listed.
+export const PLATFORMS = ["Web", "iOS", "Android", "Email"] as const;
+
+export type Platform = (typeof PLATFORMS)[number];
+
 export interface Product {
   name: string;
-  platform: "Web" | "Mobile" | "Email";
+  platform: Platform;
   path: string;
   tags: string[];
   image_tags?: Record<string, string[]>;

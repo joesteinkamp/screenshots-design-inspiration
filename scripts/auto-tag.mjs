@@ -129,7 +129,19 @@ function aggregateTags(tagsMap) {
 
 // Canonical frontmatter key order. Any keys not in this list are appended in
 // their original order after these.
-const FRONTMATTER_KEY_ORDER = ["layout", "gallery-directory", "tags", "image_tags"];
+const FRONTMATTER_KEY_ORDER = [
+  "layout",
+  "gallery-directory",
+  // Galleries that moved when Mobile was split into iOS/Android keep their old
+  // URL alive. Listed here so it stays above the long image_tags block instead
+  // of being appended after it as an unrecognized key.
+  "redirect_from",
+  "tags",
+  // Written by scripts/mark-tablet-screenshots.mjs; listed so the tagger's
+  // rewrite preserves its position rather than appending it after image_tags.
+  "tablet_images",
+  "image_tags",
+];
 
 function orderFrontmatterKeys(obj) {
   const ordered = {};
