@@ -201,9 +201,11 @@ const FRONTMATTER_KEY_ORDER = [
   // of being appended after it as an unrecognized key.
   "redirect_from",
   "tags",
-  // Written by scripts/mark-tablet-screenshots.mjs; listed so the tagger's
-  // rewrite preserves its position rather than appending it after image_tags.
+  // Written by scripts/mark-tablet-screenshots.mjs and
+  // scripts/mark-foldable-screenshots.mjs; listed so the tagger's rewrite
+  // preserves their position rather than appending them after image_tags.
   "tablet_images",
+  "foldable_images",
   "image_tags",
 ];
 

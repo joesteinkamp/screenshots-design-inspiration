@@ -39,7 +39,7 @@ const TABLET_MIN_RATIO = 0.62;
 const TABLET_MAX_RATIO = 1.05;
 
 const IMAGE_EXTS = new Set([".png", ".jpg", ".jpeg", ".gif"]);
-const KEY_ORDER = ["layout", "gallery-directory", "redirect_from", "tags", "tablet_images", "image_tags"];
+const KEY_ORDER = ["layout", "gallery-directory", "redirect_from", "tags", "tablet_images", "foldable_images", "image_tags"];
 
 function orderKeys(obj) {
   const out = {};

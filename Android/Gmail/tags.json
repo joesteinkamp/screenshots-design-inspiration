@@ -58,5 +58,59 @@
     "Tab",
     "Avatar",
     "Icon"
+  ],
+  "Screenshot_20260803-071722.png": [
+    "Home",
+    "Emails & Messages",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Text Field"
+  ],
+  "Screenshot_20260803-071747.png": [
+    "Emails & Messages",
+    "Button",
+    "Avatar",
+    "Thumbnail",
+    "Text Field",
+    "Card",
+    "Tab"
+  ],
+  "Screenshot_20260803-071802.png": [
+    "Emails & Messages",
+    "Home",
+    "Button",
+    "Text Field",
+    "Avatar",
+    "Keyboard Key",
+    "Tab",
+    "Page Control"
+  ],
+  "Screenshot_20260803-071818.png": [
+    "Home",
+    "Emails & Messages",
+    "Button",
+    "Text Field",
+    "Keyboard Key",
+    "Tab",
+    "Page Control",
+    "Drawer"
+  ],
+  "Screenshot_20260803-071916.png": [
+    "Home",
+    "Emails & Messages",
+    "Button",
+    "Tile",
+    "Drawer"
+  ],
+  "Screenshot_20260803-071936.png": [
+    "Home",
+    "Emails & Messages",
+    "Button",
+    "Avatar",
+    "Icon",
+    "Text Field",
+    "Card",
+    "Drawer"
   ]
 }
