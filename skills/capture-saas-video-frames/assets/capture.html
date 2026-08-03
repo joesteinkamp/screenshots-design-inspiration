@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS video frame capture</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-width: 1920px; background: #111; color: #eee; }
+    #player-shell { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+    #player, #player iframe { display: block; width: 1920px; height: 1080px; border: 0; }
+    #status { width: 1920px; padding: 16px 20px; font: 16px/1.4 ui-monospace, monospace; }
+    [data-state="error"] { color: #ff9c9c; }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="player-shell" aria-label="YouTube video frame">
+      <div id="player"></div>
+    </div>
+    <div id="status" role="status">Loading the official YouTube player…</div>
+  </main>
+  <script>
+    (() => {
+      const query = new URLSearchParams(location.search);
+      const videoId = query.get("video") || "";
+      const status = document.querySelector("#status");
+      let player;
+      let ready = false;
+      let playerError = null;
+
+      const errorMessages = {
+        2: "The YouTube video ID is invalid.",
+        5: "The video cannot be played in the HTML5 player.",
+        100: "The video is private, deleted, or unavailable.",
+        101: "The owner has disabled embedded playback.",
+        150: "The owner has disabled embedded playback."
+      };
+
+      function setStatus(message, state = "ready") {
+        status.textContent = message;
+        status.dataset.state = state;
+      }
+
+      function sleep(milliseconds) {
+        return new Promise((resolve) => setTimeout(resolve, milliseconds));
+      }
+
+      async function waitFor(predicate, timeoutMs, label) {
+        const started = performance.now();
+        while (performance.now() - started < timeoutMs) {
+          if (predicate()) return;
+          await sleep(100);
+        }
+        throw new Error(`Timed out waiting for ${label}.`);
+      }
+
+      function buildTimestamps(duration, options = {}) {
+        const requested = Number(options.sampleCount || 60);
+        const sampleCount = Math.max(1, Math.min(60, Math.floor(requested)));
+        const requestedStart = Number(options.start);
+        const requestedEnd = Number(options.end);
+        const start = Number.isFinite(requestedStart)
+          ? Math.max(0, requestedStart)
+          : duration > 8 ? 3 : Math.max(0, duration * 0.1);
+        const end = Number.isFinite(requestedEnd)
+          ? Math.min(duration, requestedEnd)
+          : duration > 8 ? duration - 3 : Math.max(start, duration * 0.9);
+        if (!(duration > 0) || end < start) throw new Error("The player returned an invalid duration or range.");
+        const span = end - start;
+        if (span === 0) return [Number(start.toFixed(3))];
+        const count = Math.min(sampleCount, Math.max(2, Math.floor(span / 5) + 1));
+        return Array.from({ length: count }, (_, index) =>
+          Number((start + (span * index) / (count - 1)).toFixed(3))
+        );
+      }
+
+      window.onYouTubeIframeAPIReady = () => {
+        if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
+          playerError = new Error("Missing or invalid YouTube video ID.");
+          setStatus(playerError.message, "error");
+          return;
+        }
+        player = new YT.Player("player", {
+          width: 1920,
+          height: 1080,
+          videoId,
+          playerVars: {
+            autoplay: 0,
+            cc_load_policy: 0,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            iv_load_policy: 3,
+            playsinline: 1,
+            rel: 0
+          },
+          events: {
+            onReady(event) {
+              player = event.target;
+              player.mute();
+              ready = true;
+              setStatus("Player ready. Waiting for capture commands.");
+            },
+            onError(event) {
+              const message = errorMessages[event.data] || `YouTube player error ${event.data}.`;
+              playerError = new Error(message);
+              setStatus(message, "error");
+            }
+          }
+        });
+      };
+
+      window.saasCapture = {
+        isReady: () => ready || Boolean(playerError),
+        error: () => playerError?.message || null,
+        duration: () => ready ? Number(player.getDuration()) : 0,
+        timestamps: (options) => buildTimestamps(Number(player.getDuration()), options),
+        async captureAt(seconds) {
+          if (playerError) throw playerError;
+          if (!ready) throw new Error("The YouTube player is not ready.");
+          const duration = Number(player.getDuration());
+          const target = Math.max(0, Math.min(duration, Number(seconds)));
+          player.mute();
+          player.seekTo(target, true);
+          player.playVideo();
+          await waitFor(
+            () => playerError || Math.abs(Number(player.getCurrentTime()) - target) <= 0.75,
+            15000,
+            `the player to seek to ${target.toFixed(3)} seconds`
+          );
+          if (playerError) throw playerError;
+          await sleep(250);
+          player.pauseVideo();
+          await sleep(800);
+          const actual = Number(player.getCurrentTime());
+          setStatus(`Ready at ${actual.toFixed(3)}s (requested ${target.toFixed(3)}s).`);
+          return { requested: target, actual, duration };
+        }
+      };
+
+      const api = document.createElement("script");
+      api.src = "https://www.youtube.com/iframe_api";
+      api.async = true;
+      document.head.appendChild(api);
+    })();
+  </script>
+</body>
+</html>
+

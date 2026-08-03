@@ -1,0 +1,4 @@
+interface:
+  display_name: "Find SaaS Demo Videos"
+  short_description: "Find and rank current YouTube SaaS demos"
+  default_prompt: "Use $find-saas-demo-videos to find the best current YouTube demo videos for this SaaS product or category."

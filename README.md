@@ -18,7 +18,7 @@ This repo includes a [Model Context Protocol](https://modelcontextprotocol.io/) 
 **Claude Code:**
 
 ```bash
-claude mcp add design-screenshots --scope user npx screenshots-design-inspiration-mcp
+claude mcp add design-screenshots --scope user npx screenshots-design-inspiration-mcp@latest
 ```
 
 **Claude Desktop, Cursor, or any MCP client:**
@@ -30,7 +30,7 @@ Add to your MCP config file:
   "mcpServers": {
     "design-screenshots": {
       "command": "npx",
-      "args": ["screenshots-design-inspiration-mcp"]
+      "args": ["screenshots-design-inspiration-mcp@latest"]
     }
   }
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capture SaaS Video Frames"
+  short_description: "Curate SaaS screenshots from product videos"
+  default_prompt: "Use $capture-saas-video-frames to turn this YouTube SaaS demo into gallery-ready screenshots."

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{REPORT_TITLE}}</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --surface-muted: #eef1f5;
+      --text: #172033;
+      --muted: #586174;
+      --border: #ccd2dc;
+      --accent: #174ea6;
+      --accent-soft: #e8f0fe;
+      --official: #0b6b3a;
+      --official-soft: #e7f5ed;
+      --warning: #8a4b08;
+      --warning-soft: #fff1db;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgb(23 32 51 / 8%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10141d;
+        --surface: #191f2b;
+        --surface-muted: #242c3a;
+        --text: #f4f6fa;
+        --muted: #bbc3d2;
+        --border: #465066;
+        --accent: #8ab4f8;
+        --accent-soft: #243653;
+        --official: #77d9a4;
+        --official-soft: #173b2a;
+        --warning: #ffc67a;
+        --warning-soft: #4d3216;
+        --shadow: 0 8px 24px rgb(0 0 0 / 24%);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.55; }
+    a { color: var(--accent); text-underline-offset: 0.18em; }
+    a:hover { text-decoration-thickness: 0.14em; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    .page { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.1em; text-transform: uppercase; }
+    h1 { max-width: 18ch; margin: 0; font-size: clamp(2rem, 6vw, 4.5rem); line-height: 0.98; letter-spacing: -0.045em; }
+    h2 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
+    h3 { margin: 0; font-size: 1.22rem; line-height: 1.3; }
+    p { margin: 0; }
+    .lede { max-width: 70ch; margin-top: 20px; color: var(--muted); font-size: 1.08rem; }
+    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 32px 0 52px; }
+    .summary div { min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    .summary dt { margin-bottom: 4px; color: var(--muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .summary dd { margin: 0; overflow-wrap: anywhere; font-weight: 650; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .section-heading p { color: var(--muted); }
+    .results { display: grid; gap: 18px; margin: 0; padding: 0; list-style: none; counter-reset: result; }
+    .result { counter-increment: result; padding: clamp(20px, 4vw, 30px); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .result-header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: start; }
+    .rank { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 800; }
+    .rank::before { content: counter(result); }
+    .video-title { display: inline; font-size: clamp(1.15rem, 2.4vw, 1.45rem); }
+    .score { min-width: 76px; padding: 8px 10px; border-radius: 10px; background: var(--surface-muted); text-align: center; font-weight: 800; }
+    .score span { display: block; color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0 58px; }
+    .badge { padding: 4px 9px; border-radius: 999px; background: var(--surface-muted); color: var(--muted); font-size: 0.78rem; font-weight: 700; }
+    .badge.official { background: var(--official-soft); color: var(--official); }
+    .badge.warning { background: var(--warning-soft); color: var(--warning); }
+    .meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 22px 0; }
+    .meta div { min-width: 0; padding-top: 10px; border-top: 1px solid var(--border); }
+    .meta dt { color: var(--muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .meta dd { margin: 3px 0 0; overflow-wrap: anywhere; }
+    .result-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .result-copy h4 { margin: 0 0 6px; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .result-copy p { color: var(--muted); }
+    .notes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 52px; }
+    .note { padding: 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .note h2 { margin-bottom: 12px; font-size: 1.18rem; }
+    .note ul { margin: 0; padding-left: 1.2rem; }
+    .note li + li { margin-top: 6px; }
+    footer { margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 24px, 1120px); padding-top: 30px; }
+      .summary, .meta, .result-copy, .notes { grid-template-columns: 1fr; }
+      .result-header { grid-template-columns: auto minmax(0, 1fr); }
+      .score { grid-column: 2; justify-self: start; }
+      .badges { margin-left: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; color: #111; }
+      .page { width: 100%; padding: 0; }
+      .result { break-inside: avoid; box-shadow: none; }
+      a { color: #111; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">SaaS demo research</p>
+      <h1>{{REPORT_TITLE}}</h1>
+      <p class="lede">{{SEARCH_BRIEF}}</p>
+      <dl class="summary">
+        <div><dt>Target</dt><dd>{{TARGET}}</dd></div>
+        <div><dt>Results</dt><dd>{{RESULT_COUNT}}</dd></div>
+        <div><dt>Filters</dt><dd>{{FILTERS}}</dd></div>
+        <div><dt>Generated</dt><dd>{{GENERATED_DATE}}</dd></div>
+      </dl>
+    </header>
+
+    <section aria-labelledby="results-heading">
+      <div class="section-heading">
+        <h2 id="results-heading">Ranked demos</h2>
+        <p>Sorted by verified evidence and fit.</p>
+      </div>
+      <ol class="results">
+        <!-- Replace this comment with one <li class="result"> per verified result. Use the structure below and remove the example. -->
+        <li class="result">
+          <div class="result-header">
+            <span class="rank" aria-label="Rank"></span>
+            <h3><a class="video-title" href="{{VIDEO_URL}}">{{VIDEO_TITLE}}</a></h3>
+            <div class="score">{{SCORE}}/100<span>Score</span></div>
+          </div>
+          <div class="badges" aria-label="Video labels">
+            <span class="badge {{PUBLISHER_CLASS}}">{{PUBLISHER_STATUS}}</span>
+            <span class="badge">{{PRODUCT}}</span>
+            {{FRESHNESS_BADGE}}
+          </div>
+          <dl class="meta">
+            <div><dt>Channel</dt><dd>{{CHANNEL}}</dd></div>
+            <div><dt>Published</dt><dd>{{PUBLISHED_DATE}}</dd></div>
+            <div><dt>Duration</dt><dd>{{DURATION}}</dd></div>
+            <div><dt>Video ID</dt><dd>{{VIDEO_ID}}</dd></div>
+          </dl>
+          <div class="result-copy">
+            <div><h4>Why it ranks</h4><p>{{RATIONALE}}</p></div>
+            <div><h4>Demonstrated flows</h4><p>{{DEMONSTRATED_FLOWS}}</p></div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="notes" aria-label="Research notes">
+      <article class="note">
+        <h2>Coverage</h2>
+        <p>{{COVERAGE_NOTE}}</p>
+      </article>
+      <article class="note">
+        <h2>Searches attempted</h2>
+        <ul>
+          {{SEARCH_QUERY_ITEMS}}
+        </ul>
+      </article>
+      <article class="note">
+        <h2>Scoring method</h2>
+        <p>100 points: demonstration depth 35, publisher authority 25, freshness 20, request fit 15, and watchability 5. Older videos may remain when their UI coverage is materially stronger.</p>
+      </article>
+      <article class="note">
+        <h2>Verification limits</h2>
+        <p>{{VERIFICATION_LIMITS}}</p>
+      </article>
+    </section>
+
+    <footer>Links and metadata were checked on {{GENERATED_DATE}}. SaaS interfaces and video availability can change.</footer>
+  </main>
+</body>
+</html>
