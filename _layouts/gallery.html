@@ -21,24 +21,24 @@
         {% endcomment %}
         {% assign current_platform = page.url | remove_first: '/' | split: '/' | first %}
 
+        {% comment %}
+          One filter row: platform chips first, then the form-factor chips.
+          Platform chips toggle a platform's images on/off by class. The
+          form-factor chips are exclusive "Only Show X" filters: they start off
+          and, when switched on, hide every image that isn't of that form
+          factor (see toggleOnlyFormFactor + `.grid.only-*` in style.scss). The
+          gallery images already carry `.tablet` / `.foldable` classes from the
+          shape logic below. A form-factor chip is revealed only when the
+          gallery actually holds shots of that form factor.
+        {% endcomment %}
         <ul class="filters">
         {% for platform in site.platforms %}
             {% assign slug = platform | downcase %}
             <li id="filter-{{ slug }}" class="{% if platform == current_platform %}active{% else %}hidden{% endif %}" onClick="filterImages('{{ slug }}'); this.classList.toggle('active');">{{ platform }}</li>
         {% endfor %}
-        </ul>
-
-        {% comment %}
-          Form-factor filters, a second row alongside the platform chips. The
-          gallery images already carry `.tablet` / `.foldable` classes (see the
-          shape logic below), so filterImages() toggles them by class exactly
-          like a platform. Each chip starts hidden and active; it's revealed
-          below only when the gallery actually holds shots of that form factor.
-        {% endcomment %}
-        <ul class="filters form-factor-filters">
         {% for factor in site.form_factors %}
             {% assign slug = factor | downcase %}
-            <li id="filter-ff-{{ slug }}" class="form-factor hidden active" onClick="filterImages('{{ slug }}'); this.classList.toggle('active');">{{ factor }}</li>
+            <li id="filter-ff-{{ slug }}" class="form-factor hidden" onClick="toggleOnlyFormFactor('{{ slug }}'); this.classList.toggle('active');">Only Show {{ factor }}</li>
         {% endfor %}
         </ul>
 
