@@ -30,8 +30,9 @@ mcp-server/dist/
 .DS_Store
 Web/.DS_Store
 
-# Local tagger model weights (downloaded on demand, ~6GB)
-scripts/.models/
+# Local tagger model weights (downloaded on demand, ~6GB).
+# No trailing slash: this may be a real dir or a symlink to a shared model store.
+scripts/.models
 # Native llama-server bookkeeping from start-local-tagger.sh
 scripts/.tagger.pid
 scripts/.tagger.log
