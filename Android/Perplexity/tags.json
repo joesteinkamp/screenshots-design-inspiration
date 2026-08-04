@@ -113,5 +113,44 @@
     "Home",
     "Button",
     "Text Field"
+  ],
+  "Screenshot_20260803-071955.png": [
+    "Home",
+    "Button",
+    "Text Field",
+    "Dialog"
+  ],
+  "Screenshot_20260803-072006.png": [
+    "Home",
+    "Button",
+    "Text Field",
+    "Avatar"
+  ],
+  "Screenshot_20260803-072048.png": [
+    "Home",
+    "Button",
+    "Text Field",
+    "Avatar",
+    "Drawer"
+  ],
+  "Screenshot_20260803-072054.png": [
+    "Home",
+    "Button",
+    "Text Field"
+  ],
+  "Screenshot_20260803-072141.png": [
+    "Account Setup",
+    "Guided Tour & Tutorial",
+    "Button",
+    "Checkbox",
+    "Card",
+    "Drawer",
+    "Progress Indicator",
+    "Tab"
+  ],
+  "Screenshot_20260803-072150.png": [
+    "Action Option",
+    "Button",
+    "Text Field"
   ]
 }

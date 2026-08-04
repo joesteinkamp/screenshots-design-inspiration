@@ -361,6 +361,13 @@ section {
     grid-column: span 4;
 }
 
+/* Unfolded foldable captures are near-square (see
+   scripts/mark-foldable-screenshots.mjs) — like a tablet they need the full
+   default width back, not the narrow phone column. */
+.media-wrapper:has(.foldable) {
+    grid-column: span 4;
+}
+
 .image-tags {
     position: absolute;
     bottom: 0;
@@ -417,6 +424,10 @@ section {
     }
 
     &.tablet {
+        grid-column: span 4;
+    }
+
+    &.foldable {
         grid-column: span 4;
     }
 }
@@ -481,6 +492,11 @@ section {
     .tablet {
         grid-row: span 1;
     }
+
+    /* Foldable inner displays are near-square — one row, like tablets. */
+    .foldable {
+        grid-row: span 1;
+    }
 }
 
 /* FOOTER */
@@ -508,6 +524,7 @@ footer {
         grid-column: span 6;
         &.ios, &.android { grid-column: span 4; }
         &.tablet { grid-column: span 6; }
+        &.foldable { grid-column: span 6; }
     }
     
     .masonry .img-item {
@@ -531,6 +548,7 @@ footer {
         grid-column: span 12;
         &.ios, &.android { grid-column: span 6; }
         &.tablet { grid-column: span 12; }
+        &.foldable { grid-column: span 12; }
     }
 
     .masonry .img-item {

@@ -69,6 +69,14 @@
                         {% if page.tablet_images and page.tablet_images contains image.name %}
                             {% assign shape = " tablet" %}
                         {% endif %}
+                        {% comment %}
+                          Unfolded foldable captures are near-square; like
+                          tablets they'd otherwise be squeezed into the phone
+                          column. See scripts/mark-foldable-screenshots.mjs.
+                        {% endcomment %}
+                        {% if page.foldable_images and page.foldable_images contains image.name %}
+                            {% assign shape = " foldable" %}
+                        {% endif %}
                             <div class="media-wrapper media {{ img_platform }}{{ shape }}">
                                 <img class="media {{ img_platform }}{{ shape }}" src="{{ site.baseurl }}{{ image.path }}" alt="image" {% if img_tags != "" %}data-tags="{{ img_tags }}"{% endif %} />
                                 {% if img_tags != "" %}
