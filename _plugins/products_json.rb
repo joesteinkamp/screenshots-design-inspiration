@@ -45,6 +45,12 @@ module Jekyll
           index_path = File.join(full_path, 'index.html')
           tags = []
           image_tags = {}
+          # Form-factor flags. Written into gallery frontmatter by
+          # scripts/mark-tablet-screenshots.mjs and
+          # scripts/mark-foldable-screenshots.mjs; surfaced here so MCP callers
+          # can filter by device form factor, not just platform.
+          tablet_images = []
+          foldable_images = []
           gallery_directory = entry
           if File.exist?(index_path)
             content = File.read(index_path, encoding: 'UTF-8')
@@ -53,6 +59,8 @@ module Jekyll
                 frontmatter = YAML.safe_load($1, permitted_classes: [Date]) || {}
                 tags = frontmatter['tags'] || []
                 gallery_directory = frontmatter['gallery-directory'] || entry
+                tablet_images = frontmatter['tablet_images'] if frontmatter['tablet_images'].is_a?(Array)
+                foldable_images = frontmatter['foldable_images'] if frontmatter['foldable_images'].is_a?(Array)
                 raw_image_tags = frontmatter['image_tags'] || {}
                 raw_image_tags.each do |filename, img_tags|
                   next unless img_tags.is_a?(Array)
@@ -112,6 +120,8 @@ module Jekyll
             'gallery_url' => "/#{dir}/#{entry}/"
           }
           product_data['image_tags'] = image_tags unless image_tags.empty?
+          product_data['tablet_images'] = tablet_images unless tablet_images.empty?
+          product_data['foldable_images'] = foldable_images unless foldable_images.empty?
 
           products << product_data
           dir_count += 1

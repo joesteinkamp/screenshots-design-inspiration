@@ -12,6 +12,11 @@ export interface Product {
   path: string;
   tags: string[];
   image_tags?: Record<string, string[]>;
+  // Form-factor flags mirrored from gallery frontmatter: filenames captured on
+  // a tablet (iPad, in iOS galleries) or an unfolded foldable (Android). Absent
+  // when the product has none. Used by the `form_factor` filter.
+  tablet_images?: string[];
+  foldable_images?: string[];
   images: string[];
   image_count: number;
   gallery_url: string;
