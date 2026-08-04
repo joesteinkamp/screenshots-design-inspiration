@@ -15,6 +15,25 @@ import type { Product } from "./types.js";
 const platformEnum = () => z.enum(PLATFORMS);
 const PLATFORM_LIST = PLATFORMS.join(", ");
 
+// Device form factor, derived from the tablet_images / foldable_images flags a
+// product carries. "phone" means the product has at least one capture that is
+// neither a tablet nor a foldable shot.
+const FORM_FACTORS = ["phone", "tablet", "foldable"] as const;
+const formFactorEnum = () => z.enum(FORM_FACTORS);
+
+function matchesFormFactor(
+  p: Product,
+  formFactor?: (typeof FORM_FACTORS)[number]
+): boolean {
+  if (!formFactor) return true;
+  const tablet = p.tablet_images?.length ?? 0;
+  const foldable = p.foldable_images?.length ?? 0;
+  if (formFactor === "tablet") return tablet > 0;
+  if (formFactor === "foldable") return foldable > 0;
+  // phone: some capture is neither a tablet nor a foldable shot.
+  return p.image_count > tablet + foldable;
+}
+
 export function registerTools(server: McpServer) {
   // 1. search_by_tags
   server.tool(
@@ -148,12 +167,19 @@ export function registerTools(server: McpServer) {
     `List all products for a platform (${PLATFORM_LIST}). Returns metadata only — use get_product_screenshots to see images.`,
     {
       platform: platformEnum().describe("Platform to browse"),
+      form_factor: formFactorEnum()
+        .optional()
+        .describe(
+          "Filter by device form factor: phone, tablet (iPad captures), or foldable (unfolded foldable captures, Android)"
+        ),
       limit: z.number().min(1).max(100).default(20).describe("Results per page"),
       offset: z.number().min(0).default(0).describe("Offset for pagination"),
     },
-    async ({ platform, limit, offset }) => {
+    async ({ platform, form_factor, limit, offset }) => {
       const index = await fetchIndex();
-      const filtered = index.products.filter((p) => p.platform === platform);
+      const filtered = index.products
+        .filter((p) => p.platform === platform)
+        .filter((p) => matchesFormFactor(p, form_factor));
       const page = filtered.slice(offset, offset + limit);
       const results = page.map((p) => productSummary(p, index.base_url));
 
@@ -164,6 +190,7 @@ export function registerTools(server: McpServer) {
             text: JSON.stringify(
               {
                 platform,
+                form_factor: form_factor || null,
                 total: filtered.length,
                 offset,
                 limit,
@@ -203,6 +230,11 @@ export function registerTools(server: McpServer) {
       platform: platformEnum()
         .optional()
         .describe("Filter by platform"),
+      form_factor: formFactorEnum()
+        .optional()
+        .describe(
+          "Filter by device form factor: phone, tablet (iPad captures), or foldable (unfolded foldable captures, Android)"
+        ),
       limit: z
         .number()
         .min(1)
@@ -210,7 +242,7 @@ export function registerTools(server: McpServer) {
         .default(20)
         .describe("Max results to return"),
     },
-    async ({ query, product_tags, screenshot_tags, tag_match, platform, limit }) => {
+    async ({ query, product_tags, screenshot_tags, tag_match, platform, form_factor, limit }) => {
       if (!query && (!product_tags || product_tags.length === 0) && (!screenshot_tags || screenshot_tags.length === 0)) {
         return {
           content: [
@@ -243,6 +275,7 @@ export function registerTools(server: McpServer) {
 
       const scored = index.products
         .filter((p) => !platform || p.platform === platform)
+        .filter((p) => matchesFormFactor(p, form_factor))
         .filter((p) => {
           const lowerProductTags = p.tags.map((t) => t.toLowerCase());
           if (!tagMatches(productTagNeedles, lowerProductTags)) return false;
@@ -314,6 +347,7 @@ export function registerTools(server: McpServer) {
                 product_tags: product_tags || [],
                 screenshot_tags: screenshot_tags || [],
                 tag_match,
+                form_factor: form_factor || null,
                 count: results.length,
                 products: results,
               },

@@ -28,6 +28,20 @@
         {% endfor %}
         </ul>
 
+        {% comment %}
+          Form-factor filters, a second row alongside the platform chips. The
+          gallery images already carry `.tablet` / `.foldable` classes (see the
+          shape logic below), so filterImages() toggles them by class exactly
+          like a platform. Each chip starts hidden and active; it's revealed
+          below only when the gallery actually holds shots of that form factor.
+        {% endcomment %}
+        <ul class="filters form-factor-filters">
+        {% for factor in site.form_factors %}
+            {% assign slug = factor | downcase %}
+            <li id="filter-ff-{{ slug }}" class="form-factor hidden active" onClick="filterImages('{{ slug }}'); this.classList.toggle('active');">{{ factor }}</li>
+        {% endfor %}
+        </ul>
+
         {% if page.tags != null %}
             <ul class="tags">
                 {% for tag in page.tags %}
@@ -114,6 +128,14 @@
         if(document.querySelector(".{{ platform | downcase }}") != null) {
             console.log("{{ platform }} images found");
             showElement('filter-{{ platform | downcase }}');
+        }
+        {% endfor %}
+
+        // Reveal a form-factor chip only if the gallery actually has shots of
+        // that shape — same pattern as the platform chips above.
+        {% for factor in site.form_factors %}
+        if(document.querySelector(".{{ factor | downcase }}") != null) {
+            showElement('filter-ff-{{ factor | downcase }}');
         }
         {% endfor %}
     </script>

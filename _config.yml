@@ -31,6 +31,16 @@ phone_platforms:
   - iOS
   - Android
 
+# Device form factors offered as gallery filter chips, alongside the platform
+# chips. Each value (downcased) must match the shape class the gallery layout
+# puts on an image — `.tablet` from scripts/mark-tablet-screenshots.mjs,
+# `.foldable` from scripts/mark-foldable-screenshots.mjs — so filterImages()
+# can toggle them by class. A chip only appears when a gallery actually holds
+# shots of that form factor. Order is display order.
+form_factors:
+  - Foldable
+  - Tablet
+
 # Force UTF-8 reads of source files regardless of the host locale. Without
 # this, Ruby falls back to US-ASCII when LANG is unset and kramdown rejects
 # any non-ASCII byte in page content (em-dashes, Unicode filename chars,
