@@ -28,3 +28,19 @@ why this approach, and what was considered and rejected.
   `screenshot_tags.csv` — form factor isn't screen content and it would need
   vocabulary upkeep; (b) a hand-maintained per-file list — unmaintainable
   versus dimension-based detection.
+
+## 2026-08-03 — Added a form-factor filter to galleries and the MCP server
+
+- **What:** Foldable/Tablet filter chips on gallery pages (revealed per-gallery
+  only when the gallery holds those shots), and an optional `form_factor` param
+  (`phone` | `tablet` | `foldable`) on the MCP `browse_by_platform` and
+  `search_inspiration` tools. `_plugins/products_json.rb` now emits
+  `tablet_images` / `foldable_images` into `products.json`; `form_factors` is
+  defined in `_config.yml` as the single source for the chips.
+- **Original ask:** Make form factor filterable, not just a column-width flag.
+- **Why this approach:** Reuses the existing class-based `filterImages()` and
+  the `tablet_images` / `foldable_images` flags from the prior change — no new
+  data model. `form_factors` is centralized in `_config.yml` like `platforms`.
+- **Rejected:** (a) an exclusive "show only" filter — more JS and inconsistent
+  with the additive platform-chip model; (b) a new per-screenshot form-factor
+  tag — duplicates the frontmatter flags.
