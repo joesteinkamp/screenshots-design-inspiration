@@ -313,12 +313,6 @@ section {
     }
 }
 
-/* Form-factor chips are a second filter row directly beneath the platform
-   chips; pull it up so the two read as one control group. */
-.filters.form-factor-filters {
-    margin-top: calc(-1 * var(--spacing-md));
-}
-
 /* TAGS */
 .tags {
     list-style: none;
@@ -372,6 +366,15 @@ section {
    default width back, not the narrow phone column. */
 .media-wrapper:has(.foldable) {
     grid-column: span 4;
+}
+
+/* "Only Show <form factor>" filters (toggleOnlyFormFactor): when the grid is
+   marked, hide every image that isn't of that form factor. Written out
+   literally per factor, like the .ios/.android selectors — add a rule when
+   adding a form factor to `form_factors:` in _config.yml. */
+.grid.only-foldable .media-wrapper:not(.foldable),
+.grid.only-tablet .media-wrapper:not(.tablet) {
+    display: none;
 }
 
 .image-tags {
