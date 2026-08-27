@@ -3,6 +3,34 @@
 Decisions behind AI-made changes to this repo — what changed, what prompted it,
 why this approach, and what was considered and rejected.
 
+## 2026-08-26 — Added Strawberry, Bubble, Google Opal, and Figma Weave to Web (Claude)
+
+- **What:** Four new `Web/` galleries — Strawberry (37), Bubble (23), Figma
+  Weave (14), Google Opal (9) — each with an `index.html` carrying
+  product-level `tags` and per-screenshot `image_tags` drawn from
+  `screenshot_tags.csv`, plus a `tags.json`. Also 18 new `Web/Airtable`
+  screenshots covering the Omni app-builder flow, tagged the same way and
+  merged into that product's existing `index.html` and `tags.json`.
+  `npm run auto-tag:count` goes from `{"products":5,"images":101}` to
+  `{"products":0,"images":0}`.
+- **Original ask:** Four new app folders had been dropped into `Web/` and
+  needed setup plus tagging.
+- **Why this approach:** Tags were written by reading every screenshot rather
+  than deferring to the scheduled CI tagger, which runs a 3B vision model and
+  had a 101-image backlog it drains ~45 minutes at a time. That choice forces
+  the `tags.json` half: `auto-tag.mjs` computes its backlog from `tags.json`,
+  not the frontmatter, and `writeFrontmatter` replaces `image_tags` wholesale
+  when it runs — so shipping the frontmatter alone would have left all 101
+  images in the backlog and let the next scheduled run silently overwrite the
+  hand tags with model output. Writing both files keeps the two sources
+  agreeing and takes the products out of the backlog entirely.
+- **Rejected:** (a) Frontmatter only, letting CI fill `image_tags` — slower,
+  lower quality, and the clobber described above; (b) running the local tagger
+  (`npm run tagger:start` + `auto-tag:local`) — a 3.3GB model download for
+  output worse than reading the screenshots directly; (c) leaving the 18 new
+  Airtable shots for CI — it would have split one batch of work across two
+  tagging passes of differing quality.
+
 ## 2026-08-03 — Added a `foldable` form-factor flag for Android galleries
 
 - **What:** New `scripts/mark-foldable-screenshots.mjs` classifies Android
