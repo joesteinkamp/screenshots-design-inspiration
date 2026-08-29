@@ -17,6 +17,6 @@
     "@google/generative-ai": "^0.21.0",
     "firebase-functions": "^7.0.3",
     "js-yaml": "^4.3.0",
-    "sharp": "^0.34.5"
+    "sharp": "^0.35.0"
   }
 }
