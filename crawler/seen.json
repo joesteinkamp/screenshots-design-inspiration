@@ -1,4 +1,36 @@
 {
-  "names": [],
-  "domains": []
+  "names": [
+    "capveon",
+    "collar",
+    "degla",
+    "forward",
+    "godhands",
+    "herdr",
+    "lambda robotics",
+    "lightfield",
+    "qokedas",
+    "rightnow",
+    "rote",
+    "sentient os",
+    "simantic",
+    "simulithic",
+    "veeza ai"
+  ],
+  "domains": [
+    "capveon.ai",
+    "degla.ai",
+    "godhands.dev",
+    "herdr.dev",
+    "lambdarobotics.ai",
+    "qokedas.com",
+    "runinfra.ai",
+    "sentient-os.ai",
+    "simantic.dev",
+    "simulithic.com",
+    "trylightfield.ai",
+    "tryrote.com",
+    "usecollarai.com",
+    "useforward.co",
+    "veeza.ai"
+  ]
 }
