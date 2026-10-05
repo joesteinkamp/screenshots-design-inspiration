@@ -1,4 +1,36 @@
 {
-  "names": [],
-  "domains": []
+  "names": [
+    "designobo",
+    "era",
+    "i built a free open source postgresql client for mac",
+    "i run five micro saas products on one mac mini billed in usdc",
+    "invofox",
+    "linklane",
+    "made a xcom like game in a weekend with ai 3d textures models etc",
+    "memorable",
+    "pokebest",
+    "possiblymadebyahuman sign writing process now with chrome ext",
+    "postquel a free mac postgres client with claude code and codex",
+    "resumetester",
+    "rote",
+    "setup unlimited accurate agent memory with past beam10m 85",
+    "soldstack"
+  ],
+  "domains": [
+    "designobo.com",
+    "eon.io",
+    "fly.dev",
+    "frizky.dev",
+    "github.com",
+    "invofox.com",
+    "linklane.ai",
+    "memorable.sh",
+    "past.dev",
+    "playgama.ai",
+    "pokebest.club",
+    "possiblymadebyahuman.com",
+    "resumetester.com",
+    "tryrote.com",
+    "watchtbot.site"
+  ]
 }
