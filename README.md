@@ -21,9 +21,49 @@ This repo includes a [Model Context Protocol](https://modelcontextprotocol.io/) 
 claude mcp add design-screenshots --scope user npx screenshots-design-inspiration-mcp
 ```
 
-**Claude Desktop, Cursor, or any MCP client:**
+**OpenAI Codex CLI:**
 
-Add to your MCP config file:
+```bash
+codex mcp add design-screenshots -- npx screenshots-design-inspiration-mcp
+```
+
+Or add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.design-screenshots]
+command = "npx"
+args = ["screenshots-design-inspiration-mcp"]
+```
+
+**Gemini CLI:**
+
+```bash
+gemini mcp add design-screenshots npx screenshots-design-inspiration-mcp --scope user
+```
+
+**VS Code (GitHub Copilot):**
+
+```bash
+code --add-mcp '{"name":"design-screenshots","command":"npx","args":["screenshots-design-inspiration-mcp"]}'
+```
+
+**OpenCode** — add to `opencode.json`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "design-screenshots": {
+      "type": "local",
+      "command": ["npx", "screenshots-design-inspiration-mcp"]
+    }
+  }
+}
+```
+
+**Claude Desktop, Cursor, Windsurf, Cline, or any other MCP client:**
+
+Add to your MCP config file (e.g. `claude_desktop_config.json`, `~/.cursor/mcp.json`, `~/.codeium/windsurf/mcp_config.json`):
 
 ```json
 {
