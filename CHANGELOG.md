@@ -19,6 +19,18 @@ why this approach, and what was considered and rejected.
   video-only gallery, because it would lack searchable screenshots. Remuxing
   the existing H.264 recording preserves its quality without re-encoding.
 
+## 2026-10-10 — Updated MCP installation guidance
+
+- **What:** Updated MCP installation examples to use npm's moving `latest` tag
+  with noninteractive `npx --yes`, and documented the release command sequence.
+- **Original ask:** Prevent users from having to edit the MCP version number for
+  every release and avoid interactive installation failures.
+- **Why this approach:** npm advances the `latest` dist-tag when a new release
+  is published, so clients can receive updates after restarting or reloading
+  their MCP host without configuration changes.
+- **Rejected:** Pinning a specific package version in client configuration,
+  because it creates recurring manual maintenance for every user.
+
 ## 2026-08-03 — Added a `foldable` form-factor flag for Android galleries
 
 - **What:** New `scripts/mark-foldable-screenshots.mjs` classifies Android
