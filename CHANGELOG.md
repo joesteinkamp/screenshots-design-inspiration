@@ -3,6 +3,22 @@
 Decisions behind AI-made changes to this repo — what changed, what prompted it,
 why this approach, and what was considered and rejected.
 
+## 2026-10-10 — Prepared Gemini, Claude Design, and Claude captures (Codex)
+
+- **What:** Tagged 54 new Claude and Claude Design screenshots, corrected five
+  stale Claude Design tag lists, and added Gemini gallery metadata with two
+  tagged stills and a losslessly remuxed MP4.
+- **Original ask:** Prepare the Gemini, Claude Design, and Claude folders for
+  upload, including new folders and images that need tags.
+- **Why this approach:** Kept the existing JSON/frontmatter schema so the
+  gallery, search, and MCP receive consistent per-image tags. Stills accompany
+  the Gemini recording because search and MCP index images. Preserved source
+  filenames and media, packaged Unicode filenames with explicit UTF-8 support,
+  and excluded temporary ImageOptim artifacts from the prepared upload.
+- **Rejected:** A MOV-only upload, because the gallery renders MP4; a
+  video-only gallery, because it would lack searchable screenshots. Remuxing
+  the existing H.264 recording preserves its quality without re-encoding.
+
 ## 2026-08-03 — Added a `foldable` form-factor flag for Android galleries
 
 - **What:** New `scripts/mark-foldable-screenshots.mjs` classifies Android
