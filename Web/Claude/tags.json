@@ -106,5 +106,170 @@
     "Checkbox",
     "Color Picker",
     "Dropdown Menu"
+  ],
+  "Screenshot 2026-09-02 at 9.21.34 PM.png": [
+    "Guided Tour & Tutorial",
+    "Dark Mode",
+    "Dialog",
+    "Illustration",
+    "Page Control",
+    "Button"
+  ],
+  "Screenshot 2026-09-02 at 9.21.37 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Dialog",
+    "Tile",
+    "Page Control",
+    "Button"
+  ],
+  "Screenshot 2026-09-02 at 9.21.40 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Dialog",
+    "Tile",
+    "Page Control",
+    "Button"
+  ],
+  "Screenshot 2026-09-02 at 9.21.43 PM.png": [
+    "Account Setup",
+    "Dark Mode",
+    "Dialog",
+    "Stacked List",
+    "Icon",
+    "Page Control",
+    "Button"
+  ],
+  "Screenshot 2026-09-02 at 9.21.51 PM.png": [
+    "Set",
+    "Dark Mode",
+    "Dialog",
+    "Text Field",
+    "Stacked List",
+    "Page Control",
+    "Button",
+    "Icon"
+  ],
+  "Screenshot 2026-09-02 at 9.22.31 PM.png": [
+    "Set",
+    "Dark Mode",
+    "Dialog",
+    "Text Field",
+    "Stacked List",
+    "Page Control",
+    "Button",
+    "Icon"
+  ],
+  "Screenshot_2026-07-24_at_1_19_51_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Table",
+    "Side Navigation",
+    "Button",
+    "Select"
+  ],
+  "Screenshot_2026-07-24_at_1_23_09_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Side Navigation",
+    "Button",
+    "Text Field",
+    "Segmented Control"
+  ],
+  "Screenshot_2026-07-24_at_1_23_19_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Table",
+    "Side Navigation",
+    "Segmented Control",
+    "Select"
+  ],
+  "Screenshot_2026-07-24_at_1_23_32_PM_anon.png": [
+    "Chat Bot",
+    "Text Field",
+    "Chip",
+    "Button",
+    "Select",
+    "Side Navigation"
+  ],
+  "Screenshot_2026-07-24_at_1_24_08_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Table",
+    "Segmented Control",
+    "Side Navigation",
+    "Button",
+    "Icon"
+  ],
+  "Screenshot_2026-07-24_at_1_24_20_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Table",
+    "Side Navigation",
+    "Button",
+    "Segmented Control"
+  ],
+  "Screenshot_2026-07-24_at_1_24_44_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Tab",
+    "Search Bar",
+    "Table",
+    "Card",
+    "Button",
+    "Side Navigation"
+  ],
+  "Screenshot_2026-07-24_at_1_24_55_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Segmented Control",
+    "Side Navigation",
+    "Icon"
+  ],
+  "Screenshot_2026-07-24_at_1_26_19_PM_anon.png": [
+    "Dashboard",
+    "Multi-Column Layout",
+    "Card",
+    "Table",
+    "Select",
+    "Segmented Control",
+    "Side Navigation",
+    "Button"
+  ],
+  "Screenshot_2026-07-24_at_1_28_23_PM_anon.png": [
+    "Billing",
+    "Multi-Column Layout",
+    "Side Navigation",
+    "Banner",
+    "Table",
+    "Button",
+    "Link",
+    "Divider"
+  ],
+  "Screenshot_2026-07-24_at_1_28_29_PM_anon.png": [
+    "Settings & Preferences",
+    "Multi-Column Layout",
+    "Switch",
+    "Progress Indicator",
+    "Table",
+    "Search Bar",
+    "Tab",
+    "Side Navigation"
+  ],
+  "Screenshot_2026-07-24_at_1_28_45_PM_anon.png": [
+    "Settings & Preferences",
+    "Multi-Column Layout",
+    "Switch",
+    "Progress Indicator",
+    "Table",
+    "Tab",
+    "Side Navigation",
+    "Select"
   ]
 }
