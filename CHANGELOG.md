@@ -9,7 +9,8 @@ why this approach, and what was considered and rejected.
   Manus recording, and three tagged stills (task plan and todo, dashboard
   analytics preview, task completed). The sidebar user name and the
   restricted-site page's SITE/USER box (work email) are pixelated in the MP4
-  and stills.
+  and stills. Removed the original Manus `.mov` added in #110, since the MP4
+  now duplicates it.
 - **Original ask:** Make the Manus recording committed in #110 appear in the
   gallery, as #108 did for Gemini.
 - **Why this approach:** Follows the Gemini pattern — the gallery renders MP4
