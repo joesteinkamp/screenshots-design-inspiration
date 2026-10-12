@@ -3,6 +3,23 @@
 Decisions behind AI-made changes to this repo — what changed, what prompted it,
 why this approach, and what was considered and rejected.
 
+## 2026-10-12 — Prepared the Manus gallery (Claude)
+
+- **What:** Added `Web/Manus/index.html` and `tags.json`, a web MP4 of the
+  Manus recording, and three tagged stills (task plan and todo, dashboard
+  analytics preview, task completed). The sidebar user name and the
+  restricted-site page's SITE/USER box (work email) are pixelated in the MP4
+  and stills.
+- **Original ask:** Make the Manus recording committed in #110 appear in the
+  gallery, as #108 did for Gemini.
+- **Why this approach:** Follows the Gemini pattern — the gallery renders MP4
+  and ignores MOV, and search and MCP index images, so stills accompany the
+  video. Re-encoded (H.264, CRF 26, faststart) rather than remuxed because a
+  lossless copy would be another ~95 MB in the repo and on every gallery load.
+  Redaction matches the repo's existing `_anon` handling of personal details.
+- **Rejected:** A lossless remux, for size; trimming the video before the
+  restricted page, because that would cut the task-completed result.
+
 ## 2026-10-12 — Added original Gemini and Manus screen recordings (Claude)
 
 - **What:** Committed the source `.mov` behind #108's remuxed
