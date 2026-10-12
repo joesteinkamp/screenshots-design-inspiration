@@ -3,6 +3,20 @@
 Decisions behind AI-made changes to this repo — what changed, what prompted it,
 why this approach, and what was considered and rejected.
 
+## 2026-10-12 — Added original Gemini and Manus screen recordings (Claude)
+
+- **What:** Committed the source `.mov` behind #108's remuxed
+  `gemini-chat-2026-09-15.mp4`, and the original Manus screen recording
+  (`Web/Manus/`, ~95 MB) as-is.
+- **Original ask:** Commit outstanding local work, including the Manus
+  recording, and open a PR.
+- **Why this approach:** Keeps the lossless source recordings in the repo
+  alongside any derived media. The Manus file is under GitHub's 100 MiB
+  per-file limit, so it was committed without Git LFS.
+- **Rejected:** Holding the Manus recording until it was compressed to MP4 with
+  gallery metadata — the user chose to commit the original now. Committing the
+  `.DS_Store` changes, because they are Finder metadata.
+
 ## 2026-10-10 — Prepared Gemini, Claude Design, and Claude captures (Codex)
 
 - **What:** Tagged 54 new Claude and Claude Design screenshots, corrected five
