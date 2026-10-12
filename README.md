@@ -18,13 +18,13 @@ This repo includes a [Model Context Protocol](https://modelcontextprotocol.io/) 
 **Claude Code:**
 
 ```bash
-claude mcp add design-screenshots --scope user npx screenshots-design-inspiration-mcp
+claude mcp add design-screenshots --scope user -- npx --yes screenshots-design-inspiration-mcp@latest
 ```
 
 **OpenAI Codex CLI:**
 
 ```bash
-codex mcp add design-screenshots -- npx screenshots-design-inspiration-mcp
+codex mcp add design-screenshots -- npx --yes screenshots-design-inspiration-mcp@latest
 ```
 
 Or add to `~/.codex/config.toml`:
@@ -32,19 +32,19 @@ Or add to `~/.codex/config.toml`:
 ```toml
 [mcp_servers.design-screenshots]
 command = "npx"
-args = ["screenshots-design-inspiration-mcp"]
+args = ["--yes", "screenshots-design-inspiration-mcp@latest"]
 ```
 
 **Gemini CLI:**
 
 ```bash
-gemini mcp add design-screenshots npx screenshots-design-inspiration-mcp --scope user
+gemini mcp add design-screenshots npx --yes screenshots-design-inspiration-mcp@latest --scope user
 ```
 
 **VS Code (GitHub Copilot):**
 
 ```bash
-code --add-mcp '{"name":"design-screenshots","command":"npx","args":["screenshots-design-inspiration-mcp"]}'
+code --add-mcp '{"name":"design-screenshots","command":"npx","args":["--yes","screenshots-design-inspiration-mcp@latest"]}'
 ```
 
 **OpenCode** — add to `opencode.json`:
@@ -55,7 +55,7 @@ code --add-mcp '{"name":"design-screenshots","command":"npx","args":["screenshot
   "mcp": {
     "design-screenshots": {
       "type": "local",
-      "command": ["npx", "screenshots-design-inspiration-mcp"]
+      "command": ["npx", "--yes", "screenshots-design-inspiration-mcp@latest"]
     }
   }
 }
@@ -70,13 +70,30 @@ Add to your MCP config file (e.g. `claude_desktop_config.json`, `~/.cursor/mcp.j
   "mcpServers": {
     "design-screenshots": {
       "command": "npx",
-      "args": ["screenshots-design-inspiration-mcp"]
+      "args": ["--yes", "screenshots-design-inspiration-mcp@latest"]
     }
   }
 }
 ```
 
 No repo clone, no install, no build required. `npx` handles everything.
+
+Use the `@latest` tag instead of pinning a version. When a new release is
+published, npm moves `latest` automatically, so users only need to restart or
+reload their MCP client. The `--yes` flag lets `npx` install the package
+without an interactive prompt.
+
+To publish a new MCP release as the package owner:
+
+```bash
+cd mcp-server
+npm version patch
+npm publish
+```
+
+`npm version patch` updates `package.json` and `package-lock.json`; do not
+reuse a version that has already been published because npm versions are
+immutable.
 
 ### Available Tools
 
