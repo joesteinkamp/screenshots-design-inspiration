@@ -1,4 +1,36 @@
 {
-  "names": [],
-  "domains": []
+  "names": [
+    "cues video editor",
+    "git dupe",
+    "give one context across all your agents via mcp",
+    "godpack",
+    "juiced claude code",
+    "linklane",
+    "lpmr delta a lightweight financial research terminal",
+    "lucebox",
+    "memorable",
+    "on air",
+    "plyxl",
+    "rce in atlantis",
+    "rote",
+    "tesser",
+    "wunderkammer"
+  ],
+  "domains": [
+    "cues.app",
+    "forgot.dev",
+    "github.com",
+    "godpack.gg",
+    "juiced.codes",
+    "linklane.ai",
+    "lpmresearch.com",
+    "lucebox.com",
+    "make0.ai",
+    "medium.com",
+    "memorable.sh",
+    "plyxl.com",
+    "tesser.sh",
+    "tryrote.com",
+    "wunderkammer.page"
+  ]
 }
