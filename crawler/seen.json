@@ -1,4 +1,36 @@
 {
-  "names": [],
-  "domains": []
+  "names": [
+    "care gp",
+    "colony",
+    "datanode",
+    "godpack",
+    "linklane",
+    "lucebox",
+    "luminary",
+    "memorable",
+    "nuum robotics",
+    "operon",
+    "plyxl",
+    "rote",
+    "tesser",
+    "vibe robotics",
+    "xulux"
+  ],
+  "domains": [
+    "colony.tech",
+    "com.au",
+    "datanodelabs.com",
+    "godpack.com",
+    "linklane.ai",
+    "lucebox.com",
+    "meetluminary.ai",
+    "memorable.sh",
+    "nuumrobotics.com",
+    "operonsolutions.com",
+    "plyxl.com",
+    "tesser.sh",
+    "tryrote.com",
+    "viberobotics.co",
+    "xulux.ai"
+  ]
 }
